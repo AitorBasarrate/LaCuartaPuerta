@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
     <link rel="stylesheet" href="CSS/IndexCSS.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Document</title>
 </head>
 <body>
@@ -13,18 +14,25 @@
             <!-- Hemen logoa txertatu behar da -->
             <img class="logo" src="Media/logo-bien.png" alt="<<Au revoir Shoshanna>>">
             <!-- Nabigatzailea, bakoitzak beraren orria kargatuko du -->
-            
-            <div class="fondoNavigation">
-                <nav class="navigation" id="navigation">
-                    <ul>
-                        <li><a href="#">HASIERA</a></li>
-                        <li><a href="#">ASTEKO FILMA</a></li>
-                        <li><a href="#">+ FILMAK</a></li>
-                        <li><a href="#">BAZKIDE AREA</a></li>
-                        <img width='1.5%' src="Media/Log-In.png" href="#">
-                    </ul>
-                </nav>
-        </div>
+            <div class="topnav" id="myTopnav">
+                <a href="#home" class="active">HASIERA</a>
+                <a href="#news">ASTEKO FILMA</a>
+                <a href="#contact">+ FILMA</a>
+                <a href="#about">BAZKIDE AREA</a>
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+                </a>
+            </div>
+            <script>
+                function myFunction() {
+                    var x = document.getElementById("myTopnav");
+                    if (x.className === "topnav") {
+                    x.className += " responsive";
+                        } else {
+                    x.className = "topnav";
+                    }
+                }
+            </script>
     </header>
     <div class="contenedor">
         <a>pene</a>
