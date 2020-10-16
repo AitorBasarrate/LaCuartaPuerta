@@ -7,7 +7,7 @@ $.ajax({
     url: '/Media/DB/movies_metadata.csv',
     dataType: 'text',
   }).done(successFunction);
-
+{}
 
   	
 function successFunction(data) {
