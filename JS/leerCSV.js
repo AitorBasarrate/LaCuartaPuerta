@@ -55,4 +55,3 @@ function successFunction(data) {
     table += '</tbody>';
     table += '</table>';
     $('body').append(table);
-  }
