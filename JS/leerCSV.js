@@ -7,8 +7,8 @@ include(/PHP/dbKonexioa.php);
 
 $konexioa = new konexioa("localhost", "lacuartapuerta", "root", "");
 
-$hostPDO = "mysql:host=$KONEXIOA->hostDB;dbname=$nombreDB;";
-$miPDO = new PDO($konexioa->hostPDO, $konexioa->usuarioDB, $konexioa->contrasenyaDB);
+// $hostPDO = "mysql:host=$KONEXIOA->hostDB;dbname=$nombreDB;";
+// $miPDO = new PDO($konexioa->hostPDO, $konexioa->usuarioDB, $konexioa->contrasenyaDB);
 /**
  * ajax eta jquery erablita, .csv-ko eduki guztiak irakurtzen ditugu.
  */
@@ -29,19 +29,12 @@ function successFunction(data) {
      * taulako izenburuak hartu
      */
     for (var singleRow = 0; singleRow < allRows.length; singleRow++) {
-      if (singleRow === 0) {
-        table += '<thead>';
-        table += '<tr>';
-      } else {
-        table += '<tr>';
-      }
       /**
        * taulan beste edukiak sartzen dira
        */
       var rowCells = allRows[singleRow].split(',');
       for (var rowCell = 0; rowCell < rowCells.length; rowCell++) { 
-          table += rowCells[rowCell];
-          table += rowCells[rowCell];
+          var_dump(rowCells[rowCell]);
         }
       }
       if (singleRow === 0) {
