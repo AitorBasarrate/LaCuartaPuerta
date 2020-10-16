@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Izena eman</title>
+</head>
+<body>
+
+    <!-- Izena emateko MODAL-a -->
+    <div class="modal" id="izenaEman">
+        
+        <p><strong>Bazkide izatearen abantailak</strong></p>
+
+        <!-- Izen emateko datuak sartu -->
+            <!-- Izena -->
+            <input type="text" name="erabiltzailea" placeholder="Erabiltzaile izena" required><br>
+            <!-- Pasahitza -->
+            <input type="password" name="password1" placeholder="Pasahitza" required><br>
+            <!-- Pasahitza konfirmatu -->
+            <input type="password" name="password2" placeholder="Pasahitza konfirmatu" required><br>
+            <!-- Korreoa -->
+            <input type="text" name="korreoa" placeholder="Posta elektronikoa jarri" required><br>
+            <!-- Termino legalak onartu-->
+            <input type="checkbox" id="terminoLegalak" name="terminoLegalak" value="Boat">
+            <label for="terminoLegalak">Termino legalak onartzen ditut.</label><br><br>
+            <!-- Izena eman -->
+            <input type="submit" value="Register">
+
+        <!-- Bazkide naiz botoia - Sartzeko modal-a erakutsi -->
+        <a>Bazkidea naiz dagoeneko</a>
+
+        <!-- Ixteko botoia -->
+        <span class="close">&times;</span>
+
+            <!-- Ixteko botoiaren funtzioak -->
+            <script>
+                // Erabiltzaileak <span> (x)-an klik egiterakoan, aurreko orrira bueltatu
+                span.onclick = function() {
+                    modal.style.display = "none";
+                }
+                
+                //Modaletik kanpo klik egiterakoan modala itxi egingo da
+                window.onclick = function(event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                    }
+                }
+            </script>
+    </div>
+
+        <!-- Sartu MODAL-a -->
+        <div class="modal" id="sartu">
+        
+            <!-- Kolumna 1 -->
+            <!-- LOGOA JARTZEKO ZATIA-->
+    
+            <!-- Kolumna 2 -->
+            <!-- Izen emateko datuak sartu -->
+                <!-- Izena -->
+                <input type="text" name="erabiltzailea" placeholder="Erabiltzaile izena" required><br>
+                <!-- Pasahitza -->
+                <input type="password" name="password1" placeholder="Pasahitza" required><br>
+                <!-- Sartu -->
+                <input type="submit" value="logIn">
+        
+                <!-- Ixteko botoiaren funtzioak -->
+                <script>
+                    // Erabiltzaileak <span> (x)-an klik egiterakoan, aurreko orrira bueltatu
+                    span.onclick = function() {
+                        modal.style.display = "none";
+                    }
+                    
+                    //Modaletik kanpo klik egiterakoan modala itxi egingo da
+                    window.onclick = function(event) {
+                        if (event.target == modal) {
+                            modal.style.display = "none";
+                        }
+                    }
+                </script>
+        </div>
+    
+</body>
+</html>
