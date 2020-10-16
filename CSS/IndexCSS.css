@@ -1,3 +1,22 @@
+
+table {
+    margin: 0 auto;
+    text-align: center;
+    border-collapse: collapse;
+    border: 1px solid #d4d4d4;
+  }
+ 
+  tr:nth-child(even) {
+    background: #d4d4d4;
+  }
+   
+  th, td {
+    padding: 10px 30px;
+  }
+   
+  th {
+    border-bottom: 1px solid #d4d4d4;
+  }    
 /* Orrialde guztian letra berdina eukiteko */
 *{
     font-family:'Oswald',serif;
@@ -127,3 +146,11 @@ footer{
   color: #f5cb5c;
   padding: 0.5%;
 }
+
+    /* parte 2 */
+    .footerP2{
+        text-align: center;
+        background-color:  #242423;
+        color: #f5cb5c;
+        padding: 0.5%;
+    }
