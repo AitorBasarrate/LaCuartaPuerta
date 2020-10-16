@@ -87,60 +87,39 @@ width: 200px;
   }
 }
 
-.grid-1 {
+/* Los Grid */
+.grid-container {
   display: grid;
-  width: 100%;
-  max-width: 770px;
-  margin: 0 auto;
-  
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 80px auto 80px;
-  grid-gap: 20px;
-  
-  grid-template-areas: "header   header   header"
-                       "main     main     sidebar"
-                       "footer   footer   footer";
+  grid-gap: 10px;
+  padding: 10px;
+  margin: 5% ;
 }
 
-/* items */
-
-.grid-1 div {
-  color: white;
-  font-size: 20px;
+.grid-item {
+  background-color: rgba(133, 2, 2, 0.8);
+  text-align: center;
   padding: 20px;
-  }
+  font-size: 20px;
+}
 
-/* specific item styles */
+.item1 {
+  grid-column: 1 / span 2;
+  grid-row: 1;
+}
 
-.item-2 {
-  background: #33a8a5;
-  grid-area: main;
-  
-  display: grid;
-  
-  grid-template-columns: 1fr 30%;
-  grid-template-rows: auto auto;
-  grid-gap: 20px;
-  
-  grid-template-areas: "header header"
-  "article sidebar";
-  
+.item2 {
+  grid-column: 3;
+  grid-row: 1 / span 2;
 }
-.item-3 {
-  background: #30997a;
-  grid-area: sidebar;
+.item2 .RegresoFuturo {
+  width: 35%;
+  height: 90%;
 }
-.item-5 {
-  background: #da6f2b;
-  grid-area: header;
-}
-.item-6 {
-  background: #3d8bb1;
-  grid-area: article;
-}
-.item-7 {
-  background: #e03f3f;
-  grid-area: sidebar;
+
+.item5 {
+  margin-top: 4%;
+  grid-column: 1 / span 3;
+  grid-row: 3;
 }
 
 /* Footer de la pagina */
