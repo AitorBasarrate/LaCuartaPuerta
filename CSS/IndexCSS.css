@@ -1,22 +1,22 @@
 
 table {
-    margin: 0 auto;
-    text-align: center;
-    border-collapse: collapse;
-    border: 1px solid #d4d4d4;
-  }
- 
-  tr:nth-child(even) {
-    background: #d4d4d4;
-  }
-   
-  th, td {
-    padding: 10px 30px;
-  }
-   
-  th {
-    border-bottom: 1px solid #d4d4d4;
-  }    
+  margin: 0 auto;
+  text-align: center;
+  border-collapse: collapse;
+  border: 1px solid #d4d4d4;
+}
+
+tr:nth-child(even) {
+  background: #d4d4d4;
+}
+
+th, td {
+  padding: 10px 30px;
+}
+
+th {
+  border-bottom: 1px solid #d4d4d4;
+}    
 /* Orrialde guztian letra berdina eukiteko */
 *{
     font-family:'Oswald',serif;
@@ -86,39 +86,64 @@ width: 200px;
     text-align: left;
   }
 }
-.sidenav {
-  height: 100%;
-  width: 160px;
-  font-family: "Secular One";
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #042A2B;
-  overflow-x: hidden;
-  padding-top: 20px;
-}
+
+.grid-1 {
+  display: grid;
+  width: 100%;
+  max-width: 770px;
+  margin: 0 auto;
   
-.sidenav a {
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #CDEDF6;
-  display: block;
-}
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 80px auto 80px;
+  grid-gap: 20px;
   
-.sidenav a:hover {
-  background-color: #094446;
-  transform: scale(1.1) perspective(1px);
+  grid-template-areas: "header   header   header"
+                       "main     main     sidebar"
+                       "footer   footer   footer";
 }
 
-  @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
+/* items */
+
+.grid-1 div {
+  color: white;
+  font-size: 20px;
+  padding: 20px;
   }
 
-/* Footer de la pagina */
+/* specific item styles */
 
+.item-2 {
+  background: #33a8a5;
+  grid-area: main;
+  
+  display: grid;
+  
+  grid-template-columns: 1fr 30%;
+  grid-template-rows: auto auto;
+  grid-gap: 20px;
+  
+  grid-template-areas: "header header"
+  "article sidebar";
+  
+}
+.item-3 {
+  background: #30997a;
+  grid-area: sidebar;
+}
+.item-5 {
+  background: #da6f2b;
+  grid-area: header;
+}
+.item-6 {
+  background: #3d8bb1;
+  grid-area: article;
+}
+.item-7 {
+  background: #e03f3f;
+  grid-area: sidebar;
+}
+
+/* Footer de la pagina */
 footer{
   background-color: #333533;
 }
