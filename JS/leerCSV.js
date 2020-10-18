@@ -1,24 +1,28 @@
 /*https://www.kaggle.com/rounakbanik/the-movies-dataset?select=movies_metadata.csv*/
 
 /**
- * ajax eta jquery erablita, .csv-ko eduki guztiak irakurtzen ditugu.
+ * ajax eta erablita, .csv-ko eduki guztiak irakurtzen ditugu.
  */
 $.ajax({
     url: '/Media/DB/movies_metadata.csv',
     dataType: 'text',
-  }).done(successFunction);
+  }).done(csvIrakurri);
 {}
 
   	
-function successFunction(data) {
+function csvIrakurri(data) {
   /**
    * Lerroak banatu
    */
     var allRows = data.split(/\r?\n|\r/);
-
+/**
+ * nahi dudan datua irakurtzen dut.
+ */
     allRows.forEach(line => {
-      datuak = line.split(',')[1];
+      var datuak = line.split(',')[0];
       console.log(datuak);
     });
-
-    }
+    $.GET("/PHP/datuBaseaBete.php").success(function(response){
+            sessionStorage.setItem("izenburuak", datuak);
+      })
+  }
