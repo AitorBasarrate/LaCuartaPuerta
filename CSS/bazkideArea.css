@@ -1,7 +1,7 @@
 /* Grids-ekin ordenatuko dugu atal hau */
 section{
     margin-left: 10%;
-    
+    font-size: 20px;
     width: 80%;
     height: 1500px;
     align-items: center;
@@ -76,7 +76,14 @@ section{
     height: 100px;
 
 }
-.rankingAtala h1{
-    
-    
+/* Igarkizun misteriotsuaren atala */
+#erantzunaBidali{
+        color:242423;
+        background:#e8eddf;
+        border:0px;
+        width:40%;
+        height:100%;
+        font-size:20px;
+        font-family:Verdana,Helvetica;
+        font-weight:bold;
 }
