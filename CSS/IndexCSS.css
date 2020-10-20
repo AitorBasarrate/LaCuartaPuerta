@@ -68,39 +68,54 @@ width: 200px;
 }
 
 /* Los Grid */
-.grid-container {
+
+.wrapper > div {
+    margin-top: 3%;
+    margin-bottom: 3%;
+    padding: 1em;
+}
+.wrapper {
+  justify-content: center;
   display: grid;
-  grid-gap: 10px;
-  padding: 10px;
-  margin: 5% ;
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: repeat(2, auto);
+  height: 100%;
+  width: 100%;
+  grid-template-areas: 
+    "a a b"
+    "a a c";
 }
-
-.grid-item {
-  background-color: rgba(133, 2, 2, 0.8);
-  text-align: center;
-  padding: 20px;
-  font-size: 20px;
-}
-
 .item1 {
-  grid-column: 1 / span 2;
-  grid-row: 1;
+  text-align: center;
+  grid-area: a;
 }
-
 .item2 {
-  grid-column: 3;
-  grid-row: 1 / span 2;
+  text-align: center;
+  grid-area: b;
 }
-.item2 .RegresoFuturo {
-  width: 35%;
-  height: 90%;
+.item3 {
+  text-align: center;
+  grid-area: c;
 }
 
-.item5 {
-  margin-top: 4%;
-  grid-column: 1 / span 3;
-  grid-row: 3;
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media (max-width: 800px) {
+  .wrapper {
+    flex: 25%;
+    max-width: 25%;
+    justify-content: center;
+  }
 }
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media (max-width: 800px) {
+  .wrapper {
+    flex: 100%;
+    max-width: 100%;
+    justify-content: center;
+  }
+}
+
 
 /* Footer de la pagina */
 .content{
