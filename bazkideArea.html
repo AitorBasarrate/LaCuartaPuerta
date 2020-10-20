@@ -3,21 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/bazkideArea.css">
+    <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
     <title>Document</title>
 </head>
 <body>
     <section>
-        <!-- Atal hau administratzailearentzat -->
-        <input type="file" name="insertarImagen">
-        <!-- Ikusle modua -->
-        <div class="hurrengoPelikula">
-            <h1>Hurrengo filma</h1>
-            <img src="#">
+        <div class="container">
+        <!-- Atal hau asteko argazkia ikusteko -->
+        <div class="astekoArgazkia">
+            <h1>Hurrengo asteko filma</h1>
+            <label for="file-input">
+                <img  id="argazkia" src="https://i.blogs.es/fc2240/los-increibles-2-pixar-trailer-final/1366_2000.jpg"><!-- codigo php -->
+            </label>
+            <!-- administratzailearentzat -->
+            <input id="file-input" type="file"/>
         </div>
+        <!-- Igarkizun misteriotsuaren atala -->
         <div class="igarkizunMisteriotsua">
             <h1>Igarkizun Misteriotsua</h1>
+<<<<<<< HEAD
+            <p contenteditable="true" id="igarkizunMamia">Zenbat urte ditu gure protagonistaren amona?</p>
+            <input type="text" id="igarkizunErantzuna">
+            <input type="submit" id="erantzunaBidali" value="Bidali">
+           
+=======
             <p>'codigo php'</p>
+>>>>>>> 9eea86ee714a8a8a9010e3e0ccc823e8c6525854
         </div> 
+        <!-- Datu Interesgarriaren atala-->
+        <div class="datuInteresgarria">
+            <h1>Datu Interesgarria</h1>
+            <p contenteditable="true" id="datuInteresgarriaMamia">5 Urte egon ziren filmaren trajeak pentsatzekoZenbat urte ditu gure protagonistaren amona?Zenbat urte ditu gure protagonistaren amona?Zenbat urte ditu gure protagonistaren amona?Zenbat urte ditu gure protagonistaren amona?Zenbat urte ditu gure protagonistaren amona?Zenbat urte ditu gure protagonistaren amona?</p>
+        </div>
+        <!-- Bazkidearen atala -->
+        <div class="bazkideDatuak">
+            <h1>Bazkidearen datuak:</h1>
+            <p>Erabiltzailea: <a>partephp</a></p>
+            <p>Puntuazioa: <a>partephp</a></p>
+            <p>Posizioa Raking-ean: <a>partephp</a></p>
+
+            <input type="submit" id="saioaItxi" value="Saioa Itxi">
+        </div>
+        <!-- Bazkideen ranking-aren atala taula batean egingo dugu -->
+        <div class="rankingAtala">
+            <h1>Bazkideekiko Ranking-a</h1>
+            <table>
+                <!-- tr filak dira -->
+                <tr>
+                    <!-- td kolumnak -->
+                    <td id="bazkide1">Celda 1</td>
+                
+                    <td id="bazkide2">Celda 2</td>
+                
+                    <td id="bazkide3">Celda 3</td>
+                  </tr>
+                  <tr>
+                
+                    <td id="bazkidePuntuak1">Celda 4</td>
+                
+                    <td id="bazkidePuntuak2">Celda 5</td>
+                
+                    <td id="bazkidePuntuak3">Celda 6</td>
+                
+                  </tr>
+            </table>
+
+        </div>
+    </div>
     </section>
 </body>
 </html>

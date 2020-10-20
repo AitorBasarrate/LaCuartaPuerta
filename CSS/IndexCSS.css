@@ -79,23 +79,37 @@ width: 200px;
   display: grid;
   grid-template-columns: repeat(3, auto);
   grid-template-rows: repeat(2, auto);
-  height: 100%;
-  width: 100%;
   grid-template-areas: 
     "a a b"
     "a a c";
+    grid-gap: 10px;
 }
 .item1 {
   text-align: center;
+  box-shadow: black;
   grid-area: a;
+  width: auto;
+  background-color: #E8EDDF;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 25px;
 }
+
 .item2 {
   text-align: center;
   grid-area: b;
+  width: auto;
+  background-color: #E8EDDF;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 25px;
 }
+
 .item3 {
   text-align: center;
   grid-area: c;
+  width: auto;
+  background-color: #E8EDDF;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 25px;
 }
 
 /* Responsive layout - makes a two column-layout instead of four columns */
