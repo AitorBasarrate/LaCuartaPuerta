@@ -19,10 +19,11 @@ function csvIrakurri(data) {
  * nahi dudan datua irakurtzen dut.
  */
     allRows.forEach(line => {
-      var datuak = line.split(',')[0];
-      console.log(datuak);
+      console.log(line.split(',')[5]);
+      sessionStorage.setItem('izenburuak', line.split(',')[0]);
+      sessionStorage.setItem('generoa', line.split(',')[1]);
+      sessionStorage.setItem('urtea', line.split(',')[7]);
     });
-    $.GET("/PHP/datuBaseaBete.php").success(function(response){
-            sessionStorage.setItem("izenburuak", datuak);
-      })
+    
+    
   }

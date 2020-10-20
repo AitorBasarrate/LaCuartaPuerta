@@ -1,6 +1,11 @@
 <?php
 include("/PHP/dbKonexioa.php");
-    $izenburuak = $_GET['izenburuak'];
+    if (isset($_SESSION['izenburuak'])) {
+        $izenburuak = $_SESSION['izenburuak'];
+        var_dump($izenburuak);
+    }else{
+        echo "que no funciona, que no"
+    }
     $konexioa = new konexioa("localhost", "lacuartapuerta", "root", "")
 
     $hostPDO = "mysql:host=$konexioa->hostDB;dbname=$konexio->nombreDB;";
@@ -9,5 +14,4 @@ include("/PHP/dbKonexioa.php");
     $miConsulta = $miPDO->prepare('INSERT INTO filmak (Izenburua) VALUES ("' + $izenburuak + '")');
 
 $miConsulta->execute();
-    var_dump($izenburuak);
 ?>
