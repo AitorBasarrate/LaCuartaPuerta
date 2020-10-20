@@ -1,28 +1,50 @@
 /*https://www.kaggle.com/rounakbanik/the-movies-dataset?select=movies_metadata.csv*/
 
 /**
- * ajax eta erablita, .csv-ko eduki guztiak irakurtzen ditugu.
+ * Datu Basera konexioa egiteko objetua eta dena prestatzen dugu.
+ */
+include(/PHP/dbKonexioa.php);
+
+$konexioa = new konexioa("localhost", "lacuartapuerta", "root", "");
+
+// $hostPDO = "mysql:host=$KONEXIOA->hostDB;dbname=$nombreDB;";
+// $miPDO = new PDO($konexioa->hostPDO, $konexioa->usuarioDB, $konexioa->contrasenyaDB);
+/**
+ * ajax eta jquery erablita, .csv-ko eduki guztiak irakurtzen ditugu.
  */
 $.ajax({
-    url: '/Media/DB/movies_metadata.csv',
+    url: 'movies_metadata.csv',
     dataType: 'text',
-  }).done(csvIrakurri);
-{}
+  }).done(successFunction);
+
 
   	
-function csvIrakurri(data) {
+function successFunction(data) {
   /**
    * Lerroak banatu
    */
     var allRows = data.split(/\r?\n|\r/);
-/**
- * nahi dudan datua irakurtzen dut.
- */
-    allRows.forEach(line => {
-      var datuak = line.split(',')[0];
-      console.log(datuak);
-    });
-    $.GET("/PHP/datuBaseaBete.php").success(function(response){
-            sessionStorage.setItem("izenburuak", datuak);
-      })
-  }
+    var table = '<table>';
+    /**
+     * taulako izenburuak hartu
+     */
+    for (var singleRow = 0; singleRow < allRows.length; singleRow++) {
+      /**
+       * taulan beste edukiak sartzen dira
+       */
+      var rowCells = allRows[singleRow].split(',');
+      for (var rowCell = 0; rowCell < rowCells.length; rowCell++) { 
+          var_dump(rowCells[rowCell]);
+        }
+      }
+      if (singleRow === 0) {
+        table += '</tr>';
+        table += '</thead>';
+        table += '<tbody>';
+      } else {
+        table += '</tr>';
+      }
+    } 
+    table += '</tbody>';
+    table += '</table>';
+    $('body').append(table);
