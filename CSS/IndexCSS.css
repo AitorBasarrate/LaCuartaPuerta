@@ -103,6 +103,10 @@ width: 200px;
 }
 
 /* Footer de la pagina */
+.content{
+  /*da al contenido "altura mínima" para que el footer nunca suba más de ahí, pero sí para que baje si aumenta el contenido*/
+  min-height: calc(100vh - 70px);
+}
 footer{
   background-color: #333533;
 }
