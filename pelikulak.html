@@ -11,9 +11,9 @@
         <!-- Bilaketa atala -->
         <div class="bilatzailea" style="background-color: yellow;">
             <!-- Generoa -->
-            <button id="generoaBotoia" onclick="generoakErakutsi()">Generoa ▼</button>
+            <button id="generoaBotoia" onclick="generoakErakutsi()" >Generoa ▼</button>
             <!-- Generoen DIV-en lista -->
-            <div class="genero-lista" id="genero-lista" style="width: 400px; height: 250px; background-color: #CFDBD5;"></div>
+            <div class="genero-lista" id="genero-lista" style="width: 400px; height: 250px; background-color: #CFDBD5;" hidden></div>
 
                 <!-- Script Genero botoiak checkboxak erakusteko -->
                 <script>
@@ -53,7 +53,7 @@
             <input type="text" id="pelikulaIzenezBilatu" onKeyUp="pelikulaIzenezBilatu()" placeholder="Pelikula bilatu..." title="pelikulaIzenezBilatu"> 
             
             <!-- Bilaketa botoia -->
-            <img src="https://img.icons8.com/pastel-glyph/2x/search--v1.png" width="30px" height="30px">
+            <img src="https://img.icons8.com/pastel-glyph/2x/search--v1.png" width="30px" height="30px" onclick="pelikulaBilatu()">
 
             <br> <br>
 
