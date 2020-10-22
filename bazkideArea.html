@@ -10,7 +10,7 @@
 </head>
 <body>
     <section>
-        <div class="container">
+        <div class="container" id="containerBazkide">
             <!-- Atal hau asteko argazkia ikusteko -->
             <div class="astekoArgazkia">
                 <h1>Hurrengo asteko filma</h1>
@@ -25,7 +25,7 @@
                 <h1>Igarkizun Misteriotsua</h1>
 
                 <p contenteditable="true" id="igarkizunMamia">Zenbat urte ditu gure protagonistaren amona?</p>
-                <input type="text" id="igarkizunErantzuna">
+                <input type="text" id="igarkizunErantzuna" onclick="alertPosibilidades(id)">
                 <input type="submit" id="erantzunaBidali" value="Bidali" onmouseover="botoiHandiak(this.id)" onmouseout="botoiTxikiak(this.id)">
                 
             </div> 
