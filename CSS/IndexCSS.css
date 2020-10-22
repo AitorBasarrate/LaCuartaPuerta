@@ -186,7 +186,7 @@ width: 200px;
   background-color: white;
   opacity: 0.95;
 }
-input {
+.modal input {
   margin-top: 5%;
 }
 
