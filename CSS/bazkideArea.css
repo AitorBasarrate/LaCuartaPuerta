@@ -8,66 +8,132 @@ section{
     text-align: center;
     font-family:'Oswald',serif;
 }
+/* Pantaila normala dagoenean... */
+@media screen and (min-width: 900px) {
+    .container{
+        display: grid;
+        grid-gap: 2%;
+        padding: 4%;
+        width: 80%;
+        margin-left: 7%;
+        margin-bottom: 2%;
+        
+    }
+    /* Argazkia sartzeko GRID posizioaren atala */
+    .astekoArgazkia{
+        padding: 3%;
+        grid-column: 1 / span 3;
+        grid-row: 1;
+       
+    }
+    /* Bazkide datuak ikusteko GRID posizioaren atala */
+    .bazkideDatuak{
+        padding: 3%;
+        margin-top: 40%;
+        grid-column: 4;
+        grid-row: 1;
+        min-width: 300px;
+     
+    }
+    /* Azertijoaren GRID posizioaren lekua */
+    .igarkizunMisteriotsua{
+        width: 70%;
+        padding: 3%;
+        grid-column: 1/ span 2;
+        grid-row: 2;
+        margin-left: 10%;
+    }
+    /* Datu interesgarriaren GRID posizioaren lekua */
+    .datuInteresgarria{
+        
+        text-align: center;
+        width: 70%;
+        padding: 1%;
+        grid-column: 3/ span 2;
+        grid-row: 2;
+        padding: 3%;
+        margin-left: 20%;
+    }
+    /* Rankingaren atala GRID posizioaren */
+    .rankingAtala{
+        padding: 2%;
+        grid-column: 1/ span 4;
+        grid-row: 3;
+        align-items: center;
+        text-align: center;
+        
+        
+    }
+}
+@media screen and (max-width: 900px) {
+    /* Atal horren barruan, Grids-ekin ordenatuko dugu container div-a */
+    .container{
+        display: grid;
+        grid-gap: 2%;
+        padding: 4%;
+        width: 90%;
+        margin-left: 5%;
+        margin-bottom: 20%;
+    
+    }
+     /* Argazkia sartzeko GRID posizioaren atala */
+     .astekoArgazkia{
+        padding: 3%;
+        grid-column: 1 / span 2;
+        grid-row: 1;
+    }
+    /* Bazkide datuak ikusteko GRID posizioaren atala */
+    .bazkideDatuak{
 
-.container{
-    display: grid;
-    grid-gap: 2%;
-    padding: 4%;
-    width: 80%;
-    margin-left: 5%
+        padding: 3%;
+        
+        grid-column: 1/ span 2;
+        grid-row: 2;
+        min-width: 300px;
     
+    }
+    /* Azertijoaren GRID posizioaren lekua */
+    .igarkizunMisteriotsua{
+        width: 70%;
+        padding: 3%;
+        grid-column: 1/ span 2;
+        grid-row: 3;
+        margin-left: 10%;
+    }
+    /* Datu interesgarriaren GRID posizioaren lekua */
+    .datuInteresgarria{
+        
+        text-align: center;
+        width: 70%;
+        padding: 1%;
+        grid-column: 1/ span 2;
+        grid-row: 4;
+        padding: 3%;
+        margin-left: 10%;
+    }
+    /* Rankingaren atala GRID posizioaren */
+    .rankingAtala{
+        padding: 2%;
+        grid-column: 1/ span 3;
+        grid-row: 5;
+        align-items: center;
+        text-align: center;
+    } 
+}
 
-}
-.astekoArgazkia{
-    
-    padding: 3%;
-    
-    grid-column: 1 / span 3;
-    grid-row: 1;
-   
-}
-.bazkideDatuak{
-
-    padding: 3%;
-    margin-top: 40%;
-    grid-column: 4;
-    grid-row: 1;
-    min-width: 300px;
- 
-}
-.igarkizunMisteriotsua{
-    width: 70%;
-    padding: 3%;
-    grid-column: 1/ span 2;
-    grid-row: 2;
-    margin-left: 10%;
-}
-.datuInteresgarria{
-    
-    text-align: center;
-    width: 70%;
-    padding: 1%;
-    grid-column: 3/ span 2;
-    grid-row: 2;
-    padding: 3%;
-    margin-left: 20%;
-}
-.rankingAtala{
-    padding: 2%;
-    grid-column: 1/ span 4;
-    grid-row: 3;
-    align-items: center;
-    text-align: center;
-    
-    
-}
 
 /* Asteko argazkiaren atala */
 .astekoArgazkia input{
     display: none;
 }
 #argazkia{
-    width: 80%;
+    width: 70%;
+    height: 50%;
+    border-radius: 5px;
+    /* Sombra */
+    border: 1px solid;
+    padding: 3px;
+    box-shadow: 5px 10px 8px #888888;
 }
 /* Ranking taularen atala */
 
@@ -79,24 +145,55 @@ section{
 }
 /* Igarkizun misteriotsuaren atala */
 #erantzunaBidali{
-        color:242423;
-        background:#e8eddf;
-        border:0px;
-        width:100px;
-        height: 25px;
-        font-size:20px;
-        font-family:Verdana,Helvetica;
-        font-weight:bold;
+    text-align: center;
+    color:#e9eddf; 
+    background-color: #242423;
+    width:50%;
+    height:30px;
+    font-size:20px;
+    font-family:Verdana,Helvetica;
+    font-weight:bold;
+    margin-top: 10%;
+    border-radius: 5px;
+    /* Sombra */
+    border: 1px solid;
+    padding: 3px;
+    box-shadow: 5px 10px 8px #888888;
 }
 
 #saioaItxi{
-    color:242423;
-        background:#e8eddf;
-        border:0px;
-        width:40%;
-        height:25px;
-        font-size:20px;
-        font-family:Verdana,Helvetica;
-        font-weight:bold;
+    text-align: center;
+    color:#e9eddf; 
+    background-color: #242423;
+    width:50%;
+    height:30px;
+    font-size:20px;
+    font-family:Verdana,Helvetica;
+    font-weight:bold;
+    border-radius: 5px;
+    /* Sombra */
+    border: 1px solid;
+    padding: 3%px;
+    box-shadow: 5px 10px 8px #888888;
 
+
+}
+#gorde{
+    text-align: center;
+    color:#e9eddf; 
+    
+    background-color: #242423;
+    width:40%;
+    height:25px;
+    font-size:20px;
+    font-family:Verdana,Helvetica;
+    font-weight:bold;
+    margin-bottom: 20%;
+    padding-bottom: 2%;
+    padding-top: 0.5%; 
+    border-radius: 5px;
+    /* Sombra */
+    border: 1px solid;
+    padding: 3%px;
+    box-shadow: 5px 10px 8px #888888;
 }

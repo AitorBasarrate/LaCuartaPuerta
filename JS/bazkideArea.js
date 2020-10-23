@@ -4,6 +4,3 @@ function botoiHandiak(obj){
 function botoiTxikiak(obj){
     document.getElementById(obj).style.backgroundColor='#242423'
 }
-function alertPosibilidades(obj){
-   
-}
