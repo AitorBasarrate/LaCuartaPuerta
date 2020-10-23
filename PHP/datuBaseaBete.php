@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 include 'C:/xampp/htdocs/lacuartapuerta/PHP/dbKonexioa.php';
 $linea = 0;
 $izenburuak = "";
@@ -55,6 +56,24 @@ for ($i=0; $i < $datos; $i++) {
  */
 //Cerramos el archivo
 fclose($archivo);
+=======
+include("/PHP/dbKonexioa.php");
+    if (isset($_SESSION['izenburuak'])) {
+        $izenburuak = $_SESSION['izenburuak'];
+        var_dump($izenburuak);
+    }else{
+        echo "que no funciona, que no"
+    }
+    $konexioa = new konexioa("localhost", "lacuartapuerta", "root", "")
+
+    $hostPDO = "mysql:host=$konexioa->hostDB;dbname=$konexio->nombreDB;";
+    $miPDO = new PDO($hostPDO, $konexioa->usuarioDB, $konexioa->contrasenyaDB);
+
+    $miConsulta = $miPDO->prepare('INSERT INTO filmak (Izenburua) VALUES ("' + $izenburuak + '")');
+
+$miConsulta->execute();
+?>
+>>>>>>> parent of 9f93860... Intento de subir a la bd
 =======
 include("/PHP/dbKonexioa.php");
     if (isset($_SESSION['izenburuak'])) {
