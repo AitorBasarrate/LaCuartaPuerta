@@ -11,10 +11,10 @@
 //KONEXIOA EGITEKO DATUAK - SERBITZARIA - DATU BASEAREN IZENA - ERABILTZAILEA - PASAHITZA
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 class konexioa{
-    var $hostDB;
-    var $nombreDB;
-    var $usuarioDB;
-    var $contrasenyaDB; 
+    public $hostDB;
+    public $nombreDB;
+    public $usuarioDB;
+    public $contrasenyaDB; 
 
     function konexioa($hostDB,$nombreDB,$usuarioDB,$contrasenyaDB){ 
         $this->hostDB = $hostDB; 
@@ -28,7 +28,7 @@ class konexioa{
 
 
 // DB KONEXIOA
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // $hostPDO = "mysql:host=$hostDB;dbname=$nombreDB;";
 // $miPDO = new PDO($hostPDO, $usuarioDB, $contrasenyaDB);
 

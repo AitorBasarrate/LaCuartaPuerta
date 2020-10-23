@@ -4,7 +4,7 @@
  * ajax eta erablita, .csv-ko eduki guztiak irakurtzen ditugu.
  */
 $.ajax({
-    url: '/Media/DB/movies_metadata.csv',
+    url: 'Media/DB/movies_metadata.csv',
     dataType: 'text',
   }).done(csvIrakurri);
 
@@ -16,6 +16,7 @@ function csvIrakurri(data) {
   /**
    * Lerroak banatu
    */
+  
     var allRows = data.split(/\r?\n|\r/);
 /**
  * nahi dudan datua irakurtzen dut.
@@ -26,14 +27,11 @@ function csvIrakurri(data) {
       var rottenTomatoes = (line.split(',')[5]);
       var urtea = (line.split(',')[7]);
       
-      console.log(izenburuak);
-      const formData = new FormData;
-      const json = JSON.stringify(izenburuak);
-      formData.append('izenburuArray', json);
+      // console.log(izenburuak);
 
       fetch('PHP/datuBaseaBete.php', {
       method: 'POST',
-      body: formData
+      body: izenburuak
       })
       .then(res => res.text())
       .then(data => console.log(data))
