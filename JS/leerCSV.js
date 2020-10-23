@@ -21,6 +21,7 @@ function csvIrakurri(data) {
  */
     allRows.forEach(line => {
 <<<<<<< HEAD
+<<<<<<< HEAD
       var izenburuak = (line.split(',')[0]);
       var generoa = (line.split(',')[1]);
       var rottenTomatoes = (line.split(',')[5]);
@@ -35,10 +36,15 @@ function csvIrakurri(data) {
       .then(res => res.text())
       .then(data => console.log(data))
 =======
+=======
+>>>>>>> parent of 9f93860... Intento de subir a la bd
       console.log(line.split(',')[5]);
       sessionStorage.setItem('izenburuak', line.split(',')[0]);
       sessionStorage.setItem('generoa', line.split(',')[1]);
       sessionStorage.setItem('urtea', line.split(',')[7]);
+<<<<<<< HEAD
+>>>>>>> parent of 9f93860... Intento de subir a la bd
+=======
 >>>>>>> parent of 9f93860... Intento de subir a la bd
     });
     
