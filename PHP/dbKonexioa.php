@@ -1,36 +1,30 @@
 <?php
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-// ROOT ERABILTZAILEARI PASAHITZA ALDATZEKO XAMPPen SHELLean mysqladmin.exe -u root password WhateverPassword
-
-// .../XAMPP/phpMyAdmin/config.inc.php ALDATU --> $cfg['Servers'][$i]['password'] = 'WhateverPassword';
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-//KONEXIOA EGITEKO DATUAK - SERBITZARIA - DATU BASEAREN IZENA - ERABILTZAILEA - PASAHITZA
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/**
+ * Datu basera konektatzeko klasea
+ */
 class konexioa{
     public $hostDB;
-    public $nombreDB;
-    public $usuarioDB;
-    public $contrasenyaDB; 
-
-    function konexioa($hostDB,$nombreDB,$usuarioDB,$contrasenyaDB){ 
+    public $izenaDB;
+    public $erabiltzaileaDB;
+    public $pasahitzaDB; 
+    /**
+     * konstruktorea, objetua sortzerakoan atributu hauek bete beharko dira.
+     */
+    function konexioa($hostDB,$izenaDB,$erabiltzaileaDB,$pasahitzaDB){ 
         $this->hostDB = $hostDB; 
-        $this->nombreDB = $nombreDB; 
-        $this->usuarioDB = $usuarioDB; 
-        $this->contrasenyaDB =$contrasenyaDB;
+        $this->izenaDB = $izenaDB; 
+        $this->erabiltzaileaDB = $erabiltzaileaDB; 
+        $this->pasahitzaDB =$pasahitzaDB;
     }
 }
 
 
-
-
-// DB KONEXIOA
-////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// $hostPDO = "mysql:host=$hostDB;dbname=$nombreDB;";
-// $miPDO = new PDO($hostPDO, $usuarioDB, $contrasenyaDB);
+/**
+ * Objetua sortu ondoren hemen beheko bilerro hauek sartu behar dira kodean.
+ */
+//$hostPDO = "mysql:host=$obj->hostDB;dbname=$obj->izenaDB;";
+//$miPDO = new PDO($hostPDO, $erabiltzaileaDB, $pasahitzaDB);
 
 
 // Create TABLE
@@ -43,6 +37,9 @@ class konexioa{
 //     reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP)
 //     ');
 
-// $miConsulta->execute();
+/**
+ * Query-a exekutatzeko.
+ */
+//$miConsulta->execute();
 
 ?>
