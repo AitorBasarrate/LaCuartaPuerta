@@ -1,0 +1,351 @@
+/* Orrialde guztian letra berdina eukiteko */
+*{
+font-family:'Oswald',serif;
+}
+/* Header logoarekin eta menuari estiloa emango diogu */
+header{
+top: 0;
+left: 0;
+right: 0;
+height: 10%;
+align-items: center;
+background-color: #242423;
+text-align: center;
+}
+
+.logo {
+height: 100%;
+width: 200px;
+}
+
+.topnav a.LoginBoton {
+overflow: hidden;
+background-color: #333;
+float: right;
+color: #f2f2f2;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+font-size: 17px;
+}
+
+.topnav {
+overflow: hidden;
+background-color: #333;
+}
+
+.topnav a {
+float: left;
+color: #f2f2f2;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+font-size: 17px;
+}
+
+.topnav a:hover {
+background-color: #ddd;
+color: black;
+}
+
+.topnav a.active {
+background-color: #f5cb5c;
+color: white;
+}
+
+.topnav .icon {
+display: none;
+}
+
+@media screen and (max-width: 600px) {
+.topnav a:not(:first-child) {display: none;}
+.topnav a.icon {
+float: right;
+display: block;
+}
+}
+
+@media screen and (max-width: 600px) {
+.topnav.responsive {position: relative;}
+.topnav.responsive .icon {
+position: absolute;
+right: 0;
+top: 0;
+}
+.topnav.responsive a {
+float: none;
+display: block;
+text-align: left;
+}
+.topnav.responsive .LoginBoton {
+float: none;
+display: block;
+text-align: left;
+}
+}
+
+/* Los Grid */
+
+/* contenido: Hemen filmak eta trailerra ordenatuko dugu */
+.contenido{
+width: 100%;
+height: auto;
+display: grid;
+padding: 5%;
+
+grid-template-columns: 60% 40%;
+grid-template-rows: auto;
+grid-template-areas: 
+'wrapper trailer'
+'sobreNosotros sobreNosotros';
+
+
+}
+
+
+
+
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media (max-width: 900px) {
+
+.wrapper img{
+width: 100%;
+height: 80%;
+}
+.item2, .item3{
+width: 90%;
+}
+.item1{
+width: 100%;
+}
+/* Hemen ordenatuko dugu videoa behean gera dadin */
+.contenido{
+width: 100%;
+height: auto;
+display: grid;
+padding: 2%;
+grid-template-columns: 100%;
+grid-template-rows: auto;
+grid-template-areas: 
+'wrapper'
+'trailer'
+'sobreNosotros';  
+}
+.wrapper{
+margin-left: -10%;
+}
+.sobreNosotros{
+margin-left: 0%;
+}
+
+.trailer iframe{
+width: 100%;
+height: 100%;
+
+
+}
+.trailerBox{
+background-color: #E8EDDF;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+margin-bottom: 25px;
+width: 100%;
+height: 50%;
+margin-top: 10%;
+padding:2%;
+
+}
+
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media (min-width: 900px) {
+.wrapper img{
+width: 100%;
+height: 95%;
+background-color: blueviolet;
+
+}
+.item2, .item3{
+width: 60%;
+}
+.item1{
+width: 100%;
+}
+
+
+}
+
+/*NAVEGAZIO MENUA*/
+.menua {
+    display: inline;
+    
+}
+
+.astekoPelikulaBotoia {
+    padding: 5%;
+    margin: 5% 5% 5% 5%;
+    text-align: center;
+    align-self: center;
+    border-radius: 0%;
+    background-color: #FFE14D;
+    border-color: #242423;
+}
+
+.pelikulakSartzekoa {
+    padding: 5%;
+    margin: 5% 5% 5% 5%;
+    text-align: center;
+    align-self: center;
+    border-radius: 0%;
+    background-color: #FFE14D;
+    border-color: #242423;
+}
+
+.bazkideArea {
+    padding: 5%;
+    margin: 5% 5% 5% 5%;
+    text-align: center;
+    align-self: center;
+    border-radius: 0%;    
+    background-color: #FFE14D;
+    border-color: #242423;
+}
+
+.erabiltzaileak {
+    padding: 5%;
+    margin: 5% 5% 5% 5%;
+    text-align: center;
+    align-self: center;
+    border-radius: 0%;
+    background-color: #FFE14D;
+    border-color: #242423;
+}
+
+/* LOGIN ETA REGISTER */
+.column1 {
+float: left;
+margin: auto;
+padding: 20px;
+margin-top: 30px;
+max-width: 50%; 
+max-height: auto;
+margin-left: 5%;
+background-color: white;
+opacity: 0.95;
+}
+.column2 {
+float: right;
+margin: auto;
+padding: 20px;
+margin-top: 30px;
+max-width: 40%; 
+max-height: 80%;
+margin-right: 5%;
+background-color: white;
+opacity: 0.95;
+}
+.column0 {
+float: left;
+margin: auto;
+padding: 20px;
+margin-top: 30px;
+max-width: 50%; 
+max-height: auto;
+margin-left: 5%;
+opacity: 0.95;
+}
+.column3 {
+float: right;
+margin: auto;
+padding: 20px;
+margin-top: 18%;
+max-width: 40%; 
+max-height: 80%;
+margin-right: 5%;
+background-color: white;
+opacity: 0.95;
+}
+.modal input {
+margin-top: 5%;
+}
+
+.row:after {
+content: "";
+display: table;
+clear: both;
+}
+
+.modal {
+position: absolute;
+margin: 2.5vh auto;
+background-color: #e8eddf; 
+opacity: 0.95;
+width: 50%; 
+height: 65%;   
+padding: 50px;
+overflow: hidden;
+position: fixed;
+display: inline-block;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.modal-body {
+max-height: calc(100vh - 143px);
+overflow-y: auto; 
+}
+
+
+/* IXTEKO BOTOIAREN ESTILOAK */
+.close-button{
+position: absolute;
+top: 0;
+right: 10px;
+font-size: 50px;
+}
+
+.close-button:hover {
+color: red;
+}
+
+
+/* Footer de la pagina */
+.content{
+/*da al contenido "altura mínima" para que el footer nunca suba más de ahí, pero sí para que baje si aumenta el contenido*/
+min-height: calc(100vh - 70px);
+}
+footer{
+background-color: #333533;
+}
+
+/* parte 1 */
+.footerP1{
+color: #f5cb5c;
+align-items: center;
+text-align: center;
+padding: 3%;
+}
+.footerP1 a{
+padding-right: 5%;
+padding-left: 1%;
+vertical-align: middle;
+}
+.footerP1 img{
+vertical-align:middle;
+width: 40px;
+}
+/* parte 2 */
+.footerP2{
+text-align: center;
+background-color:  #242423;
+color: #f5cb5c;
+padding: 0.5%;
+}
+
+/* parte 2 */
+.footerP2{
+text-align: center;
+background-color:  #242423;
+color: #f5cb5c;
+padding: 0.5%;
+}
