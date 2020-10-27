@@ -3,7 +3,25 @@
 /**
  * Datu basera konektatzeko klasea
  */
-class konexioa{
+//KONEXIOA EGITEKO DATUAK - SERBITZARIA - DATU BASEAREN IZENA - ERABILTZAILEA - PASAHITZA
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        $hostDB = 'localhost';
+        $nombreDB = 'lacuartapuerta';
+        $usuarioDB = 'root';
+        $contrasenyaDB = '1234';
+        // DB KONEXIOAttttttttg
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        try {
+        $hostPDO = "mysql:host=$hostDB;dbname=$nombreDB;";
+        $miPDO = new PDO($hostPDO, $usuarioDB, $contrasenyaDB);
+        printf('Connected to database<hr>');
+        } catch( PDOException $Exception ) {
+            // PHP Fatal Error. Second Argument Has To Be An Integer, But PDOException::getCode Returns A
+            // String.
+            throw new MyDatabaseException( $Exception->getMessage( ) , $Exception->getCode( ) );
+        }
+/* class konexioa{
     public $hostDB;
     public $izenaDB;
     public $erabiltzaileaDB;
@@ -11,6 +29,7 @@ class konexioa{
     /**
      * konstruktorea, objetua sortzerakoan atributu hauek bete beharko dira.
      */
+    /* 
     function konexioa($hostDB,$izenaDB,$erabiltzaileaDB,$pasahitzaDB){ 
         $this->hostDB = $hostDB; 
         $this->izenaDB = $izenaDB; 
@@ -19,7 +38,7 @@ class konexioa{
     }
 }
 
-
+ */
 /**
  * Objetua sortu ondoren hemen beheko bilerro hauek sartu behar dira kodean.
  */
