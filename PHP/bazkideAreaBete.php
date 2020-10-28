@@ -3,14 +3,17 @@
 <?php try{
         /* Hurrengo pelikularen argazkia eta izena  */
             $izenburua;
-            $miConsulta = $miPDO->prepare("SELECT Izenburua,Argazkia FROM Filmak ORDER BY idPelikulak DESC LIMIT 1");
+            $miConsulta = $miPDO->prepare("SELECT Izenburuak,Argazkia FROM filmak ORDER BY idPelikulak DESC LIMIT 1");
             $miConsulta->execute();
-            $resultados = $miConsulta->fetchAll();
-            foreach ($resultados as $indice=>$actual){
-                $izenburua=$actual['Izenburua'];
-                $argazkia=$actual['pregunta'];
-              }
-              echo($izenburua+$argazkia);
+            /* array asociativo */
+            
+            while ($fila = $miConsulta->fetch(PDO::FETCH_ASSOC)){
+                echo $fila['Izenburuak'];
+                echo$fila['Argazkia'];
+            }
+            
+            
+            
               
         }catch( PDOException $Exception ) {
             // PHP Fatal Error. Second Argument Has To Be An Integer, But PDOException::getCode Returns A
