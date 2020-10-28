@@ -52,12 +52,12 @@
                         <img  id="argazkia" src="Media/Peliculas/LOSINCREIBLES.jpg" onmouseover="botoiHandiak(this.id)" onmouseout="botoiTxikiak(this.id)"><!-- codigo php -->
                     </label>
                     <!-- administratzailearentzat -->
-                    <input id="file-input" type="file"/>
+                    
                 </div>
                 <!-- Igarkizun misteriotsuaren atala -->
                 <div class="igarkizunMisteriotsua">
                     <h1>Igarkizun Misteriotsua</h1>
-                    <p contenteditable="true" id="igarkizunMamia">Zenbat urte ditu gure protagonistaren amona?</p>
+                    <p id="igarkizunMamia">Zenbat urte ditu gure protagonistaren amona?</p>
                     <input type="text" id="igarkizunErantzuna">
                     <input type="submit" id="erantzunaBidali" value="Bidali" onmouseover="botoiHandiak(this.id)" onmouseout="botoiTxikiak(this.id)">
                 
@@ -65,7 +65,7 @@
                 <!-- Datu Interesgarriaren atala-->
                 <div class="datuInteresgarria">
                     <h1>Datu Interesgarria</h1>
-                    <p contenteditable="true" id="datuInteresgarriaMamia">5 Urte egon ziren filmaren trajeak pentsatzekoZenbat urte ditu gure protagonistaren amona?Zenbat urte ditu gure protagonistaren amona?Zenbat urte ditu gure protagonistaren amona?Zenbat urte ditu gure protagonistaren amona?Zenbat urte ditu gure protagonistaren amona?Zenbat urte ditu gure protagonistaren amona?</p>
+                    <p id="datuInteresgarriaMamia">5 Urte egon ziren filmaren trajeak pentsatzekoZenbat urte ditu gure protagonistaren amona?Zenbat urte ditu gure protagonistaren amona?Zenbat urte ditu gure protagonistaren amona?Zenbat urte ditu gure protagonistaren amona?Zenbat urte ditu gure protagonistaren amona?Zenbat urte ditu gure protagonistaren amona?</p>
                 </div>
                 <!-- Bazkidearen atala -->
                 <div class="bazkideDatuak">
@@ -99,10 +99,9 @@
                         
                         </tr>
                     </table>
-
                 </div>
             </div>
-            <input type="submit" id="gorde" class="gorde" value="Datuak Gorde" onmouseover="botoiHandiak(this.id)" onmouseout="botoiTxikiak(this.id)">
+           
         </section>
     </div>
     <!-- Izena emateko MODAL-a -->

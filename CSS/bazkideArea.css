@@ -66,6 +66,7 @@ section{
     }
 }
 @media screen and (max-width: 900px) {
+    
     /* Atal horren barruan, Grids-ekin ordenatuko dugu container div-a */
     .container{
         display: grid;
@@ -73,8 +74,6 @@ section{
         padding: 4%;
         width: 90%;
         margin-left: 5%;
-        margin-bottom: 20%;
-    
     }
      /* Argazkia sartzeko GRID posizioaren atala */
      .astekoArgazkia{
@@ -119,6 +118,7 @@ section{
         align-items: center;
         text-align: center;
     } 
+
 }
 
 
