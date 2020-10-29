@@ -52,7 +52,8 @@
                 <div class="astekoArgazkia">
                     <h1>Hurrengo asteko filma</h1>
                     <label for="file-input">
-                        <img  id="argazkia" src="Media/Peliculas/LOSINCREIBLES.jpg" onmouseover="botoiHandiak(this.id)" onmouseout="botoiTxikiak(this.id)"><!-- codigo php -->
+                    <?php echo '<img width=40% height=40% src="data:image/jpeg;base64,'.base64_encode( $argazkia ).'"/>';?>
+                        
                     </label>
                     <!-- administratzailearentzat -->
                     
