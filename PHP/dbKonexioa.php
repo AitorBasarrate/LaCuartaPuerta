@@ -3,7 +3,7 @@
 /**
  * Datu basera konektatzeko php-a
  */
-//KONEXIOA EGITEKO DATUAK - SERBITZARIA - DATU BASEAREN IZENA - ERABILTZAILEA - PASAHITZA
+//KONEXIOA EGITEKO DATUAK - ZERBITZARIA - DATU BASEAREN IZENA - ERABILTZAILEA - PASAHITZA
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         $hostDB = 'localhost';
