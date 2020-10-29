@@ -69,7 +69,7 @@
                 <div class="column1">
                     <h3>Bazkide izatearen abantailak</h3>
                     <p>
-                        &nbsp; "La cuarta Pared" familian parte hartzen baduzu abantaila pilarekin topatuko zara! Haien artean: 
+                        "La cuarta Pared" familian parte hartzen baduzu abantaila pilarekin topatuko zara! Haien artean: 
                         <ul>
                             <li type="square">Hurrengo asteko pelikula zein izango den aurrerapena izango duzu.</li>
                             <li type="square">Pelikuletan komentatu ahalko duzu.</li>
