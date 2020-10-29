@@ -52,11 +52,9 @@
             <!-- Atal hau asteko argazkia ikusteko -->
                 <div class="astekoArgazkia">
                     <h1>Hurrengo asteko filma</h1>
-                    <label for="file-input">
-                    <?php echo '<img width=40% height=40% src="data:image/jpeg;base64,'.base64_encode( $argazkia ).'"/>';?>
-                        
-                    </label>
-                    <!-- administratzailearentzat -->
+                    <?php echo '<img width=40% height=40% src="data:image/jpeg;base64,'.base64_encode( $argazkia ).'"/>';?><hr>
+                    <a><?php echo $izenburua;?></a>   
+                   
                     
                 </div>
                 <!-- Igarkizun misteriotsuaren atala -->

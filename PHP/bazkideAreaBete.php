@@ -7,7 +7,7 @@
         $miConsulta->execute(); 
         
         while ($fila = $miConsulta->fetch(PDO::FETCH_ASSOC)){
-            echo $fila['Izenburuak'];
+            $izenburua=$fila['Izenburuak'];
             //Render image
             $argazkia=$fila['Argazkia'];
         }
