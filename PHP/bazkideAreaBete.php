@@ -2,16 +2,31 @@
    
 <?php try{
         /* Hurrengo pelikularen argazkia eta izena  */
+
+        $miConsulta = $miPDO->prepare("SELECT Izenburuak,Argazkia FROM filmak ORDER BY idPelikulak DESC LIMIT 1");
+        $miConsulta->execute(); 
+        
+        while ($fila = $miConsulta->fetch(PDO::FETCH_ASSOC)){
+            echo $fila['Izenburuak'];
+            //Render image
+            $argazkia=$fila['Argazkia'];
+        }
+        
+        /* echo '<img src="data:image/jpeg;base64,'.base64_encode( $argazkia ).'"/>'; */
+           
+        /* 
             $izenburua;
             $miConsulta = $miPDO->prepare("SELECT Izenburuak,Argazkia FROM filmak ORDER BY idPelikulak DESC LIMIT 1");
-            $miConsulta->execute();
+            $miConsulta->execute(); */
             /* array asociativo */
             
-            while ($fila = $miConsulta->fetch(PDO::FETCH_ASSOC)){
+           /*  while ($fila = $miConsulta->fetch(PDO::FETCH_ASSOC)){
                 echo $fila['Izenburuak'];
-                echo$fila['Argazkia'];
+                $img=$fila['Argazkia'];
+                //Render image
+                printf($fila['Argazkia']); 
             }
-            
+            */ 
             
             
               
