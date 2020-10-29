@@ -321,24 +321,12 @@ width: 200px;
   max-height: calc(100vh - 143px);
   overflow-y: auto; 
 }
-/* Responsive layout - makes a two column-layout instead of four columns */
-@media only screen and (max-width: 900px) {
-  /* Hemen ordenatuko dugu videoa behean gera dadin */
-  .modal{
-    position: absolute;
-    margin: 2.5vh auto;
-    background-color: #e8eddf; 
-    opacity: 0.95;
-    width: auto; 
-    height: auto;   
-    padding: 50px;
-    overflow: hidden;
-    position: fixed;
-    display: inline-block;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
-    grid-template-areas: 
-    'columna1'
-    'columna2';
+@media (max-width: 1250px) {
+  .modal {
+    width: 600px;
+  }
+  .row {
+    background-color: white;
   }
 }
 /* IXTEKO BOTOIAREN ESTILOAK */
