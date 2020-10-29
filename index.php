@@ -120,7 +120,6 @@
                         <!-- Sartu -->
                         <input type="submit" value="logIn">
                         <button onclick="bazkideaSartu(this.id)" id="erregistratuNahi">Ez naiz bazkide, izena eman</button>
-
                 </div>
             </div>
         </div>
@@ -138,8 +137,5 @@
                 <a>@Talde5</a>
             </div>
         </footer>
-        <?php
-
-        ?>
     </body>
 </html>
