@@ -34,9 +34,10 @@
         while ($fila = $miConsulta->fetch(PDO::FETCH_ASSOC)){
           /* Variableak gordetzen ditugu */
             $erabiltzaileIzena=$fila['ErabiltzaileIzena'];
-            $puntuak=string($fila['puntuak']);
+            echo "<a>$erabiltzaileIzena</a>";
+            /* $puntuak=string($fila['puntuak']); */
             array_push($arrayErabiltzableIzena,$erabiltzaileIzena);
-            array_push($arrayPuntuak,$puntuak);
+          /*   array_push($arrayPuntuak,$puntuak); */
         }
 
         }catch( PDOException $Exception ) {
