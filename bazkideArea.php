@@ -10,23 +10,22 @@
     <link rel="stylesheet" href="CSS/bazkideArea.css">
     <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
     <script src="JS/bazkideArea.js"></script>
-     <!-- Hasiera oriko estilua -->
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-     <script src="JS/LoginJS.js"></script>
-     <script src="JS/HamburguerJS.js"></script>
-     <!-- Font family estiloa -->
-     <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
-     <!-- CSS stilo orrialdea -->
-     <link rel="stylesheet" href="CSS/IndexCSS.css">
-     <meta name="viewport" content="width=device-width, initial-scale=1">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">        
-     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-     <!-- Orriaren iconoa eta tituloa -->
-     <link rel="icon" type="image/png" href="Media/fav-icon1.png">
-     <title>La Cuarta Puerta</title>
+    <!-- Hasiera oriko estilua -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="JS/LoginJS.js"></script>
+    <script src="JS/HamburguerJS.js"></script>
+    <!-- Font family estiloa -->
+    <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+    <!-- CSS stilo orrialdea -->
+    <link rel="stylesheet" href="CSS/IndexCSS.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">        
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- Orriaren iconoa eta tituloa -->
+    <link rel="icon" type="image/png" href="Media/fav-icon1.png">
+    <title>La Cuarta Puerta</title>
 </head>
 <body>
     <div class="content">
@@ -104,7 +103,6 @@
                     </table>
                 </div>
             </div>
-           
         </section>
     </div>
     <!-- Izena emateko MODAL-a -->

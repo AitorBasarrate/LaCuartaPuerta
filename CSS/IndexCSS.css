@@ -84,8 +84,6 @@ width: 200px;
   }
 }
 
-/* Los Grid */
-
 /* contenido: Hemen filmak eta trailerra ordenatuko dugu */
 .contenido{
   width: 100%;
@@ -104,14 +102,10 @@ width: 200px;
 /* Trailer atala */
 .trailer{
   grid-area: 'trailer';
- 
- 
 }
 .trailer iframe{
   width: 100%;
   height: 100%;
-  
-  
 }
 .trailerBox{
   background-color: #E8EDDF;
@@ -120,26 +114,24 @@ width: 200px;
   width: 100%;
   height: 50%;
   margin-top: 28%;
-  padding:2%;
-  
+  padding:2%; 
 }
-
 
 /* Filmen atala gridekin ordenatuta */
 .wrapper > div {
-    margin-top: 3%;
-    margin-bottom: 3%;
-    padding: 1em;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  padding: 1em;
 }
-.wrapper {
 
+.wrapper {
   padding-left: 15%;
   grid-area: 'wrapper';
   text-align: center;
   display: grid;
-  grid-gap: 15px;
-  
+  grid-gap: 15px; 
 }
+
 .item1 {
   text-align: center;
   box-shadow: black;
@@ -150,7 +142,6 @@ width: 200px;
   background-color: #E8EDDF;
   box-shadow: 0 10px 18px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   margin-bottom: 25px;
-  
 }
 
 .item2 {
@@ -184,7 +175,6 @@ width: 200px;
   padding:3%;
   padding-top: 2%;
   font-size: 18px;
-  
 }
 .sobreNosotros h1{
   font-size: 25px;
@@ -228,16 +218,14 @@ width: 200px;
   
   .trailer iframe{
     width: 100%;
-    height: 100%;
-    
-    
+    height: 300px;
   }
   .trailerBox{
     background-color: #E8EDDF;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin-bottom: 25px;
     width: 100%;
-    height: 50%;
+    height: 325px;
     margin-top: 10%;
     padding:2%;
     
@@ -250,8 +238,7 @@ width: 200px;
   .wrapper img{
     width: 100%;
     height: 95%;
-    background-color: blueviolet;
-    
+    background-color: blueviolet;  
   }
   .item2, .item3{
     width: 60%;
@@ -259,12 +246,11 @@ width: 200px;
   .item1{
     width: 100%;
   }
-
-
 }
 
 /* LOGIN ETA REGISTER */
 .column1 {
+  grid-area: 'columna1';
   float: left;
   margin: auto;
   padding: 20px;
@@ -276,6 +262,7 @@ width: 200px;
   opacity: 0.95;
 }
 .column2 {
+  grid-area: 'columna2';
   float: right;
   margin: auto;
   padding: 20px;
@@ -287,6 +274,7 @@ width: 200px;
   opacity: 0.95;
 }
 .column0 {
+  grid-area: 'columna1';
   float: left;
   margin: auto;
   padding: 20px;
@@ -297,6 +285,7 @@ width: 200px;
   opacity: 0.95;
 }
 .column3 {
+  grid-area: 'columna2';
   float: right;
   margin: auto;
   padding: 20px;
@@ -310,13 +299,11 @@ width: 200px;
 .modal input {
   margin-top: 5%;
 }
-
 .row:after {
   content: "";
   display: table;
   clear: both;
 }
-
 .modal {
   position: absolute;
   margin: 2.5vh auto;
@@ -330,13 +317,18 @@ width: 200px;
   display: inline-block;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-
 .modal-body {
   max-height: calc(100vh - 143px);
   overflow-y: auto; 
 }
-
-
+@media (max-width: 1250px) {
+  .modal {
+    width: 600px;
+  }
+  .row {
+    background-color: white;
+  }
+}
 /* IXTEKO BOTOIAREN ESTILOAK */
 .close-button{
   position: absolute;
@@ -349,7 +341,6 @@ width: 200px;
   color: red;
 }
 
-
 /* Footer de la pagina */
 .content{
   /*da al contenido "altura mínima" para que el footer nunca suba más de ahí, pero sí para que baje si aumenta el contenido*/
@@ -358,7 +349,6 @@ width: 200px;
 footer{
   background-color: #333533;
 }
-
 /* parte 1 */
 .footerP1{
   color: #f5cb5c;
@@ -382,11 +372,10 @@ footer{
   color: #f5cb5c;
   padding: 0.5%;
 }
-
-    /* parte 2 */
-    .footerP2{
+/* parte 2 */
+.footerP2{
         text-align: center;
         background-color:  #242423;
         color: #f5cb5c;
         padding: 0.5%;
-    }
+}
