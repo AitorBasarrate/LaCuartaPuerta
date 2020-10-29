@@ -5,11 +5,10 @@
  */
 //KONEXIOA EGITEKO DATUAK - ZERBITZARIA - DATU BASEAREN IZENA - ERABILTZAILEA - PASAHITZA
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
         $hostDB = 'localhost';
         $nombreDB = 'lacuartapuerta';
         $usuarioDB = 'root';
-        $contrasenyaDB = 'presente';
+        $contrasenyaDB = '1234';
         // DB KONEXIOA
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////
         try {

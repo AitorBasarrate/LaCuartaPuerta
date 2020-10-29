@@ -59,7 +59,7 @@
                 <!-- Igarkizun misteriotsuaren atala -->
                 <div class="igarkizunMisteriotsua">
                     <h1>Igarkizun Misteriotsua</h1>
-                    <p id="igarkizunMamia">Zenbat urte ditu gure protagonistaren amona?</p>
+                    <p id="igarkizunMamia"><?php echo $galdera?></p>
                     <input type="text" id="igarkizunErantzuna">
                     <input type="submit" id="erantzunaBidali" value="Bidali" onmouseover="botoiHandiak(this.id)" onmouseout="botoiTxikiak(this.id)">
                 
@@ -67,13 +67,13 @@
                 <!-- Datu Interesgarriaren atala-->
                 <div class="datuInteresgarria">
                     <h1>Datu Interesgarria</h1>
-                    <p id="datuInteresgarriaMamia">5 Urte egon ziren filmaren trajeak pentsatzekoZenbat urte ditu gure protagonistaren amona?Zenbat urte ditu gure protagonistaren amona?Zenbat urte ditu gure protagonistaren amona?Zenbat urte ditu gure protagonistaren amona?Zenbat urte ditu gure protagonistaren amona?Zenbat urte ditu gure protagonistaren amona?</p>
+                    <p id="datuInteresgarriaMamia"><?php echo $datua?></p>
                 </div>
                 <!-- Bazkidearen atala -->
                 <div class="bazkideDatuak">
                     <h1>Bazkidearen datuak:</h1>
-                    <p>Erabiltzailea: <a>partephp</a></p>
-                    <p>Puntuazioa: <a>partephp</a></p>
+                    <p>Erabiltzailea: <a></a></p>
+                    <p>Puntuazioa: <a></a></p>
                     <p>Posizioa Raking-ean: <a>partephp</a></p>
 
                     <input type="submit" id="saioaItxi" value="Saioa Itxi" onmouseover="botoiHandiak(this.id)" onmouseout="botoiTxikiak(this.id)">
@@ -85,7 +85,7 @@
                         <!-- tr filak dira -->
                         <tr>
                             <!-- td kolumnak -->
-                            <td id="bazkide1">Celda 1</td>
+                            <td id="bazkide1"><?php echo $arrayErabiltzaileIzena(1)?></td>
                         
                             <td id="bazkide2">Celda 2</td>
                         
