@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Hemen datu basearekiko konexioa egingo da eta behar dituen php-ei detiuko dio -->
+    <?php
+        include 'PHP/dbKonexioa.php';
+    ?>
+
     <meta charset="UTF-8">
     <title>+Pelikulak</title>
     <!-- Link Bilatzailearen luparen bektorearekin -->
@@ -19,6 +24,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">        
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="CSS/pelikulakArea.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
     <!-- Orriaren iconoa eta tituloa -->
     <link rel="icon" type="image/png" href="Media/fav-icon1.png">
     <title>La Cuarta Puerta</title>
@@ -44,35 +51,65 @@
                 <script src="JS/HamburguerJS.js"></script>
             </header>
             <!-- Bilaketa atala -->
-            <div class="bilatzailea" style="background-color: yellow;">
-                <!-- Generoa -->
-                <button id="generoaBotoia" onclick="generoakErakutsi()" >Generoa ▼</button>
-                <!-- Generoen DIV-en lista -->
-                <div class="genero-lista" id="genero-lista" style="width: 400px; height: 250px; background-color: #CFDBD5;" hidden></div>
+            <div id="bilatzailea">
 
-                    <!-- Script Genero botoiak checkboxak erakusteko -->
-                    <script>
+                <!-- Search box -->
+                <div class="bilatuBox">
+                    <h1>Bilaketa filtroak</h1>
+                    <input type="text" id="pelikulaIzenezBilatu" onKeyUp="pelikulaIzenezBilatu()" placeholder="Pelikula bilatu..." title="pelikulaIzenezBilatu"> 
+                </div>
 
-                        function generoakErakutsi() {
-                            var lista = document.getElementById("genero-lista");
+                <!-- Bilaketa botoia -->
+                <!-- <div class="bilaketaBotoia"> -->
+                <!-- <img src="https://img.icons8.com/pastel-glyph/2x/search--v1.png" width="30px" height="30px" onclick="pelikulaBilatu()"> -->
+                <!-- </div> -->
 
-                            if (lista.style.display === "none") {
-                                lista.style.display = "block";
-                            } else {
-                                lista.style.display = "none";
-                            }
-                        }
-                    </script>
-
+                <hr>
 
                 <!-- Balorazioa -->
-                <input type="range" min="0" max="5" value="3" class="slider" id="balorazioaSlider">
+                <div class="balorazioa">
+                    <!-- Estrella 1 -->
+                    <button id="izar1">
+                        <i class="fas fa-star"></i>
+                    </button>
+
+                    <!-- Estrella 2 -->
+                    <button id="izar2">
+                        <i class="fas fa-star"></i>
+                    </button>
+
+                    <!-- Estrella 3 -->
+                    <button id="izar3">
+                        <i class="fas fa-star"></i>
+                    </button>
+
+                    <!-- Estrella 4 -->
+                    <button id="izar4">
+                        <i class="fas fa-star"></i>
+                    </button>
+
+                    <!-- Estrella 5 -->
+                    <button id="izar5">
+                        <i class="fas fa-star"></i>
+                    </button>
+                </div>    
+                
+                <hr>
+
+                <!-- Generoa -->
+                <div id="genero-lista">
+                    <h2>Generoak:</h2>
+                    <?php include ('PHP/generoakBete.php');?> 
+                </div>
+                
+                <hr>
 
                 <!-- Data - Urtea -->
+                <h2>Urtea:</h2>
                 <select id="urtea"></select>
                     <!-- urteak selectean desplegatzeko scripta -->
                     <script>
-                        var hasiera = 1900;
+                        var hasiera = 1990;
                         var amaiera = new Date().getFullYear();
                         var aukera = "";
 
@@ -83,34 +120,16 @@
                         document.getElementById("urtea").innerHTML = aukera;
 
                     </script>
-
-                <!-- Search box -->
-                <input type="text" id="pelikulaIzenezBilatu" onKeyUp="pelikulaIzenezBilatu()" placeholder="Pelikula bilatu..." title="pelikulaIzenezBilatu"> 
-                
-                <!-- Bilaketa botoia -->
-                <img src="https://img.icons8.com/pastel-glyph/2x/search--v1.png" width="30px" height="30px" onclick="pelikulaBilatu()">
-
                 <br> <br>
-
             </div>
 
             <!-- Pelikulen lista -->
-            <div id="pelikula-lista">
-
-                <style>
-                    #pelikula-lista {
-                        column-count: 3;
-                        column-gap: 40px;
-                        column-rule-style: solid;
-                        column-rule-color: #F5CB5C; 
-                        background-color: gray;
-                    }
-
-                </style>
-    bLorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.najfaj
-
+            <div id="pelikula-lista" class="flex-container">
+                <?php include 'PHP/pelikulakPlusBete.php'; ?>
             </div>
+
         </div>
+
         <footer>
             <div class="footerP1">
                 <img  src="Media/Footer/instagra.png">

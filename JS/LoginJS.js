@@ -1,8 +1,8 @@
-/*Ixteko botoiaren funtzioak */
-  // Erabiltzaileak <span> (x)-an klik egiterakoan, aurreko orrira bueltatu
-  span.onclick = function() {
-      modal.style.display = "none";
-  }
+// /*Ixteko botoiaren funtzioak */
+//   // Erabiltzaileak <span> (x)-an klik egiterakoan, aurreko orrira bueltatu
+//   span.onclick = function() {
+//       modal.style.display = "none";
+//   }
 
 
 /* Sartu div-a erakutsiko duen funtzioa */
