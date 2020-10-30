@@ -85,19 +85,19 @@
                         <!-- tr filak dira -->
                         <tr>
                             <!-- td kolumnak -->
-                            <td id="bazkide1"><?php echo $arrayErabiltzaileIzena(1)?></td>
+                            <td id="bazkide1"><?php echo '1. '.$arrayErabiltzaileIzena[0]?></td>
                         
-                            <td id="bazkide2">Celda 2</td>
+                            <td id="bazkide2"><?php echo '2. '.$arrayErabiltzaileIzena[1]?></td>
                         
-                            <td id="bazkide3">Celda 3</td>
+                            <td id="bazkide3"><?php echo '3. '.$arrayErabiltzaileIzena[2]?></td>
                         </tr>
                         <tr>
                         
-                            <td id="bazkidePuntuak1">Celda 4</td>
+                            <td id="bazkidePuntuak1"><?php echo $arrayPuntuak[0]?></td>
                         
-                            <td id="bazkidePuntuak2">Celda 5</td>
+                            <td id="bazkidePuntuak2"><?php echo $arrayPuntuak[1]?></td>
                         
-                            <td id="bazkidePuntuak3">Celda 6</td>
+                            <td id="bazkidePuntuak3"><?php echo $arrayPuntuak[2]?></td>
                         
                         </tr>
                     </table>
