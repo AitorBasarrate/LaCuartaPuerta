@@ -8,9 +8,9 @@
         <!-- Hasiera oriko estilua -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
+        <script src="JS/loginKonprobatu.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-        <script src="JS/LoginJS.js"></script>
+        
         <script src="JS/HamburguerJS.js"></script>
         <script src="JS/index.js"></script>
         <!-- Font family estiloa -->
@@ -82,9 +82,9 @@
                 <div class="column2">
                 <!-- Izen emateko datuak sartu -->
                     <!-- Izena -->
-                    <script src="JS/LoginJS.js"></script>
-                    <input type="text" name="erabiltzailea" id="erabiltzailea" onChange='erabiltzaileKonp(this.id)' placeholder="Erabiltzaile izena *" required><br>
                     
+                    <input type="text" name="erabiltzailea" id="erabiltzailea" oninput='erabiltzaileKonp(this.id)' placeholder="Erabiltzaile izena *" required><br>
+                   
                     <!-- Pasahitza -->
                     <input type="password" name="password1" placeholder="Pasahitza *" required><br>
                     <!-- Pasahitza konfirmatu -->
