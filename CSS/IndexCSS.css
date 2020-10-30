@@ -329,6 +329,15 @@ width: 200px;
     background-color: white;
   }
 }
+/* contraseña parametros */
+#info{
+  width: 16px;
+  height:16px;
+  padding: 2px;
+}
+#info:hover{
+  
+}
 /* IXTEKO BOTOIAREN ESTILOAK */
 .close-button{
   position: absolute;

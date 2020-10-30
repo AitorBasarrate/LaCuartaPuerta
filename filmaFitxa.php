@@ -3,11 +3,11 @@
 <head>
     <?php
         include 'PHP/dbKonexioa.php';
-        include 'PHP/bazkideAreaBete.php';
+        include 'PHP/filmaDatuak.php';
     ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/bazkideArea.css">
+    <link rel="stylesheet" href="CSS/filmaCSS.css">
     <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
     <script src="JS/bazkideArea.js"></script>
     <!-- Hasiera oriko estilua -->
@@ -19,7 +19,6 @@
     <!-- Font family estiloa -->
     <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
     <!-- CSS stilo orrialdea -->
-    <link rel="stylesheet" href="CSS/IndexCSS.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">        
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -38,7 +37,6 @@
                 <a href="#news">ASTEKO FILMA</a>
                 <a href="pelikulak.php">+ FILMA</a>
                 <a href="bazkideArea.php">BAZKIDE AREA</a>
-                <a href="filmaFitxa.php">filmaFitxa</a>
                 <a class="LoginBoton" href="#home" onclick="document.getElementById('izenaEman').style.display='block'"><i class="fa fa-fw fa-user"></i> LOGIN</a>
                 <a href="javascript:void(0);" class="icon" onclick="myFunction()">
                 <!-- HAMBURGUESA, responsive menua -->
@@ -47,62 +45,34 @@
             </div>
         </header>
         <section>
-            <!-- Orriaren mamia -->
-            <div class="container">
-            <!-- Atal hau asteko argazkia ikusteko -->
-                <div class="astekoArgazkia">
-                    <h1>Hurrengo asteko filma</h1>
-                    <?php echo '<img width=40% height=40% src="data:image/jpeg;base64,'.base64_encode( $argazkia ).'"/>';?><hr>
-                    <a><?php echo $izenburua;?></a>   
-                    
-                </div>
-                <!-- Igarkizun misteriotsuaren atala -->
-                <div class="igarkizunMisteriotsua">
-                    <h1>Igarkizun Misteriotsua</h1>
-                    <p id="igarkizunMamia"><?php echo $galdera;?></p>
-                    <input type="text" id="igarkizunErantzuna">
-                    <input type="submit" id="erantzunaBidali" value="Bidali" onmouseover="botoiHandiak(this.id)" onmouseout="botoiTxikiak(this.id)">
-                
-                </div> 
-                <!-- Datu Interesgarriaren atala-->
-                <div class="datuInteresgarria">
-                    <h1>Datu Interesgarria</h1>
-                    <p id="datuInteresgarriaMamia"><?php echo $datua?></p>
-                </div>
-                <!-- Bazkidearen atala -->
-                <div class="bazkideDatuak">
-                    <h1>Bazkidearen datuak:</h1>
-                    <p>Erabiltzailea: <a></a></p>
-                    <p>Puntuazioa: <a></a></p>
-                    <p>Posizioa Raking-ean: <a>partephp</a></p>
-
-                    <input type="submit" id="saioaItxi" value="Saioa Itxi" onmouseover="botoiHandiak(this.id)" onmouseout="botoiTxikiak(this.id)">
-                </div>
-                <!-- Bazkideen ranking-aren atala taula batean egingo dugu -->
-                <div class="rankingAtala">
-                    <h1>Bazkideekiko Ranking-a</h1>
-                    <table>
-                        <!-- tr filak dira -->
-                        <tr>
-                            <!-- td kolumnak -->
-                            <td id="bazkide1"><?php echo '1. '.$arrayErabiltzaileIzena[0]?></td>
-                        
-                            <td id="bazkide2"><?php echo '2. '.$arrayErabiltzaileIzena[1]?></td>
-                        
-                            <td id="bazkide3"><?php echo '3. '.$arrayErabiltzaileIzena[2]?></td>
-                        </tr>
-                        <tr>
-                        
-                            <td id="bazkidePuntuak1"><?php echo $arrayPuntuak[0]?></td>
-                        
-                            <td id="bazkidePuntuak2"><?php echo $arrayPuntuak[1]?></td>
-                        
-                            <td id="bazkidePuntuak3"><?php echo $arrayPuntuak[2]?></td>
-                        
-                        </tr>
-                    </table>
-                </div>
+        <div class="grid-container">
+            <div class="grid-item item1">
+                <h3>Sinopsis:</h3>
+                <p><?php echo $Sinopsis;?></p>
             </div>
+            <div class="grid-item item2">
+                <?php echo '<img width=60%  src="data:image/jpeg;base64,'.base64_encode( $argazkia ).'"/>';?><hr>
+                <a><?php echo $izenburua;?></a>
+            </div>
+            <div class="grid-item item3">
+                <div class="ZuzenGenero">
+                    <h3>Zuzendaria:</h3>
+                    <a><?php echo $Zuzendaria;?></a>
+                    <h3>Generoa:</h3>
+                    <a><?php echo $Generoa;?></a>
+                </div>
+                <div class="UrteBalorazio">
+                    <h3>Urtea:</h3>
+                    <a><?php echo $Urtea;?></a>
+                    <h3>Balorazioa:</h3>
+                    <a><?php echo $Balorazioa;?></a>
+                </div>
+            </div>  
+            <div class="grid-item item5">
+                <h3>Kritika:</h3>
+                <p><?php echo $Kritika;?></p>
+            </div>
+        </div>
         </section>
     </div>
     <!-- Izena emateko MODAL-a -->
