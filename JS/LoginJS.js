@@ -1,12 +1,12 @@
-/*Ixteko botoiaren funtzioak */
-  // Erabiltzaileak <span> (x)-an klik egiterakoan, aurreko orrira bueltatu
-  span.onclick = function() {
-      modal.style.display = "none";
-  }
+/* Hemen loginaren datuak balioztatuko ditugu */
+/* document.write('<?php echo include_once "include.php";?>'); */
 
+function erabiltzaileKonp(obj) {7
+   console.log('entra') ;
+    document.getElementById(obj).style.color='blue'
+   }
 
 /* Sartu div-a erakutsiko duen funtzioa */
-
   function bazkideaSartu(id) {
 
     var sartuDiv = document.getElementById("sartu");

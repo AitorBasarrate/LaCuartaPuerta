@@ -80,28 +80,26 @@
                 </div>
                 <!-- Kolumna 2 -->
                 <div class="column2">
-
-                    <form name="index.php" action="registratu.php" method="POST">
-                    <!-- Izen emateko datuak sartu -->
-                        <!-- Izena -->
-                        <input type="text" name="erabiltzailea" placeholder="Erabiltzaile izena *" required><br>
-                        <!-- Pasahitza -->
-                        <input type="password" name="password1" placeholder="Pasahitza *" required><br>
-                        <!-- Pasahitza konfirmatu -->
-                        <input type="password" name="password2" placeholder="Pasahitza konfirmatu" required><br>
-                        <!-- Korreoa -->
-                        <input type="text" name="korreoa" placeholder="Posta elektronikoa jarri" required><br><br>
-                        <!-- Termino legalak onartu-->
-                        <input type="checkbox" id="terminoLegalak" name="terminoLegalak" value="Boat">
-                        <label for="terminoLegalak">Termino legalak onartzen ditut.</label><br><br>
-                        <!-- Izena eman -->
-                        <input type="submit" value="Register" >
-                    </form>
-                        <!-- ?? -->
-                        <!-- Idatzitakoa ezabatu -->
-                        <!-- <input type="reset" name="ezabatu" value="Ezabatu"> -->
-                        <!-- ?? -->
-
+                <!-- Izen emateko datuak sartu -->
+                    <!-- Izena -->
+                    <script src="JS/LoginJS.js"></script>
+                    <input type="text" name="erabiltzailea" id="erabiltzailea" onChange='erabiltzaileKonp(this.id)' placeholder="Erabiltzaile izena *" required><br>
+                    
+                    <!-- Pasahitza -->
+                    <input type="password" name="password1" placeholder="Pasahitza *" required><br>
+                    <!-- Pasahitza konfirmatu -->
+                    <input type="password" name="password2" placeholder="Pasahitza konfirmatu" required><br>
+                    <!-- Korreoa -->
+                    <input type="text" name="korreoa" placeholder="Posta elektronikoa jarri" required><br><br>
+                    <!-- Termino legalak onartu-->
+                    <input type="checkbox" id="terminoLegalak" name="terminoLegalak" value="Boat">
+                    <label for="terminoLegalak">Termino legalak onartzen ditut.</label><br><br>
+                    <!-- Izena eman -->
+                    <input type="submit" value="Register" >
+                    <!-- ?? -->
+                    <!-- Idatzitakoa ezabatu -->
+                    <!-- <input type="reset" name="ezabatu" value="Ezabatu"> -->
+                    <!-- ?? -->
                 <!-- Bazkide naiz botoia - Sartzeko modal-a erakutsi -->
                 <button onclick="bazkideaSartu(this.id)" id="bazkideNaiz">Bazkidea naiz dagoeneko</button>
                 </div>
@@ -119,19 +117,15 @@
                 </div>
                 
                 <!-- Kolumna 2 -->
-                <div class="column3">
-
-                    <form name="index.php" action="sartu.php" method="POST">        
+                <div class="column3">  
                     <!-- Izen emateko datuak sartu -->
-                        <!-- Izena -->
-                        <input type="text" name="erabiltzailea" placeholder="Erabiltzaile izena *" required><br>
-                        <!-- Pasahitza -->
-                        <input type="password" name="password1" placeholder="Pasahitza *" required><br>
-                        <!-- Sartu -->
-                        <input type="submit" value="logIn">
-                        <button onclick="bazkideaSartu(this.id)" id="erregistratuNahi">Ez naiz bazkide, izena eman</button>
-                    </form>
-
+                    <!-- Izena -->
+                    <input type="text" name="erabiltzailea" placeholder="Erabiltzaile izena *" required><br>
+                    <!-- Pasahitza -->
+                    <input type="password" name="password1" placeholder="Pasahitza *" required><br>
+                    <!-- Sartu -->
+                    <input type="submit" value="logIn">
+                    <button onclick="bazkideaSartu(this.id)" id="erregistratuNahi">Ez naiz bazkide, izena eman</button>
                 </div>
             </div>
         </div>
