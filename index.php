@@ -86,7 +86,7 @@
                     <input type="text" name="erabiltzailea" id="erabiltzailea" oninput='erabiltzaileKonp(this.id)' placeholder="Erabiltzaile izena *" required><br>
                    
                     <!-- Pasahitza -->
-                    <input type="password" name="password1" placeholder="Pasahitza *" required><br>
+                    <input type="password"id='password1'name="password1" placeholder="Pasahitza *" required><img id='info'src='media/informacion.png'><br>
                     <!-- Pasahitza konfirmatu -->
                     <input type="password" name="password2" placeholder="Pasahitza konfirmatu" required><br>
                     <!-- Korreoa -->
