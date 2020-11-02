@@ -86,7 +86,16 @@
                     <input type="text" name="erabiltzailea" id="erabiltzailea" oninput='erabiltzaileKonp(this.id)' placeholder="Erabiltzaile izena *" required><br>
                    
                     <!-- Pasahitza -->
-                    <input type="password"id='password1'name="password1" placeholder="Pasahitza *" required><img id='info'src='media/informacion.png'><br>
+                    <input type="password"id='password1'name="password1" placeholder="Pasahitza *" required><img id="info" src='media/informacion.png'><br>
+                    <div class="condicionesContra">
+                        <a>Gutxieneko kondizioak:</a>
+                        <ul>
+                            <li><a><img src='Media/candadoCondiciones.png' width='15px'>8 digito</a></li>
+                            <li><a><img src='Media/candadoCondiciones.png' width='15px'>Zenbaki bat</a></li>
+                            <li><a><img src='Media/candadoCondiciones.png' width='15px'>Letra larri bat</a></li>
+                
+                        </ul>
+                    </div>
                     <!-- Pasahitza konfirmatu -->
                     <input type="password" name="password2" placeholder="Pasahitza konfirmatu" required><br>
                     <!-- Korreoa -->
