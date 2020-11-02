@@ -50,61 +50,49 @@
                     <!-- Nabigatzaile barra, responsive egitean Haamburguesa ateratzen da -->
                 <script src="JS/HamburguerJS.js"></script>
             </header>
-
             <!-- Bilaketa atala -->
             <div id="bilatzailea">
-
                 <!-- Search box -->
                 <div id="bilatuBox">
                     <h1>Bilaketa filtroak</h1>
+                    <h2>Filmen Izenburua:</h2>
                     <input type="text" id="pelikulaIzenezBilatu" onKeyUp="pelikulaIzenezBilatu()" placeholder="Pelikula bilatu..." title="pelikulaIzenezBilatu" maxlength="50" size="35"> 
                 </div>
-
                 <!-- Bilaketa botoia -->
                 <!-- <div class="bilaketaBotoia"> -->
                 <!-- <img src="https://img.icons8.com/pastel-glyph/2x/search--v1.png" width="30px" height="30px" onclick="pelikulaBilatu()"> -->
                 <!-- </div> -->
-
                 <hr>
-
                 <!-- Balorazioa -->
                 <div class="balorazioa">
                     <!-- Estrella 1 -->
                     <button id="izar1">
                         <i class="fas fa-star"></i>
                     </button>
-
                     <!-- Estrella 2 -->
                     <button id="izar2">
                         <i class="fas fa-star"></i>
                     </button>
-
                     <!-- Estrella 3 -->
                     <button id="izar3">
                         <i class="fas fa-star"></i>
                     </button>
-
                     <!-- Estrella 4 -->
                     <button id="izar4">
                         <i class="fas fa-star"></i>
                     </button>
-
                     <!-- Estrella 5 -->
                     <button id="izar5">
                         <i class="fas fa-star"></i>
                     </button>
                 </div>    
-                
                 <hr>
-
                 <!-- Generoa -->
                 <div id="genero-lista">
                     <h2>Generoak:</h2>
                     <?php include ('PHP/generoakBete.php');?> 
-                </div>
-                
+                </div>                
                 <hr>
-
                 <!-- Data - Urtea -->
                 <h2>Urtea:</h2>
                 <select id="urtea"></select>
@@ -113,15 +101,11 @@
                         var hasiera = 1990;
                         var amaiera = new Date().getFullYear();
                         var aukera = "";
-
                         for (var urtea = amaiera; urtea >= hasiera; urtea--) {
                             aukera += "<option id='" + urtea + "'>" + urtea + "</option>";
                         }
-
                         document.getElementById("urtea").innerHTML = aukera;
-
                     </script>
-                <br> <br>
             </div>
 
             <!-- Pelikulen lista -->

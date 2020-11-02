@@ -84,7 +84,6 @@
                     <!-- Izena -->
                     
                     <input type="text" name="erabiltzailea" id="erabiltzailea" oninput='erabiltzaileKonp(this.id)' placeholder="Erabiltzaile izena *" required><br>
-                   
                     <!-- Pasahitza -->
                     <input type="password"id='password1'name="password1" placeholder="Pasahitza *" required><img id="info" src='media/informacion.png'><br>
                     <div class="condicionesContra">
@@ -152,8 +151,5 @@
                 <a>@Talde5</a>
             </div>
         </footer>
-        <?php
-
-        ?>
     </body>
 </html>

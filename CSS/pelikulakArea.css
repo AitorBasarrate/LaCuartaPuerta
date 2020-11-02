@@ -18,11 +18,10 @@
     text-align: center;
     line-height: 100px;
     font-size: 30px;
-    color: #CFDBD5;
+    color: #e7eeeb;
 }
 
 #peliku img {
-
     width: 100%;
     height: auto;
 } 
@@ -42,26 +41,25 @@
     float: left;
     height: 1100px;
     width: 25%;
- 
- }
- 
- #bilatuBox {
-     font-size: 20px;
-     margin: 15px;
-     width: auto; 
-     height: auto;
- }
- 
- #bilatuBox > input[type="text"] {
-     margin-top: 15px;
-     margin-left: 30px;
- }
- 
- /* Bereizgailuak */
- hr {
-     border-top: 1px solid #242423;
-     width: 350px;
- }
+}
+
+#bilatuBox {
+    font-size: 20px;
+    margin: 15px;
+    width: auto; 
+    height: auto;
+}
+
+#bilatuBox > input[type="text"] {
+    margin-top: 15px;
+    margin-left: 30px;
+}
+
+/* Bereizgailuak */
+hr {
+    border-top: 1px solid #242423;
+    width: 350px;
+}
 
 
 /* Range sliderra */

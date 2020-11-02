@@ -4,7 +4,7 @@
 
         try{
             /* Pelikulen argazkia eta izena aterako dugu */
-            $miConsulta = $miPDO->prepare("SELECT Izenburuak,Argazkia FROM filmak ORDER BY idPelikulak");
+            $miConsulta = $miPDO->prepare("SELECT Izenburuak,Argazkia FROM filmak ORDER BY Izenburuak");
             $miConsulta->execute(); 
         
             while ($fila = $miConsulta->fetch(PDO::FETCH_ASSOC)){
