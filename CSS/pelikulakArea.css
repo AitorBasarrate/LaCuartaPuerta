@@ -2,24 +2,6 @@
 /* Pelikula areako CSS-a */
 /* --------------------- */
 
-/* Bilatzailearen div-a */
-
-#bilatzailea {
-   background-color: #F5CB5C;
-   margin-top: 10px;
-   font-size: 30px;
-   float: left;
-   height: 1100px;
-   width: 25%;
-
-}
-
-/* Bereizgailuak */
-hr {
-    border-top: 1px solid #242423;
-    width: 350px;
-}
-
 /* Pelikulen lista */
 .flex-container {
     display: flex;
@@ -51,23 +33,35 @@ hr {
     color: #333533;
 }
 
-/* Generoen flexboxa */
+/* Bilatzailearen div-a */
 
-#genero-lista {
-    font-size: 20px;
-    margin: 10px;
-    width: auto; 
-    height: auto;
-}
-
-.checkmark {
-    position: absolute;
-    top: 25px;
-    left: 25px;
-    height: 25px;
-    width: 25px;
-    background-color: #eee;
-}
+#bilatzailea {
+    background-color: #F5CB5C;
+    margin-top: 5px;
+    font-size: 30px;
+    float: left;
+    height: 1100px;
+    width: 25%;
+ 
+ }
+ 
+ #bilatuBox {
+     font-size: 20px;
+     margin: 15px;
+     width: auto; 
+     height: auto;
+ }
+ 
+ #bilatuBox > input[type="text"] {
+     margin-top: 15px;
+     margin-left: 30px;
+ }
+ 
+ /* Bereizgailuak */
+ hr {
+     border-top: 1px solid #242423;
+     width: 350px;
+ }
 
 
 /* Range sliderra */
@@ -110,3 +104,27 @@ hr {
     color: var(--color-hover);
     transform: rotate(360deg);
 }
+
+
+/* Generoen flexboxa */
+
+#genero-lista, #urtea {
+    font-size: 20px;
+    margin-left: 40px;
+    width: auto; 
+    height: auto;
+}
+
+.checkmark {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+}
+/* 
+#urtea {
+    font-size: 20px;
+    margin-left: 40px;
+} */

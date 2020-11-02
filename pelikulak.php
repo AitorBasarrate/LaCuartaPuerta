@@ -50,13 +50,14 @@
                     <!-- Nabigatzaile barra, responsive egitean Haamburguesa ateratzen da -->
                 <script src="JS/HamburguerJS.js"></script>
             </header>
+
             <!-- Bilaketa atala -->
             <div id="bilatzailea">
 
                 <!-- Search box -->
-                <div class="bilatuBox">
+                <div id="bilatuBox">
                     <h1>Bilaketa filtroak</h1>
-                    <input type="text" id="pelikulaIzenezBilatu" onKeyUp="pelikulaIzenezBilatu()" placeholder="Pelikula bilatu..." title="pelikulaIzenezBilatu"> 
+                    <input type="text" id="pelikulaIzenezBilatu" onKeyUp="pelikulaIzenezBilatu()" placeholder="Pelikula bilatu..." title="pelikulaIzenezBilatu" maxlength="50" size="35"> 
                 </div>
 
                 <!-- Bilaketa botoia -->
