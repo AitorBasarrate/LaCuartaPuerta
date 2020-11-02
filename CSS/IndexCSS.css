@@ -238,7 +238,7 @@ width: 200px;
   .wrapper img{
     width: 100%;
     height: 95%;
-    background-color: blueviolet;  
+    
   }
   .item2, .item3{
     width: 60%;
@@ -248,54 +248,55 @@ width: 200px;
   }
 }
 
-/* LOGIN ETA REGISTER */
+/*ERREGISTRATZEKO ATALAREN KARAKTERISTIKAK GRIDSEKIN ORDENATUTA*/
+
+.modal{
+  margin-top: 5%;
+  margin-left: 15%;
+  width: 70%;
+  padding: 3%;
+  height:500px;
+  background-color: #E8EDDF;
+  
+}
+
+.modal-container{
+  display: grid;
+  grid-template-columns: 60%40%;
+  grid-template-rows: 95%;
+  grid-gap: 5px;
+  grid-template-areas:
+  'columna1 columna2';
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 2%;
+  
+  }
 .column1 {
   grid-area: 'columna1';
-  float: left;
-  margin: auto;
   padding: 20px;
   margin-top: 30px;
-  max-width: 50%; 
   max-height: auto;
   margin-left: 5%;
   background-color: white;
   opacity: 0.95;
+  
 }
 .column2 {
+  
   grid-area: 'columna2';
-  float: right;
-  margin: auto;
+  gap: 0;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  height: 100%;
   padding: 20px;
   margin-top: 30px;
-  max-width: 40%; 
-  max-height: 80%;
-  margin-right: 5%;
   background-color: white;
+  max-height: 100%;
+  
   opacity: 0.95;
 }
-.column0 {
-  grid-area: 'columna1';
-  float: left;
-  margin: auto;
-  padding: 20px;
-  margin-top: 30px;
-  max-width: 50%; 
-  max-height: auto;
-  margin-left: 5%;
-  opacity: 0.95;
-}
-.column3 {
-  grid-area: 'columna2';
-  float: right;
-  margin: auto;
-  padding: 20px;
-  margin-top: 18%;
-  max-width: 40%; 
-  max-height: 80%;
-  margin-right: 5%;
-  background-color: white;
-  opacity: 0.95;
-}
+
 .modal input {
   margin-top: 5%;
 }
@@ -304,31 +305,67 @@ width: 200px;
   display: table;
   clear: both;
 }
-.modal {
-  position: absolute;
-  margin: 2.5vh auto;
-  background-color: #e8eddf; 
-  opacity: 0.95;
-  width: 50%; 
-  height: 65%;   
-  padding: 50px;
-  overflow: hidden;
-  position: fixed;
-  display: inline-block;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
+
 .modal-body {
   max-height: calc(100vh - 143px);
   overflow-y: auto; 
 }
-@media (max-width: 1250px) {
-  .modal {
-    width: 600px;
+/* Pantaila txikia egitean grid-a bertikalean jarriko dugu */
+@media (max-width: 900px) {
+  .modal{
+    margin-top: 5%;
+    margin-left: 1%;
+    width: 98%;
+    padding: 3%;
+    height:600px;
+    background-color: #E8EDDF;
+    
   }
-  .row {
-    background-color: white;
+  
+.modal-container{
+  
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+  grid-gap: 1px;
+  grid-template-areas:
+  'columna1'
+  'columna2';
+  width: 95%;
+  margin-left: 5%;
+  margin-right:2%;
+  margin-top: 10%;
+  
+  
   }
+.column1 {
+  grid-area: 'columna1';
+  padding: 20px;
+  margin-left: 0%;
+  margin-top: 30px;
+  max-height: auto;
+  background-color: white;
+  opacity: 0.95;
+  
 }
+.column2 {
+  grid-area: 'columna2';
+  display: inline-block;
+  height: 100%;
+  padding-left: 20px;
+  padding-top: 20px;
+  background-color: white;
+  max-height: 100%;
+  opacity: 0.95;
+  padding-bottom: 0%;
+}
+
+.modal input {
+  margin-top: 0%;
+}
+
+}
+
 /* Erabiltzaile parametros */
 .info{
   width: 20px;
@@ -343,7 +380,6 @@ width: 200px;
 }
 .condicionesErab{
   display: left;
-  
   border-top: 3px solid red;
   text-align: left;
   }
@@ -352,7 +388,7 @@ width: 200px;
   display:block;
   list-style: none;
 }
-/* Hover erabiltzaile */
+
 
 .hoverErab .condicionesErab {
   position: absolute;
@@ -365,11 +401,13 @@ width: 200px;
   position: absolute;
   z-index: 1;
 }
-
+/* Hover erabiltzailea egiten duena */
 .hoverErab:hover .condicionesErab{
   visibility: visible;
+  margin-left: 90%;
+  
 }
-/* contraseña parametros */
+/* Contraseña parametros */
 .info{
   width: 20px;
   height:20px;
@@ -383,7 +421,6 @@ width: 200px;
 }
 .condicionesContra{
   display: left;
-  
   border-top: 3px solid red;
   text-align: left;
   }
@@ -400,16 +437,14 @@ width: 200px;
   height: 100px;
   background-color: #e8eddfb9;
   color: #fff;
-  
-  
-
   /* Position the tooltip */
   position: absolute;
   z-index: 1;
 }
-
+/* Hoverra egiten duen partea */
 .hoverContra:hover .condicionesContra{
   visibility: visible;
+  margin-left: 90%;
 }
 /* IXTEKO BOTOIAREN ESTILOAK */
 .close-button{
@@ -418,11 +453,115 @@ width: 200px;
   right: 10px;
   font-size: 50px;
 }
-
 .close-button:hover {
   color: red;
 }
 
+/* LOGINAREN ATALAREN GAUZAK GRIDEKON ORDENATUTA */
+
+.modal-container2{
+  display: grid;
+  grid-template-columns: 70%30%;
+  grid-template-rows: 95%;
+  grid-gap: 5px;
+  grid-template-areas:
+  'columna3 columna4';
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 2%;
+  padding-right: 5%;
+  
+  }
+.column3 {
+  grid-area: 'columna3';
+  padding: 20px;
+  margin-top: 30px;
+  max-height: auto;
+  margin-left: 5%;
+  opacity: 0.95;
+  
+}
+.column3 img{
+  width: 80%;
+  height: auto;
+}
+.column4 {
+  grid-area: 'columna4';
+  gap: 0;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  height: 100%;
+  padding: 25px;
+  background-color: white;
+  max-height: 70%;
+  margin-top: 37%;
+  opacity: 0.95;
+  min-width: 200px;
+  min-height: 300px;
+}
+
+.modal input {
+  margin-top: 5%;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.modal-body {
+  max-height: calc(100vh - 143px);
+  overflow-y: auto; 
+}
+/* Pantaila txikia egitean grid-a bertikalean jarriko dugu */
+@media (max-width: 900px) {
+  
+
+.modal-container2{
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 50% 50%;
+  grid-template-areas:
+  'columna3'
+  'columna4';
+  width: 60%;
+  margin-left: 25%;
+  margin-right:2%;
+  margin-top: 10%;
+
+ 
+
+  }
+.column3 {
+  grid-area: 'columna3';
+  opacity: 0.95;
+  margin-left: 17%;
+
+}
+.column3  img{
+  margin-top: -20%;
+  width: 90%;
+  height: auto;
+  border-top: 3px solid red;
+  
+}
+.column4{
+  margin-left: 17%;
+  grid-area: 'columna4';
+  height: 100%;
+  background-color: white;
+  max-height: 70%;
+  opacity: 0.95;
+  min-width: 200px;
+  margin-top: 0%;
+  min-height: 150px;
+}
+
+.modal input {
+  margin-top: 0%;
+}
+
+}
 /* Footer de la pagina */
 .content{
   /*da al contenido "altura mínima" para que el footer nunca suba más de ahí, pero sí para que baje si aumenta el contenido*/

@@ -62,10 +62,11 @@
         </div>
         <!-- Izena emateko MODAL-a -->
         <div class="modal" id="izenaEman"> 
-            <div class="row">
-                <!-- Ixteko botoia -->
-                <span style="cursor: pointer;" onclick="document.getElementById('izenaEman').style.display='none'" class="close-button" title="Close Modal">&times;</span>
-                <!-- Kolumna 1 -->
+            <!-- Ixteko botoia -->
+            <span style="cursor: pointer;" onclick="document.getElementById('izenaEman').style.display='none'" class="close-button" title="Close Modal">&times;</span>
+            <!-- Bazkide egiteko atalaren kontenidoa -->
+            <div class="modal-container">
+                <!-- Kolumna 1 bazkidearen informazioa -->
                 <div class="column1">
                     <h3>Bazkide izatearen abantailak</h3>
                     <p>
@@ -78,68 +79,66 @@
                         </ul>    
                     </p>
                 </div>
-                <!-- Kolumna 2 -->
+                <!-- Kolumna 2 datak sartzeko atala -->
                 <div class="column2">
-                <!-- Izen emateko datuak sartu -->
+                    <!-- Izen emateko datuak sartu -->
                     <!-- Izena -->
-                    <input type="text" name="erabiltzailea" id="erabiltzailea" oninput='erabiltzaileKonp(this.id)' placeholder="Erabiltzaile izena *" required>
-                    <div class="hoverErab">
-                        <img class="info" src='media/informacion.png'><br>
-                         <span class="condicionesErab">
-                             <a>Gutxieneko kondizioak:</a>
-                             <ul>
-                                <li><a><img src='Media/candadoCondiciones.png' width='15px'>5 Karaktere</a></li>
-                                <li><a><img src='Media/candadoCondiciones.png' width='15px'>Soilik zenbakiak eta letrak</a></li>
-                            </ul></span>
-                        
+                    <div class='erabIzena'>
+                        <input type="text" name="erabiltzailea" id="erabiltzailea" oninput='erabiltzaileKonp(this.id)' placeholder="Erabiltzaile izena *" required>
+                        <!-- Baldintzak erabiltzaile izenarekiko (hover batean) -->
+                        <div class="hoverErab">
+                            <img class="info" src='media/informacion.png'><br>
+                            <span class="condicionesErab">
+                                <a>Gutxieneko kondizioak:</a>
+                                <ul>
+                                    <li><a><img src='Media/candadoCondiciones.png' width='15px'>5 Karaktere</a></li>
+                                    <li><a><img src='Media/candadoCondiciones.png' width='15px'>Soilik zenbakiak eta letrak</a></li>
+                                </ul></span>
+                            
+                        </div>
                     </div>
-                    
-                   
                     <!-- Pasahitza -->
-                    <input type="password"id='password1'name="password1" placeholder="Pasahitza *" required>
-                    <div class="hoverContra">
-                        <img class="info" src='media/informacion.png'><br>
-                         <span class="condicionesContra">
-                             <a>Gutxieneko kondizioak:</a>
-                             <ul>
-                                <li><a><img src='Media/candadoCondiciones.png' width='15px'>8 Karaktere</a></li>
-                                <li><a><img src='Media/candadoCondiciones.png' width='15px'>Zenbaki bat</a></li>
-                                <li><a><img src='Media/candadoCondiciones.png' width='15px'>Letra larri bat</a></li>
-                            </ul></span>
-                        
+                    <div class='pswd1'>
+                        <input type="password"id='password1'name="password1" placeholder="Pasahitza *" required>
+                        <!-- Baldintzak pasahitzari dagokiones (hover batean) -->
+                        <div class="hoverContra">
+                            <img class="info" src='media/informacion.png'><br>
+                            <span class="condicionesContra">
+                                <a>Gutxieneko kondizioak:</a>
+                                <ul>
+                                    <li><a><img src='Media/candadoCondiciones.png' width='15px'>8 Karaktere</a></li>
+                                    <li><a><img src='Media/candadoCondiciones.png' width='15px'>Zenbaki bat</a></li>
+                                    <li><a><img src='Media/candadoCondiciones.png' width='15px'>Letra larri bat</a></li>
+                                </ul></span>
+                            
+                        </div>
                     </div>
-                   
                     <!-- Pasahitza konfirmatu -->
                     <input type="password" name="password2" placeholder="Pasahitza konfirmatu" required><br>
                     <!-- Korreoa -->
-                    <input type="text" name="korreoa" placeholder="Posta elektronikoa jarri" required><br><br>
+                    <input type="text" name="korreoa" placeholder="Posta elektronikoa jarri" required><br>
                     <!-- Termino legalak onartu-->
                     <input type="checkbox" id="terminoLegalak" name="terminoLegalak" value="Boat">
-                    <label for="terminoLegalak">Termino legalak onartzen ditut.</label><br><br>
+                    <label for="terminoLegalak">Termino legalak onartzen ditut.</label><br>
                     <!-- Izena eman -->
                     <input type="submit" value="Register" >
-                    <!-- ?? -->
-                    <!-- Idatzitakoa ezabatu -->
-                    <!-- <input type="reset" name="ezabatu" value="Ezabatu"> -->
-                    <!-- ?? -->
-                <!-- Bazkide naiz botoia - Sartzeko modal-a erakutsi -->
-                <button onclick="bazkideaSartu(this.id)" id="bazkideNaiz">Bazkidea naiz dagoeneko</button>
+                    <!-- Bazkide naiz botoia - Sartzeko modal-a erakutsi -->
+                    <button onclick="bazkideaSartu(this.id)" id="bazkideNaiz">Bazkidea naiz dagoeneko</button>
                 </div>
             </div>
         </div>
         <!-- Sartu MODAL-a -->
         <div class="modal" id="sartu" hidden>
-            <div class="row">
-                <!-- Ixteko botoia -->
+            <!-- Ixteko botoia -->
                 <span style="cursor: pointer;" onclick="document.getElementById('sartu').style.display='none'" class="close-button" title="Close Modal">&times;</span>
+            <div class="modal-container2">
                 <!-- Kolumna 1 -->
-                <div class="column0">
+                <div class="column3">
                     <!-- Hemen logoa txertatu behar da -->
-                    <img class="logo" src="Media/logo-bien-negro.png" alt="Au revoir Shoshanna" style="width:100%;">
+                    <img class="logo" src="Media/logo-bien-negro.png" alt="Au revoir Shoshanna" />
                 </div>
-                
                 <!-- Kolumna 2 -->
-                <div class="column3">  
+                <div class="column4">  
                     <!-- Izen emateko datuak sartu -->
                     <!-- Izena -->
                     <input type="text" name="erabiltzailea" placeholder="Erabiltzaile izena *" required><br>
