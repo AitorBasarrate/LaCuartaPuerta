@@ -329,29 +329,87 @@ width: 200px;
     background-color: white;
   }
 }
-/* contraseña parametros */
-#info{
-  width: 25px;
-  height:16px;
+/* Erabiltzaile parametros */
+.info{
+  width: 20px;
+  height:20px;
   padding: 2px;
+  
 }
-.condicionesContra {
-  display: none;
+.hoverErab {
+  position: relative;
+  display: inline-block;
+  
+}
+.condicionesErab{
+  display: left;
+  
+  border-top: 3px solid red;
+  text-align: left;
+  }
+.condicionesErab ul{
+  padding-left:10%;
+  display:block;
+  list-style: none;
+}
+/* Hover erabiltzaile */
+
+.hoverErab .condicionesErab {
   position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  visibility: hidden;
+  width: 150px;
+  height: 100px;
+  background-color: #e8eddfb9;
+  color: #fff;
+  /* Position the tooltip */
+  position: absolute;
   z-index: 1;
 }
-.condicionesContra a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
+
+.hoverErab:hover .condicionesErab{
+  visibility: visible;
 }
-#info:hover + .condicionesContra{
+/* contraseña parametros */
+.info{
+  width: 20px;
+  height:20px;
+  padding: 2px;
+  
+}
+.hoverContra {
+  position: relative;
+  display: inline-block;
+  
+}
+.condicionesContra{
+  display: left;
+  
+  border-top: 3px solid red;
+  text-align: left;
+  }
+.condicionesContra ul{
+  padding-left:10%;
+  display:block;
+  list-style: none;
+}
+
+.hoverContra .condicionesContra {
+  position: absolute;
+  visibility: hidden;
+  width: 150px;
+  height: 100px;
+  background-color: #e8eddfb9;
+  color: #fff;
   
   
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.hoverContra:hover .condicionesContra{
+  visibility: visible;
 }
 /* IXTEKO BOTOIAREN ESTILOAK */
 .close-button{
