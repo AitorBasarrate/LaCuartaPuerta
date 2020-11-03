@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="JS/filmaIzenak.js"></script>
+    
     <?php
+        $izenburuaPlus="<script >nombrePelikula</script>";
         include 'PHP/dbKonexioa.php';
         include 'PHP/filmaDatuak.php';
     ?>
@@ -22,6 +25,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">        
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- Comentarios -->
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
     <!-- Orriaren iconoa eta tituloa -->
     <link rel="icon" type="image/png" href="Media/fav-icon1.png">
     <title>La Cuarta Puerta</title>
@@ -35,7 +43,7 @@
             <div class="topnav" id="myTopnav">
                 <a href="index.php" class="active">HASIERA</a>
                 <a href="#news">ASTEKO FILMA</a>
-                <a href="pelikulak.php">+ FILMA</a>
+                <a href="+Filma.php">+ FILMA</a>
                 <a href="bazkideArea.php">BAZKIDE AREA</a>
                 <a class="LoginBoton" href="#home" onclick="document.getElementById('izenaEman').style.display='block'"><i class="fa fa-fw fa-user"></i> LOGIN</a>
                 <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -74,6 +82,17 @@
             </div>
         </div>
         </section>
+        <!-- Comentarios -->
+            <div id="respond">     
+                <h2>IRUZKINAK</h2>
+                <hr>  
+                <?php include ('PHP/iruzkinakBete.php');?> 
+                <form id="commentform">         
+                    <h3>Zure Iruzkina:</h3>
+                    <textarea name="comment" id="comment" maxlength="250" placeholder="Zer irudita zaizu filma?"></textarea>
+                    <input name="submit" type="submit" value="Publicar"/>
+                </form>
+            </div>
     </div>
     <!-- Izena emateko MODAL-a -->
     <div class="modal" id="izenaEman"> 
@@ -139,7 +158,6 @@
             </div>
         </div>
     </div>
-</div>
     <footer>
         <div class="footerP1">
             <img  src="Media/Footer/instagra.png">

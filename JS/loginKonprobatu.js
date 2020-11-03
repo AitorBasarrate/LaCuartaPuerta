@@ -9,9 +9,9 @@ function erabiltzaileKonp() {
     /*5 karaktere gutxienez eta karaktere arraroak ez dute balio*/
      
     /* luzeegia dela frogatu */
-     if (erab.length >= 5){
+    if (erab.length >= 5){
          /* Barruko karaktereak letrak edo   zenbakiak diren begiratuko dugu */
-               if(erab.match(/[a-zA-Z0-9]+$/g)){
+            if(erab.match(/[a-zA-Z0-9]+$/g)){
                    /* dena ondo badago */
                     document.getElementById('erabiltzailea').style.borderColor='green';
                     return true;

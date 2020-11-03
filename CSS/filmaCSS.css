@@ -148,6 +148,26 @@ width: 200px;
     }
     .item5 p{text-indent:  20px;}
 }
+
+#respond {
+    margin-top: 20px;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-bottom: 20px;
+}
+
+#respond textarea {
+    margin-bottom: 10px;
+    display: block;
+    width: 100%;
+    border: 2px solid #f5cb5c;
+    border-radius: 5px;
+    resize: none;
+}
+
+#respond input{
+    background-color: #f5cb5c;
+}
 /* LOGIN ETA REGISTER */
 .column1 {
     grid-area: 'columna1';
@@ -277,3 +297,5 @@ footer{
     color: #f5cb5c;
     padding: 0.5%;
 }
+
+/*COMENTARIOS*/

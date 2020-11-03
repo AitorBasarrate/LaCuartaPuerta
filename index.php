@@ -33,7 +33,7 @@
                 <div class="topnav" id="myTopnav">
                     <a href="index.php" class="active">HASIERA</a>
                     <a href="#news">ASTEKO FILMA</a>
-                    <a href="pelikulak.php">+ FILMA</a>
+                    <a href="+Filma.php">+ FILMA</a>
                     <a href="bazkideArea.php">BAZKIDE AREA</a>
                     <a class="LoginBoton" href="#home" onclick="document.getElementById('izenaEman').style.display='block'"><i class="fa fa-fw fa-user"></i> LOGIN</a>
                     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -97,6 +97,15 @@
                             
                         </div>
                     </div>
+<<<<<<< HEAD
+                    
+<<<<<<< HEAD
+                    <input type="text" name="erabiltzailea" id="erabiltzailea" oninput='erabiltzaileKonp(this.id)' placeholder="Erabiltzaile izena *" required><br>
+=======
+                   
+>>>>>>> 2987c0c27f0bcd127ebb5eb62083d7eece8c2ede
+=======
+>>>>>>> dc925074d4eb9fb9ee846a36305707258818041a
                     <!-- Pasahitza -->
                     <div class='pswd1'>
                         <input type="password" id="password1" name="password1" oninput='pasahitzaKonp(),denaOndo()' placeholder="Pasahitza *" required>
@@ -165,8 +174,5 @@
                 <a>@Talde5</a>
             </div>
         </footer>
-        <?php
-
-        ?>
     </body>
 </html>

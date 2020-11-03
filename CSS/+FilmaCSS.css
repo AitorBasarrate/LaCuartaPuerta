@@ -1,0 +1,121 @@
+html, body{  height: 100vh;}
+
+/* --------------------- */
+/* Pelikula areako CSS-a */
+/* --------------------- */
+
+/* Pelikulen lista */
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  margin-left: 5%;
+}
+
+.flex-container > div {
+  background-color: #333533;
+  width: 275px;
+  margin: 4%;
+  text-align: center;
+  line-height: 100px;
+  font-size: 30px;
+  color: #e7eeeb;
+}
+
+#peliku img {
+  width: 100%;
+  height: auto;
+} 
+
+#peliku:hover {
+  transform: scale(1.1);
+  background-color: #F5CB5C;
+  color: #333533;
+}
+
+/*Sidevar*/
+.sidebar {
+  height: 100%;
+  width: 250px;
+  background-color: #e7eeeb;
+  float: left;
+}
+
+/* Bereizgailuak */
+hr.guion-separador {
+  border-top: 1px solid #535353;
+  width: 225px;
+}
+/* Bilatu*/
+#bilatuBox {
+  font-size: 14px;
+  margin: 15px;
+  width: auto; 
+  height: auto;
+}
+
+#bilatuBox > input[type="text"] {
+  margin-top: 15px;
+  margin-left: 10px;
+  width: 200px;
+}
+
+/*Izarrak*/
+div.stars {
+  width: 200px;
+  padding-left: 15px;
+}
+
+input.star { display: none; }
+
+label.star {
+  float: right;
+  padding: 5px;
+  font-size: 20px;
+  color: #444;
+  transition: all .2s;
+}
+
+input.star:checked ~ label.star:before {
+  content: '\f005';
+  color: #FD4;
+  transition: all .25s;
+}
+
+input.star-5:checked ~ label.star:before {
+  color: #FE7;
+  text-shadow: 0 0 20px #952;
+}
+
+input.star-1:checked ~ label.star:before { color: #F62; }
+
+label.star:hover { transform: rotate(-15deg) scale(1.3); }
+
+label.star:before {
+  content: '\f006';
+  font-family: FontAwesome;
+}
+
+/* Generoen flexboxa */
+#genero-lista, #urtea {
+  font-size: 20px;
+  margin-left: 15px;
+  width: auto; 
+  height: auto;
+}
+
+.checkmark {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+/*urteak*/
+#añicos{margin-left: 15px;}
+#urtea {
+  font-size: 20px;
+  margin-left: 15px;
+}
