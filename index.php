@@ -149,12 +149,13 @@
                 <!-- Kolumna 2 -->
                 <div class="column4">  
                     <!-- Izen emateko datuak sartu -->
+                    <a>Saioa asi:</a><br>
                     <!-- Izena -->
                     <input type="text" name="erabiltzailea" placeholder="Erabiltzaile izena *" required><br>
                     <!-- Pasahitza -->
                     <input type="password" name="password1" placeholder="Pasahitza *" required><br>
                     <!-- Sartu -->
-                    <input type="submit" value="logIn">
+                    <input type="submit" value="logIn"><br>
                     <button onclick="bazkideaSartu(this.id)" id="erregistratuNahi">Ez naiz bazkide, izena eman</button>
                 </div>
             </div>
