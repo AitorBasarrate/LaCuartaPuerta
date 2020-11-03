@@ -84,7 +84,7 @@
                     <!-- Izen emateko datuak sartu -->
                     <!-- Izena -->
                     <div class='erabIzena'>
-                        <input type="text" name="erabiltzailea" id="erabiltzailea" oninput='erabiltzaileKonp(this.id)' placeholder="Erabiltzaile izena *" required>
+                        <input type="text" name="erabiltzailea" id="erabiltzailea" oninput='erabiltzaileKonp(),denaOndo()' placeholder="Erabiltzaile izena *" required>
                         <!-- Baldintzak erabiltzaile izenarekiko (hover batean) -->
                         <div class="hoverErab">
                             <img class="info" src='media/informacion.png'><br>
@@ -99,7 +99,7 @@
                     </div>
                     <!-- Pasahitza -->
                     <div class='pswd1'>
-                        <input type="password"id='password1'name="password1" placeholder="Pasahitza *" required>
+                        <input type="password" id="password1" name="password1" oninput='pasahitzaKonp(),denaOndo()' placeholder="Pasahitza *" required>
                         <!-- Baldintzak pasahitzari dagokiones (hover batean) -->
                         <div class="hoverContra">
                             <img class="info" src='media/informacion.png'><br>
@@ -114,14 +114,14 @@
                         </div>
                     </div>
                     <!-- Pasahitza konfirmatu -->
-                    <input type="password" name="password2" placeholder="Pasahitza konfirmatu" required><br>
+                    <input type="password" name="password2" id='password2' placeholder="Pasahitza konfirmatu"  oninput='pasahitzakBerdin(),denaOndo()' required><br>
                     <!-- Korreoa -->
-                    <input type="text" name="korreoa" placeholder="Posta elektronikoa jarri" required><br>
+                    <input type="email" id='korreoa' name="korreoa" placeholder="Posta elektronikoa jarri" oninput='korreoaOndo()' required ><br>
                     <!-- Termino legalak onartu-->
-                    <input type="checkbox" id="terminoLegalak" name="terminoLegalak" value="Boat">
+                    <input type="checkbox" id="terminoLegalak" name="terminoLegalak" value="Boat" onclick='denaOndo(this.id),denaOndo()'>
                     <label for="terminoLegalak">Termino legalak onartzen ditut.</label><br>
                     <!-- Izena eman -->
-                    <input type="submit" value="Register" >
+                    <input type="submit" id='register'value="Register" onclick='erregistratu()' disabled >
                     <!-- Bazkide naiz botoia - Sartzeko modal-a erakutsi -->
                     <button onclick="bazkideaSartu(this.id)" id="bazkideNaiz">Bazkidea naiz dagoeneko</button>
                 </div>

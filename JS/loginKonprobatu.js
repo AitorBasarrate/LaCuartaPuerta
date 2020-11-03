@@ -1,62 +1,120 @@
 /* Hemen loginaren datuak balioztatuko ditugu */
 /* document.write('<?php echo include_once "include.php";?>'); */
 
-function erabiltzaileKonp(obj) {
+
+
+function erabiltzaileKonp() {
+   
+    var erab=document.getElementById('erabiltzailea').value;
     /*5 karaktere gutxienez eta karaktere arraroak ez dute balio*/
-     var erab=document.getElementById(obj).value;
+     
     /* luzeegia dela frogatu */
      if (erab.length >= 5){
          /* Barruko karaktereak letrak edo   zenbakiak diren begiratuko dugu */
                if(erab.match(/[a-zA-Z0-9]+$/g)){
                    /* dena ondo badago */
-                    document.getElementById(obj).style.borderColor='green'
+                    document.getElementById('erabiltzailea').style.borderColor='green';
+                    return true;
                }else{ 
                    /* ez badago ondo... */
-                   document.getElementById(obj).style.borderColor='red'
+                   document.getElementById('erabiltzailea').style.borderColor='red';
+                   return false;
                 }
     }
     else{
-        document.getElementById(obj).style.borderColor='red'
-        document.getElementById(obj).focus();
+        document.getElementById('erabiltzailea').style.borderColor='red';
+        document.getElementById('erabiltzailea').focus();
+        return false;
     } 
 }
-function validarContra(obj){
+
+/*  Pasahitza balio duen a la ez */
+
+function pasahitzaKonp(){
+    
+    var password = document.getElementById('password1').value;
+    
     //validar longitud contraseña
-    var password = document.getElementById(obj).value; 
-    if ( password.length < 8 ) {
-        document.getElementById(obj).attributes.className='invalid';
-        $('#length').removeClass('valid').addClass('invalid');
-    } else {
-        $('#length').removeClass('invalid').addClass('valid');
+    if ( password.length > 8 ) {
+        //validar letra
+        if ( password.match(/[A-Z]/) ) {
+            //validar numero
+            if ( password.match(/\d/) ) {
+                document.getElementById('password1').style.borderColor='green';
+                return true;
+            }else {
+                document.getElementById('password1').style.borderColor='red';
+                return false;
+            }
+        }else {
+            document.getElementById('password1').style.borderColor='red';
+            return false;
+        }
+    }else{
+        document.getElementById('password1').style.borderColor='red';
+        return false;
     }
-    //validar letra
-    if ( password.match(/[A-z]/) ) {
-        $('#letter').removeClass('invalid').addClass('valid');
-    } else {
-        $('#letter').removeClass('valid').addClass('invalid');
-    }
-
-    //validar letra mayúscula
-    if ( password.match(/[A-Z]/) ) {
-        $('#capital').removeClass('invalid').addClass('valid');
-    } else {
-        $('#capital').removeClass('valid').addClass('invalid');
-    }
-
-    //validar numero
-    if ( password.match(/\d/) ) {
-        $('#number').removeClass('invalid').addClass('valid');
-    } else {
-        $('#number').removeClass('valid').addClass('invalid');
-    }
-
-
-    /* 8 karaktere gutxienez eta soilik setrak eta zenbakiak */
-
-    var contra = document.getElementById(obj).value; 
-   
-
 }
+/* Pasahitzak berdin diren a la ez begiratzeko  */
+ function pasahitzakBerdin() { 
+    
+    var password1 = document.getElementById('password1').value;
+    var password2 = document.getElementById('password2').value;
+    if(password1===password2){
+        document.getElementById('password2').style.borderColor='green';
+        return true;
+    }else{
+        document.getElementById('password2').style.borderColor='red';
+        return false;
+    }
+
+  }
+
+  /* Emailaren datuak hartzeko */
+  function korreoaOndo(){
+      
+    var email=document.getElementById('korreoa').value;
+    var patron=/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+    if (email.match(patron)){
+        document.getElementById('korreoa').style.borderColor='green';
+        return true;
+    }else{
+        document.getElementById('korreoa').style.borderColor='red';
+        return false;
+    }
+    
+  }
+
+  /* Dena ondo badago erregistratu botoia desblokeatuko da */
+    function denaOndo() {
+        var check=document.getElementById('terminoLegalak').checked;
+        if(check==true){
+            var erab=erabiltzaileKonp();
+            var pas1= pasahitzaKonp();
+            var pas2=pasahitzakBerdin();
+            var korr=korreoaOndo();
+            if(erab==true && pas1==true&& pas2==true && korr==true){
+                console.log('llega');
+                        /* Datuak bidali beharko ditugu php-ra */
+                        $('#register').prop('disabled', false);
+                    }else{ $('#register').prop('disabled', true);}
+        }else{
+            $('#register').prop('disabled', true);
+        }
+  }
+/* Gordeko dugu LocalStorage-en datuak erregistratu() funtzioarekin, web orria zabaltzean datuak gordeta izateko 
+    eta gero php-ra bidliko ditugu datuak datu basean sartu ahal izateko */
+  function erregistratu(){
+    var erab=document.getElementById('erabiltzailea').value;
+    var password1 = document.getElementById('password1').value;
+    var email=document.getElementById('korreoa').value;
+    if (typeof(Storage) !== 'undefined') {
+        // Código cuando Storage es compatible
+      } else {
+       // Código cuando Storage NO es compatible
+      }
+
+  }
  
  /* Sartu div-a erakutsiko duen funtzioa */
    function bazkideaSartu(id) {
