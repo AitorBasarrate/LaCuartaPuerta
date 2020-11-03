@@ -1,3 +1,5 @@
+html, body{  height: 100vh;}
+
 /* --------------------- */
 /* Pelikula areako CSS-a */
 /* --------------------- */
@@ -12,7 +14,7 @@
 
 .flex-container > div {
   background-color: #333533;
-  width: 250px;
+  width: 275px;
   margin: 4%;
   text-align: center;
   line-height: 100px;
@@ -33,10 +35,10 @@
 
 /*Sidevar*/
 .sidebar {
+  height: 100%;
   width: 250px;
   background-color: #e7eeeb;
   float: left;
-  height: 5000px;
 }
 
 /* Bereizgailuak */

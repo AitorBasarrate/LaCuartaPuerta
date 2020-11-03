@@ -35,7 +35,7 @@
             <div class="topnav" id="myTopnav">
                 <a href="index.php" class="active">HASIERA</a>
                 <a href="#news">ASTEKO FILMA</a>
-                <a href="pelikulak.php">+ FILMA</a>
+                <a href="+Filma.php">+ FILMA</a>
                 <a href="bazkideArea.php">BAZKIDE AREA</a>
                 <a class="LoginBoton" href="#home" onclick="document.getElementById('izenaEman').style.display='block'"><i class="fa fa-fw fa-user"></i> LOGIN</a>
                 <a href="javascript:void(0);" class="icon" onclick="myFunction()">
