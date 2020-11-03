@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        
         <!-- Hemen datu basearekiko konexioa egingo da eta behar dituen php-ei detiuko dio -->
             <?php
                 include 'PHP/dbKonexioa.php';
@@ -8,6 +9,8 @@
         <!-- Hasiera oriko estilua -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <?php include 'PHP/filmaDatuak.php';?>
         <script src="JS/loginKonprobatu.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         <script src="JS/HamburguerJS.js"></script>
@@ -55,8 +58,7 @@
                     <input type="text" id="pelikulaIzenezBilatu" onKeyUp="pelikulaIzenezBilatu()" placeholder="Pelikula bilatu..." title="pelikulaIzenezBilatu" maxlength="50" size="35"> 
                 </div>
                 <hr class="guion-separador">
-                <!-- Balorazioa -->
-                
+                <!-- Balorazioa -->                
                 <div class="stars">
                     <h3>Balorazioa:</h3>
                     <form action="">
@@ -94,11 +96,12 @@
                     </script>
                 </div>
             </div>
-
             <!-- Pelikulen lista -->
-            <div id="pelikula-lista" class="flex-container">
-                <?php include 'PHP/pelikulakPlusBete.php'; ?>
-            </div>
+            <form action="filmaFitxa.php" method="Post">
+                <div id="pelikula-lista" class="flex-container">
+                    <?php include 'PHP/pelikulakPlusBete.php'; ?>
+                </div>
+            </form>
         </div>
             <footer>
                 <div class="footerP1">

@@ -3,16 +3,16 @@
 
 function erabiltzaileKonp(obj) {
     /*5 karaktere gutxienez eta karaktere arraroak ez dute balio*/
-     var erab=document.getElementById(obj).value;
+    var erab=document.getElementById(obj).value;
     /* luzeegia dela frogatu */
-     if (erab.length >= 5){
+    if (erab.length >= 5){
          /* Barruko karaktereak letrak edo   zenbakiak diren begiratuko dugu */
-               if(erab.match(/[a-zA-Z0-9]+$/g)){
+            if(erab.match(/[a-zA-Z0-9]+$/g)){
                    /* dena ondo badago */
                     document.getElementById(obj).style.borderColor='green'
-               }else{ 
+            }else{ 
                    /* ez badago ondo... */
-                   document.getElementById(obj).style.borderColor='red'
+                document.getElementById(obj).style.borderColor='red'
                 }
     }
     else{
@@ -54,25 +54,23 @@ function validarContra(obj){
     /* 8 karaktere gutxienez eta soilik setrak eta zenbakiak */
 
     var contra = document.getElementById(obj).value; 
-   
+}
+
+/* Sartu div-a erakutsiko duen funtzioa */
+function bazkideaSartu(id) {
+
+    var sartuDiv = document.getElementById("sartu");
+    var izenaEmanDiv = document.getElementById("izenaEman");
+
+    if (id == "bazkideNaiz") {
+        sartuDiv.style.display = "block";
+        izenaEmanDiv.style.display = "none";
+
+    } 
+    
+    if (id == "erregistratuNahi") {
+        izenaEmanDiv.style.display = "block";
+        sartuDiv.style.display = "none";
+    } 
 
 }
- 
- /* Sartu div-a erakutsiko duen funtzioa */
-   function bazkideaSartu(id) {
- 
-     var sartuDiv = document.getElementById("sartu");
-     var izenaEmanDiv = document.getElementById("izenaEman");
- 
-     if (id == "bazkideNaiz") {
-         sartuDiv.style.display = "block";
-         izenaEmanDiv.style.display = "none";
- 
-     } 
-     
-     if (id == "erregistratuNahi") {
-         izenaEmanDiv.style.display = "block";
-         sartuDiv.style.display = "none";
-     } 
- 
- }

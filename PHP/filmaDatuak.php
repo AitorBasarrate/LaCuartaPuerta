@@ -1,11 +1,12 @@
 <!-- Web atal honetan behar dugun informazioa aterako dugu -->
 
 <?php 
-
-    try{
+    try{    
+    $izenburuaPlus="<script>nombrePelikula</script>";
+    printf($izenburuaPlus);
     /* Hurrengo pelikularen argazkia eta izena aterako dugu */
     $miConsulta = $miPDO->prepare("SELECT idPelikulak,Izenburuak,Argazkia,Generoa,Zuzendaria,Urtea,Sinopsis,Kritika,Balorazioa,Trailer
-                                    FROM filmak ORDER BY idPelikulak DESC LIMIT 2");
+                                    FROM filmak WHERE Izenburuak=$izenburuaPlus");
     $miConsulta->execute(); 
     
     while ($fila = $miConsulta->fetch(PDO::FETCH_ASSOC)){
