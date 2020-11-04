@@ -1,5 +1,4 @@
 function filmaIzenak(obj){
-    var nombrePelikula = obj.text;
-    console.log(nombrePelikula);
-    window.open("filmaFitxa.php");
+    alert("idPelikula: " + obj);
+    window.location = "filmaFitxa.php";
 }

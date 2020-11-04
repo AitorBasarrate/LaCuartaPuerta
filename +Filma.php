@@ -8,13 +8,12 @@
             ?>
         <!-- Hasiera oriko estilua -->
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <?php include 'PHP/filmaDatuak.php';?>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
         <script src="JS/loginKonprobatu.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         <script src="JS/HamburguerJS.js"></script>
         <script src="JS/index.js"></script>
+        <script src="JS/filmaIzenak.js"></script>
         <!-- Font family estiloa -->
         <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
         <!-- CSS stilo orrialdea -->
@@ -38,7 +37,7 @@
                 <div class="topnav" id="myTopnav">
                     <a href="index.php" class="active">HASIERA</a>
                     <a href="#news">ASTEKO FILMA</a>
-                    <a href="pelikulak.php">+ FILMA</a>
+                    <a href="+Filma.php">+ FILMA</a>
                     <a href="bazkideArea.php">BAZKIDE AREA</a>
                     <a class="LoginBoton" href="#home" onclick="document.getElementById('izenaEman').style.display='block'"><i class="fa fa-fw fa-user"></i> LOGIN</a>
                     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -97,11 +96,11 @@
                 </div>
             </div>
             <!-- Pelikulen lista -->
-            <form action="filmaFitxa.php" method="Post">
                 <div id="pelikula-lista" class="flex-container">
                     <?php include 'PHP/pelikulakPlusBete.php'; ?>
+                    <script type="text/javascript">var izenburua = "<?= $izenburua ?>";</script>
+                    <script type="text/javascript" src="js/filmaIzenak.js"></script>
                 </div>
-            </form>
         </div>
             <footer>
                 <div class="footerP1">
