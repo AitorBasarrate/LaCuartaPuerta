@@ -4,7 +4,6 @@
     <script src="JS/filmaIzenak.js"></script>
     
     <?php
-        $izenburuaPlus="<script >nombrePelikula</script>";
         include 'PHP/dbKonexioa.php';
         include 'PHP/filmaDatuak.php';
     ?>
