@@ -12,6 +12,7 @@
                 $erab=$fila['ErabiltzaileIzena'];
                array_push($arrayErab,$erab);
             }
+            echo('pito');
 
         }catch( PDOException $Exception ) {
             // PHP Fatal Error. Second Argument Has To Be An Integer, But PDOException::getCode Returns A
