@@ -4,13 +4,15 @@
         <!-- Hemen datu basearekiko konexioa -->
         <?php
             include 'PHP/dbKonexioa.php';
+            include 'PHP/erregistroaEgin.php';
         ?>
+        <!-- Erregistro atala -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="JS/erregistratu.js">var erab2 = <?php echo $arrayErab?>; alert(erab2);</script>
         <!-- Hasiera oriko estilua -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="JS/loginKonprobatu.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-        
         <script src="JS/HamburguerJS.js"></script>
         <script src="JS/index.js"></script>
         <!-- Font family estiloa -->
@@ -22,6 +24,8 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
         <!-- Orriaren iconoa eta tituloa -->
         <link rel="icon" type="image/png" href="Media/fav-icon1.png">
+      
+
         <title>La Cuarta Puerta</title>
     </head>
     <body>
@@ -81,46 +85,37 @@
                 </div>
                 <!-- Kolumna 2 datak sartzeko atala -->
                 <div class="column2">
-                    <!-- Izen emateko datuak sartu -->
-                    <!-- Izena -->
-                    <div class='erabIzena'>
-                        <input type="text" name="erabiltzailea" id="erabiltzailea" oninput='erabiltzaileKonp(),denaOndo()' placeholder="Erabiltzaile izena *" required>
-                        <!-- Baldintzak erabiltzaile izenarekiko (hover batean) -->
-                        <div class="hoverErab">
-                            <img class="info" src='media/informacion.png'><br>
-                            <span class="condicionesErab">
-                                <a>Gutxieneko kondizioak:</a>
-                                <ul>
-                                    <li><a><img src='Media/candadoCondiciones.png' width='15px'>5 Karaktere</a></li>
-                                    <li><a><img src='Media/candadoCondiciones.png' width='15px'>Soilik zenbakiak eta letrak</a></li>
-                                </ul></span>
-                            
+                        <!-- Izen emateko datuak sartu -->
+                        <!-- Izena -->
+                        <div class='erabIzena'>
+                            <input type="text" name="erabiltzailea" id="erabiltzailea" oninput='erabiltzaileKonp(),denaOndo()' placeholder="Erabiltzaile izena *" required>
+                            <!-- Baldintzak erabiltzaile izenarekiko (hover batean) -->
+                            <div class="hoverErab">
+                                <img class="info" src='media/informacion.png'><br>
+                                <span class="condicionesErab">
+                                    <a>Gutxieneko kondizioak:</a>
+                                    <ul>
+                                        <li><a><img src='Media/candadoCondiciones.png' width='15px'>5 Karaktere</a></li>
+                                        <li><a><img src='Media/candadoCondiciones.png' width='15px'>Soilik zenbakiak eta letrak</a></li>
+                                    </ul></span>
+                                
+                            </div>
                         </div>
-                    </div>
-<<<<<<< HEAD
-                    
-<<<<<<< HEAD
-                    <input type="text" name="erabiltzailea" id="erabiltzailea" oninput='erabiltzaileKonp(this.id)' placeholder="Erabiltzaile izena *" required><br>
-=======
-                   
->>>>>>> 2987c0c27f0bcd127ebb5eb62083d7eece8c2ede
-=======
->>>>>>> dc925074d4eb9fb9ee846a36305707258818041a
-                    <!-- Pasahitza -->
-                    <div class='pswd1'>
-                        <input type="password" id="password1" name="password1" oninput='pasahitzaKonp(),denaOndo()' placeholder="Pasahitza *" required>
-                        <!-- Baldintzak pasahitzari dagokiones (hover batean) -->
-                        <div class="hoverContra">
-                            <img class="info" src='media/informacion.png'><br>
-                            <span class="condicionesContra">
-                                <a>Gutxieneko kondizioak:</a>
-                                <ul>
-                                    <li><a><img src='Media/candadoCondiciones.png' width='15px'>8 Karaktere</a></li>
-                                    <li><a><img src='Media/candadoCondiciones.png' width='15px'>Zenbaki bat</a></li>
-                                    <li><a><img src='Media/candadoCondiciones.png' width='15px'>Letra larri bat</a></li>
-                                </ul></span>
-                            
-                        </div>
+                        <!-- Pasahitza -->
+                        <div class='pswd1'>
+                            <input type="password" id="password1" name="password1" oninput='pasahitzaKonp(),denaOndo()' placeholder="Pasahitza *" required>
+                            <!-- Baldintzak pasahitzari dagokiones (hover batean) -->
+                            <div class="hoverContra">
+                                <img class="info" src='media/informacion.png'><br>
+                                <span class="condicionesContra">
+                                    <a>Gutxieneko kondizioak:</a>
+                                    <ul>
+                                        <li><a><img src='Media/candadoCondiciones.png' width='15px'>8 Karaktere</a></li>
+                                        <li><a><img src='Media/candadoCondiciones.png' width='15px'>Zenbaki bat</a></li>
+                                        <li><a><img src='Media/candadoCondiciones.png' width='15px'>Letra larri bat</a></li>
+                                    </ul></span>
+                                
+                            </div>
                     </div>
                     <!-- Pasahitza konfirmatu -->
                     <input type="password" name="password2" id='password2' placeholder="Pasahitza konfirmatu"  oninput='pasahitzakBerdin(),denaOndo()' required><br>
