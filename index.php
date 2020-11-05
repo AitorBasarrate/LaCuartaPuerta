@@ -67,7 +67,7 @@
             <!-- Ixteko botoia -->
             <span style="cursor: pointer;" onclick="document.getElementById('izenaEman').style.display='none'" class="close-button" title="Close Modal">&times;</span>
             <!-- Bazkide egiteko atalaren kontenidoa -->
-            <div class="modal-container">
+            <div class="modal-container"><!--------------------------------------------------------------------------------->
                 <!-- Kolumna 1 bazkidearen informazioa -->
                 <div class="column1">
                     <h3>Bazkide izatearen abantailak</h3>
@@ -82,7 +82,7 @@
                     </p>
                 </div>
                 <!-- Kolumna 2 datak sartzeko atala -->
-               
+                            
                 <form target="frame" method='post'>
                     <div class="column2">
                             <!-- Izen emateko datuak sartu -->
@@ -117,7 +117,7 @@
                                     
                                 </div>
                             </div>
-                    
+                            
                         <!-- Pasahitza konfirmatu -->
                         <input type="password" name="password2" id='password2' placeholder="Pasahitza konfirmatu"  oninput='pasahitzakBerdin()'oninput='denaOndo()' required><br>
                         <!-- Korreoa -->
@@ -128,7 +128,7 @@
                         <!-- Izena eman -->
                         <input type="submit" id='register'name="btn1" value="Register" >
                         <!-- Bazkide naiz botoia - Sartzeko modal-a erakutsi -->
-                        <button onclick="bazkideaSartu(this.id)" id="bazkideNaiz">Bazkidea naiz dagoeneko</button>
+                        <button onclick="if(lafuncionDeOhiane == true){muestraLaOtraVentana}else{muestraLaMismaVentana} bazkideaSartu(this.id)" id="bazkideNaiz">Bazkidea naiz dagoeneko</button>
                     </div> 
                 </form>
             </div>

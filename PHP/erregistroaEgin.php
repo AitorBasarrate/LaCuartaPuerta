@@ -10,7 +10,7 @@ include 'dbKonexioa.php';
             while ($fila = $miConsulta->fetch(PDO::FETCH_ASSOC)){
                 //Izenburua 
                 $erab=$fila['ErabiltzaileIzena'];
-               array_push($arrayErab,$erab);
+                array_push($arrayErab,$erab);
             }
             echo('pito');
 
@@ -23,5 +23,10 @@ include 'dbKonexioa.php';
         if(isset($_POST['btn1'])) { 
             echo "This is Button1 that is selected"; 
         }
+        // Lo de Aitor para mostrar el modal de registro
+        if(isset($_POST['btn1'])) { 
+
+
+        
+        }
 ?>
-  

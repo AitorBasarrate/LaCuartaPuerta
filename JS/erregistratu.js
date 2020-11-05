@@ -6,21 +6,21 @@
 function erabiltzaileKonp() {
     var erab=document.getElementById('erabiltzailea').value;
     /*5 karaktere gutxienez eta karaktere arraroak ez dute balio*/
-     
+    
     /* luzeegia dela frogatu */
     if (erab.length >= 5){
          /* Barruko karaktereak letrak edo   zenbakiak diren begiratuko dugu */
             if(erab.match(/[a-zA-Z0-9]+$/g)){
                    /* dena ondo badago, konprobatuko dugu datu basean ez dagoela izen hori iada erregistratuta */
                     
-                         document.getElementById('erabiltzailea').style.borderColor='green';
-                         erregistratu();
+                        document.getElementById('erabiltzailea').style.borderColor='green';
+                        erregistratu();
                         return false;
-                   
-               }else{ 
+                    
+                }else{ 
                    /* ez badago ondo... */
-                   document.getElementById('erabiltzailea').style.borderColor='red';
-                   return false;
+                    document.getElementById('erabiltzailea').style.borderColor='red';
+                    return false;
                 }
     }
     else{
@@ -58,7 +58,7 @@ function pasahitzaKonp(){
     }
 }
 /* Pasahitzak berdin diren a la ez begiratzeko  */
- function pasahitzakBerdin() { 
+function pasahitzakBerdin() { 
     
     var password1 = document.getElementById('password1').value;
     var password2 = document.getElementById('password2').value;
@@ -70,11 +70,11 @@ function pasahitzaKonp(){
         return false;
     }
 
-  }
+}
 
   /* Emailaren datuak hartzeko */
-  function korreoaOndo(){
-      
+    function korreoaOndo(){
+    
     var email=document.getElementById('korreoa').value;
     var patron=/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
     if (email.match(patron)){
@@ -85,7 +85,7 @@ function pasahitzaKonp(){
         return false;
     }
     
-  }
+    }
 
   /* Dena ondo badago erregistratu botoia desblokeatuko da */
     function denaOndo() {
@@ -112,33 +112,33 @@ function pasahitzaKonp(){
             $('#register').prop('disabled', true);
             return false;
         }
-  }
+}
 /* Gordeko dugu LocalStorage-en datuak erregistratu() funtzioarekin, web orria zabaltzean datuak gordeta izateko 
     eta gero php-ra bidliko ditugu datuak datu basean sartu ahal izateko */
-  function erregistratu(){
+function erregistratu(){
     if (typeof(Storage) !== 'undefined') {
         // Código cuando Storage es compatible
-      } else {
+    } else {
        // Código cuando Storage NO es compatible
-      }
+    }
 
-  }
- 
+}
+
  /* Sartu div-a erakutsiko duen funtzioa */
-   function bazkideaSartu(id) {
- 
-     var sartuDiv = document.getElementById("sartu");
-     var izenaEmanDiv = document.getElementById("izenaEman");
- 
-     if (id == "bazkideNaiz") {
-         sartuDiv.style.display = "block";
-         izenaEmanDiv.style.display = "none";
- 
-     } 
-     
-     if (id == "erregistratuNahi") {
-         izenaEmanDiv.style.display = "block";
-         sartuDiv.style.display = "none";
-     } 
- 
- }
+function bazkideaSartu(id) {
+
+    var sartuDiv = document.getElementById("sartu");
+    var izenaEmanDiv = document.getElementById("izenaEman");
+
+    if (id == "bazkideNaiz") {
+        sartuDiv.style.display = "block";
+        izenaEmanDiv.style.display = "none";
+
+    } 
+    
+    if (id == "erregistratuNahi") {
+        izenaEmanDiv.style.display = "block";
+        sartuDiv.style.display = "none";
+    } 
+
+}
