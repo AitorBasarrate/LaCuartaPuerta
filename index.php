@@ -83,7 +83,7 @@
                 </div>
                 <!-- Kolumna 2 datak sartzeko atala -->
                             
-                <form target="frame" method='post'>
+                <form target="frame1" method='post'>
                     <div class="column2">
                             <!-- Izen emateko datuak sartu -->
                             <!-- Izena -->
@@ -119,14 +119,14 @@
                             </div>
                             
                         <!-- Pasahitza konfirmatu -->
-                        <input type="password" name="password2" id='password2' placeholder="Pasahitza konfirmatu"  oninput='pasahitzakBerdin()'oninput='denaOndo()' required><br>
+                        <input type="password" name="password2" id='password2' placeholder="Pasahitza konfirmatu"  oninput='pasahitzakBerdin()' oninput='denaOndo()' required><br>
                         <!-- Korreoa -->
-                        <input type="email" id='korreoa' name="korreoa" placeholder="Posta elektronikoa jarri" oninput='korreoaOndo()'oninput='denaOndo()' required ><br>
+                        <input type="email" id='korreoa' name="korreoa" placeholder="Posta elektronikoa jarri" oninput='korreoaOndo()' oninput='denaOndo()' required ><br>
                         <!-- Termino legalak onartu-->
                         <input type="checkbox" id="terminoLegalak" name="terminoLegalak" value="Boat" onclick='denaOndo()'>
                         <label for="terminoLegalak">Termino legalak onartzen ditut.</label><br>
                         <!-- Izena eman -->
-                        <input type="submit" id='register'name="btn1" value="Register" >
+                        <input type="submit" id='register'name="btn1" value="Register" disabled >
                         <!-- Bazkide naiz botoia - Sartzeko modal-a erakutsi -->
                         <button onclick="if(lafuncionDeOhiane == true){muestraLaOtraVentana}else{muestraLaMismaVentana} bazkideaSartu(this.id)" id="bazkideNaiz">Bazkidea naiz dagoeneko</button>
                     </div> 
@@ -145,17 +145,19 @@
                     <img class="logo" src="Media/logo-bien-negro.png" alt="Au revoir Shoshanna" />
                 </div>
                 <!-- Kolumna 2 -->
-                <div class="column4">  
-                    <!-- Izen emateko datuak sartu -->
-                    <a>Saioa asi:</a><br>
-                    <!-- Izena -->
-                    <input type="text" name="erabiltzailea" placeholder="Erabiltzaile izena *" required><br>
-                    <!-- Pasahitza -->
-                    <input type="password" name="password1" placeholder="Pasahitza *" required><br>
-                    <!-- Sartu -->
-                    <input type="submit" value="logIn"><br>
-                    <button onclick="bazkideaSartu(this.id)" id="erregistratuNahi">Ez naiz bazkide, izena eman</button>
-                </div>
+                <form target="frame2" method='post'>
+                    <div class="column4">  
+                        <!-- Izen emateko datuak sartu -->
+                        <a>Saioa asi:</a><br>
+                        <!-- Izena -->
+                        <input type="text" name="erabiltzailea" placeholder="Erabiltzaile izena *" required><br>
+                        <!-- Pasahitza -->
+                        <input type="password" name="password1" placeholder="Pasahitza *" required><br>
+                        <!-- Sartu -->
+                        <input type="submit" value="logIn" name="btn2"><br>
+                        <button onclick="bazkideaSartu(this.id)" id="erregistratuNahi">Ez naiz bazkide, izena eman</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

@@ -22,7 +22,8 @@
                     $contra=$_POST['password1'];
                     $erabIzena=$_POST['erabiltzailea'];
                     /* Encriptatuko dugu pasahitza */
-                    md5($contra);
+                    $contra=md5($contra);
+                    
                     /* Insert-a egingo dugu */
                     $miConsulta = $miPDO->prepare("INSERT into erabiltzaile (ErabiltzaileIzena, Pasahitza) VALUES (?,?)");
                         /* iNTRODUCIMOS LOS VALORES A METER */    
@@ -42,9 +43,29 @@
             }
         }
         // Lo de Aitor para mostrar el modal de registro
-        if(isset($_POST['btn1'])) { 
+        if(isset($_POST['btn2'])) { 
+            /* Variableak gordeko ditugu */
+            $contra=$_POST['password1'];
+            $erabIzena=$_POST['erabiltzailea'];
+            /* Encriptatuko dugu pasahitza */
+            $contra=md5($contra);
+             /* Erabiltzaile izenak begiratu*/
+             $miConsulta = $miPDO->prepare("SELECT ErabiltzaileIzena,Pasahitza FROM erabiltzaile Where EabiltzaileIzena='.$erabIzena.'");
+             $miConsulta->execute(); 
+             $igual=false;
+             while ($fila = $miConsulta->fetch(PDO::FETCH_ASSOC)){
+                 //Koinziditzen duen a la ez begiratuko dugu
+                 if($erabIzena==$fila['ErabiltzaileIzena'] && $contra==$fila['Pasahitza']){
+                     //Koinziditzen badu...
+                     $igual=true;
+                 }
+             }
+             /* Koinziditu badu */
+             if($igual==true){
+                 echo('bienvenido usuario');
+             }else{
+                echo('np hay ningun usuario');
+             }
 
-
-        
         }
 ?>
