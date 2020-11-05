@@ -13,7 +13,6 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         <script src="JS/HamburguerJS.js"></script>
         <script src="JS/index.js"></script>
-        <script src="JS/filmaIzenak.js"></script>
         <!-- Font family estiloa -->
         <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
         <!-- CSS stilo orrialdea -->
@@ -35,9 +34,9 @@
                 <img class="logo" src="Media/logo-bien.png" alt="Au revoir Shoshanna">
                     <!-- Nabigatzailea, bakoitzak beraren orria kargatuko du -->
                 <div class="topnav" id="myTopnav">
-                    <a href="index.php" class="active">HASIERA</a>
+                    <a href="index.php">HASIERA</a>
                     <a href="#news">ASTEKO FILMA</a>
-                    <a href="+Filma.php">+ FILMA</a>
+                    <a href="+Filma.php" class="active">+ FILMA</a>
                     <a href="bazkideArea.php">BAZKIDE AREA</a>
                     <a class="LoginBoton" href="#home" onclick="document.getElementById('izenaEman').style.display='block'"><i class="fa fa-fw fa-user"></i> LOGIN</a>
                     <a href="javascript:void(0);" class="icon" onclick="myFunction()">

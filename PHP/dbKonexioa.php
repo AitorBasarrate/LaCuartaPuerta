@@ -9,19 +9,17 @@
         $nombreDB = 'lacuartapuerta';
         $usuarioDB = 'root';
         $contrasenyaDB = '1234';
-        // DB KONEXIOAttttttttg
+        // DB KONEXIOA
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////
         try {
-        /* Con esto hace la conexion */
-        //$miPDO = new mysqli($hostDB, $usuarioDB, $contrasenyaDB,$nombreDB);
-        
-            $hostPDO = "mysql:host=$hostDB;dbname=$nombreDB";
-            $miPDO = new PDO($hostPDO, $usuarioDB, $contrasenyaDB);
-            
+            /* Con esto hace la conexion */
+        //$conn = new mysqli($hostDB, $usuarioDB, $contrasenyaDB,$nombreDB);
+        $hostPDO = "mysql:host=$hostDB;dbname=$nombreDB";
+        $miPDO = new PDO($hostPDO, $usuarioDB, $contrasenyaDB);
         } catch( PDOException $Exception ) {
             // PHP Fatal Error. Second Argument Has To Be An Integer, But PDOException::getCode Returns A
             // String.
-            printf('error de conexion');
+                printf('error de conexion');
         }
 
 
