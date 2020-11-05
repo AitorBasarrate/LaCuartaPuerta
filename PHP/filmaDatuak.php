@@ -4,14 +4,12 @@
     $TituloPelikula = $_GET['id'];
 
     try{       
-    /* Hurrengo pelikularen argazkia eta izena aterako dugu */
+    /* Filmen datu guztiak aterako ditu */
     $miConsulta = $miPDO->prepare("SELECT idPelikulak,Izenburuak,Argazkia,Generoa,Zuzendaria,Urtea,Sinopsis,Kritika,Balorazioa,Trailer
                                     FROM filmak WHERE idPelikulak=:idPelikula;");
-                                    var_dump($TituloPelikula);
     $miConsulta->bindValue("idPelikula",intval($TituloPelikula));
 
-    if ($miConsulta->execute())
-    {
+    if ($miConsulta->execute()) {
         $fila = $miConsulta->fetchALl(PDO::FETCH_OBJ);
 
         foreach ($fila as $peli) {
@@ -37,9 +35,11 @@
         }
     }
 
+
+
     }catch( PDOException $Exception ) {
         // PHP Fatal Error. Second Argument Has To Be An Integer, But PDOException::getCode Returns A
         // String.
         throw new MyDatabaseException( $Exception->getMessage( ) , $Exception->getCode( ) );
     } 
-    ?>
+?>

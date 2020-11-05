@@ -160,13 +160,34 @@ width: 200px;
     margin-bottom: 10px;
     display: block;
     width: 100%;
-    border: 2px solid #f5cb5c;
+    border: 1px solid #f5cb5c;
     border-radius: 5px;
     resize: none;
 }
 
 #respond input{
     background-color: #f5cb5c;
+}
+
+#comentario{
+    margin-bottom: 10px;
+    display: block;
+    width: 100%;
+    border: 1px solid #f5cb5c;
+    border-radius: 5px;
+}
+#IzenaErabiltzaile{
+    margin-left: 10px;
+    margin-top: 10px;
+    text-decoration: underline #242423;
+}
+#IruzkinTexto{
+    margin-left: 10px;
+    margin-top: 10px;
+    font-size: 20px;
+}
+#commentform h3{
+    font-size: 25px;
 }
 /* LOGIN ETA REGISTER */
 .column1 {

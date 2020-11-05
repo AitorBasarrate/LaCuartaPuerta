@@ -84,6 +84,7 @@
                 <h2>IRUZKINAK</h2>
                 <hr>  
                 <?php include ('PHP/iruzkinakBete.php');?> 
+                <hr>
                 <form id="commentform">         
                     <h3>Zure Iruzkina:</h3>
                     <textarea name="comment" id="comment" maxlength="250" placeholder="Zer irudita zaizu filma?"></textarea>
