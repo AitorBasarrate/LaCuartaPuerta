@@ -38,7 +38,7 @@
             <img class="logo" src="Media/logo-bien.png" alt="Au revoir Shoshanna">
                 <!-- Nabigatzailea, bakoitzak beraren orria kargatuko du -->
             <div class="topnav" id="myTopnav">
-                <a href="index.php" class="active">HASIERA</a>
+                <a href="index.php">HASIERA</a>
                 <a href="#news">ASTEKO FILMA</a>
                 <a href="+Filma.php">+ FILMA</a>
                 <a href="bazkideArea.php">BAZKIDE AREA</a>

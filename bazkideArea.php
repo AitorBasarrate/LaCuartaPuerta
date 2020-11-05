@@ -34,11 +34,10 @@
             <img class="logo" src="Media/logo-bien.png" alt="Au revoir Shoshanna">
                 <!-- Nabigatzailea, bakoitzak beraren orria kargatuko du -->
             <div class="topnav" id="myTopnav">
-                <a href="index.php" class="active">HASIERA</a>
+                <a href="index.php" >HASIERA</a>
                 <a href="#news">ASTEKO FILMA</a>
                 <a href="+Filma.php">+ FILMA</a>
-                <a href="bazkideArea.php">BAZKIDE AREA</a>
-                <a href="filmaFitxa.php">filmaFitxa</a>
+                <a href="bazkideArea.php" class="active">BAZKIDE AREA</a>
                 <a class="LoginBoton" href="#home" onclick="document.getElementById('izenaEman').style.display='block'"><i class="fa fa-fw fa-user"></i> LOGIN</a>
                 <a href="javascript:void(0);" class="icon" onclick="myFunction()">
                 <!-- HAMBURGUESA, responsive menua -->
