@@ -4,7 +4,7 @@
         <!-- Hemen datu basearekiko konexioa -->
         <?php
             include 'PHP/dbKonexioa.php';
-            /* include 'PHP/erregistroaEgin.php'; */
+            include 'PHP/erregistroaEgin.php';
         ?>
         <!-- Erregistro atala -->
         <script src="JS/erregistratu.js"></script>
@@ -83,7 +83,7 @@
                 </div>
                 <!-- Kolumna 2 datak sartzeko atala -->
                
-                <form target="frame" method='post' action='PHP/erregistroaEgin.php'>
+                <form target="frame" method='post'>
                     <div class="column2">
                             <!-- Izen emateko datuak sartu -->
                             <!-- Izena -->
@@ -126,7 +126,7 @@
                         <input type="checkbox" id="terminoLegalak" name="terminoLegalak" value="Boat" onclick='denaOndo()'>
                         <label for="terminoLegalak">Termino legalak onartzen ditut.</label><br>
                         <!-- Izena eman -->
-                        <input type="submit" id='register'value="Register" onclick='erregistratu()' >
+                        <input type="submit" id='register'name="btn1" value="Register" >
                         <!-- Bazkide naiz botoia - Sartzeko modal-a erakutsi -->
                         <button onclick="bazkideaSartu(this.id)" id="bazkideNaiz">Bazkidea naiz dagoeneko</button>
                     </div> 

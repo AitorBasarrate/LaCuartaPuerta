@@ -20,6 +20,8 @@ include 'dbKonexioa.php';
             throw new MyDatabaseException( $Exception->getMessage( ) , $Exception->getCode( ) );
         }
 
-        include 'C:/xampp/htdocs/Ariketak/LaCuartaPuerta/index.php';
+        if(isset($_POST['btn1'])) { 
+            echo "This is Button1 that is selected"; 
+        }
 ?>
   
