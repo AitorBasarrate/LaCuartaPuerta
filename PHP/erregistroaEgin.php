@@ -41,5 +41,10 @@
                 throw new MyDatabaseException( $Exception->getMessage( ) , $Exception->getCode( ) );
             }
         }
+        // Lo de Aitor para mostrar el modal de registro
+        if(isset($_POST['btn1'])) { 
+
+
+        
+        }
 ?>
-  
