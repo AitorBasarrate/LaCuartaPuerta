@@ -1,33 +1,40 @@
 <!-- Web atal honetan behar dugun informazioa aterako dugu -->
-<script src="JS/filmaIzenak.js"></script>
+
 <?php 
-    try{        
+    $TituloPelikula = $_GET['id'];
+
+    try{       
     /* Hurrengo pelikularen argazkia eta izena aterako dugu */
     $miConsulta = $miPDO->prepare("SELECT idPelikulak,Izenburuak,Argazkia,Generoa,Zuzendaria,Urtea,Sinopsis,Kritika,Balorazioa,Trailer
-                                    FROM filmak WHERE idPelikulak=$idFilma");
-    $miConsulta->execute(); 
-    
-    while ($fila = $miConsulta->fetch(PDO::FETCH_ASSOC)){
-        //Izenburua 
-        $idPelikulak=$fila['idPelikulak'];
-        //Izenburua 
-        $izenburua=$fila['Izenburuak'];
-        //Argazkiaren datua
-        $argazkia=$fila['Argazkia'];
-        //Generoa 
-        $Generoa=$fila['Generoa'];
-        //Zuzendaria 
-        $Zuzendaria=$fila['Zuzendaria'];
-        //Urtea 
-        $Urtea=$fila['Urtea'];
-        //Sinopsis 
-        $Sinopsis=$fila['Sinopsis'];
-        //Kritika 
-        $Kritika=$fila['Kritika'];
-        //Balorazioa
-        $Balorazioa=$fila['Balorazioa'];
-        //Trailer
-        $Trailer=$fila['Trailer'];
+                                    FROM filmak WHERE idPelikulak=:idPelikula;");
+                                    var_dump($TituloPelikula);
+    $miConsulta->bindValue("idPelikula",intval($TituloPelikula));
+
+    if ($miConsulta->execute())
+    {
+        $fila = $miConsulta->fetchALl(PDO::FETCH_OBJ);
+
+        foreach ($fila as $peli) {
+            $idPelikulak=$peli->idPelikulak;
+            //Izenburua 
+            $izenburua=$peli->Izenburuak;
+            //Argazkiaren datua
+            $argazkia=$peli->Argazkia;
+            //Generoa 
+            $Generoa=$peli->Generoa;
+            //Zuzendaria 
+            $Zuzendaria=$peli->Zuzendaria;
+            //Urtea 
+            $Urtea=$peli->Urtea;
+            //Sinopsis 
+            $Sinopsis=$peli->Sinopsis;
+            //Kritika 
+            $Kritika=$peli->Kritika;
+            //Balorazioa
+            $Balorazioa=$peli->Balorazioa;
+            //Trailer
+            $Trailer=$peli->Trailer;
+        }
     }
 
     }catch( PDOException $Exception ) {

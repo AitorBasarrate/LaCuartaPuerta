@@ -13,7 +13,7 @@
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////
         try {
             /* Con esto hace la conexion */
-        $conn = new mysqli($hostDB, $usuarioDB, $contrasenyaDB,$nombreDB);
+        //$conn = new mysqli($hostDB, $usuarioDB, $contrasenyaDB,$nombreDB);
         $hostPDO = "mysql:host=$hostDB;dbname=$nombreDB";
         $miPDO = new PDO($hostPDO, $usuarioDB, $contrasenyaDB);
         } catch( PDOException $Exception ) {

@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <script src="JS/filmaIzenak.js"></script>
-    
+<head>    
     <?php
         include 'PHP/dbKonexioa.php';
         include 'PHP/filmaDatuak.php';
