@@ -13,7 +13,6 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         <script src="JS/HamburguerJS.js"></script>
         <script src="JS/index.js"></script>
-        <script src="JS/filmaIzenak.js"></script>
         <!-- Font family estiloa -->
         <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
         <!-- CSS stilo orrialdea -->

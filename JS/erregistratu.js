@@ -99,6 +99,7 @@ function pasahitzaKonp(){
             /* Atal guztiak beteta badaude... */
             if(erab==true && pas1==true&& pas2==true && korr==true){
                         /* Datuak bidaltzeko prest dagoela esango dugu, erregistro botoia desblokeatuko da */
+                        console.log('entra');
                         $('#register').prop('disabled', false);
                         return true;
             }else{ 
