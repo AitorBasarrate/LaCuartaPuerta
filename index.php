@@ -4,11 +4,10 @@
         <!-- Hemen datu basearekiko konexioa -->
         <?php
             include 'PHP/dbKonexioa.php';
-            include 'PHP/erregistroaEgin.php';
+            /* include 'PHP/erregistroaEgin.php'; */
         ?>
         <!-- Erregistro atala -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-        <script src="JS/erregistratu.js">var erab2 = <?php echo $arrayErab?>; alert(erab2);</script>
+        <script src="JS/erregistratu.js"></script>
         <!-- Hasiera oriko estilua -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -84,13 +83,13 @@
                     </p>
                 </div>
                 <!-- Kolumna 2 datak sartzeko atala -->
-                <iframe display="none" name="frame"></iframe>
+               
                 <form target="frame" method='post' action='PHP/erregistroaEgin.php'>
                     <div class="column2">
                             <!-- Izen emateko datuak sartu -->
                             <!-- Izena -->
                             <div class='erabIzena'>
-                                <input type="text" name="erabiltzailea" id="erabiltzailea" oninput='erabiltzaileKonp(),denaOndo()' placeholder="Erabiltzaile izena *" required>
+                                <input type="text" name="erabiltzailea" id="erabiltzailea" oninput='erabiltzaileKonp()' oninput='denaOndo()' placeholder="Erabiltzaile izena *" required>
                                 <!-- Baldintzak erabiltzaile izenarekiko (hover batean) -->
                                 <div class="hoverErab">
                                     <img class="info" src='media/informacion.png'><br>
@@ -105,7 +104,7 @@
                             </div>
                             <!-- Pasahitza -->
                             <div class='pswd1'>
-                                <input type="password" id="password1" name="password1" oninput='pasahitzaKonp(),denaOndo()' placeholder="Pasahitza *" required>
+                                <input type="password" id="password1" name="password1" oninput='pasahitzaKonp()'oninput='denaOndo()' placeholder="Pasahitza *" required>
                                 <!-- Baldintzak pasahitzari dagokiones (hover batean) -->
                                 <div class="hoverContra">
                                     <img class="info" src='media/informacion.png'><br>
@@ -121,14 +120,14 @@
                             </div>
                     
                         <!-- Pasahitza konfirmatu -->
-                        <input type="password" name="password2" id='password2' placeholder="Pasahitza konfirmatu"  oninput='pasahitzakBerdin(),denaOndo()' required><br>
+                        <input type="password" name="password2" id='password2' placeholder="Pasahitza konfirmatu"  oninput='pasahitzakBerdin()'oninput='denaOndo()' required><br>
                         <!-- Korreoa -->
-                        <input type="email" id='korreoa' name="korreoa" placeholder="Posta elektronikoa jarri" oninput='korreoaOndo(),denaOndo()' required ><br>
+                        <input type="email" id='korreoa' name="korreoa" placeholder="Posta elektronikoa jarri" oninput='korreoaOndo()'oninput='denaOndo()' required ><br>
                         <!-- Termino legalak onartu-->
                         <input type="checkbox" id="terminoLegalak" name="terminoLegalak" value="Boat" onclick='denaOndo()'>
                         <label for="terminoLegalak">Termino legalak onartzen ditut.</label><br>
                         <!-- Izena eman -->
-                        <input type="submit" id='register'value="Register" onclick='erregistratu()' disabled >
+                        <input type="submit" id='register'value="Register" onclick='erregistratu()' >
                         <!-- Bazkide naiz botoia - Sartzeko modal-a erakutsi -->
                         <button onclick="bazkideaSartu(this.id)" id="bazkideNaiz">Bazkidea naiz dagoeneko</button>
                     </div> 

@@ -1,5 +1,5 @@
 <?php
-
+include 'dbKonexioa.php';
     /* Kontsulta egingo dugu ea erabiltzailea koinziditzen duen beste erregistro batekin */
         try{
             /* Genero desberdinen lista atera */
@@ -19,5 +19,7 @@
             // String.
             throw new MyDatabaseException( $Exception->getMessage( ) , $Exception->getCode( ) );
         }
+
+        include 'C:/xampp/htdocs/Ariketak/LaCuartaPuerta/index.php';
 ?>
   

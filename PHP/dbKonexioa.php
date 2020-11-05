@@ -12,14 +12,12 @@
         // DB KONEXIOAttttttttg
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////
         try {
-            /* Con esto hace la conexion */
-        $conn = new mysqli($hostDB, $usuarioDB, $contrasenyaDB,$nombreDB);
-        echo('conexion establecida');/* 
-        $hostPDO = "mysql:host=$hostDB;dbname=$nombreDB";
-        echo('entra');
-        $miPDO = new PDO($hostPDO, $usuarioDB, $contrasenyaDB);
-        echo('entra');
-        printf('Connected to database<hr>'); */
+        /* Con esto hace la conexion */
+        //$miPDO = new mysqli($hostDB, $usuarioDB, $contrasenyaDB,$nombreDB);
+        
+            $hostPDO = "mysql:host=$hostDB;dbname=$nombreDB";
+            $miPDO = new PDO($hostPDO, $usuarioDB, $contrasenyaDB);
+            
         } catch( PDOException $Exception ) {
             // PHP Fatal Error. Second Argument Has To Be An Integer, But PDOException::getCode Returns A
             // String.
