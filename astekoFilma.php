@@ -3,16 +3,18 @@
 <head>    
     <?php
         include 'PHP/dbKonexioa.php';
-        include 'PHP/filmaDatuak.php';
+        include 'PHP/astekoFilmaDatuakHartu.php';
     ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/filmaCSS.css">
     <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+    <script src="JS/bazkideArea.js"></script>
     <!-- Hasiera oriko estilua -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="JS/LoginJS.js"></script>
     <script src="JS/HamburguerJS.js"></script>
     <!-- Font family estiloa -->
     <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
@@ -84,7 +86,7 @@
             <div id="respond">     
                 <h2>IRUZKINAK</h2>
                 <hr>  
-                <?php include ('PHP/iruzkinakBete.php');?> 
+                <?php include ('PHP/iruzkinakAstekoFilma.php');?> 
                 <hr>
                 <form id="commentform">         
                     <h3>Zure Iruzkina:</h3>

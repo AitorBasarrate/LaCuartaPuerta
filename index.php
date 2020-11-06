@@ -18,12 +18,12 @@
         <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
         <!-- CSS stilo orrialdea -->
         <link rel="stylesheet" href="CSS/IndexCSS.css">
+        <link rel="stylesheet" href="CSS/LogInArea.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">        
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
         <!-- Orriaren iconoa eta tituloa -->
         <link rel="icon" type="image/png" href="Media/fav-icon1.png">
-
         <title>La Cuarta Puerta</title>
     </head>
     <body>
@@ -47,10 +47,8 @@
                 <script src="JS/HamburguerJS.js"></script>
             </header>
                 <div class="contenido">
-                    <div class="wrapper">
-                        <div class="item1" id="item1" onmouseover="botoiHandiak(this.id)" onmouseout="botoiTxikiak(this.id)"><img src="Media/Peliculas/DOGS3.jpg"><p>Reservoir Dogs (1992)</p></div>
-                        <div class="item2"id="item2"onmouseover="botoiHandiak(this.id)" onmouseout="botoiTxikiak(this.id)"><img src="Media/Peliculas/INCEPTION2.jpg"></br> Inception (2010)</div>
-                        <div class="item3"id="item3"onmouseover="botoiHandiak(this.id)" onmouseout="botoiTxikiak(this.id)"><img src="Media/Peliculas/IT22.jpg" ></br> IT 2 (2019)</div>
+                    <div class="wrapper"> 
+                        <?php include ('PHP/indexDatosPelis.php');?> 
                     </div>
                     <div class="trailer">
                         <div class="trailerBox" id='trailerBox'onmouseover="botoiHandiak(this.id)" onmouseout="botoiTxikiak(this.id)"><iframe width="640" height="360" src="https://www.youtube.com/embed/vayksn4Y93A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
@@ -126,7 +124,7 @@
                         <input type="checkbox" id="terminoLegalak" name="terminoLegalak" value="Boat" onclick='denaOndo()'>
                         <label for="terminoLegalak">Termino legalak onartzen ditut.</label><br>
                         <!-- Izena eman -->
-                        <input type="submit" id='register'name="btn1" value="Register" disabled >
+                        <input type="submit" id='register'name="btn1" value="Register" onclick="erregistratu()" disabled >
                         <!-- Bazkide naiz botoia - Sartzeko modal-a erakutsi -->
                         <button onclick="if(lafuncionDeOhiane == true){muestraLaOtraVentana}else{muestraLaMismaVentana} bazkideaSartu(this.id)" id="bazkideNaiz">Bazkidea naiz dagoeneko</button>
                     </div> 
