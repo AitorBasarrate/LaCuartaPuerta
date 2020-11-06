@@ -1,72 +1,91 @@
-<!-- Pelikulak+ atala pelikulez beteko dituen php-a -->
-<?php 
-    try{
-        /* Pelikulen argazkia eta izena aterako dugu */
-        $miConsulta = $miPDO->prepare("SELECT idPelikulak,Izenburuak, Argazkia FROM filmak ORDER BY Izenburuak");
-        $miConsulta->execute(); 
+<?php
+    //Datu baseari konexioa deituko diogu 
+    require_once("dbKonexioa.php");
 
-        while ($fila = $miConsulta->fetch(PDO::FETCH_ASSOC)){
-            //Izenburua 
-            $idFilma=$fila['idPelikulak'];  
-            $izenburua=$fila['Izenburuak'];
-            //Argazkiaren datua
-            $argazkia=$fila['Argazkia'];
-                echo ' 
-                    <div id=peliku>
-                        <a href="filmaFitxa.php?id='.$idFilma.'">
-                            <img width=20% height=20% src="data:image/jpeg;base64,'.base64_encode($argazkia).'"/>
-                            <label for="'.$izenburua.'" >'.$izenburua.'</label>
-                        </a>
-                    </div>
-                ';  
-        }  
-    }catch( PDOException $Exception ) {
-        // PHP Fatal Error. Second Argument Has To Be An Integer, But PDOException::getCode Returns A
-        // String.
-        throw new MyDatabaseException( $Exception->getMessage( ) , $Exception->getCode( ) );
-    } 
+    // bilaketa.js-tik jasotako bilaketa filtroak jaso 
+    if ($_POST && !empty($_POST['value']))
+    {
+        $response = array("status" => "" );
 
-    // function bilaketaFiltroekin(titulua, balorazioa, generoa, urtea) {
+        // Kontsulta egin jasotako parametroak WHERE-ean jarriz
+        $miConsulta = $miPDO->prepare("SELECT * FROM filmak WHERE Izenburuak LIKE :titulo");
 
-    //     $bilaketaQuery = "SELECT * FROM filmak";
-    //     $filtroak = array();
-    //     $filtroakQuery;
+        // Exekutatzen bada eta zerbait itzultzen badu
+        if ($miConsulta->execute(["titulo" => "%".$_POST['value']."%"])) {
+            $response['status'] = "OK";
+            $response['data'] = array();
 
-    //     if titulua {
-    //         array_push("titulua="+titulua);
-    //     }
+            // Pelikularen datuak hartu, div indibidual bat sortuko du pelikula bakoitzerako
+            while ($fila = $miConsulta->fetch(PDO::FETCH_ASSOC)){
+                //Izenburua 
+                $idFilma=$fila['idPelikulak'];  
+                $izenburua=$fila['Izenburuak'];
+                //Argazkiaren datua
+                $argazkia=$fila['Argazkia'];
+                $div = ' 
+                        <div id=peliku>
+                            <a href="filmaFitxa.php?id='.$idFilma.'">
+                                <img width=20% height=20% src="data:image/jpeg;base64,'.base64_encode($argazkia).'"/>
+                                <label for="'.$izenburua.'" >'.$izenburua.'</label>
+                            </a>
+                        </div>
+                    ';
 
-    //     if balorazioa {
-    //         array_push("balorazioa="+balorazioa);
-    //     }
+                // Pelikula bakoitza (indibidualki beraien div-arekin) array batean sartuta pasako dira
+                // json bidez bilaketa.js-ra, honek deskodifikatzeko
+                array_push($response['data'],["peli" => $div]);
+            }
+        // Errorerenbat ematekotan kodigo zati hau exekutatuko da
+        }else {
+            $response['status'] = "false";
+        }
 
-    //     if generoa {
-    //         array_push("generoa="+generoa);
-    //     }
+        echo json_encode($response);
+    }
+    die();
 
-    //     if urtea {
-    //         array_push("urtea="+urtea);
-    //     }
+        // if titulua {
+        //     array_push("titulua="+titulua);
+        // }
+
+        // if (balorazioa) {
+        //     array_push("balorazioa="+balorazioa);
+        // }
+
+        // if generoa {
+
+        //     for ($j=0; $j < generoa[$j]; $j++) {
+
+        //         if ($j = 0) {
+        //             array_push("Generoa LIKE " . generoa[$j]);
+        //         } else {
+        //             array_push("OR Generoa LIKE " . generoa[$j]);
+        //         }
+
+        //     }
+            
+        // }
+
+        // if urtea {
+        //     array_push("urtea="+urtea);
+        // }
 
         
+        // for ($i=0; $i<$filtroak[$i]; $i++) {
 
-    //     for ($i=0; $i<$filtroak[i]; $i++) {
+        //     if ($i = 0){
 
-    //         if ($i = 0){
+        //         //ez du WHERE-a detektatzen??
+        //         $filtroakQuery .= " WHERE " . $filtroak;
 
-    //             //ez du WHERE-a detektatzen??
-    //             $filtroakQuery .= " WHERE " . $filtroak;
+        //     } else {
 
-    //         } else {
+        //         $filtroakQuery .= " AND " . $filtroak;
 
-    //             $filtroakQuery .= " AND " . $filtroak;
+        //     }
+        // } 
 
-    //         }
-    //     }   
-    //     return $bilaketaQuery . $filtroakQuery;
-
-    // }
-
+        // return $bilaketaQuery . $filtroakQuery;
 
 ?>
 

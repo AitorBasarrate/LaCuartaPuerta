@@ -1,0 +1,130 @@
+/* --------------------- */
+/* Pelikula areako CSS-a */
+/* --------------------- */
+
+/* Pelikulen lista */
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    margin-left: 5%;
+    background-color: #E8EDDF;
+}
+
+.flex-container > div {
+    background-color: #333533;
+    width: 300px;
+    margin: 4%;
+    text-align: center;
+    line-height: 100px;
+    font-size: 30px;
+    color: #CFDBD5;
+}
+
+#peliku img {
+
+    width: 100%;
+    height: auto;
+} 
+
+#peliku:hover {
+    transform: scale(1.1);
+    background-color: #F5CB5C;
+    color: #333533;
+}
+
+/* Bilatzailearen div-a */
+
+#bilatzailea {
+    background-color: #F5CB5C;
+    margin-top: 5px;
+    font-size: 30px;
+    float: left;
+    height: 1100px;
+    width: 25%;
+ 
+ }
+ 
+ #bilatuBox {
+     font-size: 20px;
+     margin: 15px;
+     width: auto; 
+     height: auto;
+ }
+ 
+ #bilatuBox > input[type="text"] {
+     margin-top: 15px;
+     margin-left: 30px;
+ }
+ 
+ /* Bereizgailuak */
+ hr {
+     border-top: 1px solid #242423;
+     width: 350px;
+ }
+
+
+/* Range sliderra */
+:root {
+    --color-inactivo: #5f5050;
+    --color-hover: #ffa400;
+}
+.balorazioa {
+    display: flex;
+    flex-direction: row-reverse;
+}
+.balorazioa button {
+    background-color: initial;
+    border: 0;
+    color: var(--color-inactivo);
+    transition: 1s all;
+}
+.balorazioa button:hover {
+    cursor: pointer;
+    color: var(--color-hover);
+    transform: rotate(360deg);
+}
+#izar1:hover ~ button {
+    color: var(--color-hover);
+    transform: rotate(360deg);
+}
+#izar2:hover ~ button {
+    color: var(--color-hover);
+    transform: rotate(360deg);
+}
+#izar3:hover ~ button {
+    color: var(--color-hover);
+    transform: rotate(360deg);
+}
+#izar4:hover ~ button {
+    color: var(--color-hover);
+    transform: rotate(360deg);
+}
+#izar5:hover ~ button {
+    color: var(--color-hover);
+    transform: rotate(360deg);
+}
+
+
+/* Generoen flexboxa */
+
+#genero-lista, #urtea {
+    font-size: 20px;
+    margin-left: 40px;
+    width: auto; 
+    height: auto;
+}
+
+.checkmark {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+}
+/* 
+#urtea {
+    font-size: 20px;
+    margin-left: 40px;
+} */
