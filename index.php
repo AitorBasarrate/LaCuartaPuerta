@@ -8,17 +8,18 @@
         ?>
         <!-- Erregistro atala -->
         <script src="JS/erregistratu.js"></script>
+        <link rel="stylesheet" href="CSS/LogInArea.css">
         <!-- Hasiera oriko estilua -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         <script src="JS/HamburguerJS.js"></script>
-        <script src="JS/index.js"></script>
+        <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <!-- Font family estiloa -->
         <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
         <!-- CSS stilo orrialdea -->
         <link rel="stylesheet" href="CSS/IndexCSS.css">
-        <link rel="stylesheet" href="CSS/LogInArea.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">        
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -30,7 +31,7 @@
         <div class="content">
             <header>
                     <!-- Hemen logoa txertatu behar da -->
-                <img class="logo" src="Media/logo-bien.png" alt="Au revoir Shoshanna">
+                <img class="logo" id="logo"src="Media/logo-bien.png" alt="Au revoir Shoshanna">
                     <!-- Nabigatzailea, bakoitzak beraren orria kargatuko du -->
                 <div class="topnav" id="myTopnav">
                     <a href="index.php" class="active">HASIERA</a>

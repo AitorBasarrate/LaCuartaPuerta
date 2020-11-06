@@ -20,7 +20,7 @@ try{
         array_push($arrayIzenburuak,$izenburua);
 
     }
-    echo ' 
+    echo ' <script src="JS/index.js"></script>
             <div class="item1" id="item1" onmouseover="botoiHandiak(this.id)" onmouseout="botoiTxikiak(this.id)"><a href="filmaFitxa.php?id='.$arrayIdFilmak[0].'"><img  src="data:image/jpeg;base64,'.base64_encode( $arrayArgazkiak[0]).'"><p>'.$arrayIzenburuak[0].'</p></a></div>
             <div class="item2"id="item2"onmouseover="botoiHandiak(this.id)" onmouseout="botoiTxikiak(this.id)"><a href="filmaFitxa.php?id='.$arrayIdFilmak[1].'"><img src="data:image/jpeg;base64,'.base64_encode( $arrayArgazkiak[1]).'"><p>'.$arrayIzenburuak[1].'</p></a></div>
             <div class="item3"id="item3"onmouseover="botoiHandiak(this.id)" onmouseout="botoiTxikiak(this.id)"><a href="filmaFitxa.php?id='.$arrayIdFilmak[2].'"><img src="data:image/jpeg;base64,'.base64_encode( $arrayArgazkiak[2]).'"><p>'.$arrayIzenburuak[2].'</p></a></div>
