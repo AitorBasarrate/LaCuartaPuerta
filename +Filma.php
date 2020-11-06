@@ -79,11 +79,12 @@
                     <?php include ('PHP/generoakBete.php');?> 
                 </div>   
                 <hr class="guion-separador">
-                <div id="añicos">
+                <div id="anyos">
                 <h3>Urtea:</h3>
                 <select id="urtea"></select>
+                    <?php include ('PHP/urteakBete.php');?>
                     <!-- urteak selectean desplegatzeko scripta -->
-                    <script>
+                    <!-- <script>
                         var hasiera = 1990;
                         var amaiera = new Date().getFullYear();
                         var aukera = "";
@@ -91,7 +92,7 @@
                             aukera += "<option id='" + urtea + "'>" + urtea + "</option>";
                         }
                         document.getElementById("urtea").innerHTML = aukera;
-                    </script>
+                    </script> -->
                 </div>
             </div>
             <!-- Pelikulen lista -->
