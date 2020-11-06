@@ -1,0 +1,337 @@
+/*ERREGISTRATZEKO ATALAREN KARAKTERISTIKAK GRIDSEKIN ORDENATUTA*/
+
+.modal{
+    margin-top: 5%;
+    margin-left: 15%;
+    width: 70%;
+    padding: 3%;
+    height:500px;
+    background-color: #e8eddff8;
+    
+  }
+  
+  .modal-container{
+    display: grid;
+    grid-template-columns: 60%40%;
+    grid-template-rows: 95%;
+    grid-gap: 5px;
+    grid-template-areas:
+    'columna1 columna2';
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 2%;
+    
+    }
+  .column1 {
+    grid-area: 'columna1';
+    padding: 20px;
+    margin-top: 30px;
+    max-height: auto;
+    margin-left: 5%;
+    background-color: white;
+    opacity: 0.95;
+    
+  }
+  .column2 {
+    
+    grid-area: 'columna2';
+    gap: 0;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    height: 100%;
+    padding: 20px;
+    margin-top: 30px;
+    background-color: white;
+    max-height: 100%;
+    opacity: 0.95;
+  }
+  
+  .modal input {
+    margin-top: 5%;
+  }
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  .modal-body {
+    max-height: calc(100vh - 143px);
+    overflow-y: auto; 
+  }
+  /* Pantaila txikia egitean grid-a bertikalean jarriko dugu */
+  @media (max-width: 800px) {
+    .modal{
+      margin-top: 5%;
+      margin-left: 1%;
+      width: 98%;
+      padding: 3%;
+      height:600px;
+      background-color: #e8eddff8;
+      
+    }
+    
+  .modal-container{
+    
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    grid-gap: 1px;
+    grid-template-areas:
+    'columna1'
+    'columna2';
+    width: 95%;
+    margin-left: 5%;
+    margin-right:2%;
+    margin-top: 10%;
+    
+    
+    }
+  .column1 {
+    grid-area: 'columna1';
+    padding: 20px;
+    margin-left: 0%;
+    margin-top: 30px;
+    max-height: auto;
+    background-color: white;
+    opacity: 0.95;
+    
+  }
+  .column2 {
+    grid-area: 'columna2';
+    display: inline-block;
+    width: auto;
+    height: 100%;
+    padding-left: 20px;
+    padding-top: 20px;
+    background-color: white;
+    max-height: 100%;
+    opacity: 0.95;
+    padding-bottom: 0%;
+  }
+  
+  .modal input {
+    margin-top: 0%;
+  }
+  .modal-body{
+    height: 80vh;
+    overflow-y: auto; 
+  }
+  
+  }
+  
+  /* Erabiltzaile parametros */
+  .info{
+    width: 20px;
+    height:20px;
+    padding: 2px;
+    
+  }
+  .hoverErab {
+    position: relative;
+    display: inline-block;
+    
+  }
+  .condicionesErab{
+    display: left;
+    border-top: 3px solid red;
+    text-align: left;
+    }
+  .condicionesErab ul{
+    padding-left:10%;
+    display:block;
+    list-style: none;
+  }
+  
+  
+  .hoverErab .condicionesErab {
+    position: absolute;
+    visibility: hidden;
+    width: 150px;
+    height: 100px;
+    background-color: #e8eddfb9;
+    color: #fff;
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+  }
+  /* Hover erabiltzailea egiten duena */
+  .hoverErab:hover .condicionesErab{
+    visibility: visible;
+    margin-left: 90%;
+    
+  }
+  /* Contraseña parametros */
+  .info{
+    width: 20px;
+    height:20px;
+    padding: 2px;
+    
+  }
+  .hoverContra {
+    position: relative;
+    display: inline-block;
+    
+  }
+  .condicionesContra{
+    display: left;
+    border-top: 3px solid red;
+    text-align: left;
+    }
+  .condicionesContra ul{
+    padding-left:10%;
+    display:block;
+    list-style: none;
+  }
+  
+  .hoverContra .condicionesContra {
+    position: absolute;
+    visibility: hidden;
+    width: 150px;
+    height: 100px;
+    background-color: #e8eddfb9;
+    color: #fff;
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+  }
+  /* Hoverra egiten duen partea */
+  .hoverContra:hover .condicionesContra{
+    visibility: visible;
+    margin-left: 90%;
+  }
+  /* IXTEKO BOTOIAREN ESTILOAK */
+  .close-button{
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 50px;
+  }
+  .close-button:hover {
+    color: red;
+  }
+  
+  /* LOGINAREN ATALAREN GAUZAK GRIDEKON ORDENATUTA */
+  /* Pantaila handia dagoenean */
+  
+  @media (min-width: 800px) {
+    #sartu{
+        margin-left: auto;
+        margin-right: auto;
+        min-width: 400px;
+        max-width: 900px;
+        width: 90%;
+        height: 500px;
+      }
+    .modal-container2{
+      display: grid;
+      grid-template-columns: 60% 40%;
+      grid-template-rows:auto;
+      grid-gap: 5px;
+      grid-template-areas:
+      'columna3 columna4';
+      width: 90%;
+      margin-left: 3%;
+      padding-right: 5%;
+      height: auto;
+      margin-top: 3%;
+      min-width: 700px;
+      }
+    .column3 {
+      grid-area: 'columna3';
+      padding: 20px;
+      margin-top: 30px;
+      max-height: auto;
+      margin-left: 5%;
+      opacity: 0.95;
+      
+    }
+    .column3 img{
+      width: 80%;
+      height: auto;
+    }
+    .column4 {
+      grid-area: 'columna4';
+      gap: 0;
+      flex-wrap: nowrap;
+      flex-direction: column;
+      height: auto;
+      border-left: 2px solid black;
+      max-height: 70%;
+      opacity: 0.95;
+      min-width: 20%;
+      padding: 10%;
+      margin-top: 30%;
+    }
+  
+    .modal input {
+      margin-top: 5%;
+    }
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  
+    .modal-body {
+      max-height: calc(100vh - 143px);
+      overflow-y: auto; 
+    }
+  }
+  /* Pantaila txikia egitean grid-a bertikalean jarriko dugu */
+  @media (max-width: 800px) {
+    #sartu{
+      margin-left: auto;
+      width: 90%;
+      height: 600px;
+      margin-left:5% ;
+      margin-right:5% ;
+    }
+    .modal-container2{
+      display: grid;
+      grid-template-columns: 80%;
+      grid-template-rows: 250px 350px;
+      grid-template-areas:
+      'columna3'
+      'columna4';
+      width: 90%;
+      margin-top: 1%;
+      margin-left: 12%;
+      }
+      .modal-container2 a{
+        font-size: 16px;
+        color: black;
+      }
+    .column3 {
+      grid-area: 'columna3';
+      opacity: 0.95;
+      
+  
+    }
+    .column3  img{
+  
+      width: 300px;
+      height: auto;
+      
+    }
+    .column4{
+     flex-direction: column;
+      display: flex;
+      grid-area: 'columna4';
+      height: 100%;
+      padding: 5%;
+      max-height: 70%;
+      opacity: 0.95;
+      min-width: 200px;
+      margin-top: 0%;
+      width: 100%;
+      min-height: 150px;
+      padding-top: 4%;
+      border-top:1px solid black ;
+    }
+  
+    .modal input {
+      margin-top: 0%;
+    }
+  
+  }

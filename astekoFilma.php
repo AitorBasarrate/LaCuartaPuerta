@@ -1,66 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <!-- Hemen datu basearekiko konexioa -->
-        <?php
-            include 'PHP/dbKonexioa.php';
-            include 'PHP/erregistroaEgin.php';
-        ?>
-        <!-- Erregistro atala -->
-        <script src="JS/erregistratu.js"></script>
-        <link rel="stylesheet" href="CSS/LogInArea.css">
-        <!-- Hasiera oriko estilua -->
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-        <script src="JS/HamburguerJS.js"></script>
-        <script src="//code.jquery.com/jquery-1.12.4.js"></script>
-        <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-        <!-- Font family estiloa -->
-        <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
-        <!-- CSS stilo orrialdea -->
-        <link rel="stylesheet" href="CSS/IndexCSS.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">        
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        <!-- Orriaren iconoa eta tituloa -->
-        <link rel="icon" type="image/png" href="Media/fav-icon1.png">
-        <title>La Cuarta Puerta</title>
-    </head>
-    <body>
-        <div class="content">
-            <header>
-                    <!-- Hemen logoa txertatu behar da -->
-                <img class="logo" id="logo"src="Media/logo-bien.png" alt="Au revoir Shoshanna">
-                    <!-- Nabigatzailea, bakoitzak beraren orria kargatuko du -->
-                <div class="topnav" id="myTopnav">
-                    <a href="index.php" class="active">HASIERA</a>
-                    <a href="#news">ASTEKO FILMA</a>
-                    <a href="+Filma.php">+ FILMA</a>
-                    <a href="bazkideArea.php">BAZKIDE AREA</a>
-                    <a class="LoginBoton" href="#home" onclick="document.getElementById('izenaEman').style.display='block'"><i class="fa fa-fw fa-user"></i> LOGIN</a>
-                    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                    <!-- ESTO ES LA PUTA HAMBURGUESA -->
-                    <i class="fa fa-bars"></i>
-                    </a>
+<head>    
+    <?php
+        include 'PHP/dbKonexioa.php';
+        include 'PHP/astekoFilmaDatuakHartu.php';
+    ?>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/filmaCSS.css">
+    <link rel="stylesheet" href="CSS/LogInArea.css">
+    <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+    <script src="JS/bazkideArea.js"></script>
+    <!-- Hasiera oriko estilua -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="JS/LoginJS.js"></script>
+    <script src="JS/HamburguerJS.js"></script>
+    <!-- Font family estiloa -->
+    <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+    <!-- CSS stilo orrialdea -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">        
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- Comentarios -->
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+    <!-- Orriaren iconoa eta tituloa -->
+    <link rel="icon" type="image/png" href="Media/fav-icon1.png">
+    <title>La Cuarta Puerta</title>
+    <!-- Loginaren css a -->
+    <link rel="stylesheet" href="CSS/LogInArea.css">
+    <script src="JS/erregistratu.js"></script>
+</head>
+<body>
+    <div class="content">
+        <header>
+                <!-- Hemen logoa txertatu behar da -->
+            <img class="logo" src="Media/logo-bien.png" alt="Au revoir Shoshanna">
+                <!-- Nabigatzailea, bakoitzak beraren orria kargatuko du -->
+            <div class="topnav" id="myTopnav">
+                <a href="index.php">HASIERA</a>
+                <a href="astekoFilma.php">ASTEKO FILMA</a>
+                <a href="+Filma.php">+ FILMA</a>
+                <a href="bazkideArea.php">BAZKIDE AREA</a>
+                <a class="LoginBoton" href="#home" onclick="document.getElementById('izenaEman').style.display='block'"><i class="fa fa-fw fa-user"></i> LOGIN</a>
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <!-- HAMBURGUESA, responsive menua -->
+                <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </header>
+        <section>
+        <div class="grid-container">
+            <div class="grid-item item1">
+                <h3>Sinopsis:</h3>
+                <p><?php echo $Sinopsis;?></p>
+            </div>
+            <div class="grid-item item2">
+                <?php echo '<img width=60%  src="data:image/jpeg;base64,'.base64_encode( $argazkia ).'"/>';?><hr>
+                <a><?php echo $izenburua;?></a>
+            </div>
+            <div class="grid-item item3">
+                <div class="ZuzenGenero">
+                    <h3>Zuzendaria:</h3>
+                    <a><?php echo $Zuzendaria;?></a>
+                    <h3>Generoa:</h3>
+                    <a><?php echo $Generoa;?></a>
                 </div>
-                    <!-- Nabigatzaile barra, responsive egitean Haamburguesa ateratzen da -->
-                <script src="JS/HamburguerJS.js"></script>
-            </header>
-                <div class="contenido">
-                    <div class="wrapper"> 
-                        <?php include ('PHP/indexDatosPelis.php');?> 
-                    </div>
-                    <div class="trailer">
-                        <div class="trailerBox" id='trailerBox'onmouseover="botoiHandiak(this.id)" onmouseout="botoiTxikiak(this.id)"><iframe width="640" height="360" src="https://www.youtube.com/embed/vayksn4Y93A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-                    </div>
-                    <div class="sobreNosotros">
-                        <h1>GURI BURUZ</h1><br>
-                        <p>     Zinemazaleentzat diseinatutako bloga da, baita zinemaren ikuspegia aldatzeko gogoa dutenentzat da. Astero, film bat aukeratuko dugu honi buruz hitz egiteko eta aztertzeko
-                            iruzkinen atalen bitartez. Film gehiagotarako, ikus +Filmak atala. ADI! Ez ahaztu bazkide egin zaitezkela eta horrek hanbat abantailak dituela.</p>
-                    </div>
+                <div class="UrteBalorazio">
+                    <h3>Urtea:</h3>
+                    <a><?php echo $Urtea;?></a>
+                    <h3>Balorazioa:</h3>
+                    <a><?php echo $Balorazioa;?></a>
                 </div>
+            </div>  
+            <div class="grid-item item5">
+                <h3>Kritika:</h3>
+                <p><?php echo $Kritika;?></p>
+            </div>
         </div>
+        </section>
+        <!-- Comentarios -->
+            <div id="respond">     
+                <h2>IRUZKINAK</h2>
+                <hr>  
+                <?php include ('PHP/iruzkinakAstekoFilma.php');?> 
+                <hr>
+                <form id="commentform">         
+                    <h3>Zure Iruzkina:</h3>
+                    <textarea name="comment" id="comment" maxlength="250" placeholder="Zer irudita zaizu filma?"></textarea>
+                    <input name="submit" type="submit" value="Publicar"/>
+                </form>
+            </div>
+    </div>
         <!-- Izena emateko MODAL-a -->
         <div class="modal" id="izenaEman"> 
             <!-- Ixteko botoia -->
@@ -132,7 +167,7 @@
                 </form>
             </div>
         </div> 
-
+       
         <!-- Sartu MODAL-a -->
         <div class="modal" id="sartu" hidden>
             <!-- Ixteko botoia -->
@@ -159,18 +194,19 @@
                 </form>
             </div>
         </div>
-        <footer>
-            <div class="footerP1">
-                <img  src="Media/Footer/instagra.png">
-                <a>@LaCuartaPuerta</a>      
-                <img  src="Media/Footer/twitter-logo-6.png">
-                <a>@LaCuartaPuerta</a>        
-                <img src="Media/Footer/gmail.png">
-                <a>LaCuartaPuerta@gmail.com</a>
-            </div>
-            <div class="footerP2">
-                <a>@Talde5</a>
-            </div>
-        </footer>
-    </body>
+    </div>
+    <footer>
+        <div class="footerP1">
+            <img  src="Media/Footer/instagra.png">
+            <a>@LaCuartaPuerta</a>      
+            <img  src="Media/Footer/twitter-logo-6.png">
+            <a>@LaCuartaPuerta</a>        
+            <img src="Media/Footer/gmail.png">
+            <a>LaCuartaPuerta@gmail.com</a>
+        </div>
+        <div class="footerP2">
+            <a>@Talde5</a>
+        </div>
+    </footer>
+</body>
 </html>
