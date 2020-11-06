@@ -10,8 +10,8 @@
             while ($fila = $miConsulta->fetch(PDO::FETCH_ASSOC)){
                 //urtea 
                 $urtea=$fila['Urtea'];
-                    echo '   
-                        &ensp;&ensp;&ensp;<option id="'.$fila['Urtea'].'" value="'.$urtea.'"></option>
+                    echo '
+                        <option value="'.$urtea.'">'.$urtea.'</option>
                         ';
             }
 

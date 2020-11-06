@@ -10,7 +10,6 @@
             while ($fila = $miConsulta->fetch(PDO::FETCH_ASSOC)){
                 //Generoa 
                 $generoa=$fila['Generoa'];
-                $cont = 0;
 
                     echo '   
                         &ensp;&ensp;&ensp;<input type="checkbox" name="generoa[]" id="'.$fila['Generoa'].'" value="'.$generoa.'">
