@@ -1,5 +1,4 @@
 <?php
-
 try{
     /* Asteko filmaren trailerraren datua aterako dugu */
    
@@ -11,8 +10,8 @@ try{
         /* Trailerra */
         $trailer=$comentario->trailer;
     }
+    echo $trailer;
 }
-
 }catch( PDOException $Exception ) {
 // PHP Fatal Error. Second Argument Has To Be An Integer, But PDOException::getCode Returns A
 // String.
