@@ -12,10 +12,11 @@ function erabiltzaileKonp() {
          /* Barruko karaktereak letrak edo   zenbakiak diren begiratuko dugu */
             if(erab.match(/[a-zA-Z0-9]+$/g)){
                    /* dena ondo badago, konprobatuko dugu datu basean ez dagoela izen hori iada erregistratuta */
-                    
-                        document.getElementById('erabiltzailea').style.borderColor='green';
+                        document.getElementById('erabiltzailea').style.border='3px solid green';
+                        document.getElementById('erabiltzailea').style.borderRadius='3px';
+                        
                         erregistratu();
-                        return false;
+                        return true;
                     
                 }else{ 
                    /* ez badago ondo... */
@@ -42,18 +43,22 @@ function pasahitzaKonp(){
         if ( password.match(/[A-Z]/) ) {
             //validar numero
             if ( password.match(/\d/) ) {
-                document.getElementById('password1').style.borderColor='green';
+                document.getElementById('password1').style.border='3px solid green';
+                document.getElementById('password1').style.borderRadius='3px';
                 return true;
             }else {
-                document.getElementById('password1').style.borderColor='red';
+                document.getElementById('password1').style.border='3px solid red';
+                document.getElementById('password1').style.borderRadius='3px';
                 return false;
             }
         }else {
-            document.getElementById('password1').style.borderColor='red';
+            document.getElementById('password1').style.border='3px solid red';
+                document.getElementById('password1').style.borderRadius='3px';
             return false;
         }
     }else{
-        document.getElementById('password1').style.borderColor='red';
+        document.getElementById('password1').style.border='3px solid red';
+                document.getElementById('password1').style.borderRadius='3px';
         return false;
     }
 }
@@ -63,10 +68,12 @@ function pasahitzakBerdin() {
     var password1 = document.getElementById('password1').value;
     var password2 = document.getElementById('password2').value;
     if(password1===password2){
-        document.getElementById('password2').style.borderColor='green';
+        document.getElementById('password2').style.border='3px solid green';
+        document.getElementById('password2').style.borderRadius='3px';
         return true;
     }else{
-        document.getElementById('password2').style.borderColor='red';
+        document.getElementById('password2').style.border='3px solid red';
+                document.getElementById('password2').style.borderRadius='3px';
         return false;
     }
 
@@ -78,10 +85,12 @@ function pasahitzakBerdin() {
     var email=document.getElementById('korreoa').value;
     var patron=/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
     if (email.match(patron)){
-        document.getElementById('korreoa').style.borderColor='green';
+        document.getElementById('korreoa').style.border='3px solid green';
+        document.getElementById('korreoa').style.borderRadius='3px';
         return true;
     }else{
-        document.getElementById('korreoa').style.borderColor='red';
+        document.getElementById('korreoa').style.border='3px solid red';
+                document.getElementById('korreoa').style.borderRadius='3px';
         return false;
     }
     
@@ -96,8 +105,10 @@ function pasahitzakBerdin() {
             var pas1= pasahitzaKonp();
             var pas2=pasahitzakBerdin();
             var korr=korreoaOndo();
+            console.log(erab);
+
             /* Atal guztiak beteta badaude... */
-            if(erab==true && pas1==true&& pas2==true && korr==true){
+            if(erab==true && pas1==true && pas2==true && korr==true){
                         /* Datuak bidaltzeko prest dagoela esango dugu, erregistro botoia desblokeatuko da */
                         console.log('entra');
                         $('#register').prop('disabled', false);
