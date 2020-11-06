@@ -64,7 +64,7 @@
              if($igual==true){
                  echo('bienvenido usuario');
              }else{
-                echo('np hay ningun usuario');
+                echo('no hay ningun usuario');
              }
 
         }

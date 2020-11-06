@@ -25,6 +25,9 @@
     <!-- Orriaren iconoa eta tituloa -->
     <link rel="icon" type="image/png" href="Media/fav-icon1.png">
     <title>La Cuarta Puerta</title>
+        <!-- Loginaren css a -->
+        <link rel="stylesheet" href="CSS/LogInArea.css">
+    <script src="JS/erregistratu.js"></script>
 </head>
 <body>
     <div class="content">
@@ -34,7 +37,7 @@
                 <!-- Nabigatzailea, bakoitzak beraren orria kargatuko du -->
             <div class="topnav" id="myTopnav">
                 <a href="index.php" >HASIERA</a>
-                <a href="#news">ASTEKO FILMA</a>
+                <a href="astekoFilma.php">ASTEKO FILMA</a>
                 <a href="+Filma.php">+ FILMA</a>
                 <a href="bazkideArea.php" class="active">BAZKIDE AREA</a>
                 <a class="LoginBoton" href="#home" onclick="document.getElementById('izenaEman').style.display='block'"><i class="fa fa-fw fa-user"></i> LOGIN</a>
@@ -105,69 +108,103 @@
     </div>
     <!-- Izena emateko MODAL-a -->
     <div class="modal" id="izenaEman"> 
-        <div class="row">
             <!-- Ixteko botoia -->
             <span style="cursor: pointer;" onclick="document.getElementById('izenaEman').style.display='none'" class="close-button" title="Close Modal">&times;</span>
-            <!-- Kolumna 1 -->
-            <div class="column1">
-                <h3>Bazkide izatearen abantailak</h3>
-                <p>
-                    &nbsp; "La cuarta Pared" familian parte hartzen baduzu abantaila pilarekin topatuko zara! Haien artean: 
-                    <ul>
-                        <li type="square">Hurrengo asteko pelikula zein izango den aurrerapena izango duzu.</li>
-                        <li type="square">Pelikuletan komentatu ahalko duzu.</li>
-                        <li type="square">Pelikulen kuriositate izkutuak erakutsiko dizkizugu.</li>
-                        <li type="square">Beste bazkide batzuekin "Asteko galderan" parte hartu ahalko duzu eta gure ranking-ean sartu!</li>
-                    </ul>    
-                </p>
+            <!-- Bazkide egiteko atalaren kontenidoa -->
+            <div class="modal-container"><!--------------------------------------------------------------------------------->
+                <!-- Kolumna 1 bazkidearen informazioa -->
+                <div class="column1">
+                    <h3>Bazkide izatearen abantailak</h3>
+                    <p>
+                        "La cuarta Pared" familian parte hartzen baduzu abantaila pilarekin topatuko zara! Haien artean: 
+                        <ul>
+                            <li type="square">Hurrengo asteko pelikula zein izango den aurrerapena izango duzu.</li>
+                            <li type="square">Pelikuletan komentatu ahalko duzu.</li>
+                            <li type="square">Pelikulen kuriositate izkutuak erakutsiko dizkizugu.</li>
+                            <li type="square">Beste bazkide batzuekin "Asteko galderan" parte hartu ahalko duzu eta gure ranking-ean sartu!</li>
+                        </ul>    
+                    </p>
+                </div>
+                <!-- Kolumna 2 datak sartzeko atala -->
+                            
+                <form target="frame1" method='post'>
+                    <div class="column2">
+                            <!-- Izen emateko datuak sartu -->
+                            <!-- Izena -->
+                            <div class='erabIzena'>
+                                <input type="text" name="erabiltzailea" id="erabiltzailea" oninput='erabiltzaileKonp()' oninput='denaOndo()' placeholder="Erabiltzaile izena *" required>
+                                <!-- Baldintzak erabiltzaile izenarekiko (hover batean) -->
+                                <div class="hoverErab">
+                                    <img class="info" src='media/informacion.png'><br>
+                                    <span class="condicionesErab">
+                                        <a>Gutxieneko kondizioak:</a>
+                                        <ul>
+                                            <li><a><img src='Media/candadoCondiciones.png' width='15px'>5 Karaktere</a></li>
+                                            <li><a><img src='Media/candadoCondiciones.png' width='15px'>Soilik zenbakiak eta letrak</a></li>
+                                        </ul></span>
+                                    
+                                </div>
+                            </div>
+                            <!-- Pasahitza -->
+                            <div class='pswd1'>
+                                <input type="password" id="password1" name="password1" oninput='pasahitzaKonp()'oninput='denaOndo()' placeholder="Pasahitza *" required>
+                                <!-- Baldintzak pasahitzari dagokiones (hover batean) -->
+                                <div class="hoverContra">
+                                    <img class="info" src='media/informacion.png'><br>
+                                    <span class="condicionesContra">
+                                        <a>Gutxieneko kondizioak:</a>
+                                        <ul>
+                                            <li><a><img src='Media/candadoCondiciones.png' width='15px'>8 Karaktere</a></li>
+                                            <li><a><img src='Media/candadoCondiciones.png' width='15px'>Zenbaki bat</a></li>
+                                            <li><a><img src='Media/candadoCondiciones.png' width='15px'>Letra larri bat</a></li>
+                                        </ul></span>
+                                    
+                                </div>
+                            </div>
+                            
+                        <!-- Pasahitza konfirmatu -->
+                        <input type="password" name="password2" id='password2' placeholder="Pasahitza konfirmatu"  oninput='pasahitzakBerdin()' oninput='denaOndo()' required><br>
+                        <!-- Korreoa -->
+                        <input type="email" id='korreoa' name="korreoa" placeholder="Posta elektronikoa jarri" oninput='korreoaOndo()' oninput='denaOndo()' required ><br>
+                        <!-- Termino legalak onartu-->
+                        <input type="checkbox" id="terminoLegalak" name="terminoLegalak" value="Boat" onclick='denaOndo()'>
+                        <label for="terminoLegalak">Termino legalak onartzen ditut.</label><br>
+                        <!-- Izena eman -->
+                        <input type="submit" id='register'name="btn1" value="Register" onclick="erregistratu()" disabled >
+                        <!-- Bazkide naiz botoia - Sartzeko modal-a erakutsi -->
+                        <button onclick="if(lafuncionDeOhiane == true){muestraLaOtraVentana}else{muestraLaMismaVentana} bazkideaSartu(this.id)" id="bazkideNaiz">Bazkidea naiz dagoeneko</button>
+                    </div> 
+                </form>
             </div>
-            <!-- Kolumna 2 -->
-            <div class="column2">
-            <!-- Izen emateko datuak sartu -->
-                <!-- Izena -->
-                <input type="text" name="erabiltzailea" placeholder="Erabiltzaile izena *" required><br>
-                <!-- Pasahitza -->
-                <input type="password" name="password1" placeholder="Pasahitza *" required><br>
-                <!-- Pasahitza konfirmatu -->
-                <input type="password" name="password2" placeholder="Pasahitza konfirmatu" required><br>
-                <!-- Korreoa -->
-                <input type="text" name="korreoa" placeholder="Posta elektronikoa jarri" required><br><br>
-                <!-- Termino legalak onartu-->
-                <input type="checkbox" id="terminoLegalak" name="terminoLegalak" value="Boat">
-                <label for="terminoLegalak">Termino legalak onartzen ditut.</label><br><br>
-                <!-- Izena eman -->
-                <input type="submit" value="Register">
-            <!-- Bazkide naiz botoia - Sartzeko modal-a erakutsi -->
-            <button onclick="bazkideaSartu(this.id)" id="bazkideNaiz">Bazkidea naiz dagoeneko</button>
-            </div>
-        </div>
-    </div>
-    <!-- Sartu MODAL-a -->
-    <div class="modal" id="sartu" hidden>
-        <div class="row">
+        </div> 
+       
+        <!-- Sartu MODAL-a -->
+        <div class="modal" id="sartu" hidden>
             <!-- Ixteko botoia -->
-            <span style="cursor: pointer;" onclick="document.getElementById('sartu').style.display='none'" class="close-button" title="Close Modal">&times;</span>
-            <!-- Kolumna 1 -->
-            <div class="column0">
-                <!-- Hemen logoa txertatu behar da -->
-                <img class="logo" src="Media/logo-bien-negro.png" alt="Au revoir Shoshanna" style="width:100%;">
-            </div>
-            
-            <!-- Kolumna 2 -->
-            <div class="column3">
-                <!-- Izen emateko datuak sartu -->
-                    <!-- Izena -->
-                    <input type="text" name="erabiltzailea" placeholder="Erabiltzaile izena *" required><br>
-                    <!-- Pasahitza -->
-                    <input type="password" name="password1" placeholder="Pasahitza *" required><br>
-                    <!-- Sartu -->
-                    <input type="submit" value="logIn">
-                    <button onclick="bazkideaSartu(this.id)" id="erregistratuNahi">Ez naiz bazkide, izena eman</button>
-                    
+                <span style="cursor: pointer;" onclick="document.getElementById('sartu').style.display='none'" class="close-button" title="Close Modal">&times;</span>
+            <div class="modal-container2">
+                <!-- Kolumna 1 -->
+                <div class="column3">
+                    <!-- Hemen logoa txertatu behar da -->
+                    <img class="logo" src="Media/logo-bien-negro.png" alt="Au revoir Shoshanna" />
+                </div>
+                <!-- Kolumna 2 -->
+                <form target="frame2" method='post'>
+                    <div class="column4">  
+                        <!-- Izen emateko datuak sartu -->
+                        <a>Saioa asi:</a><br>
+                        <!-- Izena -->
+                        <input type="text" name="erabiltzailea" placeholder="Erabiltzaile izena *" required><br>
+                        <!-- Pasahitza -->
+                        <input type="password" name="password1" placeholder="Pasahitza *" required><br>
+                        <!-- Sartu -->
+                        <input type="submit" value="logIn" name="btn2"><br>
+                        <button onclick="bazkideaSartu(this.id)" id="erregistratuNahi">Ez naiz bazkide, izena eman</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
-</div>
     <footer>
         <div class="footerP1">
             <img  src="Media/Footer/instagra.png">
