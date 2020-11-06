@@ -189,97 +189,6 @@ width: 200px;
 #commentform h3{
     font-size: 25px;
 }
-/* LOGIN ETA REGISTER */
-.column1 {
-    grid-area: 'columna1';
-    float: left;
-    margin: auto;
-    padding: 20px;
-    margin-top: 30px;
-    max-width: 50%; 
-    max-height: auto;
-    margin-left: 5%;
-    background-color: white;
-    opacity: 0.95;
-}
-.column2 {
-    grid-area: 'columna2';
-    float: right;
-    margin: auto;
-    padding: 20px;
-    margin-top: 30px;
-    max-width: 40%; 
-    max-height: 80%;
-    margin-right: 5%;
-    background-color: white;
-    opacity: 0.95;
-}
-.column0 {
-    grid-area: 'columna1';
-    float: left;
-    margin: auto;
-    padding: 20px;
-    margin-top: 30px;
-    max-width: 50%; 
-    max-height: auto;
-    margin-left: 5%;
-    opacity: 0.95;
-}
-.column3 {
-    grid-area: 'columna2';
-    float: right;
-    margin: auto;
-    padding: 20px;
-    margin-top: 18%;
-    max-width: 40%; 
-    max-height: 80%;
-    margin-right: 5%;
-    background-color: white;
-    opacity: 0.95;
-}
-.modal input {
-    margin-top: 5%;
-}
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-.modal {
-    position: absolute;
-    margin: 2.5vh auto;
-    background-color: #e8eddf; 
-    opacity: 0.95;
-    width: 50%; 
-    height: 65%;   
-    padding: 50px;
-    overflow: hidden;
-    position: fixed;
-    display: inline-block;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-.modal-body {
-    max-height: calc(100vh - 143px);
-    overflow-y: auto; 
-}
-@media (max-width: 1250px) {
-    .modal {
-    width: 600px;
-    }
-    .row {
-    background-color: white;
-    }
-}
-/* IXTEKO BOTOIAREN ESTILOAK */
-.close-button{
-    position: absolute;
-    top: 0;
-    right: 10px;
-    font-size: 50px;
-}
-.close-button:hover {
-    color: red;
-}
 /* Footer de la pagina */
 .content{
 /*da al contenido "altura mínima" para que el footer nunca suba más de ahí, pero sí para que baje si aumenta el contenido*/
@@ -318,5 +227,3 @@ footer{
     color: #f5cb5c;
     padding: 0.5%;
 }
-
-/*COMENTARIOS*/

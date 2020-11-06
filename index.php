@@ -131,7 +131,7 @@
                 </form>
             </div>
         </div> 
-       
+
         <!-- Sartu MODAL-a -->
         <div class="modal" id="sartu" hidden>
             <!-- Ixteko botoia -->
@@ -158,7 +158,6 @@
                 </form>
             </div>
         </div>
-    </div>
         <footer>
             <div class="footerP1">
                 <img  src="Media/Footer/instagra.png">

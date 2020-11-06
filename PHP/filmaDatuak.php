@@ -34,9 +34,6 @@
             $Trailer=$peli->Trailer;
         }
     }
-
-
-
     }catch( PDOException $Exception ) {
         // PHP Fatal Error. Second Argument Has To Be An Integer, But PDOException::getCode Returns A
         // String.
