@@ -52,7 +52,9 @@
                         <?php include ('PHP/indexDatosPelis.php');?> 
                     </div>
                     <div class="trailer">
-                        <div class="trailerBox" id='trailerBox'onmouseover="botoiHandiak(this.id)" onmouseout="botoiTxikiak(this.id)"><iframe width="640" height="360" src="https://www.youtube.com/embed/vayksn4Y93A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                        
+                        <div class="trailerBox" id="trailerBox "onmouseover="botoiHandiak(this.id)" onmouseout="botoiTxikiak(this.id)"><iframe width="640" height="360" src=<?php $trailer ?> frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                       
                     </div>
                     <div class="sobreNosotros">
                         <h1>GURI BURUZ</h1><br>
