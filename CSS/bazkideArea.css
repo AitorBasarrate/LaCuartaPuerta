@@ -24,7 +24,7 @@ section{
         padding: 3%;
         grid-column: 1 / span 3;
         grid-row: 1;
-       
+
     }
     /* Bazkide datuak ikusteko GRID posizioaren atala */
     .bazkideDatuak{
@@ -33,7 +33,7 @@ section{
         grid-column: 4;
         grid-row: 1;
         min-width: 300px;
-     
+
     }
     /* Azertijoaren GRID posizioaren lekua */
     .igarkizunMisteriotsua{

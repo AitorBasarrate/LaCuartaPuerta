@@ -2,28 +2,29 @@
 
 try{
     /* Filmen datu guztiak aterako ditu */
-    $arrayArgazkiak=array();
+    $arrayIdFilmak=array();
     $arrayIzenburuak=array();
-    $miConsulta = $miPDO->prepare("SELECT argazkia,Izenburuak FROM filmak order by idPelikulak desc limit 3  OFFSET 1");
+    $arrayArgazkiak=array();
+    $miConsulta = $miPDO->prepare("SELECT idPelikulak,argazkia,Izenburuak FROM filmak order by idPelikulak desc limit 3  OFFSET 1");
 
     if ($miConsulta->execute()) {
     $fila = $miConsulta->fetchALl(PDO::FETCH_OBJ);
     foreach ($fila as $comentario) {
+        $idFilma=$comentario->idPelikulak;
+        //Argazkia 
         $argazkia=$comentario->argazkia;
-        //Iruzkina 
+        //Izenburua 
         $izenburua=$comentario->Izenburuak;
+        array_push($arrayIdFilmak,$idFilma);
         array_push($arrayArgazkiak,$argazkia);
         array_push($arrayIzenburuak,$izenburua);
 
-
-      
     }
     echo ' 
-    
-    <div class="item1" id="item1" onmouseover="botoiHandiak(this.id)" onmouseout="botoiTxikiak(this.id)"><img  src="data:image/jpeg;base64,'.base64_encode( $arrayArgazkiak[2]).'"><p>'.$arrayIzenburuak[2].'</p></div>
-    <div class="item2"id="item2"onmouseover="botoiHandiak(this.id)" onmouseout="botoiTxikiak(this.id)"><img src="data:image/jpeg;base64,'.base64_encode( $arrayArgazkiak[1] ).'"><p>'.$arrayIzenburuak[1].'</p></div>
-    <div class="item3"id="item3"onmouseover="botoiHandiak(this.id)" onmouseout="botoiTxikiak(this.id)"><img src="data:image/jpeg;base64,'.base64_encode( $arrayArgazkiak[0] ).'"><p>'.$arrayIzenburuak[0].'</p></div>
-    ';
+            <div class="item1" id="item1" onmouseover="botoiHandiak(this.id)" onmouseout="botoiTxikiak(this.id)"><a href="filmaFitxa.php?id='.$arrayIdFilmak[0].'"><img  src="data:image/jpeg;base64,'.base64_encode( $arrayArgazkiak[0]).'"><p>'.$arrayIzenburuak[0].'</p></a></div>
+            <div class="item2"id="item2"onmouseover="botoiHandiak(this.id)" onmouseout="botoiTxikiak(this.id)"><a href="filmaFitxa.php?id='.$arrayIdFilmak[1].'"><img src="data:image/jpeg;base64,'.base64_encode( $arrayArgazkiak[1]).'"><p>'.$arrayIzenburuak[1].'</p></a></div>
+            <div class="item3"id="item3"onmouseover="botoiHandiak(this.id)" onmouseout="botoiTxikiak(this.id)"><a href="filmaFitxa.php?id='.$arrayIdFilmak[2].'"><img src="data:image/jpeg;base64,'.base64_encode( $arrayArgazkiak[2]).'"><p>'.$arrayIzenburuak[2].'</p></a></div>
+        ';
 }
 
 }catch( PDOException $Exception ) {
