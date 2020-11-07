@@ -2,16 +2,55 @@
     //Datu baseari konexioa deituko diogu 
     require_once("dbKonexioa.php");
 
+    // $sql = "SELECT * FROM filmak WHERE Izenburuak LIKE :titulo";
+    $sql = "SELECT * FROM filmak";
+    $filtroak = array();
+
+    // Filtroren bat beteta badago SQL- kontsultari WHERE klausula gehituko da
+    if(($_POST && !empty($_POST['value'])) || ($_POST && !empty($_POST['balorazioa'])) || ($_POST && !empty($_POST['urtea'])) || ($_POST && !empty($_POST['generoa']))) {
+        $sql .= " WHERE ";
+    }
+
+    // Filtroen array-a bete beharrezko AND-ak jartzeko
+    if(($_POST && !empty($_POST['value']))) {
+        $titulua = " Izenburuak LIKE $_POST['value'] ";
+        $filtroak = array_push($titulua);
+    }
+    if(($_POST && !empty($_POST['balorazioa']))) {
+        $balorazioa = " Balorazioa = $_POST['value'] ";
+        $filtroak = array_push($balorazioa);
+    }
+    if(($_POST && !empty($_POST['urtea']))) {
+        $urtea = " Urtea = $_POST['value'] ";
+        $filtroak = array_push($urtea);
+    }
+    if(($_POST && !empty($_POST['generoa']))) {
+        $generoa = " Generoa LIKE $_POST['value'] ";
+        $filtroak = array_push($generoa);
+    }
+
+
+    for ($i=0; $i<$filtroak[$i]; $i++) {
+        if ($i = 0){
+            //ez du WHERE-a detektatzen??
+            $sql .= " WHERE " . $filtroak[$i];
+        } else {
+            $sql .= " AND " . $filtroak[$i];
+        }
+    } 
+
     // bilaketa.js-tik jasotako bilaketa filtroak jaso 
-    if ($_POST && !empty($_POST['value']))
-    {
+    if ($_POST && !empty($_POST['value'])) {
         $response = array("status" => "" );
 
+        // $sql .= " Izenburuak LIKE :titulo ";
+        
         // Kontsulta egin jasotako parametroak WHERE-ean jarriz
-        $miConsulta = $miPDO->prepare("SELECT * FROM filmak WHERE Izenburuak LIKE :titulo");
+        $miConsulta = $miPDO->prepare( $sql );
 
         // Exekutatzen bada eta zerbait itzultzen badu
-        if ($miConsulta->execute(["titulo" => "%".$_POST['value']."%"])) {
+        // Array baten sartuta dauden POST balioen bitartez goiko kontsultaren aldagaiak beteko ditugu
+        if ($miConsulta->execute(["titulo" => "%".$_POST['value']."%", "generoa" => "%".$_POST['generoa']."%", "Urtea" => "%".$_POST['urtea']."%", "Balorazioa" => "%".$_POST['balorazioa']."%"]) {
             $response['status'] = "OK";
             $response['data'] = array();
 
@@ -42,15 +81,10 @@
 
         echo json_encode($response);
     }
+
+
+
     die();
-
-        // if titulua {
-        //     array_push("titulua="+titulua);
-        // }
-
-        // if (balorazioa) {
-        //     array_push("balorazioa="+balorazioa);
-        // }
 
         // if generoa {
 
@@ -66,26 +100,10 @@
             
         // }
 
-        // if urtea {
-        //     array_push("urtea="+urtea);
-        // }
 
         
-        // for ($i=0; $i<$filtroak[$i]; $i++) {
 
-        //     if ($i = 0){
 
-        //         //ez du WHERE-a detektatzen??
-        //         $filtroakQuery .= " WHERE " . $filtroak;
-
-        //     } else {
-
-        //         $filtroakQuery .= " AND " . $filtroak;
-
-        //     }
-        // } 
-
-        // return $bilaketaQuery . $filtroakQuery;
 
 ?>
 

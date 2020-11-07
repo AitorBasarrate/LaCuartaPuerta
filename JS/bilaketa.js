@@ -4,7 +4,7 @@ $(function() {
     // hurrengo funtzioari deitzen zaio
 
     // CSS-an bezalaxe ID-ei deitzen zaie, hauetan aldaketa bat dagoenean funtzioa exekutatu
-    $("#pelikulaIzenezBilatu", "#urtea").keyup(function (e) { 
+    $("#pelikulaIzenezBilatu").keyup(function (e) { 
         // Konstanteetan sartutakoaren balioa sartuko dira:
         // Tituluaren konstantea
         const bilaketa = $(this).val();
