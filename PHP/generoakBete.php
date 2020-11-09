@@ -12,7 +12,7 @@
                 $generoa=$fila['Generoa'];
 
                     echo '   
-                        &ensp;&ensp;&ensp;<input type="checkbox" name="generoa[]" id="'.$fila['Generoa'].'" value="'.$generoa.'">
+                        &ensp;&ensp;&ensp;<input type="checkbox" name="generoa[]" id="generoa" value="'.$generoa.'">
                         <label for="'.$generoa.'">'.$generoa.'</label><br>
                         ';
 
