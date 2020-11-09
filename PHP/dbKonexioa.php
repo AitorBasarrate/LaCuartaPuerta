@@ -7,7 +7,7 @@
         $hostDB = 'localhost';
         $nombreDB = 'lacuartapuerta';
         $usuarioDB = 'root';
-        $contrasenyaDB = '';
+        $contrasenyaDB = '1234';
         // DB KONEXIOA
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////
         try {
