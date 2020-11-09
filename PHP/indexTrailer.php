@@ -10,7 +10,16 @@ try{
         /* Trailerra */
         $trailer=$comentario->trailer;
     }
-    echo $trailer;
+    
+    $posizioa = strpos($trailer, '/', 3);
+    $ytb = "https://www.youtube.com/";
+    $embed = "embed/";
+    $autoplay= "?autoplay=1";
+
+    substr($trailer, $posizioa);
+
+    echo $ytb.$embed.$trailer.$autoplay;
+
 }
 }catch( PDOException $Exception ) {
 // PHP Fatal Error. Second Argument Has To Be An Integer, But PDOException::getCode Returns A

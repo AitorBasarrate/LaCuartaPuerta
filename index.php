@@ -5,6 +5,8 @@
         <?php
             include 'PHP/dbKonexioa.php';
             include 'PHP/erregistroaEgin.php';
+            // Set a cross-site cookie for third-party contexts
+            header('Set-Cookie: HttpOnly; SameSite=None;Secure');
         ?>
         <!-- Erregistro atala -->
         <script src="JS/erregistratu.js"></script>
@@ -26,6 +28,7 @@
         <!-- Orriaren iconoa eta tituloa -->
         <link rel="icon" type="image/png" href="Media/fav-icon1.png">
         <title>La Cuarta Puerta</title>
+        
     </head>
     <body>
         <div class="content">
@@ -53,8 +56,12 @@
                     </div>
                     <div class="trailer">
                    
-                        <div class="trailerBox" id="trailerBox "onmouseover="botoiHandiak(this.id)" onmouseout="botoiTxikiak(this.id)"><?php include ('PHP/indexTrailer.php');?></div>
-                       
+                        <!-- <div class="trailerBox" id="trailerBox "onmouseover="botoiHandiak(this.id)" onmouseout="botoiTxikiak(this.id)"><?php include ('PHP/indexTrailer.php');?></div> -->
+                        <div class="trailerBox" id="trailerBox "onmouseover="botoiHandiak(this.id)" onmouseout="botoiTxikiak(this.id)">
+                        <iframe allow='autoplay' src=<?php include ('PHP/indexTrailer.php') ?>>
+                        </iframe>
+                        </div>
+
                     </div>
                     <div class="sobreNosotros">
                         <h1>GURI BURUZ</h1><br>

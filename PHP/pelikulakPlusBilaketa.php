@@ -13,19 +13,19 @@
 
     // Filtroen array-a bete beharrezko AND-ak jartzeko
     if(($_POST && !empty($_POST['value']))) {
-        $titulua = " Izenburuak LIKE $_POST['value'] ";
+        $titulua = " Izenburuak LIKE {$_POST['value']} ";
         $filtroak = array_push($titulua);
     }
     if(($_POST && !empty($_POST['balorazioa']))) {
-        $balorazioa = " Balorazioa = $_POST['value'] ";
+        $balorazioa = " Balorazioa = {$_POST['value']} ";
         $filtroak = array_push($balorazioa);
     }
     if(($_POST && !empty($_POST['urtea']))) {
-        $urtea = " Urtea = $_POST['value'] ";
+        $urtea = " Urtea = {$_POST['value']} ";
         $filtroak = array_push($urtea);
     }
     if(($_POST && !empty($_POST['generoa']))) {
-        $generoa = " Generoa LIKE $_POST['value'] ";
+        $generoa = " Generoa LIKE {$_POST['value']} ";
         $filtroak = array_push($generoa);
     }
 
@@ -51,8 +51,8 @@
         // Exekutatzen bada eta zerbait itzultzen badu
         // Array baten sartuta dauden POST balioen bitartez goiko kontsultaren aldagaiak beteko ditugu
         if ($miConsulta->execute(["titulo" => "%".$_POST['value']."%", "generoa" => "%".$_POST['generoa']."%", "Urtea" => "%".$_POST['urtea']."%", "Balorazioa" => "%".$_POST['balorazioa']."%"]) {
-            $response['status'] = "OK";
-            $response['data'] = array();
+            // $response['status'] = "OK";
+            // $response['data'] = array();
 
             // Pelikularen datuak hartu, div indibidual bat sortuko du pelikula bakoitzerako
             while ($fila = $miConsulta->fetch(PDO::FETCH_ASSOC)){
