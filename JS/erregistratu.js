@@ -15,7 +15,6 @@ function erabiltzaileKonp() {
                         document.getElementById('erabiltzailea').style.border='3px solid green';
                         document.getElementById('erabiltzailea').style.borderRadius='3px';
                         
-                        erregistratu();
                         return true;
                     
                 }else{ 
@@ -149,8 +148,8 @@ function erregistratu(){
     });
     if (typeof(Storage) !== 'undefined') {
         // Código cuando Storage es compatible
-       
-       sessionStorage.setItem(izena,pasahitza);
+        
+        sessionStorage.setItem(izena,pasahitza);
     } else {
        // En el caso en el que haya 
     }
