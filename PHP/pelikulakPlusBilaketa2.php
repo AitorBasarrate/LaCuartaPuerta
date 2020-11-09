@@ -28,39 +28,70 @@ if((isset($_POST['pelikulaIzenezBilatu'])) || (isset($_POST['star'])) || (isset(
                 } 
                 array_push($filtroak,$str);
             }
-            else{
-                $var= " Generoa = {$generoa[0]} ";
-                array_push($filtroak,$var);
-            } 
-        
-            //$filtroak = array_push($urtea);
-        }  
+        else{
+            $var= " Generoa = {$generoa[0]} ";
+            array_push($filtroak,$var);
+        } 
+    }  
 
-    if((isset($_POST['urtea']))) {
+     
+    if(isset($_POST['urtea'])) {
         $año=$_POST['urtea'];
-        $var = " Urtea = {$año} ";
-        $filtroak =array_push($filtroak,$var);
-        
-        echo($filtroak[0]); 
+        print_r($año);
+        print_r($filtroak);
+        $var1 = " Urtea = {$año} ";
+       array_push($filtroak,$var1);
+       
     }
     //filtroak irakurtzeko
+    
     if(isset($filtroak)){
-        /*  for ($i=0; $i<count($filtroak); $i++) {
-            while($i<2){
                 $sql= $filtroak[0];
                 $sql.= $filtroak[1];
-            }
-
+         for ($i=2; $i<count($filtroak); $i++) {
+            
                 $sql.= " AND " . $filtroak[$i];
                 
-            echo($sql);  } */
-   
-    }else{
-    $sql = "SELECT * FROM filmak ";
+            }
+      echo($sql);  
+      hacerSelect($sql);
     }
-   
-    
+
+}else{
+    $sql = "SELECT * FROM filmak ";
+    hacerSelect($sql);
+    }
+
+
+function hacerSelect($obj){
+/*     include 'PHP/dbKonexioa.php';
+    printf($obj);
+    try{
         
+        // Pelikulen argazkia eta izena aterako dugu 
+        $miConsulta = $miPDO->prepare($obj);
+        $miConsulta->execute(); 
+
+        while ($fila = $miConsulta->fetch(PDO::FETCH_ASSOC)){
+            //Izenburua 
+            $idFilma=$fila['idPelikulak'];  
+            $izenburua=$fila['Izenburuak'];
+            //Argazkiaren datua
+            $argazkia=$fila['Argazkia'];
+                echo ' 
+                    <div id=peliku>
+                        <a href="filmaFitxa.php?id='.$idFilma.'">
+                            <img width=20% height=20% src="data:image/jpeg;base64,'.base64_encode($argazkia).'"/>
+                            <label for="'.$izenburua.'" >'.$izenburua.'</label>
+                        </a>
+                    </div>
+                ';  
+        }  
+    }catch( PDOException $Exception ) {
+        // PHP Fatal Error. Second Argument Has To Be An Integer, But PDOException::getCode Returns A
+        // String.
+        throw new MyDatabaseException( $Exception->getMessage( ) , $Exception->getCode( ) );
+    }  */
 }
 
 ?>

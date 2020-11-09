@@ -103,7 +103,7 @@
             </form>
             <!-- Pelikulen lista -->
                 <div id="pelikula-lista" class="flex-container">
-                    <?php include 'PHP/pelikulakPlusBete.php'; ?>
+                    <?php include 'PHP/pelikulakPlusBilaketa2.php'; ?>
                     <script type="text/javascript">var izenburua = "<?= $izenburua ?>";</script>
                     <!-- <script type="text/javascript" src="js/filmaIzenak.js"></script> -->
                 </div>
