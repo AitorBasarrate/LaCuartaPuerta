@@ -5,6 +5,7 @@
         <!-- Hemen datu basearekiko konexioa egingo da eta behar dituen php-ei detiuko dio -->
             <?php
                 include 'PHP/dbKonexioa.php';
+                include 'PHP/pelikulakPlusBilaketa2.php';
             ?>
         <!-- Hasiera oriko estilua -->
         <meta charset="UTF-8">
@@ -14,6 +15,7 @@
         <script src="JS/HamburguerJS.js"></script>
         <script src="JS/index.js"></script>
         <script src="JS/bilaketa.js"></script>
+        
         <!-- Font family estiloa -->
         <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
         <!-- CSS stilo orrialdea -->
@@ -54,13 +56,14 @@
                 <script src="JS/HamburguerJS.js"></script>
             </header>
             <div class="sidebar">
-            
-                <!-- BiltuBox-a -->
+            <!-- FILTROEN ATALA -->
+                <!-- BilatuBox-a -->
+            <form method="POST" action="">
                 <div id="bilatuBox">
                     <h2>Bilaketa filtroak</h2>
                     <hr class="guion-separador">
                     <h3>Filmen Izenburua:</h3>
-                    <input type="text" id="pelikulaIzenezBilatu" placeholder="Pelikula bilatu..." title="pelikulaIzenezBilatu" maxlength="50" size="35"> 
+                    <input type="text" id="pelikulaIzenezBilatu" name="pelikulaIzenezBilatu" placeholder="Pelikula bilatu..." title="pelikulaIzenezBilatu" maxlength="50" size="35"> 
                 </div>
                 <hr class="guion-separador">
                 <!-- Balorazioa -->                
@@ -87,14 +90,17 @@
                     <?php include ('PHP/generoakBete.php');?> 
                 </div>   
                 <hr class="guion-separador">
+                <!-- Urteak -->
                 <div id="anyos">
-                <h3>Urtea:</h3>
-                <select id="urtea"> 
-                     <!--Urteak beteko dituen PHP-ari deia egin-->
-                    <?php include ('PHP/urteakBete.php');?>
-                </select>
+                    <h3>Urtea:</h3>
+                    <select id="urtea" name="urtea"> 
+                        <!--Urteak beteko dituen PHP-ari deia egin-->
+                        <?php include ('PHP/urteakBete.php');?>
+                    </select>
+                    </div>
                 </div>
-            </div>
+                
+            </form>
             <!-- Pelikulen lista -->
                 <div id="pelikula-lista" class="flex-container">
                     <?php include 'PHP/pelikulakPlusBete.php'; ?>

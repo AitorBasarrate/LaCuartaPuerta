@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Datu basera konektatzeko php-a
  */
@@ -8,7 +7,7 @@
         $hostDB = 'localhost';
         $nombreDB = 'lacuartapuerta';
         $usuarioDB = 'root';
-        $contrasenyaDB = '1234';
+        $contrasenyaDB = '';
         // DB KONEXIOA
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////
         try {
@@ -19,9 +18,6 @@
         } catch( PDOException $Exception ) {
             // PHP Fatal Error. Second Argument Has To Be An Integer, But PDOException::getCode Returns A
             // String.
-                printf('error de conexion');
+            printf('error de conexion');
         }
-
-
-
 ?>

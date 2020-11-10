@@ -55,6 +55,7 @@
                         <?php include ('PHP/indexDatosPelis.php');?> 
                     </div>
                     <div class="trailer">
+<<<<<<< HEAD
                    
                         <!-- <div class="trailerBox" id="trailerBox "onmouseover="botoiHandiak(this.id)" onmouseout="botoiTxikiak(this.id)"><?php include ('PHP/indexTrailer.php');?></div> -->
                         <div class="trailerBox" id="trailerBox "onmouseover="botoiHandiak(this.id)" onmouseout="botoiTxikiak(this.id)">
@@ -62,6 +63,11 @@
                         </iframe>
                         </div>
 
+=======
+                    
+                        <div class="trailerBox" id="trailerBox "onmouseover="botoiHandiak(this.id)" onmouseout="botoiTxikiak(this.id)"><?php include ('PHP/indexTrailer.php');?></div>
+                    
+>>>>>>> 61226a7bb6f81c78bcf1eceaf71a1bc3e6c26eed
                     </div>
                     <div class="sobreNosotros">
                         <h1>GURI BURUZ</h1><br>
@@ -134,13 +140,20 @@
                         <input type="checkbox" id="terminoLegalak" name="terminoLegalak" value="Boat" onclick='denaOndo()'>
                         <label for="terminoLegalak">Termino legalak onartzen ditut.</label><br>
                         <!-- Izena eman -->
-                        <input type="submit" id='register'name="btn1" value="Register" onclick="erregistratu()" disabled >
+                        <input type="submit" id='register'name="btn1" value="Register" onclick="var erantzuna = <?php $ret = erregistroaEgin(); echo json_encode($ret);?>;
+                            if(erantzuna == true){
+                                bazkideaSartu('bazkideNaiz');
+                                console.log('churrula');
+                            }else('erregistratuNahi')
+                                bazkideaSartu('erregistratuNahi');
+                                console.log('no churrula');
+                            ">
                         <!-- Bazkide naiz botoia - Sartzeko modal-a erakutsi -->
-                        <button onclick="if(lafuncionDeOhiane == true){muestraLaOtraVentana}else{muestraLaMismaVentana} bazkideaSartu(this.id)" id="bazkideNaiz">Bazkidea naiz dagoeneko</button>
+                        <button onclick="bazkideaSartu(this.id);" id="bazkideNaiz">Bazkidea naiz dagoeneko</button>
                     </div> 
                 </form>
             </div>
-        </div> 
+        </div>
 
         <!-- Sartu MODAL-a -->
         <div class="modal" id="sartu" hidden>

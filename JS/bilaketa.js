@@ -1,16 +1,31 @@
+$("#pelikulaIzenezBilatu").click(function(){});
+$('[name="star"]').click(function(){});
+$("#generoa").change(function(){});
+$("#urtea").change(function(){});
+$('#customIDtoInputtypeFile').change(function(){});
+
 $(function() {
+    $("input:file").change(function (){
+        alert('entrajs')
+      $('form').submit();
+    });
+   });
+
+/* function llamarPhp(obj){
+    console.log('pelikulakPlusBete.php? name='+ obj);
+} */
+/* $(function() { */
 
     // Bilaketa filtroetako baten batean aldaketa bat baldin badago
     // hurrengo funtzioari deitzen zaio
 
     // CSS-an bezalaxe ID-ei deitzen zaie, hauetan aldaketa bat dagoenean funtzioa exekutatu
-    $("#pelikulaIzenezBilatu").keyup(function (e) { 
+   /*  $("#pelikulaIzenezBilatu").keyup(function (e) {  */
         // Konstanteetan sartutakoaren balioa sartuko dira:
         // Tituluaren konstantea
-        const bilaketa = $(this).val();
-
+      
         // Ajax funtzioa
-        $.ajax({
+        /* $.ajax({
 
             // Beharrezko aldagaiak betetzen ditugu
             type: "POST",
@@ -43,6 +58,6 @@ $(function() {
             error: function (error) {
                 console.log(error);
             }
-        });
-    });
-});
+        }); */
+ /*    });
+}); */
