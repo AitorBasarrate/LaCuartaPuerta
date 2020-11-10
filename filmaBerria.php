@@ -56,8 +56,10 @@
                     <textarea name="sinopsis" id="sinopsis" maxlength="250" placeholder="Filmaren Sinopsis-a"></textarea>
                 </div>
                 <div class="grid-item item2">
-                    <img width=90% src="Media/Peliculas/INCEPTION2.jpg"/><hr>
+                    <h3>Izenburua:</h3>
                     <input type="text" placeholder="Filmaren Izenburua"></input>
+                    <h3>Trailer:</h3>
+                    <input type="text" placeholder="Filmaren Trailer-a"></input>
                 </div>
                     <div class="grid-item item3" >
                         <h3>Zuzendaria:</h3>
@@ -76,6 +78,7 @@
                     <textarea name="kritika" id="kritika" maxlength="250" placeholder="Filmaren Kritika"></textarea>
                 </div>
                 <div class="grid-item item6">
+                    <br><input type="file" id="img" name="img" accept="image/*"><br><br>
                     <input type="submit" value="Filma Gorde">
                     <input type="reset" value="Datuak Ezabatu">
                 </div>
