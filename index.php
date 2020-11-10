@@ -42,7 +42,7 @@
                     <a href="bazkideArea.php">BAZKIDE AREA</a>
                     <a class="LoginBoton" href="#home" onclick="document.getElementById('izenaEman').style.display='block'"><i class="fa fa-fw fa-user"></i> LOGIN</a>
                     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                    <!-- ESTO ES LA PUTA HAMBURGUESA -->
+                    <!-- ESTO ES LA HAMBURGUESA -->
                     <i class="fa fa-bars"></i>
                     </a>
                 </div>
