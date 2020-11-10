@@ -35,7 +35,17 @@
                     $miConsulta->bindParam(4, $punt);
                 /* Ejecutamos */
                 $miConsulta->execute(); 
+                /* Creamos las cookies para despues generar el localStorage */
+                include 'PHP/cookies';
+                /* Decimos que se han generado correctamente */
                 echo'<script>alert("El usuario se ha creado correctamente")</script>';
+                /* local-storage-a sortzeko */
+                echo '<script type="text/javascript">',
+                        ' createStorage();',
+                        '</script>'
+                ;
+               
+
             }
 
         }catch( PDOException $Exception ) {
@@ -66,7 +76,6 @@
             //Koinziditzen duen a la ez begiratuko dugu
             if($erabIzena==$fila['ErabiltzaileIzena'] && $contra==$fila['Pasahitza']){
                 //Koinziditzen badu...
-               
                 $igual=true;
             }
         }
@@ -101,3 +110,11 @@
     }
 
 ?>
+<script>
+        function createStorage(){
+           console.log('entra');
+
+        };
+
+
+</script>
