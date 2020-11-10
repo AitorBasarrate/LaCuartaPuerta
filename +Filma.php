@@ -5,7 +5,6 @@
         <!-- Hemen datu basearekiko konexioa egingo da eta behar dituen php-ei detiuko dio -->
             <?php
                 include 'PHP/dbKonexioa.php';
-                include 'PHP/pelikulakPlusBilaketa2.php';
             ?>
         <!-- Hasiera oriko estilua -->
         <meta charset="UTF-8">
@@ -103,7 +102,7 @@
             </form>
             <!-- Pelikulen lista -->
                 <div id="pelikula-lista" class="flex-container">
-                    <?php include 'PHP/pelikulakPlusBilaketa2.php'; ?>
+                    <?php include  'PHP/pelikulakPlusBilaketa2.php'; ?>
                     <script type="text/javascript">var izenburua = "<?= $izenburua ?>";</script>
                     <!-- <script type="text/javascript" src="js/filmaIzenak.js"></script> -->
                 </div>

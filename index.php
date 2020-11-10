@@ -57,7 +57,7 @@
     
                         <div class="trailerBox" id="trailerBox "onmouseover="botoiHandiak(this.id)" onmouseout="botoiTxikiak(this.id)"><?php include ('PHP/indexTrailer.php');?></div>
                         </div>                    
-                                        
+                                    
                     </div>
                     <div class="sobreNosotros">
                         <h1>GURI BURUZ</h1><br>
@@ -130,20 +130,23 @@
                         <input type="checkbox" id="terminoLegalak" name="terminoLegalak" value="Boat" onclick='denaOndo()'>
                         <label for="terminoLegalak">Termino legalak onartzen ditut.</label><br>
                         <!-- Izena eman -->
-                        <input type="submit" id='register'name="btn1" value="Register" onclick="var erantzuna = <?php $ret = erregistroaEgin(); echo json_encode($ret);?>;
-                            if(erantzuna == true){
-                                bazkideaSartu('bazkideNaiz');
-                                console.log('churrula');
-                            }else('erregistratuNahi')
-                                bazkideaSartu('erregistratuNahi');
-                                console.log('no churrula');
-                            ">
+                        <input type="submit" id='register' name="btn1" value="Register" onclick="<?php erregistroa(); ?>">  
                         <!-- Bazkide naiz botoia - Sartzeko modal-a erakutsi -->
                         <button onclick="bazkideaSartu(this.id);" id="bazkideNaiz">Bazkidea naiz dagoeneko</button>
                     </div> 
                 </form>
             </div>
         </div>
+
+<!-- onclick="var erantzuna = lo de php que esta copiando en erregistroEgin.php;
+                            if(erantzuna == true){
+                                bazkideaSartu('bazkideNaiz');
+                                console.log('churrula');
+                            }else('erregistratuNahi')
+                                bazkideaSartu('erregistratuNahi');
+                                console.log('no churrula');
+                            " -->
+
 
         <!-- Sartu MODAL-a -->
         <div class="modal" id="sartu" hidden>
@@ -165,7 +168,7 @@
                         <!-- Pasahitza -->
                         <input type="password" name="password1" placeholder="Pasahitza *" required><br>
                         <!-- Sartu -->
-                        <input type="submit" value="logIn" name="btn2"><br>
+                        <input type="submit" value="Log In" name="btn2" onclick="<?php login(); ?>"><br>
                         <button onclick="bazkideaSartu(this.id)" id="erregistratuNahi">Ez naiz bazkide, izena eman</button>
                     </div>
                 </form>
