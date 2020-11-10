@@ -5,10 +5,8 @@
         <?php
             include 'PHP/dbKonexioa.php';
             include 'PHP/erregistroaEgin.php';
-            // Set a cross-site cookie for third-party contexts            
-            header('Set-Cookie: HttpOnly; SameSite=None;Secure');
-
         ?>
+
         <!-- Erregistro atala -->
         <script src="JS/erregistratu.js"></script>
         <link rel="stylesheet" href="CSS/LogInArea.css">
@@ -44,7 +42,7 @@
                     <a href="bazkideArea.php">BAZKIDE AREA</a>
                     <a class="LoginBoton" href="#home" onclick="document.getElementById('izenaEman').style.display='block'"><i class="fa fa-fw fa-user"></i> LOGIN</a>
                     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                    <!-- ESTO ES LA PUTA HAMBURGUESA -->
+                    <!-- ESTO ES LA HAMBURGUESA -->
                     <i class="fa fa-bars"></i>
                     </a>
                 </div>
@@ -142,6 +140,16 @@
                 </form>
             </div>
         </div>
+
+<!-- onclick="var erantzuna = lo de php que esta copiando en erregistroEgin.php;
+                            if(erantzuna == true){
+                                bazkideaSartu('bazkideNaiz');
+                                console.log('churrula');
+                            }else('erregistratuNahi')
+                                bazkideaSartu('erregistratuNahi');
+                                console.log('no churrula');
+                            " -->
+
 
         <!-- Sartu MODAL-a -->
         <div class="modal" id="sartu" hidden>

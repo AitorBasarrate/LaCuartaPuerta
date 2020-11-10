@@ -1,5 +1,4 @@
 <?php
-
     /* Erregistratzeko botoia klikatzean soilik saartuko da */
     if(isset($_POST['btn1'])) {
         echo('entra1');
@@ -15,6 +14,7 @@
                 if($erabIzena==$fila['ErabiltzaileIzena']){
                     //Koinziditzen badu...
                     $igual=true;
+                    echo "<script>console.log('supuestamente el usuerio ya esta registrado pero ya ves tu')</script>";
                 }
             }
             //Ez badu koinziditu... Libre dagoela esan nahi du, orduan insert egingo dugu
@@ -44,7 +44,9 @@
             throw new MyDatabaseException( $Exception->getMessage( ) , $Exception->getCode( ) );
         }
     }
-    // Lo de Aitor para mostrar el modal de registro
+
+
+
     if(isset($_POST['btn2'])) { 
         echo('pdfg');
         /* Variableak gordeko ditugu */
@@ -96,6 +98,6 @@
             }
             </style>';
         }
-
     }
+
 ?>
