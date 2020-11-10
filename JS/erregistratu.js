@@ -19,13 +19,14 @@ function erabiltzaileKonp() {
                     
                 }else{ 
                    /* ez badago ondo... */
-                    document.getElementById('erabiltzailea').style.borderColor='red';
+                   document.getElementById('erabiltzailea').style.border='3px solid red';
+                   document.getElementById('erabiltzailea').style.borderRadius='3px';
                     return false;
                 }
     }
     else{
-        document.getElementById('erabiltzailea').style.borderColor='red';
-        document.getElementById('erabiltzailea').focus();
+        document.getElementById('erabiltzailea').style.border='3px solid red';
+        document.getElementById('erabiltzailea').style.borderRadius='3px';
         return false;
     } 
 }
@@ -66,7 +67,8 @@ function pasahitzakBerdin() {
     
     var password1 = document.getElementById('password1').value;
     var password2 = document.getElementById('password2').value;
-    if(password1===password2){
+    
+    if(password1===password2 && password2!=''){
         document.getElementById('password2').style.border='3px solid green';
         document.getElementById('password2').style.borderRadius='3px';
         return true;
