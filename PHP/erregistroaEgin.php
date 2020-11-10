@@ -1,5 +1,7 @@
 <?php
-    function erregistroaEgin(){
+function erregistroa(){
+
+/* <?php $ret = erregistroaEgin(); echo json_encode($ret);?>*/
     /* Erregistratzeko botoia klikatzean soilik saartuko da */
     if(isset($_POST['btn1'])) {
         $erabIzena=$_POST['erabiltzailea'];
@@ -14,6 +16,7 @@
                 if($erabIzena==$fila['ErabiltzaileIzena']){
                     //Koinziditzen badu...
                     $igual=true;
+                    echo "<script>console.log('supuestamente el usuerio ya esta registrado pero ya ves tu')</script>";
                 }
             }
             //Ez badu koinziditu... Libre dagoela esan nahi du, orduan insert egingo dugu
@@ -30,10 +33,8 @@
                     $miConsulta->bindParam(1, $erabIzena);
                     $miConsulta->bindParam(2, $contra);
                 /* Ejecutamos */
-                $miConsulta->execute(); 
-                return true;
-            }else{
-                return false;
+                $miConsulta->execute();
+                echo "<script>console.log('deberia de haber insertado pero yo ya no me creo na')</script>";
             }
 
         }catch( PDOException $Exception ) {
@@ -42,7 +43,9 @@
             throw new MyDatabaseException( $Exception->getMessage( ) , $Exception->getCode( ) );
         }
     }
-    // Lo de Aitor para mostrar el modal de registro
+}
+
+function login(){
     if(isset($_POST['btn2'])) { 
         /* Variableak gordeko ditugu */
         $contra=$_POST['password1'];
@@ -66,8 +69,6 @@
         }else{
             echo('no hay ningun usuario');
         }
-
     }
 }
-
 ?>
