@@ -6,7 +6,7 @@
             /* Genero desberdinen lista atera */
             $miConsulta = $miPDO->prepare("SELECT DISTINCT Urtea FROM filmak ORDER BY Urtea DESC");
             $miConsulta->execute(); 
-        
+            echo'<option value=""></option>';
             while ($fila = $miConsulta->fetch(PDO::FETCH_ASSOC)){
                 //urtea 
                 $urtea=$fila['Urtea'];
