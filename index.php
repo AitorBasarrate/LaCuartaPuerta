@@ -54,10 +54,10 @@
                         <?php include ('PHP/indexDatosPelis.php');?> 
                     </div>
                     <div class="trailer">
-                   
-                        <!-- <div class="trailerBox" id="trailerBox "onmouseover="botoiHandiak(this.id)" onmouseout="botoiTxikiak(this.id)"><?php include ('PHP/indexTrailer.php');?></div> -->
-                        <div class="trailerBox" id="trailerBox "onmouseover="botoiHandiak(this.id)" onmouseout="botoiTxikiak(this.id)">
-                        <iframe allow='autoplay' src=<?php include ('PHP/indexTrailer.php') ?>>
+                        
+                    <div class="trailerBox" id="trailerBox "onmouseover="botoiHandiak(this.id)" onmouseout="botoiTxikiak(this.id)"><?php include ('PHP/indexTrailer.php');?></div> 
+                        <!-- <div class="trailerBox" id="trailerBox "onmouseover="botoiHandiak(this.id)" onmouseout="botoiTxikiak(this.id)">
+                        <iframe allow='autoplay' src=<?php include ('PHP/indexTrailer.php') ?>> -->
                         </iframe>
                         </div>
 
