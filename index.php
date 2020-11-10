@@ -5,9 +5,8 @@
         <?php
             include 'PHP/dbKonexioa.php';
             include 'PHP/erregistroaEgin.php';
-            // Set a cross-site cookie for third-party contexts
-            header('Set-Cookie: HttpOnly; SameSite=None;Secure');
         ?>
+
         <!-- Erregistro atala -->
         <script src="JS/erregistratu.js"></script>
         <link rel="stylesheet" href="CSS/LogInArea.css">
@@ -55,19 +54,10 @@
                         <?php include ('PHP/indexDatosPelis.php');?> 
                     </div>
                     <div class="trailer">
-<<<<<<< HEAD
-                   
-                        <!-- <div class="trailerBox" id="trailerBox "onmouseover="botoiHandiak(this.id)" onmouseout="botoiTxikiak(this.id)"><?php include ('PHP/indexTrailer.php');?></div> -->
-                        <div class="trailerBox" id="trailerBox "onmouseover="botoiHandiak(this.id)" onmouseout="botoiTxikiak(this.id)">
-                        <iframe allow='autoplay' src=<?php include ('PHP/indexTrailer.php') ?>>
-                        </iframe>
-                        </div>
-
-=======
-                    
+    
                         <div class="trailerBox" id="trailerBox "onmouseover="botoiHandiak(this.id)" onmouseout="botoiTxikiak(this.id)"><?php include ('PHP/indexTrailer.php');?></div>
-                    
->>>>>>> 61226a7bb6f81c78bcf1eceaf71a1bc3e6c26eed
+                        </div>                    
+                                        
                     </div>
                     <div class="sobreNosotros">
                         <h1>GURI BURUZ</h1><br>

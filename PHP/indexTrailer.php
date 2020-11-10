@@ -11,14 +11,10 @@ try{
         $trailer=$comentario->trailer;
     }
     
-    $posizioa = strpos($trailer, '/', 3);
-    $ytb = "https://www.youtube.com/";
-    $embed = "embed/";
-    $autoplay= "?autoplay=1";
+    // $bideo = substr_replace("https://www.youtube.com/", "https://www.youtube.com/embed/");
+    // echo $bideo;
 
-    substr($trailer, $posizioa);
-
-    echo $ytb.$embed.$trailer.$autoplay;
+    echo $trailer;
 
 }
 }catch( PDOException $Exception ) {
