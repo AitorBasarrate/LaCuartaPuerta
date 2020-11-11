@@ -39,8 +39,10 @@
                     <a href="index.php" class="active">HASIERA</a>
                     <a href="#news">ASTEKO FILMA</a>
                     <a href="+Filma.php">+ FILMA</a>
-                    <a href="bazkideArea.php">BAZKIDE AREA</a>
-                    <a class="LoginBoton" href="#home" onclick="document.getElementById('izenaEman').style.display='block'"><i class="fa fa-fw fa-user"></i> LOGIN</a>
+                    <a href="bazkideArea.php" id="bazkideArea1">BAZKIDE AREA</a>
+                    <a id="bazkideArea2" onclick="alert('Atal hau ikusi nahi baduzu, erregistratu')">BAZKIDE AREA</a>
+                    <a class="LoginBoton" href="#home" id='LoginBoton'onclick="document.getElementById('izenaEman').style.display='block'"><i class="fa fa-fw fa-user" ></i> LOGIN</a>
+                    <a class="LoginBoton"  href="#home" id='LogoutBoton' onclick="disableButton()"><i class="fa fa-fw fa-user" ></i> LOGOUT</a>
                     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
                     <!-- ESTO ES LA HAMBURGUESA -->
                     <i class="fa fa-bars"></i>
@@ -133,7 +135,7 @@
                         <input type="checkbox" id="terminoLegalak" name="terminoLegalak" value="Boat" onclick='denaOndo()'>
                         <label for="terminoLegalak">Termino legalak onartzen ditut.</label><br>
                         <!-- Izena eman -->
-                        <input type="submit" id='register'name="btn1" value="register" onclick="bazkideaSartu(this.id)' " disabled>
+                        <input type="submit" id='register'name="btn1" value="register" onclick="crearLocal()" disabled>
                         <!-- Bazkide naiz botoia - Sartzeko modal-a erakutsi -->
                         <button onclick="bazkideaSartu(this.id)" id="bazkideNaiz">Bazkidea naiz dagoeneko</button>
                     </div> 
