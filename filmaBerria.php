@@ -49,34 +49,37 @@
                 </a>
             </div>
         </header>
-        <form>
+        <form action="" method="post">
             <div class="grid-container">
                 <div class="grid-item item1">
                     <h3>Sinopsis:</h3>
                     <textarea name="sinopsis" id="sinopsis" maxlength="250" placeholder="Filmaren Sinopsis-a"></textarea>
                 </div>
                 <div class="grid-item item2">
-                    <img width=90% src="Media/Peliculas/INCEPTION2.jpg"/><hr>
-                    <input type="text" placeholder="Filmaren Izenburua"></input>
+                    <h3>Izenburua:</h3>
+                    <input type="text" name="izenburua" placeholder="Filmaren Izenburua"></input>
+                    <h3>Trailer:</h3>
+                    <input type="text" name="trailer" placeholder="Filmaren Trailer-a"></input>
                 </div>
                     <div class="grid-item item3" >
                         <h3>Zuzendaria:</h3>
-                        <input type="text" placeholder="Filmaren Zuzendaria"></input>
+                        <input type="text" name="zuzendaria" placeholder="Filmaren Zuzendaria"></input>
                         <h3>Generoa:</h3>
-                        <input type="text" placeholder="Filmaren Generoa"></input>
+                        <input type="text" name="generoa" placeholder="Filmaren Generoa"></input>
                     </div>
                     <div class="grid-item item4">
                         <h3>Urtea:</h3>
-                        <input type="text" placeholder="Filmaren Urtea"></input>
+                        <input type="text" name="urtea" placeholder="Filmaren Urtea"></input>
                         <h3>Balorazioa:</h3>
-                        <input type="text" placeholder="Filmaren Balorazioa"></input>
+                        <input type="text" name="balorazioa" placeholder="Filmaren Balorazioa"></input>
                     </div>
                 <div class="grid-item item5">
                     <h3>Kritika:</h3>
-                    <textarea name="kritika" id="kritika" maxlength="250" placeholder="Filmaren Kritika"></textarea>
+                    <textarea name="kritika" name="kritika" id="kritika" maxlength="250" placeholder="Filmaren Kritika"></textarea>
                 </div>
                 <div class="grid-item item6">
-                    <input type="submit" value="Filma Gorde">
+                    <br><input type="file" id="img" name="argazkia" accept="image/*"><br><br>
+                    <input type="submit" name="gorde" onclick="<?php include 'PHP/filmaBerriaGorde.php'; ?>" value="Filma Gorde">
                     <input type="reset" value="Datuak Ezabatu">
                 </div>
             </div>

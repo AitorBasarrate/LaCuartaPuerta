@@ -11,10 +11,11 @@
         // DB KONEXIOA
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////
         try {
-            /* Con esto hace la conexion */
+        /* Con esto hace la conexion */
         //$conn = new mysqli($hostDB, $usuarioDB, $contrasenyaDB,$nombreDB);
         $hostPDO = "mysql:host=$hostDB;dbname=$nombreDB";
         $miPDO = new PDO($hostPDO, $usuarioDB, $contrasenyaDB);
+        $miPDO->exec("set names utf8");
         } catch( PDOException $Exception ) {
             // PHP Fatal Error. Second Argument Has To Be An Integer, But PDOException::getCode Returns A
             // String.

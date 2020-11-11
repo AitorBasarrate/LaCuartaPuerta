@@ -37,7 +37,7 @@
                     <!-- Nabigatzailea, bakoitzak beraren orria kargatuko du -->
                 <div class="topnav" id="myTopnav">
                     <a href="index.php" class="active">HASIERA</a>
-                    <a href="#news">ASTEKO FILMA</a>
+                    <a href="astekoFilma.php">ASTEKO FILMA</a>
                     <a href="+Filma.php">+ FILMA</a>
                     <a href="bazkideArea.php" id="bazkideArea1">BAZKIDE AREA</a>
                     <a id="bazkideArea2" onclick="alert('Atal hau ikusi nahi baduzu, erregistratu')">BAZKIDE AREA</a>
