@@ -3,7 +3,6 @@
 <head>    
     <?php
         include 'PHP/dbKonexioa.php';
-        include 'PHP/filmaBerriaGorde.php';
     ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -79,8 +78,8 @@
                     <textarea name="kritika" name="kritika" id="kritika" maxlength="250" placeholder="Filmaren Kritika"></textarea>
                 </div>
                 <div class="grid-item item6">
-                    <br><input type="file" id="img" name="aragzkia" accept="image/*"><br><br>
-                    <input type="submit" value="Filma Gorde" name="gorde">
+                    <br><input type="file" id="img" name="argazkia" accept="image/*"><br><br>
+                    <input type="submit" name="gorde" onclick="<?php include 'PHP/filmaBerriaGorde.php'; ?>" value="Filma Gorde">
                     <input type="reset" value="Datuak Ezabatu">
                 </div>
             </div>
