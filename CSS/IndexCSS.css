@@ -172,8 +172,8 @@ width: 200px;
   background-color:#E8EDDF ;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   margin-bottom: 25px;
-  margin-left: 35%;
-  width: 100%;
+  margin-left: 15%;
+  width: 70%;
   margin-top: 5%;
   padding:3%;
   padding-top: 2%;
@@ -216,7 +216,7 @@ width: 200px;
     margin-left: -10%;
   }
   .sobreNosotros{
-    margin-left: 0%;
+    margin-left: 15%;
   }
   
   .trailer iframe{

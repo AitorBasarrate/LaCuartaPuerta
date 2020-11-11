@@ -3,7 +3,7 @@
 // Erregistratzen saiatuko den pertsonaren datuak balidatuko dira hemen
 
     if(isset($_POST["erabiltzailea"]) and isset($_POST["password1"]) and isset($_POST["korreoa"])) {
-
+        echo('alertttt');
         $erabiltzailea = $_POST["erabiltzailea"];
         $password1 = $_POST["password1"];
         $korreoa = $_POST["korreoa"];

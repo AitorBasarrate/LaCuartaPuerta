@@ -92,7 +92,7 @@
                 <form id="commentform">         
                     <h3>Zure Iruzkina:</h3>
                     <textarea name="comment" id="comment" maxlength="250" placeholder="Zer irudita zaizu filma?"></textarea>
-                    <input name="submit" type="submit" value="Publicar"/>
+                    <input name="submit" type="submit" value="Argitaratu"/>
                 </form>
             </div>
     </div>

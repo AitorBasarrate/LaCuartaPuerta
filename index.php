@@ -5,9 +5,8 @@
         <?php
             include 'PHP/dbKonexioa.php';
             include 'PHP/erregistroaEgin.php';
-            // Set a cross-site cookie for third-party contexts
-            header('Set-Cookie: HttpOnly; SameSite=None;Secure');
         ?>
+
         <!-- Erregistro atala -->
         <script src="JS/erregistratu.js"></script>
         <link rel="stylesheet" href="CSS/LogInArea.css">
@@ -44,7 +43,7 @@
                     <a href="filmaBerria.php">filmaBerria</a>
                     <a class="LoginBoton" href="#home" onclick="document.getElementById('izenaEman').style.display='block'"><i class="fa fa-fw fa-user"></i> LOGIN</a>
                     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                    <!-- ESTO ES LA PUTA HAMBURGUESA -->
+                    <!-- ESTO ES LA HAMBURGUESA -->
                     <i class="fa fa-bars"></i>
                     </a>
                 </div>
@@ -56,10 +55,10 @@
                         <?php include ('PHP/indexDatosPelis.php');?> 
                     </div>
                     <div class="trailer">
-                    
-                        <!-- <div class="trailerBox" id="trailerBox "onmouseover="botoiHandiak(this.id)" onmouseout="botoiTxikiak(this.id)"><?php include ('PHP/indexTrailer.php');?></div> -->
-                        <div class="trailerBox" id="trailerBox" onmouseover="botoiHandiak(this.id)" onmouseout="botoiTxikiak(this.id)">
-                        <iframe allow='autoplay' src=<?php include ('PHP/indexTrailer.php') ?>>
+                        
+                    <div class="trailerBox" id="trailerBox "onmouseover="botoiHandiak(this.id)" onmouseout="botoiTxikiak(this.id)"><?php include ('PHP/indexTrailer.php');?></div> 
+                        <!-- <div class="trailerBox" id="trailerBox "onmouseover="botoiHandiak(this.id)" onmouseout="botoiTxikiak(this.id)">
+                        <iframe allow='autoplay' src=<?php include ('PHP/indexTrailer.php') ?>> -->
                         </iframe>
                         </div>
 
@@ -92,12 +91,12 @@
                 </div>
                 <!-- Kolumna 2 datak sartzeko atala -->
                             
-                <form target="frame1" method='post'>
+                <form  method='post' action=''>
                     <div class="column2">
                             <!-- Izen emateko datuak sartu -->
                             <!-- Izena -->
                             <div class='erabIzena'>
-                                <input type="text" name="erabiltzailea" id="erabiltzailea" oninput='erabiltzaileKonp()' oninput='denaOndo()' placeholder="Erabiltzaile izena *" required>
+                                <input type="text" name="erabiltzailea" id="erabiltzailea" oninput='erabiltzaileKonp(),denaOndo()' placeholder="Erabiltzaile izena *" required>
                                 <!-- Baldintzak erabiltzaile izenarekiko (hover batean) -->
                                 <div class="hoverErab">
                                     <img class="info" src='media/informacion.png'><br>
@@ -112,7 +111,7 @@
                             </div>
                             <!-- Pasahitza -->
                             <div class='pswd1'>
-                                <input type="password" id="password1" name="password1" oninput='pasahitzaKonp()'oninput='denaOndo()' placeholder="Pasahitza *" required>
+                                <input type="password" id="password1" name="password1" oninput='pasahitzaKonp(),denaOndo()' placeholder="Pasahitza *" required>
                                 <!-- Baldintzak pasahitzari dagokiones (hover batean) -->
                                 <div class="hoverContra">
                                     <img class="info" src='media/informacion.png'><br>
@@ -128,16 +127,16 @@
                             </div>
                             
                         <!-- Pasahitza konfirmatu -->
-                        <input type="password" name="password2" id='password2' placeholder="Pasahitza konfirmatu"  oninput='pasahitzakBerdin()' oninput='denaOndo()' required><br>
+                        <input type="password" name="password2" id='password2' placeholder="Pasahitza konfirmatu"  oninput='pasahitzakBerdin(),denaOndo()' required><br>
                         <!-- Korreoa -->
-                        <input type="email" id='korreoa' name="korreoa" placeholder="Posta elektronikoa jarri" oninput='korreoaOndo()' oninput='denaOndo()' required ><br>
+                        <input type="email" id='korreoa' name="korreoa" placeholder="Posta elektronikoa jarri" oninput='korreoaOndo(),denaOndo()' required ><br>
                         <!-- Termino legalak onartu-->
                         <input type="checkbox" id="terminoLegalak" name="terminoLegalak" value="Boat" onclick='denaOndo()'>
                         <label for="terminoLegalak">Termino legalak onartzen ditut.</label><br>
                         <!-- Izena eman -->
-                        <input type="submit" id='register' name="btn1" value="Register" onclick="<?php erregistroa(); ?>">  
+                        <input type="submit" id='register'name="btn1" value="register" onclick="bazkideaSartu(this.id)' " disabled>
                         <!-- Bazkide naiz botoia - Sartzeko modal-a erakutsi -->
-                        <button onclick="bazkideaSartu(this.id);" id="bazkideNaiz">Bazkidea naiz dagoeneko</button>
+                        <button onclick="bazkideaSartu(this.id)" id="bazkideNaiz">Bazkidea naiz dagoeneko</button>
                     </div> 
                 </form>
             </div>
@@ -164,7 +163,7 @@
                     <img class="logo" src="Media/logo-bien-negro.png" alt="Au revoir Shoshanna" />
                 </div>
                 <!-- Kolumna 2 -->
-                <form target="frame2" method='post'>
+                <form method='post' action=''>
                     <div class="column4">  
                         <!-- Izen emateko datuak sartu -->
                         <a>Saioa asi:</a><br>
@@ -173,7 +172,9 @@
                         <!-- Pasahitza -->
                         <input type="password" name="password1" placeholder="Pasahitza *" required><br>
                         <!-- Sartu -->
-                        <input type="submit" value="Log In" name="btn2" onclick="<?php login(); ?>"><br>
+                        
+                        <input type="submit" value="logIn" onclick='loginKonprobatu()' onclick="bazkideaSartu()" id='btn2' name="btn2"><br>
+                        
                         <button onclick="bazkideaSartu(this.id)" id="erregistratuNahi">Ez naiz bazkide, izena eman</button>
                     </div>
                 </form>
