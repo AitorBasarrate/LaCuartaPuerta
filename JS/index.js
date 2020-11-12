@@ -31,7 +31,6 @@ $( "#logo ").click(function() {
       //Begiratuko dugu zei baimena duen 
         miStorage = window.localStorage;
         var permisos = miStorage.getItem('permisos');
-        
         if(permisos=='2'){
           console.log('entra');
           document.getElementById('adminArea').style.display='block';
@@ -52,6 +51,7 @@ $( "#logo ").click(function() {
         document.getElementById('adminArea').style.display='none';
         bazkide1.style.display='none';
         bazkide2.style.display='block';
+        
     }
   }
 

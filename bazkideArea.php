@@ -4,6 +4,7 @@
     <?php
         include 'PHP/dbKonexioa.php';
         include 'PHP/bazkideAreaBete.php';
+        include 'PHP/loginEgin.php';
     ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -78,8 +79,8 @@
                 <!-- Bazkidearen atala -->
                 <div class="bazkideDatuak">
                     <h1>Bazkidearen datuak:</h1>
-                    <p>Erabiltzailea: <a></a></p>
-                    <p>Puntuazioa: <a></a></p>
+                    <p>Erabiltzailea: <a><?php echo  $erabIzena?></a></p>
+                    <p>Puntuazioa: <a><?php echo $puntuak?></a></p>
                     <p>Posizioa Raking-ean: <a>partephp</a></p>
 
                     <input type="submit" id="saioaItxi" value="Saioa Itxi" onmouseover="botoiHandiak(this.id)" onmouseout="botoiTxikiak(this.id)">

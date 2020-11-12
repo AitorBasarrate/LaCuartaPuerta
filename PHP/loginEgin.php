@@ -11,7 +11,7 @@
         echo('pdfg2');
         try{
         /* Erabiltzaile izenak begiratu*/
-        $miConsulta = $miPDO->prepare("SELECT ErabiltzaileIzena,Pasahitza ,Baimenak FROM erabiltzaile Where ErabiltzaileIzena='$erabIzena'");
+        $miConsulta = $miPDO->prepare("SELECT ErabiltzaileIzena,Pasahitza ,Baimenak,Puntuak FROM erabiltzaile Where ErabiltzaileIzena='$erabIzena'");
         $miConsulta->execute(); 
         echo('pdfg3');
         $igual=false;
@@ -19,7 +19,9 @@
             echo('pdfg4');
             //Koinziditzen duen a la ez begiratuko dugu
             if($erabIzena==$fila['ErabiltzaileIzena'] && $contra==$fila['Pasahitza']){
+                $erabIzena=$fila['ErabiltzaileIzena'];
                 $baim=$fila['Baimenak'];
+                $puntuak=$fila['Puntuak'];
                 //Koinziditzen badu...
                 $igual=true;
             }
