@@ -44,10 +44,10 @@ if((isset($_POST['pelikulaIzenezBilatu'])) || (isset($_POST['star'])) || (isset(
     if((isset($_POST['pelikulaIzenezBilatu']))) {
         $pelikulaIzena=$_POST['pelikulaIzenezBilatu'];
         if($pelikulaIzena!=''){
-            $pelikulaIzena = " Izenburuak LIKE '%{$pelikulaIzena}%' ";
+             $pelikulaIzena = " Izenburuak LIKE '%{$pelikulaIzena}%' ";
         array_push($filtroak,$pelikulaIzena);
         }
-    
+       
     }
     if((isset($_POST['star']))) {
         $izarrak=$_POST['star'];
@@ -105,5 +105,5 @@ if((!isset($_POST['pelikulaIzenezBilatu'])) && (!isset($_POST['star'])) &&(!isse
     }
    
 hacerSelect($sql);
-/* print_r($sql);  */  
+print_r($sql);   
 ?>
