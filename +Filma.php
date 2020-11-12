@@ -43,6 +43,7 @@
                     <a href="index.php" class="active">HASIERA</a>
                     <a href="astekoFilma.php">ASTEKO FILMA</a>
                     <a href="+Filma.php">+ FILMA</a>
+                    <a href="adminArea.html" id="adminArea" >ADMIN AREA</a>
                     <a href="bazkideArea.php" id="bazkideArea1">BAZKIDE AREA</a>
                     <a id="bazkideArea2" onclick="alert('Atal hau ikusi nahi baduzu, erregistratu')">BAZKIDE AREA</a>
                     <a class="LoginBoton" href="#home" id='LoginBoton'onclick="document.getElementById('izenaEman').style.display='block'"><i class="fa fa-fw fa-user" ></i> LOGIN</a>
