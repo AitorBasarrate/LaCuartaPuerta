@@ -26,6 +26,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
         <!-- Orriaren iconoa eta tituloa -->
         <link rel="icon" type="image/png" href="Media/fav-icon1.png">
+        <script src="JS/index.js"></script>
         <title>La Cuarta Puerta</title>
         
     </head>
@@ -137,7 +138,7 @@
                         <input type="checkbox" id="terminoLegalak" name="terminoLegalak" value="Boat" onclick='denaOndo()'>
                         <label for="terminoLegalak">Termino legalak onartzen ditut.</label><br>
                         <!-- Izena eman -->
-                        <input type="submit" id='register'name="btn1" value="register" onclick="crearLocal()" disabled>
+                        <input type="submit" id='register' name="btn1" value="register" onclick="crearLocal()" disabled>
                         <!-- Bazkide naiz botoia - Sartzeko modal-a erakutsi -->
                         <button onclick="bazkideaSartu(this.id)" id="bazkideNaiz">Bazkidea naiz dagoeneko</button>
                     </div> 
