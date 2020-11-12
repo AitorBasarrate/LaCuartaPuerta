@@ -21,20 +21,15 @@
                         
                         echo '
                             <div>
-                                
-                                <style>    button, input[type="submit"] {
-                                    background:url(Media/trash.png) no-repeat;
-                                }</style>
-
                                 <form method="POST" action="" name="formErab">   
-                                    <input type="number" name="idErab" id="idErab" value="'.$idErabiltzaile.'" readonly>
+                                    <b>ID:</b><input type="number" name="idErab" id="idErab" value="'.$idErabiltzaile.'" readonly>
                                     <p><b>Izena:</b> '.$erabiltzaileIzena.'</p>
                                     <p><b>Puntuak:</b> '.$puntuak.'<p>
                                     <input type="submit" value="Ezabatu" title="delete" name="delete" class="delete" onclick="return confirm(\'Ziur '.$erabiltzaileIzena.' ezabatu nahi duzula?\')"/>
                                 </form>
                             </div>                             
                         ';
-// <a href="PHP/erabiltzaileakEzabatu.php?id='.$idErabiltzaile.'"
+
                     }
 
                 }

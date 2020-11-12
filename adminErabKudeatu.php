@@ -91,9 +91,7 @@
         </header>
         <section>
         <div class="flex-container">
-            <!-- <form method='POST' action=''> -->
-                <?php include 'PHP/erabiltzaileakKudeatu.php' ?>
-            <!-- </form> -->
+            <?php include 'PHP/erabiltzaileakKudeatu.php' ?>
         </div>
         </section>
 

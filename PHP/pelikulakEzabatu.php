@@ -1,4 +1,4 @@
-<!-- Erabiltzaileak ezabatuko dituen PHP-a -->
+<!-- Pelikulak ezabatuko dituen PHP-a -->
 
 <?php 
 if(isset($_POST['delete'])){
@@ -7,6 +7,7 @@ if(isset($_POST['delete'])){
 
             $idErab = $_POST['idErab'];
             include 'dbKonexioa.php';
+            /* Erabiltzaileen ID izena eta puntuak aterako dugu */
             $miConsulta = $miPDO->prepare("DELETE FROM erabiltzaile WHERE idErabiltzaile=:idErabiltzaile");
             $miConsulta->bindValue("idErabiltzaile",intval($idErab));
 
