@@ -103,6 +103,9 @@ label.star:before {
   margin-left: 15px;
   width: auto; 
   height: auto;
+  position: fixed;
+  top: 10%;
+  left: 20%;
 }
 
 .checkmark {

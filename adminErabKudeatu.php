@@ -1,56 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>La Cuarta Puerta</title>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-        <script src="JS/leerCSV.js"></script>
-        <script src="JS/LoginJS.js"></script>
-        <script src="JS/HamburguerJS.js"></script>
-        <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
-        <link rel="stylesheet" href="CSS/adminArea.css">
-        <link rel="stylesheet" href="CSS/LogInArea.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">        
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        <link rel="icon" type="image/png" href="Media/fav-icon1.png">
-    </head>
-    <body>
-        <div class="content">
-            <header>
-                    <!-- Hemen logoa txertatu behar da -->
-                <img class="logo" src="Media/logo-bien.png" alt="Au revoir Shoshanna">
-                    <!-- Nabigatzailea, bakoitzak beraren orria kargatuko du -->
-                <div class="topnav" id="myTopnav">
-                    <a href="#home" class="active">HASIERA</a>
-                    <a href="#news">ASTEKO FILMA</a>
-                    <a href="#contact">+ FILMA</a>
-                    <a href="#about">BAZKIDE AREA</a>
-                    <a class="LoginBoton" href="#home" onclick="document.getElementById('izenaEman').style.display='block'"><i class="fa fa-fw fa-user"></i> LOGIN</a>
-                    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                    <!-- ESTO ES LA PUTA HAMBURGUESA -->
-                    <i class="fa fa-bars"></i>
-                    </a>
-                </div>
-                    <!-- Nabigatzaile barra, responsive egitean Haamburguesa ateratzen da -->
-                <script src="JS/HamburguerJS.js"></script>
-            </header>   
-            <div class="menua">
-                <div class="astekoPelikulaBotoia">
-                    <a href="http://google.es"><h4><b>ASTEKO FILMA SARTU</b></h4></a>
-                </div>
-                <div class="pelikulakSartzekoa">
-                    <a href="filmaBerria.php"><h4><b>FILM BERRIA SARTU</b></h4></a>
-                </div>
-                <div class="bazkideArea">
-                    <a><h4><b>BAZKIDE AREA KUDEATU</b></h4></a>
-                </div>
-                <div class="erabiltzaileak">
-                    <a href="adminErabKudeatu.php"><h4><b>ERABILTZAILEAK KUDEATU</b></h4></a>
-                </div>
+<head>    
+    <?php
+        include 'PHP/dbKonexioa.php';
+    ?>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/filmaCSS.css">
+    <link rel="stylesheet" href="CSS/LogInArea.css">
+    <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+    <!-- Hasiera oriko estilua -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="JS/HamburguerJS.js"></script>
+    <!-- Font family estiloa -->
+    <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+    <!-- CSS stilo orrialdea -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">        
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- Orriaren iconoa eta tituloa -->
+    <link rel="icon" type="image/png" href="Media/fav-icon1.png">
+    <title>La Cuarta Puerta</title>
+    <!-- Loginaren css a -->
+    <link rel="stylesheet" href="CSS/LogInArea.css">
+    <script src="JS/erregistratu.js"></script>
+</head>
+
+<style>
+    /* Erabiltzaileak erakutsiko dituen flexboxa */
+
+    .flex-container {
+    display: inline-block;
+    background-color: #F5CB5C;
+    width: 70%;
+    border-radius: 10px;
+    margin-top:2%;
+    margin-bottom:2%;
+    margin-left:15%;
+    }
+
+    .flex-container > div {
+    background-color: #E8EDDF;
+    margin: 30px;
+    padding: 10px;
+    font-size: 25px;
+    border-radius: 20px;
+    align-items: center;
+    display: flex;
+    }
+
+    .flex-container > div > p {
+    display: inline-block;
+    padding: 50px;
+    margin-left:20px;
+    }
+
+    .flex-container img {
+    vertical-align:middle;
+    width: 40px;
+    }
+
+
+</style>
+
+<body>
+    <div class="content">
+        <header>
+                <!-- Hemen logoa txertatu behar da -->
+            <img class="logo" src="Media/logo-bien.png" alt="Au revoir Shoshanna">
+                <!-- Nabigatzailea, bakoitzak beraren orria kargatuko du -->
+            <div class="topnav" id="myTopnav">
+                <a href="index.php">HASIERA</a>
+                <a href="astekoFilma.php">ASTEKO FILMA</a>
+                <a href="+Filma.php">+ FILMA</a>
+                <a href="bazkideArea.php">BAZKIDE AREA</a>.
+                <a href="adminArea.html" id="adminArea">ADMIN AREA</a>
+
+                <a class="LoginBoton" href="#home" onclick="document.getElementById('izenaEman').style.display='block'"><i class="fa fa-fw fa-user"></i> LOGIN</a>
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <!-- HAMBURGUESA, responsive menua -->
+                <i class="fa fa-bars"></i>
+                </a>
             </div>
-                   <!-- Izena emateko MODAL-a -->
+        </header>
+        <section>
+        <div class="flex-container">
+            <?php include 'PHP/erabiltzaileakKudeatu.php' ?>
+        </div>
+        </section>
+
+    </div>
+
+        <!-- Izena emateko MODAL-a -->
         <div class="modal" id="izenaEman"> 
             <!-- Ixteko botoia -->
             <span style="cursor: pointer;" onclick="document.getElementById('izenaEman').style.display='none'" class="close-button" title="Close Modal">&times;</span>
@@ -121,7 +164,7 @@
                 </form>
             </div>
         </div> 
-
+       
         <!-- Sartu MODAL-a -->
         <div class="modal" id="sartu" hidden>
             <!-- Ixteko botoia -->
@@ -149,18 +192,18 @@
             </div>
         </div>
     </div>
-        <footer>
-            <div class="footerP1">
-                <img  src="Media/Footer/instagra.png">
-                <a>@LaCuartaPuerta</a>      
-                <img  src="Media/Footer/twitter-logo-6.png">
-                <a>@LaCuartaPuerta</a>        
-                <img src="Media/Footer/gmail.png">
-                <a>LaCuartaPuerta@gmail.com</a>
-            </div>
-            <div class="footerP2">
-                <a>@Talde5</a>
-            </div>
-        </footer>
-    </body>
+    <footer>
+        <div class="footerP1">
+            <img  src="Media/Footer/instagra.png">
+            <a>@LaCuartaPuerta</a>      
+            <img  src="Media/Footer/twitter-logo-6.png">
+            <a>@LaCuartaPuerta</a>        
+            <img src="Media/Footer/gmail.png">
+            <a>LaCuartaPuerta@gmail.com</a>
+        </div>
+        <div class="footerP2">
+            <a>@Talde5</a>
+        </div>
+    </footer>
+</body>
 </html>
