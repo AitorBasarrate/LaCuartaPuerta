@@ -12,9 +12,8 @@
         <script src="JS/loginKonprobatu.js"></script>
         <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
         <script src="JS/HamburguerJS.js"></script>
-        <script src="JS/index.js"></script>
         <script src="JS/bilaketa.js"></script>
-        
+        <script src='JS/index.js'></script>
         <!-- Font family estiloa -->
         <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
         <!-- CSS stilo orrialdea -->
@@ -40,14 +39,16 @@
                     <!-- Hemen logoa txertatu behar da -->
                 <img class="logo" src="Media/logo-bien.png" alt="Au revoir Shoshanna">
                     <!-- Nabigatzailea, bakoitzak beraren orria kargatuko du -->
-                <div class="topnav" id="myTopnav">
-                    <a href="index.php">HASIERA</a>
+                    <div class="topnav" id="myTopnav">
+                    <a href="index.php" class="active">HASIERA</a>
                     <a href="astekoFilma.php">ASTEKO FILMA</a>
-                    <a href="+Filma.php" class="active">+ FILMA</a>
-                    <a href="bazkideArea.php">BAZKIDE AREA</a>
-                    <a class="LoginBoton" href="#home" onclick="document.getElementById('izenaEman').style.display='block'"><i class="fa fa-fw fa-user"></i> LOGIN</a>
+                    <a href="+Filma.php">+ FILMA</a>
+                    <a href="bazkideArea.php" id="bazkideArea1">BAZKIDE AREA</a>
+                    <a id="bazkideArea2" onclick="alert('Atal hau ikusi nahi baduzu, erregistratu')">BAZKIDE AREA</a>
+                    <a class="LoginBoton" href="#home" id='LoginBoton'onclick="document.getElementById('izenaEman').style.display='block'"><i class="fa fa-fw fa-user" ></i> LOGIN</a>
+                    <a class="LoginBoton"  href="#home" id='LogoutBoton' onclick="disableButton()"><i class="fa fa-fw fa-user" ></i> LOGOUT</a>
                     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                    <!-- ESTO ES LA PUTA HAMBURGUESA -->
+                    <!-- ESTO ES LA HAMBURGUESA -->
                     <i class="fa fa-bars"></i>
                     </a>
                 </div>
@@ -128,12 +129,12 @@
                 </div>
                 <!-- Kolumna 2 datak sartzeko atala -->
                             
-                <form target="frame1" method='post'>
+                <form  method='post' action=''>
                     <div class="column2">
                             <!-- Izen emateko datuak sartu -->
                             <!-- Izena -->
                             <div class='erabIzena'>
-                                <input type="text" name="erabiltzailea" id="erabiltzailea" oninput='erabiltzaileKonp()' oninput='denaOndo()' placeholder="Erabiltzaile izena *" required>
+                                <input type="text" name="erabiltzailea" id="erabiltzailea" oninput='erabiltzaileKonp(),denaOndo()' placeholder="Erabiltzaile izena *" required>
                                 <!-- Baldintzak erabiltzaile izenarekiko (hover batean) -->
                                 <div class="hoverErab">
                                     <img class="info" src='media/informacion.png'><br>
@@ -143,11 +144,12 @@
                                             <li><a><img src='Media/candadoCondiciones.png' width='15px'>5 Karaktere</a></li>
                                             <li><a><img src='Media/candadoCondiciones.png' width='15px'>Soilik zenbakiak eta letrak</a></li>
                                         </ul></span>
+                                    
                                 </div>
                             </div>
                             <!-- Pasahitza -->
                             <div class='pswd1'>
-                                <input type="password" id="password1" name="password1" oninput='pasahitzaKonp()'oninput='denaOndo()' placeholder="Pasahitza *" required>
+                                <input type="password" id="password1" name="password1" oninput='pasahitzaKonp(),denaOndo()' placeholder="Pasahitza *" required>
                                 <!-- Baldintzak pasahitzari dagokiones (hover batean) -->
                                 <div class="hoverContra">
                                     <img class="info" src='media/informacion.png'><br>
@@ -163,16 +165,16 @@
                             </div>
                             
                         <!-- Pasahitza konfirmatu -->
-                        <input type="password" name="password2" id='password2' placeholder="Pasahitza konfirmatu"  oninput='pasahitzakBerdin()' oninput='denaOndo()' required><br>
+                        <input type="password" name="password2" id='password2' placeholder="Pasahitza konfirmatu"  oninput='pasahitzakBerdin(),denaOndo()' required><br>
                         <!-- Korreoa -->
-                        <input type="email" id='korreoa' name="korreoa" placeholder="Posta elektronikoa jarri" oninput='korreoaOndo()' oninput='denaOndo()' required ><br>
+                        <input type="email" id='korreoa' name="korreoa" placeholder="Posta elektronikoa jarri" oninput='korreoaOndo(),denaOndo()' required ><br>
                         <!-- Termino legalak onartu-->
                         <input type="checkbox" id="terminoLegalak" name="terminoLegalak" value="Boat" onclick='denaOndo()'>
                         <label for="terminoLegalak">Termino legalak onartzen ditut.</label><br>
                         <!-- Izena eman -->
-                        <input type="submit" id='register'name="btn1" value="Register" onclick="erregistratu()" disabled >
+                        <input type="submit" id='register' name="btn1" value="register" onclick="crearLocal()" disabled>
                         <!-- Bazkide naiz botoia - Sartzeko modal-a erakutsi -->
-                        <button onclick="if(lafuncionDeOhiane == true){muestraLaOtraVentana}else{muestraLaMismaVentana} bazkideaSartu(this.id)" id="bazkideNaiz">Bazkidea naiz dagoeneko</button>
+                        <button onclick="bazkideaSartu(this.id)" id="bazkideNaiz">Bazkidea naiz dagoeneko</button>
                     </div> 
                 </form>
             </div>
