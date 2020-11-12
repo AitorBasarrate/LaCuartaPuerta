@@ -7,7 +7,7 @@
     ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/filmaCSS.css">
+    <link rel="stylesheet" href="CSS/adminKudeatuCSS.css">
     <link rel="stylesheet" href="CSS/LogInArea.css">
     <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
     <!-- Hasiera oriko estilua -->
@@ -28,48 +28,6 @@
     <link rel="stylesheet" href="CSS/LogInArea.css">
     <script src="JS/erregistratu.js"></script>
 </head>
-
-<style>
-    /* Erabiltzaileak erakutsiko dituen flexboxa */
-
-    .flex-container {
-    display: inline-block;
-    background-color: #F5CB5C;
-    width: 70%;
-    border-radius: 10px;
-    margin-top:2%;
-    margin-bottom:2%;
-    margin-left:15%;
-    }
-
-    .flex-container > div {
-    background-color: #E8EDDF;
-    margin: 30px;
-    padding: 10px;
-    font-size: 25px;
-    border-radius: 20px;
-    align-items: center;
-    display: flex;
-    }
-
-    .flex-container > div > p {
-    display: inline-block;
-    padding: 50px;
-    margin-left:20px;
-    }
-
-    .flex-container img {
-    vertical-align:middle;
-    width: 40px;
-    }
-
-    button, input[type="submit"] {
-        background:url(/Media/trash.png) no-repeat;
-    }
-
-
-</style>
-
 <body>
     <div class="content">
         <header>
@@ -94,9 +52,7 @@
             <?php include 'PHP/erabiltzaileakKudeatu.php' ?>
         </div>
         </section>
-
     </div>
-
         <!-- Izena emateko MODAL-a -->
         <div class="modal" id="izenaEman"> 
             <!-- Ixteko botoia -->
@@ -168,7 +124,6 @@
                 </form>
             </div>
         </div> 
-       
         <!-- Sartu MODAL-a -->
         <div class="modal" id="sartu" hidden>
             <!-- Ixteko botoia -->

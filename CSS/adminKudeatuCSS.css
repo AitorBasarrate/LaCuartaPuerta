@@ -1,0 +1,169 @@
+html, body{  height: 100vh;}
+
+/* Orrialde guztian letra berdina eukiteko */
+*{
+  font-family:'Oswald',serif;
+}
+/* Header logoarekin eta menuari estiloa emango diogu */
+header{
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 10%;
+  align-items: center;
+  background-color: #242423;
+  text-align: center;
+}
+
+.logo {
+height: 100%;
+width: 200px;
+}
+
+.topnav a.LoginBoton {
+  overflow: hidden;
+  background-color: #333;
+  float: right;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #f5cb5c;
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+  float: right;
+  display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+  }
+  .topnav.responsive a {
+  float: none;
+  display: block;
+  text-align: left;
+  }
+  .topnav.responsive .LoginBoton {
+  float: none;
+  display: block;
+  text-align: left;
+  }
+}
+
+/*Erabiltzaileak*/
+
+.flex-container {
+  overflow: hidden;
+  background-color: #F5CB5C;
+  width: 70%;
+  border-radius: 10px;
+  margin-top:2%;
+  margin-bottom:2%;
+  margin-left:15%;
+  }
+
+.grid-container {
+  display: grid;
+  padding: 15px;
+}  
+.grid-item {
+  background-color: #ddd;
+  text-align: center;
+  padding: 20px;
+  font-size: 25px;
+}
+.item1 {
+  grid-column: 1;
+  grid-row: 1;
+}
+.item1 input {background-color: transparent;}
+.item1 input[type=number]{border: none;}
+
+.item2 {
+  grid-column: 2;
+  grid-row: 1;
+}
+.item3 {
+  grid-column: 3;
+  grid-row: 1;
+}
+.item4 {
+  grid-column: 4;
+  grid-row: 1;
+}
+
+/* Footer de la pagina */
+.content{
+  /*da al contenido "altura mínima" para que el footer nunca suba más de ahí, pero sí para que baje si aumenta el contenido*/
+  min-height: calc(100vh - 70px);
+  }
+  footer{
+      background-color: #333533;
+  }
+  /* parte 1 */
+  .footerP1{
+      color: #f5cb5c;
+      align-items: center;
+      text-align: center;
+      padding: 3%;
+  }
+  .footerP1 a{
+      padding-right: 5%;
+      padding-left: 1%;
+      vertical-align: middle;
+  }
+  .footerP1 img{
+      vertical-align:middle;
+      width: 40px;
+  }
+  /* parte 2 */
+  .footerP2{
+      text-align: center;
+      background-color:  #242423;
+      color: #f5cb5c;
+      padding: 0.5%;
+  }
+  /* parte 2 */
+  .footerP2{
+      text-align: center;
+      background-color:  #242423;
+      color: #f5cb5c;
+      padding: 0.5%;
+  }
+  
