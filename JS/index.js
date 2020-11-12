@@ -19,7 +19,6 @@ $( "#logo ").click(function() {
   window.onload = function(){
     comprobarStorage();
     verBazkide();
-   
   };
 
  
@@ -28,7 +27,7 @@ $( "#logo ").click(function() {
       console.log('entra1')
       //localean zeozer badago...
     if(buscarLocal()){
-        console.log('entra2')
+        console.log('');
         document.getElementById('LoginBoton').style.display='none';
         document.getElementById('LogoutBoton').style.display='block';
         //lokalean dauden elementuekin kookiak sotuko dtugu
@@ -58,9 +57,11 @@ $( "#logo ").click(function() {
     var usuario = localStorage.getItem('usuario');
     var contraseña = localStorage.getItem('contraseña');
     if (usuario==null && contraseña==null){
+      console.log('no hay local');
         //ez badago local storage...
         return false;
     }else{
+      console.log('hayl local')
         //local storage baldin badago...
         return true;
     }
@@ -136,7 +137,6 @@ function disableButton() {
     for (var i = 0; i < allCookies.length; i++) 
         document.cookie = allCookies[i] + "=;expires=" 
         + new Date(0).toUTCString(); 
-
     //berriz guztia ezabatu denez, konprobatuko dugu ea zeozer dagoen 
         comprobarStorage();
 }
