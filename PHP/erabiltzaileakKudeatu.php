@@ -22,10 +22,20 @@
                         echo '
                             <div>
                                 <form method="POST" action="" name="formErab">   
-                                    <b>ID:</b><input type="number" name="idErab" id="idErab" value="'.$idErabiltzaile.'" readonly>
-                                    <p><b>Izena:</b> '.$erabiltzaileIzena.'</p>
-                                    <p><b>Puntuak:</b> '.$puntuak.'<p>
-                                    <input type="submit" value="Ezabatu" title="delete" name="delete" class="delete" onclick="return confirm(\'Ziur '.$erabiltzaileIzena.' ezabatu nahi duzula?\')"/>
+                                    <div class="grid-container">
+                                        <div class="grid-item item1">
+                                            <b>ID:</b><input type="number" name="idErab" id="idErab" value="'  .$idErabiltzaile.'" readonly>
+                                        </div>
+                                        <div class="grid-item item2">
+                                            <p><b>Izena:</b> '.$erabiltzaileIzena.'</p>
+                                        </div>
+                                        <div class="grid-item item3">
+                                            <p><b>Puntuak:</b> '.$puntuak.'<p>
+                                        </div>
+                                        <div class="grid-item item4">
+                                            <input type="submit" value="Ezabatu" title="delete" name="delete" class="delete" onclick="return confirm(\'Ziur '.$erabiltzaileIzena.' ezabatu nahi duzula?\')"/>
+                                        </div>
+                                    </div>
                                 </form>
                             </div>                             
                         ';
