@@ -27,7 +27,6 @@ $( "#logo ").click(function() {
       var bazkide2=document.getElementById('bazkideArea2');
       //localean zeozer badago...
     if(buscarLocal()){
-      
         console.log('');
         document.getElementById('LoginBoton').style.display='none';
         document.getElementById('LogoutBoton').style.display='block';
@@ -37,7 +36,6 @@ $( "#logo ").click(function() {
         
         crearCookies();
     }else{
-        alert("Illooooo que ha cerrao la cecion!!!");
         document.getElementById('LoginBoton').style.display='block';
         document.getElementById('LogoutBoton').style.display='none';
         bazkide1.style.display='none';
@@ -49,7 +47,6 @@ $( "#logo ").click(function() {
       var bazkide1=document.getElementById('bazkideArea1');
       var bazkide2=document.getElementById('bazkideArea2');
     if(buscarLocal()){
-        alert('entra');
         bazkide1.style.display='block';
         bazkide2.style.display='none';
     }else{
