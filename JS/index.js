@@ -18,25 +18,30 @@ $( "#logo ").click(function() {
   //Orrialzea zabaltzean...
     window.onload = function(){
     comprobarStorage();
-    verBazkide();
   };
 
  
   //Local storage dagoen ala ez begiratuko du.
   function comprobarStorage() {
-      console.log('entra1')
+      var bazkide1=document.getElementById('bazkideArea1');
+      var bazkide2=document.getElementById('bazkideArea2');
       //localean zeozer badago...
     if(buscarLocal()){
+      
         console.log('');
         document.getElementById('LoginBoton').style.display='none';
         document.getElementById('LogoutBoton').style.display='block';
+        bazkide1.style.display='block';
+        bazkide2.style.display='none';
         //lokalean dauden elementuekin kookiak sotuko dtugu
-        alert("Illooooo que ha cerrao la cecion!!!");
+        
         crearCookies();
     }else{
-        console.log('entra3')
+        alert("Illooooo que ha cerrao la cecion!!!");
         document.getElementById('LoginBoton').style.display='block';
         document.getElementById('LogoutBoton').style.display='none';
+        bazkide1.style.display='none';
+        bazkide2.style.display='block';
     }
   }
   //boton bazkideArea
@@ -55,8 +60,8 @@ $( "#logo ").click(function() {
 //localean zeozer gordeta dagoen a la ez
   function buscarLocal(){
     miStorage = window.localStorage;
-    var usuario = localStorage.getItem('usuario');
-    var contraseña = localStorage.getItem('contraseña');
+    var usuario = miStorage.getItem('usuario');
+    var contraseña = miStorage.getItem('contraseña');
     if (usuario==null && contraseña==null){
       console.log('no hay local');
         //ez badago local storage...
@@ -83,51 +88,45 @@ $( "#logo ").click(function() {
 //Erregistratzean, local storage-a sortuko du.
 function crearLocal(){
     console.log('entra4');
-    var usuario = localStorage.getItem('usuario');
-    var contraseña = localStorage.getItem('contraseña');
-    console.log('entra a crear local');
+    console.log(localStorage.getItem('nombre'));
+    localStorage.clear();
     //Aurretikan baldin ez badago
-    if(usuario.length==0 && contraseña.length==0){
-        console.log('entra5');
-         //Sortutako cookiak (crearCookies.php-tik) irakurtzen ditugu
-            //Uruario cooki-a
-            var nameEQ = 'usuario' + "=";
-            var ca = document.cookie.split(';');
-            for(var i=0;i < ca.length;i++) { 
-                var c = ca[i]; while (c.charAt(0)==' ') c = c.substring(1,c.length); 
-                if (c.indexOf(nameEQ) == 0) {
-                    var cookie1=c.substring(nameEQ.length,c.length);
-                } 
-            }
-            //contraseña cooki-a
-            var nameEQ = 'contraseña' + "=";
-            var ca = document.cookie.split(';');
-            for(var i=0;i < ca.length;i++) { 
-                var c = ca[i]; while (c.charAt(0)==' ') c = c.substring(1,c.length); 
-                if (c.indexOf(nameEQ) == 0) {
-                var cookie2=c.substring(nameEQ.length,c.length);
-                } 
-            }
-            //localStorage sortzen dugu datu horietatik
-            var nombre=cookie1;
-            var apellido=cookie2;
-            localStorage.setItem('usuario', nombre);
-            localStorage.setItem('contraseña', apellido);
-            
-            //menua aldatzen dugu
-            document.getElementById('LoginBoton').style.display='none';
-            document.getElementById('LogoutBoton').style.display='block';
+    console.log('entra5');
+      //Sortutako cookiak (crearCookies.php-tik) irakurtzen ditugu
+        //Uruario cooki-a
+        var nameEQ = 'usuario' + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0;i < ca.length;i++) { 
+            var c = ca[i]; while (c.charAt(0)==' ') c = c.substring(1,c.length); 
+            if (c.indexOf(nameEQ) == 0) {
+                var cookie1=c.substring(nameEQ.length,c.length);
+            } 
+        }
+        //contraseña cooki-a
+        var nameEQ = 'contraseña' + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0;i < ca.length;i++) { 
+            var c = ca[i]; while (c.charAt(0)==' ') c = c.substring(1,c.length); 
+            if (c.indexOf(nameEQ) == 0) {
+            var cookie2=c.substring(nameEQ.length,c.length);
+            } 
+        }
+        //localStorage sortzen dugu datu horietatik
+        var nombre=cookie1;
+        var apellido=cookie2;
+       
+        localStorage.setItem('usuario', nombre);
+        localStorage.setItem('contraseña', apellido);
+         console.log(localStorage.getItem('nombre'));
+        //menua aldatzen dugu
+        document.getElementById('LoginBoton').style.display='none';
+        document.getElementById('LogoutBoton').style.display='block';
 
-    }else{
-          //Aurretikan baldin badago... aurrekoa ezabatu eta berriak egin
-        //local-storage ezabatu
-        localStorage.clear();
-        crearLocal();
     }
   
 
        
-}
+
 //Sesioa ixteko cookiak eta locl storage datuak ezabatuko ditugu
 function disableButton() {
     //local-storage ezabatu
