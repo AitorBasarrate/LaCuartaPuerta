@@ -3,6 +3,7 @@
 <head>    
     <?php
         include 'PHP/dbKonexioa.php';
+        include 'PHP/erabiltzaileakEzabatu.php';
     ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -62,6 +63,10 @@
     width: 40px;
     }
 
+    button, input[type="submit"] {
+        background:url(/Media/trash.png) no-repeat;
+    }
+
 
 </style>
 
@@ -87,7 +92,9 @@
         </header>
         <section>
         <div class="flex-container">
-            <?php include 'PHP/erabiltzaileakKudeatu.php' ?>
+            <!-- <form method='POST' action=''> -->
+                <?php include 'PHP/erabiltzaileakKudeatu.php' ?>
+            <!-- </form> -->
         </div>
         </section>
 

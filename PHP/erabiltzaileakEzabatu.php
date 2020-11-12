@@ -1,18 +1,21 @@
 <!-- Erabiltzaileak ezabatuko dituen PHP-a -->
 
 <?php 
+if(isset($_POST['delete'])){
 
         try{ 
 
-            $idErab = $_GET['id'];
-            include 'PHP/dbKonexioa.php';
+            $idErab = $_POST['idErab'];
+            include 'dbKonexioa.php';
             /* Erabiltzaileen ID izena eta puntuak aterako dugu */
             $miConsulta = $miPDO->prepare("DELETE FROM erabiltzaile WHERE idErabiltzaile=:idErabiltzaile");
             $miConsulta->bindValue("idErabiltzaile",intval($idErab));
 
                 if ($miConsulta->execute()) {
-
+                    
+                    echo '<script language="javascript">';
                     echo 'alert("Erabiltzailea ezabatu da!")';
+                    echo '</script>';
 
                 } else {
 
@@ -27,5 +30,6 @@
                 throw new MyDatabaseException( $Exception->getMessage( ) , $Exception->getCode( ) );
 
         } 
+    }
 
 ?>
