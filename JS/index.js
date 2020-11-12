@@ -16,7 +16,7 @@ $( "#logo ").click(function() {
 
 /* LOCALSTORAGE ETA COOKI-EN GESTIO GUZTIA */
   //Orrialzea zabaltzean...
-  window.onload = function(){
+    window.onload = function(){
     comprobarStorage();
     verBazkide();
   };
@@ -31,6 +31,7 @@ $( "#logo ").click(function() {
         document.getElementById('LoginBoton').style.display='none';
         document.getElementById('LogoutBoton').style.display='block';
         //lokalean dauden elementuekin kookiak sotuko dtugu
+        alert("Illooooo que ha cerrao la cecion!!!");
         crearCookies();
     }else{
         console.log('entra3')
