@@ -39,7 +39,7 @@
                 <!-- Nabigatzailea, bakoitzak beraren orria kargatuko du -->
             <div class="topnav" id="myTopnav">
                 <a href="index.php">HASIERA</a>
-                <a href="#news">ASTEKO FILMA</a>
+                <a href="astekoFilma.php">ASTEKO FILMA</a>
                 <a href="+Filma.php">+ FILMA</a>
                 <a href="bazkideArea.php">BAZKIDE AREA</a>
                 <a class="LoginBoton" href="#home" onclick="document.getElementById('izenaEman').style.display='block'"><i class="fa fa-fw fa-user"></i> LOGIN</a>
