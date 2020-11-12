@@ -7,12 +7,8 @@
         $fila = $miConsulta->fetchALl(PDO::FETCH_OBJ);
 
         foreach ($fila as $comentario) {
-            $idPelikulakAnterior=$comentario->idPelikulak;
+            $idPelikulakAnterior=$comentario->idPelikulak+1;
         }
-<<<<<<< HEAD
-    }
-
-=======
     }     
 
 
@@ -39,7 +35,6 @@
 // Display status message 
 echo $statusMsg; 
     
->>>>>>> e7e1fa6909fc4d51731d706d379066ada7942d8f
     $sinopsis = $_POST['sinopsis'];
 	$izenburua = $_POST['izenburua'];
 	$trailer = $_POST['trailer'];
@@ -49,12 +44,7 @@ echo $statusMsg;
 	$balorazioa = $_POST['balorazioa'];
     $kritika = $_POST['kritika'];   
 
-<<<<<<< HEAD
-    $miConsulta = $miPDO->prepare ("INSERT INTO filmak (idPelikulak,Izenburuak,Generoa,Zuzendaria,Urtea,Sinopsis,Kritika,Balorazioa,Trailer)
-    VALUES ($idPelikulakAnterior+1,'$izenburua','$generoa','$zuzendaria','$urtea','$sinopsis','$kritika','$balorazioa','$trailer')");
-=======
     $miConsulta = $miPDO->prepare ("INSERT INTO filmak (idPelikulak,Izenburuak,Argazkia,Generoa,Zuzendaria,Urtea,Sinopsis,Kritika,Balorazioa,Trailer)
     VALUES ($idPelikulakAnterior,'$izenburua','$argaz','$generoa','$zuzendaria','$urtea','$sinopsis','$kritika','$balorazioa','$trailer')");
->>>>>>> e7e1fa6909fc4d51731d706d379066ada7942d8f
     $miConsulta->execute(); 
 ?>
