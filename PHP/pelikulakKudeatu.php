@@ -16,7 +16,6 @@
                         $idpelikula=$pelikula->idPelikulak;
                         $izenburuak=$pelikula->Izenburuak;
                         $urtea=$pelikula->Urtea;
-
                         
                         echo '
                             <div>
