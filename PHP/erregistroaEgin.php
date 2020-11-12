@@ -36,16 +36,11 @@
                 /* Ejecutamos */
                 $miConsulta->execute(); 
                 /* Creamos las cookies para despues generar el localStorage */
-                include 'PHP/cookies';
+                include 'PHP/crearCookies.php';
                 /* Decimos que se han generado correctamente */
                 echo'<script>alert("El usuario se ha creado correctamente")</script>';
+                echo '<script>crearLocal();</script>';
                 /* local-storage-a sortzeko */
-                echo '<script type="text/javascript">',
-                        ' createStorage();',
-                        '</script>'
-                ;
-               
-
             }
 
         }catch( PDOException $Exception ) {
