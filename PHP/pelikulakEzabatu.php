@@ -1,24 +1,25 @@
-<!-- Erabiltzaileak ezabatuko dituen PHP-a -->
+<!-- Pelikulak ezabatuko dituen PHP-a -->
 
 <?php 
 if(isset($_POST['delete'])){
 
         try{ 
 
-            $idErab = $_POST['idErab'];
+            $idPelikula = $_POST['idPelikula'];
             include 'dbKonexioa.php';
-            $miConsulta = $miPDO->prepare("DELETE FROM erabiltzaile WHERE idErabiltzaile=:idErabiltzaile");
-            $miConsulta->bindValue("idErabiltzaile",intval($idErab));
+            /* Erabiltzaileen ID izena eta puntuak aterako dugu */
+            $miConsulta = $miPDO->prepare("DELETE FROM filmak WHERE idPelikulak=:idPelikulak");
+            $miConsulta->bindValue("idPelikulak",intval($idPelikula));
 
                 if ($miConsulta->execute()) {
                     
                     echo '<script language="javascript">';
-                    echo 'alert("Erabiltzailea ezabatu da!")';
+                    echo 'alert("Pelikula ezabatu da!")';
                     echo '</script>';
 
                 } else {
 
-                    echo "Ezin izan da erabiltzailea ezabatu: " . $miConsulta->error;
+                    echo "Ezin izan da pelikula ezabatu: " . $miConsulta->error;
 
                 }
 

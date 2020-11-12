@@ -1,10 +1,11 @@
 <?php 
 
+
         try{ 
 
             include 'PHP/dbKonexioa.php';
             /* Erabiltzaileen ID izena eta puntuak aterako dugu */
-            $miConsulta = $miPDO->prepare("SELECT iderabiltzaile,ErabiltzaileIzena,Puntuak FROM erabiltzaile WHERE Bimenak = 1");
+            $miConsulta = $miPDO->prepare("SELECT iderabiltzaile,ErabiltzaileIzena,Puntuak FROM erabiltzaile WHERE Baimenak = 1");
 
                 if ($miConsulta->execute()) {
 
@@ -17,12 +18,15 @@
                         $erabiltzaileIzena=$erabiltzaile->ErabiltzaileIzena;
                         $puntuak=$erabiltzaile->Puntuak;
 
+                        
                         echo '
-                            <div>   
-                                <p><b>ID:</b> '.$idErabiltzaile.'</p>
-                                <p><b>Izena:</b> '.$erabiltzaileIzena.'</p>
-                                <p><b>Puntuak:</b> '.$puntuak.'<p>
-                                <a href="#" title="delete" class="delete" onclick="return confirm("Ziur $erabiltzaileIzena ezabatu nahi duzula?")"><img  src="Media/trash.png"></a>
+                            <div>
+                                <form method="POST" action="" name="formErab">   
+                                    <b>ID:</b><input type="number" name="idErab" id="idErab" value="'.$idErabiltzaile.'" readonly>
+                                    <p><b>Izena:</b> '.$erabiltzaileIzena.'</p>
+                                    <p><b>Puntuak:</b> '.$puntuak.'<p>
+                                    <input type="submit" value="Ezabatu" title="delete" name="delete" class="delete" onclick="return confirm(\'Ziur '.$erabiltzaileIzena.' ezabatu nahi duzula?\')"/>
+                                </form>
                             </div>                             
                         ';
 
@@ -37,5 +41,7 @@
         } 
 
 
+
+    
 
 ?>

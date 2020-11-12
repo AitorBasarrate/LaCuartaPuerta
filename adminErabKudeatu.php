@@ -3,6 +3,7 @@
 <head>    
     <?php
         include 'PHP/dbKonexioa.php';
+        include 'PHP/erabiltzaileakEzabatu.php';
     ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -60,6 +61,10 @@
     .flex-container img {
     vertical-align:middle;
     width: 40px;
+    }
+
+    button, input[type="submit"] {
+        background:url(/Media/trash.png) no-repeat;
     }
 
 
