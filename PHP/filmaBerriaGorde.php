@@ -1,4 +1,3 @@
-
 <?php
 
     require_once 'dbKonexioa.php';
@@ -37,12 +36,12 @@
 echo $statusMsg; 
     
     $sinopsis = $_POST['sinopsis'];
-    $izenburua = $_POST['izenburua'];
-    $trailer = $_POST['trailer'];
+	$izenburua = $_POST['izenburua'];
+	$trailer = $_POST['trailer'];
     $zuzendaria = $_POST['zuzendaria'];
     $generoa = $_POST['generoa'];
-    $urtea = $_POST['urtea'];
-    $balorazioa = $_POST['balorazioa'];
+	$urtea = $_POST['urtea'];
+	$balorazioa = $_POST['balorazioa'];
     $kritika = $_POST['kritika'];   
 
     $miConsulta = $miPDO->prepare ("INSERT INTO filmak (idPelikulak,Izenburuak,Argazkia,Generoa,Zuzendaria,Urtea,Sinopsis,Kritika,Balorazioa,Trailer)

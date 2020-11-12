@@ -5,6 +5,7 @@
         <?php
             include 'PHP/dbKonexioa.php';
             include 'PHP/erregistroaEgin.php';
+            include 'PHP/loginEgin.php';
         ?>
 
         <!-- Erregistro atala -->
@@ -43,7 +44,6 @@
                     <a href="bazkideArea.php" id="bazkideArea1">BAZKIDE AREA</a>
                     <a id="bazkideArea2" onclick="alert('Atal hau ikusi nahi baduzu, erregistratu')">BAZKIDE AREA</a>
                     <a href="adminArea.html" id="adminArea">ADMIN AREA</a>
-
                     <a class="LoginBoton" href="#home" id='LoginBoton'onclick="document.getElementById('izenaEman').style.display='block'"><i class="fa fa-fw fa-user" ></i> LOGIN</a>
                     <a class="LoginBoton"  href="#home" id='LogoutBoton' onclick="disableButton()"><i class="fa fa-fw fa-user" ></i> LOGOUT</a>
                     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -172,12 +172,12 @@
                         <!-- Izen emateko datuak sartu -->
                         <a>Saioa asi:</a><br>
                         <!-- Izena -->
-                        <input type="text" name="erabiltzailea" placeholder="Erabiltzaile izena *" required><br>
+                        <input type="text" name="erabiltzailea" placeholder="Erabiltzaile izena *" oninput='erabiltzaileKonp(),denaOndo()' required><br>
                         <!-- Pasahitza -->
-                        <input type="password" name="password1" placeholder="Pasahitza *" required><br>
+                        <input type="password" name="password1" placeholder="Pasahitza *" oninput='pasahitzakBerdin(),denaOndo()' required><br>
                         <!-- Sartu -->
                         
-                        <input type="submit" value="logIn" onclick='loginKonprobatu()' onclick="bazkideaSartu()" id='btn2' name="btn2"><br>
+                        <input type="submit" value="logIn" onclick='<?php konprobatuLogina();?>' onclick="bazkideaSartu()" id='btn2' name="btn2"><br>
                         
                         <button onclick="bazkideaSartu(this.id)" id="erregistratuNahi">Ez naiz bazkide, izena eman</button>
                     </div>

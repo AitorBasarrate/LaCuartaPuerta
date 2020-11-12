@@ -27,17 +27,14 @@ $( "#logo ").click(function() {
       var bazkide2=document.getElementById('bazkideArea2');
       //localean zeozer badago...
     if(buscarLocal()){
-      
         console.log('');
         document.getElementById('LoginBoton').style.display='none';
         document.getElementById('LogoutBoton').style.display='block';
         bazkide1.style.display='block';
         bazkide2.style.display='none';
         //lokalean dauden elementuekin kookiak sotuko dtugu
-        
         crearCookies();
     }else{
-        alert("Illooooo que ha cerrao la cecion!!!");
         document.getElementById('LoginBoton').style.display='block';
         document.getElementById('LogoutBoton').style.display='none';
         bazkide1.style.display='none';
@@ -49,7 +46,6 @@ $( "#logo ").click(function() {
       var bazkide1=document.getElementById('bazkideArea1');
       var bazkide2=document.getElementById('bazkideArea2');
     if(buscarLocal()){
-        alert('entra');
         bazkide1.style.display='block';
         bazkide2.style.display='none';
     }else{
@@ -111,13 +107,24 @@ function crearLocal(){
             var cookie2=c.substring(nameEQ.length,c.length);
             } 
         }
+        //permisos cooki-a
+        var nameEQ = 'permisos' + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0;i < ca.length;i++) { 
+            var c = ca[i]; while (c.charAt(0)==' ') c = c.substring(1,c.length); 
+            if (c.indexOf(nameEQ) == 0) {
+            var cookie3=c.substring(nameEQ.length,c.length);
+            } 
+        }
+        //loc
         //localStorage sortzen dugu datu horietatik
         var nombre=cookie1;
         var apellido=cookie2;
+        var permisos=cookie3
        
         localStorage.setItem('usuario', nombre);
         localStorage.setItem('contraseña', apellido);
-         console.log(localStorage.getItem('nombre'));
+        localStorage.setItem('contraseña', permisos);
         //menua aldatzen dugu
         document.getElementById('LoginBoton').style.display='none';
         document.getElementById('LogoutBoton').style.display='block';
