@@ -17,6 +17,7 @@ $( "#logo ").click(function() {
 /* LOCALSTORAGE ETA COOKI-EN GESTIO GUZTIA */
   //Orrialzea zabaltzean...
     window.onload = function(){
+    document.getElementById('adminArea').style.display='none';
     comprobarStorage();
   };
 
@@ -27,32 +28,33 @@ $( "#logo ").click(function() {
       var bazkide2=document.getElementById('bazkideArea2');
       //localean zeozer badago...
     if(buscarLocal()){
-        console.log('');
+      //Begiratuko dugu zei baimena duen 
+        miStorage = window.localStorage;
+        var permisos = miStorage.getItem('permisos');
+        
+        if(permisos=='2'){
+          console.log('entra');
+          document.getElementById('adminArea').style.display='block';
+        }else{
+
+          document.getElementById('adminArea').style.display='none';
+        }
         document.getElementById('LoginBoton').style.display='none';
         document.getElementById('LogoutBoton').style.display='block';
         bazkide1.style.display='block';
         bazkide2.style.display='none';
+        
         //lokalean dauden elementuekin kookiak sotuko dtugu
         crearCookies();
     }else{
         document.getElementById('LoginBoton').style.display='block';
         document.getElementById('LogoutBoton').style.display='none';
+        document.getElementById('adminArea').style.display='none';
         bazkide1.style.display='none';
         bazkide2.style.display='block';
     }
   }
-  //boton bazkideArea
-  function verBazkide(){
-      var bazkide1=document.getElementById('bazkideArea1');
-      var bazkide2=document.getElementById('bazkideArea2');
-    if(buscarLocal()){
-        bazkide1.style.display='block';
-        bazkide2.style.display='none';
-    }else{
-        bazkide1.style.display='none';
-        bazkide2.style.display='block';
-    }
-  }
+
 //localean zeozer gordeta dagoen a la ez
   function buscarLocal(){
     miStorage = window.localStorage;
@@ -67,18 +69,19 @@ $( "#logo ").click(function() {
         //local storage baldin badago...
         return true;
     }
-
   }
 
  //Cookiak sortzeko localStorage-eko datuekin...
   function crearCookies(){
     var usuario = localStorage.getItem('usuario');
     var contraseña = localStorage.getItem('contraseña');
+    var permisos=localStorage.getItem('permisos');
     var d=new Date();
     d.setTime(d.getTime()+(12*60*60*1000));
     var expires="expires="+ d.toUTCString();
     document.cookie='usuario'+"="+usuario+';'+expires;
     document.cookie='contraseña'+"="+contraseña+';'+expires;
+    document.cookie='permisos'+"="+permisos+';'+expires;
   }
 
 //Erregistratzean, local storage-a sortuko du.
