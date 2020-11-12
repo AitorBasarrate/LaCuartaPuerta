@@ -145,17 +145,6 @@
                 </form>
             </div>
         </div>
-
-<!-- onclick="var erantzuna = lo de php que esta copiando en erregistroEgin.php;
-                            if(erantzuna == true){
-                                bazkideaSartu('bazkideNaiz');
-                                console.log('churrula');
-                            }else('erregistratuNahi')
-                                bazkideaSartu('erregistratuNahi');
-                                console.log('no churrula');
-                            " -->
-
-
         <!-- Sartu MODAL-a -->
         <div class="modal" id="sartu" hidden>
             <!-- Ixteko botoia -->
@@ -176,10 +165,8 @@
                         <!-- Pasahitza -->
                         <input type="password" name="password1" placeholder="Pasahitza *" oninput='pasahitzakBerdin(),denaOndo()' required><br>
                         <!-- Sartu -->
-                        
-                        <input type="submit" value="logIn" onclick='<?php konprobatuLogina();?>' onclick="bazkideaSartu()" id='btn2' name="btn2"><br>
-                        
-                        <button onclick="bazkideaSartu(this.id)" id="erregistratuNahi">Ez naiz bazkide, izena eman</button>
+                        <input type="submit" value="logIn" onclick="bazkideaSartu()" id='btn2' name="btn2"><br>
+                        <button onclick="bazkideaSartu(this.id)" id="erregistratuNavhi">Ez naiz bazkide, izena eman</button>
                     </div>
                 </form>
             </div>
