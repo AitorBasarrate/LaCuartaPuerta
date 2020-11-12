@@ -5,6 +5,7 @@
         <?php
             include 'PHP/dbKonexioa.php';
             include 'PHP/erregistroaEgin.php';
+            include 'PHP/loginEgin.php';
         ?>
 
         <!-- Erregistro atala -->
@@ -171,12 +172,12 @@
                         <!-- Izen emateko datuak sartu -->
                         <a>Saioa asi:</a><br>
                         <!-- Izena -->
-                        <input type="text" name="erabiltzailea" placeholder="Erabiltzaile izena *" required><br>
+                        <input type="text" name="erabiltzailea" placeholder="Erabiltzaile izena *" oninput='erabiltzaileKonp(),denaOndo()' required><br>
                         <!-- Pasahitza -->
-                        <input type="password" name="password1" placeholder="Pasahitza *" required><br>
+                        <input type="password" name="password1" placeholder="Pasahitza *" oninput='pasahitzakBerdin(),denaOndo()' required><br>
                         <!-- Sartu -->
                         
-                        <input type="submit" value="logIn" onclick='loginKonprobatu()' onclick="bazkideaSartu()" id='btn2' name="btn2"><br>
+                        <input type="submit" value="logIn" onclick='<?php konprobatuLogina();?>' onclick="bazkideaSartu()" id='btn2' name="btn2"><br>
                         
                         <button onclick="bazkideaSartu(this.id)" id="erregistratuNahi">Ez naiz bazkide, izena eman</button>
                     </div>
