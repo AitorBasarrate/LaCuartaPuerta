@@ -20,8 +20,8 @@
                         
                         echo '
                             <div>
-                                <form method="POST" action="" name="formErab">   
-                                    <b>ID:</b><input type="number" name="idErab" id="idErab" value="'.$idpelikula.'" readonly>
+                                <form method="POST" action="" name="formPelikula">   
+                                    <b>ID:</b><input type="number" name="idPelikula" id="idPelikula" value="'.$idpelikula.'" readonly>
                                     <p><b>Izenburua:</b> '.$izenburuak.'</p>
                                     <p><b>Urtea:</b> '.$urtea.'<p>
                                     <input type="submit" value="Ezabatu" title="delete" name="delete" class="delete" onclick="return confirm(\'Ziur '.$izenburuak.' ezabatu nahi duzula?\')"/>
