@@ -3,6 +3,13 @@
 <?php 
 
         try{
+
+            if((isset($_POST['generoa']))) {
+                $gen=$_POST['generoa'];
+                $gene = implode('-',$gen);
+                echo $gene;
+            }
+
             /* Genero desberdinen lista atera */
             $miConsulta = $miPDO->prepare("SELECT DISTINCT Generoa FROM filmak");
             $miConsulta->execute(); 
@@ -11,10 +18,17 @@
                 //Generoa 
                 $generoa=$fila['Generoa'];
 
-                    echo '   
+                    // echo '   
+                    // &ensp;&ensp;&ensp;<input type="checkbox" name="generoa[]" id="generoa" value="'.$generoa.'" '. if (in_array($generoa, $gen))echo "checked";.' >
+                    //     <label for="'.$generoa.'">'.$generoa.'</label><br>
+                    //     ';
+
+                    // https://stackoverflow.com/questions/10920821/set-checkbox-checked-state-based-on-array-values
+
+                        echo '   
                         &ensp;&ensp;&ensp;<input type="checkbox" name="generoa[]" id="generoa" value="'.$generoa.'">
-                        <label for="'.$generoa.'">'.$generoa.'</label><br>
-                        ';
+                            <label for="'.$generoa.'">'.$generoa.'</label><br>
+                            ';
 
             }
 

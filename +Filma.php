@@ -14,24 +14,11 @@
 
                 if((isset($_POST['star']))) {
                     $izarrak=$_POST['star'];
-                    echo $izarrak;
-
-                    // switch ($izarrak) {
-                    //     // https://stackoverflow.com/questions/12620564/radio-buttons-with-cookie
-
-                    //     case 1:
-                    //         $izar1 = 'checked="checked"';
-                    //     case 2:
-                    //         $izar2 = 'checked="checked"'; 
-                    //     case 3:
-                    //         $izar3 = 'checked="checked"';  
-                    //     case 4:
-                    //         $izar4 = 'checked="checked"';  
-                    //     case 5:
-                    //         $izar5 = 'checked="checked"';  
-                    // }
-
+                } else {
+                    $izarrak = 0;
                 }
+
+   
                  
             ?>
         <!-- Hasiera oriko estilua -->
