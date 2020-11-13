@@ -146,6 +146,7 @@ width: 200px;
     grid-column: 3;
     grid-row: 3;
 }
+
 .item9 input[type=file]{justify-content: center; font-size: 65%;}
 .grid-container p{font-size: 20px;}
 
@@ -195,6 +196,7 @@ width: 200px;
         grid-column: 1;
         grid-row: 9;
     }
+    
 }
 #respond {
     margin-top: 20px;

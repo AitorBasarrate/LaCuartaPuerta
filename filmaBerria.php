@@ -12,6 +12,7 @@
     <script src="JS/bazkideArea.js"></script>
     <script src="JS/sesionStorage.js"></script>
     <script src="JS/erregistratu.js"></script>
+    <script src="JS/replaceHistory.js"></script>
     <!-- Hasiera oriko estilua -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -62,7 +63,7 @@
             <div class="grid-container">
                 <div class="grid-item item1">
                     <h3>Izenburua:</h3>
-                    <input type="text" name="izenburua" placeholder="Filmaren Izenburua" required></input>
+                    <input type="text" name="izenburua" id="izenburua" placeholder="Filmaren Izenburua" required></input>
                     <h3>Trailer:</h3>
                     <input type="text" name="trailer" placeholder="Filmaren Trailer-a" required></input><hr>
                 </div>
@@ -88,18 +89,18 @@
                 </div>
                 <div class="grid-item item6">
                     <h3>Filmaren Datua:</h3>
-                    <textarea name="sinopsis" id="datua" maxlength="250" placeholder="Filmaren Datua" required></textarea><hr>
+                    <textarea name="datua" id="datua" maxlength="250" placeholder="Filmaren Datua" required></textarea><hr>
                 </div>
                 <div class="grid-item item7">
                     <h3>Filmaren Galdera:</h3>
-                    <textarea name="sinopsis" id="galdera" maxlength="250" placeholder="Filmaren Galdera" required></textarea><hr>
+                    <textarea name="galdera" id="galdera" maxlength="250" placeholder="Filmaren Galdera" required></textarea><hr>
                 </div>
                 <div class="grid-item item8">
                 <h3>Galderaren Erantzuna:</h3>
-                    <textarea name="sinopsis" id="erantzuna" maxlength="250" placeholder="Galderaren Erantzuna" required></textarea><hr>
+                    <textarea name="erantzuna" id="erantzuna" maxlength="250" placeholder="Galderaren Erantzuna" required></textarea><hr>
                 </div>
                 <div class="grid-item item9">
-                <br><input type="file" id="img" name="argazkia" accept="image/*" required><br><br>
+                    <br><input type="file" id="img" name="argazkia" accept="image/*" required><br><br>
                     <input type="submit" name="gorde" onclick="<?php include 'PHP/filmaBerriaGorde.php'; ?>" value="Filma Gorde">
                     <input type="reset" value="Datuak Ezabatu">
                 </div>

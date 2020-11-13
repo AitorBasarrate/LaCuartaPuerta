@@ -17,8 +17,8 @@ function erabiltzaileKonp() {
                     
                 }else{ 
                    /* ez badago ondo... */
-                   document.getElementById('erabiltzailea').style.border='3px solid red';
-                   document.getElementById('erabiltzailea').style.borderRadius='3px';
+                    document.getElementById('erabiltzailea').style.border='3px solid red';
+                    document.getElementById('erabiltzailea').style.borderRadius='3px';
                     return false;
                 }
     }
