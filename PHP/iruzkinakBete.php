@@ -1,18 +1,17 @@
 <!-- Pelikulak+ ataleko iruzkinaren filtroak beteko dituen php-a -->
 
 <?php 
-        $TituloPelikula = $_GET['id'];
+        $idPelikula=$_COOKIE['idPelikula'];
 
     try{
         /* Filmen datu guztiak aterako ditu */
         $miConsulta = $miPDO->prepare("SELECT Iruzkina,filmak_idPelikulak,ErabiltzaileIzena 
                                         FROM iruzkinak INNER JOIN erabiltzaile ON iruzkinak.erabiltzaile_iderabiltzaile=erabiltzaile.iderabiltzaile 
                                         WHERE filmak_idPelikulak=:idPelikula;");
-        $miConsulta->bindValue("idPelikula",intval($TituloPelikula));
+        $miConsulta->bindValue("idPelikula",intval($idPelikula));
 
         if ($miConsulta->execute()) {
         $fila = $miConsulta->fetchALl(PDO::FETCH_OBJ);
-
         foreach ($fila as $comentario) {
             $ErabiltzaileIzena=$comentario->ErabiltzaileIzena;
             //Iruzkina 

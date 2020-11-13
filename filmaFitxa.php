@@ -4,6 +4,7 @@
     <?php
         include 'PHP/dbKonexioa.php';
         include 'PHP/filmaDatuak.php';
+        include "PHP/iruzkinaEgin.php";
     ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -87,10 +88,10 @@
                 <hr>  
                 <?php include ('PHP/iruzkinakBete.php');?> 
                 <hr>
-                <form id="commentform" action="PHP/iruzkinaEgin.php">         
+                <form id="commentform" action="" method="POST">         
                     <h3>Zure Iruzkina:</h3>
                     <textarea name="comment" id="comment" maxlength="250" placeholder="Zer irudita zaizu filma?"></textarea>
-                    <input name="submit" type="submit" value="Argitaratu"/>
+                    <input name="argitaratu" type="submit" value="Argitaratu"/>
                 </form>
             </div>
     </div>
