@@ -105,5 +105,4 @@ if((!isset($_POST['pelikulaIzenezBilatu'])) && (!isset($_POST['star'])) &&(!isse
     }
    
 hacerSelect($sql);
-print_r($sql);   
 ?>
