@@ -3,6 +3,13 @@
 <?php 
 
         try{
+
+            if(isset($_POST['urtea'])) {     
+                $aukeratuta=$_POST['urtea'];
+                
+                echo $aukeratuta;
+            }
+
             /* Genero desberdinen lista atera */
             $miConsulta = $miPDO->prepare("SELECT DISTINCT Urtea FROM filmak ORDER BY Urtea DESC");
             $miConsulta->execute(); 
@@ -11,7 +18,7 @@
                 //urtea 
                 $urtea=$fila['Urtea'];
                     echo '
-                        <option value="'.$urtea.'">'.$urtea.'</option>
+                        <option value="'.$urtea.'" '. ($aukeratuta === $urtea ? ' selected="selected"' : '').'>'.$urtea.'</option>
                         ';
             }
 

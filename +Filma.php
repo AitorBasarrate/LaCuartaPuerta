@@ -17,12 +17,6 @@
                     echo $izarrak;
                 }
                  
-                if(isset($_POST['urtea'])) {     
-                    $urtea=$_POST['urtea'];
-    
-                    echo $urtea;
-                }
-
             ?>
         <!-- Hasiera oriko estilua -->
         <meta charset="UTF-8">
