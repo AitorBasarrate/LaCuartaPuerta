@@ -19,11 +19,22 @@
                         
                         echo '
                             <div>
-                                <form method="POST" action="" name="formPelikula">   
-                                    <b>ID:</b><input type="number" name="idPelikula" id="idPelikula" value="'.$idpelikula.'" readonly>
-                                    <p><b>Izenburua:</b> '.$izenburuak.'</p>
-                                    <p><b>Urtea:</b> '.$urtea.'<p>
-                                    <input type="submit" value="Ezabatu" title="delete" name="delete" class="delete" onclick="return confirm(\'Ziur '.$izenburuak.' ezabatu nahi duzula?\')"/>
+                                <form method="POST" action="" name="formPelikula">  
+                                    <div class="grid-container">
+                                        <div class="grid-item item1"> 
+                                            <b>ID:</b><input type="number" name="idPelikula" id="idPelikula" value="'.$idpelikula.'" readonly>
+                                        </div>
+                                        <div class="grid-item item2">
+                                            <p class="izenburua"><b>Izenburua:</b> '.$izenburuak.'</p>
+                                        </div>
+                                        <div class="grid-item item3">
+                                            <p><b>Urtea:</b> '.$urtea.'<p>
+                                        </div>
+                                        <div class="grid-item item4">
+                                            <img class="trash" src="Media\trash.png">
+                                            <input type="submit" value="Ezabatu" title="delete" name="delete" class="delete" onclick="return confirm(\'Ziur '.$izenburuak.' ezabatu nahi duzula?\')"/>
+                                        </div>
+                                    </div>
                                 </form>
                             </div>                             
                         ';

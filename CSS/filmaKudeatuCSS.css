@@ -128,7 +128,7 @@ width: 200px;
   grid-row: 1;
 }
 
-.item4 .trash {width: 10%;padding-bottom: 10px;}
+.item4 .trash {width: 20%;padding-bottom: 10px;}
 
 @media screen and (max-width: 1350px) {
 

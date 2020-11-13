@@ -33,17 +33,15 @@
                                             <p><b>Puntuak:</b> '.$puntuak.'<p>
                                         </div>
                                         <div class="grid-item item4">
+                                            <img class="trash" src="Media\trash.png">
                                             <input type="submit" value="Ezabatu" title="delete" name="delete" class="delete" onclick="return confirm(\'Ziur '.$erabiltzaileIzena.' ezabatu nahi duzula?\')"/>
                                         </div>
                                     </div>
                                 </form>
                             </div>                             
                         ';
-
                     }
-
                 }
-
         }catch( PDOException $Exception ) {
                 // PHP Fatal Error. Second Argument Has To Be An Integer, But PDOException::getCode Returns A
                 // String.
