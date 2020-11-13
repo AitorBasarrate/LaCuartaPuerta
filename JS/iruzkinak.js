@@ -1,17 +1,15 @@
-    
-function alertBoton(){
+
     if(buscarLocal()==false){
-       alert('Bidali ahal izateko, bazkide egin behar zara. Momentuz, bakarrik irakurri');
-    }else{
+        alert('Bidali ahal izateko, bazkide egin behar zara. Momentuz, bakarrik irakurri');
+        document.getElementById('argitaratu').disabled=true;
+     }
+function alertBoton(){
+    
         comentario=document.getElementById('commit').text;
-        console.log('entra1')
-        if(comentario==null){
-            console.log('entra2')
+        if(comentario!=null){
             alert('Eskerrik asko zure mezuagatik!');
         }else{
-            console.log('entra3')
             alert('Hutsik dago, mesedez idatzi zeozer');
         }
        
     }
-};

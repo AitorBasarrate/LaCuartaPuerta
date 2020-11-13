@@ -1,7 +1,6 @@
 <?php
     /* Erregistratzeko botoia klikatzean soilik saartuko da */
     if(isset($_POST['btn1'])) {
-        echo('entra1');
         $erabIzena=$_POST['erabiltzailea'];
         /* Datu basearekiko konexioa egingo dugu konprobatzeko erabiltzaile izena erepikatzen ez dela. */
         try{
@@ -14,7 +13,6 @@
                 if($erabIzena==$fila['ErabiltzaileIzena']){
                     //Koinziditzen badu...
                     $igual=true;
-                    echo "<script>console.log('supuestamente el usuerio ya esta registrado pero ya ves tu')</script>";
                 }
             }
             //Ez badu koinziditu... Libre dagoela esan nahi du, orduan insert egingo dugu

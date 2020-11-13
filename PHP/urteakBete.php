@@ -6,8 +6,6 @@
 
             if(isset($_POST['urtea'])) {     
                 $aukeratuta=$_POST['urtea'];
-                
-                echo $aukeratuta;
             }
 
             /* Genero desberdinen lista atera */

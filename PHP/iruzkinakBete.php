@@ -1,8 +1,7 @@
 <!-- Pelikulak+ ataleko iruzkinaren filtroak beteko dituen php-a -->
 
 <?php 
-        $idPelikula=$_COOKIE['idPelikula'];
-
+        
     try{
         /* Filmen datu guztiak aterako ditu */
         $miConsulta = $miPDO->prepare("SELECT Iruzkina,filmak_idPelikulak,ErabiltzaileIzena 

@@ -3,6 +3,7 @@
 <?php 
     //Arzetikan baldin badago idPelikula, aukeratutako pelikula berria dela adierazten du.
     //Orduan filmaren id-a gordetzeko pagina errekargatzean (id-a hartzen delako soilik klik egitean, baina ez da gordetzen komntatu ostean adibidez)...
+   
     if(isset($_GET['id'])){
         $domain = "localhost";
         //Aurreko pelikularen cookia ezabatzen dugu egotekotan...

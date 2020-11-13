@@ -1,6 +1,7 @@
 <?php
 
 try{
+    
     /* Filmen datu guztiak aterako ditu */
     $arrayIdFilmak=array();
     $arrayIzenburuak=array();
@@ -18,7 +19,6 @@ try{
         array_push($arrayIdFilmak,$idFilma);
         array_push($arrayArgazkiak,$argazkia);
         array_push($arrayIzenburuak,$izenburua);
-
     }
     echo ' <script src="JS/index.js"></script>
             <div class="item1" id="item1" onmouseover="botoiHandiak(this.id)" onmouseout="botoiTxikiak(this.id)"><a href="filmaFitxa.php?id='.$arrayIdFilmak[0].'"><img  src="data:image/jpeg;base64,'.base64_encode( $arrayArgazkiak[0]).'"><p>'.$arrayIzenburuak[0].'</p></a></div>

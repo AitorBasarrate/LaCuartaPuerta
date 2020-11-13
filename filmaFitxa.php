@@ -5,6 +5,8 @@
         include 'PHP/dbKonexioa.php';
         include 'PHP/filmaDatuak.php';
         include "PHP/iruzkinaEgin.php";
+        include 'PHP/erregistroaEgin.php';
+        include 'PHP/loginEgin.php';
     ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +14,7 @@
     <link rel="stylesheet" href="CSS/LogInArea.css">
     <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
     <script src="JS/sesionStorage.js"></script>
-    <script src="JS/sesi"></script>
+    <script src="JS/iruzkinak.js"></script>
     <!-- Hasiera oriko estilua -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -50,7 +52,7 @@
                 <a id="bazkideArea2" onclick="alert('Atal hau ikusi nahi baduzu, erregistratu')">BAZKIDE AREA</a>
                 <a href="adminArea.html" id="adminArea">ADMIN AREA</a>
                 <a class="LoginBoton" href="#home" id='LoginBoton'onclick="document.getElementById('izenaEman').style.display='block'"><i class="fa fa-fw fa-user" ></i> LOGIN</a>
-                <a class="LoginBoton"  href="#home" id='LogoutBoton' onclick="disableButton()"><i class="fa fa-fw fa-user" ></i> LOGOUT</a>
+                <a class="LoginBoton"  href="index.php" id='LogoutBoton' onclick="disableButton()"><i class="fa fa-fw fa-user" ></i> LOGOUT</a>
                 <a href="javascript:void(0);" class="icon" onclick="myFunction()">
                 <!-- ESTO ES LA HAMBURGUESA -->
                 <i class="fa fa-bars"></i>
@@ -98,7 +100,7 @@
                 <form id="commentform" action="" method="POST">         
                     <h3>Zure Iruzkina:</h3>
                     <textarea name="comment" id="comment" maxlength="250" placeholder="Zer irudita zaizu filma?"></textarea>
-                    <input name="argitaratu" type="submit" value="Argitaratu"/>
+                    <input name="argitaratu" onclick='alertBoton()' type="submit" value="Argitaratu" disabled/>
                 </form>
             </div>
     </div>

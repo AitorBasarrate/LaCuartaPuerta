@@ -3,23 +3,23 @@
 <?php
     /* Argitaratu botoia sakatzerakoan */
     try{
+        //Botoia sakatzean...
         if(isset($_POST['argitaratu'])){
         $iruzkin=$_POST['comment'];
-            if($iruzkin!='' ){
-                $erab=$_COOKIE['usuario'];
-            //Aurreko php tik eongo da bai edo bai
+        $erab=$_COOKIE['usuario'];
+            //Iruzkina ezbadago hutsik eta erabiltzailea logeatuta baldin badago
+            if($iruzkin!=''&& isset($erab)){
+            //Aurreko php tik eongo da variablea bai edo bai kadenan pasatzen delako.
             $idPelikula;
-
             //Erabiltzaile izena dugu baina ez id erabiltzaile, orduan aterako dugu...
             $miConsulta = $miPDO->prepare("SELECT iderabiltzaile from erabiltzaile where ErabiltzaileIzena='$erab'");
             $miConsulta->execute(); 
             while ($fila = $miConsulta->fetch(PDO::FETCH_ASSOC)){
                     //erabiltzaileId-a aterako dugu
                     $idErab=$fila['iderabiltzaile'];
-                echo $idErab;
                 
             }
-            /* Datu basearekiko konexioa, iruzkina datu basean sartzeko. */
+            /* Iruzkina datu basean sartzeko... */
                 /* Insert-a egingo dugu */
                 $miConsulta = $miPDO->prepare("INSERT into iruzkinak (iruzkina, erabiltzaile_iderabiltzaile, filmak_idPelikulak) VALUES (?,?,?)");
                     /*iNTRODUCIMOS LOS VALORES A METER*/    
@@ -28,8 +28,7 @@
                     $miConsulta->bindParam(3, $idPelikula);
                     /* Ejecutamos */
                     $miConsulta->execute(); 
-                    /* Decimos que se han generado correctamente */
-                    echo'<script>alert("Zure iruzkina gorde da!")</script>'; 
+                    /* La consulta se ha ejecutado correctamente*/
 
             
             }

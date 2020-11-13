@@ -57,7 +57,7 @@
                 <script src="JS/HamburguerJS.js"></script>
             </header>
                 <div class="contenido">
-                    <div class="wrapper"> 
+                    <div class="wrapper">
                         <?php include ('PHP/indexDatosPelis.php');?> 
                     </div>
                     <div class="trailer">

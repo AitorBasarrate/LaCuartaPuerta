@@ -11,7 +11,7 @@
     $fila = $miConsulta->fetchALl(PDO::FETCH_OBJ);
 
     foreach ($fila as $peli) {
-    $idPelikulak=$peli->idPelikulak;
+    $idPelikula=$peli->idPelikulak;
     //Izenburua 
     $izenburua=$peli->Izenburuak;
     //Argazkiaren datua

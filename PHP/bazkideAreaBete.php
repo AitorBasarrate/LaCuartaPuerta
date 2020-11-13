@@ -3,7 +3,6 @@
 <?php 
 
         try{
-        var_dump($miPDO);
         /* Hurrengo pelikularen argazkia eta izena aterako dugu */
         $miConsulta = $miPDO->prepare("SELECT Izenburuak,Argazkia FROM filmak ORDER BY idPelikulak DESC LIMIT 1");
         $miConsulta->execute(); 
@@ -52,8 +51,6 @@
                 
                 $puntuazioa=$fila['Puntuak'];
                 $ranking=$fila['erabiltzaileRankingPos'];
-                echo($puntuazioa);
-                echo($ranking);
         }
         }
         /* Orain html-an bakarrik deituko dugu array posizioetara  */

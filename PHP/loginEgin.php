@@ -8,15 +8,12 @@
         $erabIzena=$_POST['erabiltzailea'];
         /* Encriptatuko dugu pasahitza */
         $contra=md5($contra);
-        echo('pdfg2');
         try{
         /* Erabiltzaile izenak begiratu*/
         $miConsulta = $miPDO->prepare("SELECT ErabiltzaileIzena,Pasahitza ,Baimenak FROM erabiltzaile Where ErabiltzaileIzena='$erabIzena'");
         $miConsulta->execute(); 
-        echo('pdfg3');
         $igual=false;
         while ($fila = $miConsulta->fetch(PDO::FETCH_ASSOC)){
-            echo('pdfg4');
             //Koinziditzen duen a la ez begiratuko dugu
             if($erabIzena==$fila['ErabiltzaileIzena'] && $contra==$fila['Pasahitza']){
                 $erabIzena=$fila['ErabiltzaileIzena'];
@@ -36,11 +33,11 @@
             include 'PHP/crearCookies.php';
 
             echo("<script>
-                console.log('entra4');
+                
                 console.log(localStorage.getItem('nombre'));
                 localStorage.clear();
                 //Aurretikan baldin ez badago
-                console.log('entra5');
+                
                 //Sortutako cookiak (crearCookies.php-tik) irakurtzen ditugu
                 
                 //Uruario cooki-a
@@ -83,7 +80,6 @@
                 document.getElementById('LoginBoton').style.display='none';
                 document.getElementById('LogoutBoton').style.display='block';
                     </script>");
-            echo 'coincide';
             echo'<style>
             #sartu{
                 display:none;

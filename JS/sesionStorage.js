@@ -1,10 +1,13 @@
 
 /* LOCALSTORAGE ETA COOKI-EN GESTIO GUZTIA */
   //Orrialzea zabaltzean...
-  window.onload = function(){
+  console.log('entraSesion');
+  window.addEventListener("load", function() { 
+    // el código que quieres ejecutar 
+    console.log('entra2');
     document.getElementById('adminArea').style.display='none';
     comprobarStorage();
-  };
+});
 
  
   //Local storage dagoen ala ez begiratuko du.
@@ -17,7 +20,6 @@
         miStorage = window.localStorage;
         var permisos = miStorage.getItem('permisos');
         if(permisos=='2'){
-          console.log('entra');
           document.getElementById('adminArea').style.display='block';
         }else{
 
@@ -33,7 +35,7 @@
     }else{
         document.getElementById('LoginBoton').style.display='block';
         document.getElementById('LogoutBoton').style.display='none';
-        document.getElementById('adminArea').style.display='none';
+        
         bazkide1.style.display='none';
         bazkide2.style.display='block';
         
@@ -71,11 +73,9 @@
 
 //Erregistratzean, local storage-a sortuko du.
 function crearLocal(){
-    console.log('entra4');
     console.log(localStorage.getItem('nombre'));
     localStorage.clear();
     //Aurretikan baldin ez badago
-    console.log('entra5');
       //Sortutako cookiak (crearCookies.php-tik) irakurtzen ditugu
         //Uruario cooki-a
         var nameEQ = 'usuario' + "=";

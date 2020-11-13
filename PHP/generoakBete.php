@@ -7,7 +7,6 @@
             if((isset($_POST['generoa']))) {
                 $gen=$_POST['generoa'];
                 $gene = implode('-',$gen);
-                echo $gene;
             }
 
             /* Genero desberdinen lista atera */

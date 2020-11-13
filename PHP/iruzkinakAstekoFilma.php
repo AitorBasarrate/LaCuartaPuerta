@@ -5,7 +5,7 @@ try{
     /* Filmen datu guztiak aterako ditu */
     $miConsulta = $miPDO->prepare("SELECT Iruzkina,filmak_idPelikulak,ErabiltzaileIzena 
                                     FROM iruzkinak INNER JOIN erabiltzaile ON iruzkinak.erabiltzaile_iderabiltzaile=erabiltzaile.iderabiltzaile 
-                                    WHERE filmak_idPelikulak=$idPelikulak");
+                                    WHERE filmak_idPelikulak=$idPelikula");
 
     if ($miConsulta->execute()) {
     $fila = $miConsulta->fetchALl(PDO::FETCH_OBJ);

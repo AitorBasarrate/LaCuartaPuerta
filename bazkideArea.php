@@ -46,7 +46,7 @@
                 <a id="bazkideArea2" onclick="alert('Atal hau ikusi nahi baduzu, erregistratu')">BAZKIDE AREA</a>
                 <a href="adminArea.html" id="adminArea">ADMIN AREA</a>
                 <a class="LoginBoton" href="#home" id='LoginBoton'onclick="document.getElementById('izenaEman').style.display='block'"><i class="fa fa-fw fa-user" ></i> LOGIN</a>
-                <a class="LoginBoton"  href="#home" id='LogoutBoton' onclick="disableButton()"><i class="fa fa-fw fa-user" ></i> LOGOUT</a>
+                <a class="LoginBoton"  href="index.php" id='LogoutBoton' onclick="disableButton()"><i class="fa fa-fw fa-user" ></i> LOGOUT</a>
                 <a href="javascript:void(0);" class="icon" onclick="myFunction()">
                 <!-- ESTO ES LA HAMBURGUESA -->
                 <i class="fa fa-bars"></i>
