@@ -27,7 +27,7 @@
                 /* Encriptatuko dugu pasahitza */
                 $contra=md5($contra);
                 /* Insert-a egingo dugu */
-                $miConsulta = $miPDO->prepare("INSERT into erabiltzaile (ErabiltzaileIzena, Pasahitza,Bimenak,Puntuak) VALUES (?,?,?,?)");
+                $miConsulta = $miPDO->prepare("INSERT into erabiltzaile (ErabiltzaileIzena, Pasahitza,Baimenak,Puntuak) VALUES (?,?,?,?)");
                     /* iNTRODUCIMOS LOS VALORES A METER */    
                     $miConsulta->bindParam(1, $erabIzena);
                     $miConsulta->bindParam(2, $contra);
