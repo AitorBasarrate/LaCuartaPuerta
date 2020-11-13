@@ -1,8 +1,6 @@
 /* Hemen loginaren datuak balioztatuko ditugu */
 /* document.write('<?php echo include_once "include.php";?>'); */
 
-
-
 function erabiltzaileKonp() {
     var erab=document.getElementById('erabiltzailea').value;
     /*5 karaktere gutxienez eta karaktere arraroak ez dute balio*/
@@ -19,8 +17,8 @@ function erabiltzaileKonp() {
                     
                 }else{ 
                    /* ez badago ondo... */
-                   document.getElementById('erabiltzailea').style.border='3px solid red';
-                   document.getElementById('erabiltzailea').style.borderRadius='3px';
+                    document.getElementById('erabiltzailea').style.border='3px solid red';
+                    document.getElementById('erabiltzailea').style.borderRadius='3px';
                     return false;
                 }
     }

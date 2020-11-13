@@ -1,7 +1,6 @@
 <!-- Asteko filmean eta filma fitxan iruzkinak egiteko gaitasuna emango digun PHP-a -->
 
 <?php
-
     /* Argitaratu botoia sakatzerakoan */
     try{
         if(isset($_POST['argitaratu'])){
@@ -42,6 +41,7 @@
                 // String.
                 throw new MyDatabaseException( $Exception->getMessage( ) , $Exception->getCode( ) );
     }
+
 ?>
 <script>
      

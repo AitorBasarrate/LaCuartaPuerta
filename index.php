@@ -5,11 +5,12 @@
         <?php
             include 'PHP/dbKonexioa.php';
             include 'PHP/erregistroaEgin.php';
+            include 'PHP/loginEgin.php';
         ?>
 
         <!-- Erregistro atala -->
+        <script src="JS/sesionStorage.js"></script>
         <script src="JS/erregistratu.js"></script>
-        <link rel="stylesheet" href="CSS/LogInArea.css">
         <!-- Hasiera oriko estilua -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,12 +21,15 @@
         <!-- Font family estiloa -->
         <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
         <!-- CSS stilo orrialdea -->
-        <link rel="stylesheet" href="CSS/IndexCSS.css">
+        <link rel="stylesheet" href="CSS/IndexCSS.css">        
+        <link rel="stylesheet" href="CSS/LogInArea.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">        
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
         <!-- Orriaren iconoa eta tituloa -->
         <link rel="icon" type="image/png" href="Media/fav-icon1.png">
+        <script src="JS/index.js"></script>
+        
         <title>La Cuarta Puerta</title>
         
     </head>
@@ -33,7 +37,7 @@
         <div class="content">
             <header>
                     <!-- Hemen logoa txertatu behar da -->
-                <img class="logo" id="logo"src="Media/logo-bien.png" alt="Au revoir Shoshanna">
+                <img href="index.php" class="logo" id="logo"src="Media/logo-bien.png" alt="Au revoir Shoshanna">
                     <!-- Nabigatzailea, bakoitzak beraren orria kargatuko du -->
                 <div class="topnav" id="myTopnav">
                     <a href="index.php" class="active">HASIERA</a>
@@ -41,6 +45,7 @@
                     <a href="+Filma.php">+ FILMA</a>
                     <a href="bazkideArea.php" id="bazkideArea1">BAZKIDE AREA</a>
                     <a id="bazkideArea2" onclick="alert('Atal hau ikusi nahi baduzu, erregistratu')">BAZKIDE AREA</a>
+                    <a href="adminArea.html" id="adminArea">ADMIN AREA</a>
                     <a class="LoginBoton" href="#home" id='LoginBoton'onclick="document.getElementById('izenaEman').style.display='block'"><i class="fa fa-fw fa-user" ></i> LOGIN</a>
                     <a class="LoginBoton"  href="#home" id='LogoutBoton' onclick="disableButton()"><i class="fa fa-fw fa-user" ></i> LOGOUT</a>
                     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -135,24 +140,13 @@
                         <input type="checkbox" id="terminoLegalak" name="terminoLegalak" value="Boat" onclick='denaOndo()'>
                         <label for="terminoLegalak">Termino legalak onartzen ditut.</label><br>
                         <!-- Izena eman -->
-                        <input type="submit" id='register'name="btn1" value="register" onclick="crearLocal()" disabled>
+                        <input type="submit" id='register' name="btn1" value="register" onclick="crearLocal()" disabled>
                         <!-- Bazkide naiz botoia - Sartzeko modal-a erakutsi -->
                         <button onclick="bazkideaSartu(this.id)" id="bazkideNaiz">Bazkidea naiz dagoeneko</button>
                     </div> 
                 </form>
             </div>
         </div>
-
-<!-- onclick="var erantzuna = lo de php que esta copiando en erregistroEgin.php;
-                            if(erantzuna == true){
-                                bazkideaSartu('bazkideNaiz');
-                                console.log('churrula');
-                            }else('erregistratuNahi')
-                                bazkideaSartu('erregistratuNahi');
-                                console.log('no churrula');
-                            " -->
-
-
         <!-- Sartu MODAL-a -->
         <div class="modal" id="sartu" hidden>
             <!-- Ixteko botoia -->
@@ -169,14 +163,12 @@
                         <!-- Izen emateko datuak sartu -->
                         <a>Saioa asi:</a><br>
                         <!-- Izena -->
-                        <input type="text" name="erabiltzailea" placeholder="Erabiltzaile izena *" required><br>
+                        <input type="text" name="erabiltzailea" placeholder="Erabiltzaile izena *" oninput='erabiltzaileKonp(),denaOndo()' required><br>
                         <!-- Pasahitza -->
-                        <input type="password" name="password1" placeholder="Pasahitza *" required><br>
+                        <input type="password" name="password1" placeholder="Pasahitza *" oninput='pasahitzakBerdin(),denaOndo()' required><br>
                         <!-- Sartu -->
-                        
-                        <input type="submit" value="logIn" onclick='loginKonprobatu()' onclick="bazkideaSartu()" id='btn2' name="btn2"><br>
-                        
-                        <button onclick="bazkideaSartu(this.id)" id="erregistratuNahi">Ez naiz bazkide, izena eman</button>
+                        <input type="submit" value="logIn" onclick="bazkideaSartu()" id='btn2' name="btn2"><br>
+                        <button onclick="bazkideaSartu(this.id)" id="erregistratuNavhi">Ez naiz bazkide, izena eman</button>
                     </div>
                 </form>
             </div>

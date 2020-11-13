@@ -5,6 +5,8 @@
         include 'PHP/dbKonexioa.php';
         include 'PHP/astekoFilmaDatuakHartu.php';
         include "PHP/iruzkinaEgin.php";
+        include 'PHP/erregistroaEgin.php';
+        include 'PHP/loginEgin.php';
     ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,11 +14,12 @@
     <link rel="stylesheet" href="CSS/LogInArea.css">
     <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
     <script src="JS/bazkideArea.js"></script>
+    <script src="JS/sesionStorage.js"></script>
     <!-- Hasiera oriko estilua -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="JS/LoginJS.js"></script>
+
     <script src="JS/HamburguerJS.js"></script>
     <!-- Font family estiloa -->
     <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
@@ -29,6 +32,7 @@
     <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
     <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="JS/iruzkinak.js"></script>
     <!-- Orriaren iconoa eta tituloa -->
     <link rel="icon" type="image/png" href="Media/fav-icon1.png">
     <title>La Cuarta Puerta</title>
@@ -40,19 +44,24 @@
     <div class="content">
         <header>
                 <!-- Hemen logoa txertatu behar da -->
-            <img class="logo" src="Media/logo-bien.png" alt="Au revoir Shoshanna">
+            <img href="index.php" class="logo" id="logo"src="Media/logo-bien.png" alt="Au revoir Shoshanna">
                 <!-- Nabigatzailea, bakoitzak beraren orria kargatuko du -->
             <div class="topnav" id="myTopnav">
                 <a href="index.php">HASIERA</a>
                 <a href="astekoFilma.php" class="active">ASTEKO FILMA</a>
                 <a href="+Filma.php">+ FILMA</a>
-                <a href="bazkideArea.php">BAZKIDE AREA</a>
-                <a class="LoginBoton" href="#home" onclick="document.getElementById('izenaEman').style.display='block'"><i class="fa fa-fw fa-user"></i> LOGIN</a>
+                <a href="bazkideArea.php" id="bazkideArea1">BAZKIDE AREA</a>
+                <a id="bazkideArea2" onclick="alert('Atal hau ikusi nahi baduzu, erregistratu')">BAZKIDE AREA</a>
+                <a href="adminArea.html" id="adminArea">ADMIN AREA</a>
+                <a class="LoginBoton" href="#home" id='LoginBoton'onclick="document.getElementById('izenaEman').style.display='block'"><i class="fa fa-fw fa-user" ></i> LOGIN</a>
+                <a class="LoginBoton"  href="#home" id='LogoutBoton' onclick="disableButton()"><i class="fa fa-fw fa-user" ></i> LOGOUT</a>
                 <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                <!-- HAMBURGUESA, responsive menua -->
+                <!-- ESTO ES LA HAMBURGUESA -->
                 <i class="fa fa-bars"></i>
                 </a>
             </div>
+                <!-- Nabigatzaile barra, responsive egitean Haamburguesa ateratzen da -->
+            <script src="JS/HamburguerJS.js"></script>
         </header>
         <section>
         <div class="grid-container">
@@ -118,12 +127,12 @@
                 </div>
                 <!-- Kolumna 2 datak sartzeko atala -->
                             
-                <form target="frame1" method='post'>
+                <form  method='post' action=''>
                     <div class="column2">
                             <!-- Izen emateko datuak sartu -->
                             <!-- Izena -->
                             <div class='erabIzena'>
-                                <input type="text" name="erabiltzailea" id="erabiltzailea" oninput='erabiltzaileKonp()' oninput='denaOndo()' placeholder="Erabiltzaile izena *" required>
+                                <input type="text" name="erabiltzailea" id="erabiltzailea" oninput='erabiltzaileKonp(),denaOndo()' placeholder="Erabiltzaile izena *" required>
                                 <!-- Baldintzak erabiltzaile izenarekiko (hover batean) -->
                                 <div class="hoverErab">
                                     <img class="info" src='media/informacion.png'><br>
@@ -138,7 +147,7 @@
                             </div>
                             <!-- Pasahitza -->
                             <div class='pswd1'>
-                                <input type="password" id="password1" name="password1" oninput='pasahitzaKonp()'oninput='denaOndo()' placeholder="Pasahitza *" required>
+                                <input type="password" id="password1" name="password1" oninput='pasahitzaKonp(),denaOndo()' placeholder="Pasahitza *" required>
                                 <!-- Baldintzak pasahitzari dagokiones (hover batean) -->
                                 <div class="hoverContra">
                                     <img class="info" src='media/informacion.png'><br>
@@ -154,16 +163,16 @@
                             </div>
                             
                         <!-- Pasahitza konfirmatu -->
-                        <input type="password" name="password2" id='password2' placeholder="Pasahitza konfirmatu"  oninput='pasahitzakBerdin()' oninput='denaOndo()' required><br>
+                        <input type="password" name="password2" id='password2' placeholder="Pasahitza konfirmatu"  oninput='pasahitzakBerdin(),denaOndo()' required><br>
                         <!-- Korreoa -->
-                        <input type="email" id='korreoa' name="korreoa" placeholder="Posta elektronikoa jarri" oninput='korreoaOndo()' oninput='denaOndo()' required ><br>
+                        <input type="email" id='korreoa' name="korreoa" placeholder="Posta elektronikoa jarri" oninput='korreoaOndo(),denaOndo()' required ><br>
                         <!-- Termino legalak onartu-->
                         <input type="checkbox" id="terminoLegalak" name="terminoLegalak" value="Boat" onclick='denaOndo()'>
                         <label for="terminoLegalak">Termino legalak onartzen ditut.</label><br>
                         <!-- Izena eman -->
-                        <input type="submit" id='register'name="btn1" value="Register" onclick="erregistratu()" disabled >
+                        <input type="submit" id='register' name="btn1" value="register" onclick="crearLocal()" disabled>
                         <!-- Bazkide naiz botoia - Sartzeko modal-a erakutsi -->
-                        <button onclick="if(lafuncionDeOhiane == true){muestraLaOtraVentana}else{muestraLaMismaVentana} bazkideaSartu(this.id)" id="bazkideNaiz">Bazkidea naiz dagoeneko</button>
+                        <button onclick="bazkideaSartu(this.id)" id="bazkideNaiz">Bazkidea naiz dagoeneko</button>
                     </div> 
                 </form>
             </div>

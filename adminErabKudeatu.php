@@ -3,16 +3,14 @@
 <head>    
     <?php
         include 'PHP/dbKonexioa.php';
-        include 'PHP/filmaDatuak.php';
-        include "PHP/iruzkinaEgin.php";
+        include 'PHP/erabiltzaileakEzabatu.php';
     ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/filmaCSS.css">
+    <link rel="stylesheet" href="CSS/adminKudeatuCSS.css">
     <link rel="stylesheet" href="CSS/LogInArea.css">
     <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
     <script src="JS/sesionStorage.js"></script>
-    <script src="JS/sesi"></script>
     <!-- Hasiera oriko estilua -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,11 +22,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">        
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <!-- Comentarios -->
-    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
-    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
     <!-- Orriaren iconoa eta tituloa -->
     <link rel="icon" type="image/png" href="Media/fav-icon1.png">
     <title>La Cuarta Puerta</title>
@@ -48,7 +41,7 @@
                 <a href="+Filma.php">+ FILMA</a>
                 <a href="bazkideArea.php" id="bazkideArea1">BAZKIDE AREA</a>
                 <a id="bazkideArea2" onclick="alert('Atal hau ikusi nahi baduzu, erregistratu')">BAZKIDE AREA</a>
-                <a href="adminArea.html" id="adminArea">ADMIN AREA</a>
+                <a href="adminArea.html" id="adminArea" class="active">ADMIN AREA</a>
                 <a class="LoginBoton" href="#home" id='LoginBoton'onclick="document.getElementById('izenaEman').style.display='block'"><i class="fa fa-fw fa-user" ></i> LOGIN</a>
                 <a class="LoginBoton"  href="#home" id='LogoutBoton' onclick="disableButton()"><i class="fa fa-fw fa-user" ></i> LOGOUT</a>
                 <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -60,47 +53,10 @@
             <script src="JS/HamburguerJS.js"></script>
         </header>
         <section>
-        <div class="grid-container">
-            <div class="grid-item item1">
-                <h3>Sinopsis:</h3>
-                <p><?php echo $Sinopsis;?></p>
-            </div>
-            <div class="grid-item item2">
-                <?php echo '<img width=60%  src="data:image/jpeg;base64,'.base64_encode( $argazkia ).'"/>';?><hr>
-                <a><?php echo $izenburua;?></a>
-            </div>
-            <div class="grid-item item3">
-                <div class="ZuzenGenero">
-                    <h3>Zuzendaria:</h3>
-                    <a><?php echo $Zuzendaria;?></a>
-                    <h3>Generoa:</h3>
-                    <a><?php echo $Generoa;?></a>
-                </div>
-                <div class="UrteBalorazio">
-                    <h3>Urtea:</h3>
-                    <a><?php echo $Urtea;?></a>
-                    <h3>Balorazioa:</h3>
-                    <a><?php echo $Balorazioa;?></a>
-                </div>
-            </div>  
-            <div class="grid-item item5">
-                <h3>Kritika:</h3>
-                <p><?php echo $Kritika;?></p>
-            </div>
+        <div class="flex-container">
+            <?php include 'PHP/erabiltzaileakKudeatu.php' ?>
         </div>
         </section>
-        <!-- Comentarios -->
-            <div id="respond">     
-                <h2>IRUZKINAK</h2>
-                <hr>  
-                <?php include ('PHP/iruzkinakBete.php');?> 
-                <hr>
-                <form id="commentform" action="" method="POST">         
-                    <h3>Zure Iruzkina:</h3>
-                    <textarea name="comment" id="comment" maxlength="250" placeholder="Zer irudita zaizu filma?"></textarea>
-                    <input name="argitaratu" type="submit" value="Argitaratu"/>
-                </form>
-            </div>
     </div>
         <!-- Izena emateko MODAL-a -->
         <div class="modal" id="izenaEman"> 
@@ -123,12 +79,12 @@
                 </div>
                 <!-- Kolumna 2 datak sartzeko atala -->
                             
-                <form  method='post' action=''>
+                <form target="frame1" method='post'>
                     <div class="column2">
                             <!-- Izen emateko datuak sartu -->
                             <!-- Izena -->
                             <div class='erabIzena'>
-                                <input type="text" name="erabiltzailea" id="erabiltzailea" oninput='erabiltzaileKonp(),denaOndo()' placeholder="Erabiltzaile izena *" required>
+                                <input type="text" name="erabiltzailea" id="erabiltzailea" oninput='erabiltzaileKonp()' oninput='denaOndo()' placeholder="Erabiltzaile izena *" required>
                                 <!-- Baldintzak erabiltzaile izenarekiko (hover batean) -->
                                 <div class="hoverErab">
                                     <img class="info" src='media/informacion.png'><br>
@@ -143,7 +99,7 @@
                             </div>
                             <!-- Pasahitza -->
                             <div class='pswd1'>
-                                <input type="password" id="password1" name="password1" oninput='pasahitzaKonp(),denaOndo()' placeholder="Pasahitza *" required>
+                                <input type="password" id="password1" name="password1" oninput='pasahitzaKonp()'oninput='denaOndo()' placeholder="Pasahitza *" required>
                                 <!-- Baldintzak pasahitzari dagokiones (hover batean) -->
                                 <div class="hoverContra">
                                     <img class="info" src='media/informacion.png'><br>
@@ -159,21 +115,20 @@
                             </div>
                             
                         <!-- Pasahitza konfirmatu -->
-                        <input type="password" name="password2" id='password2' placeholder="Pasahitza konfirmatu"  oninput='pasahitzakBerdin(),denaOndo()' required><br>
+                        <input type="password" name="password2" id='password2' placeholder="Pasahitza konfirmatu"  oninput='pasahitzakBerdin()' oninput='denaOndo()' required><br>
                         <!-- Korreoa -->
-                        <input type="email" id='korreoa' name="korreoa" placeholder="Posta elektronikoa jarri" oninput='korreoaOndo(),denaOndo()' required ><br>
+                        <input type="email" id='korreoa' name="korreoa" placeholder="Posta elektronikoa jarri" oninput='korreoaOndo()' oninput='denaOndo()' required ><br>
                         <!-- Termino legalak onartu-->
                         <input type="checkbox" id="terminoLegalak" name="terminoLegalak" value="Boat" onclick='denaOndo()'>
                         <label for="terminoLegalak">Termino legalak onartzen ditut.</label><br>
                         <!-- Izena eman -->
-                        <input type="submit" id='register' name="btn1" value="register" onclick="crearLocal()" disabled>
+                        <input type="submit" id='register'name="btn1" value="Register" onclick="erregistratu()" disabled >
                         <!-- Bazkide naiz botoia - Sartzeko modal-a erakutsi -->
-                        <button onclick="bazkideaSartu(this.id)" id="bazkideNaiz">Bazkidea naiz dagoeneko</button>
+                        <button onclick="if(lafuncionDeOhiane == true){muestraLaOtraVentana}else{muestraLaMismaVentana} bazkideaSartu(this.id)" id="bazkideNaiz">Bazkidea naiz dagoeneko</button>
                     </div> 
                 </form>
             </div>
         </div> 
-       
         <!-- Sartu MODAL-a -->
         <div class="modal" id="sartu" hidden>
             <!-- Ixteko botoia -->
