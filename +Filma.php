@@ -5,6 +5,21 @@
         <!-- Hemen datu basearekiko konexioa egingo da eta behar dituen php-ei detiuko dio -->
             <?php
                 include 'PHP/dbKonexioa.php';
+
+                // Bilaketa bat egin bada dagoeneko, aurreko bilaketaren parametroak gordeko dituzten
+                //cookiak
+                if((isset($_POST['pelikulaIzenezBilatu']))) {
+                    $pelikulaIzena=$_POST['pelikulaIzenezBilatu'];
+                }
+
+                if((isset($_POST['star']))) {
+                    $izarrak=$_POST['star'];
+                } else {
+                    $izarrak = 0;
+                }
+
+   
+                 
             ?>
         <!-- Hasiera oriko estilua -->
         <meta charset="UTF-8">
@@ -64,22 +79,22 @@
                     <h2>Bilaketa filtroak</h2>
                     <hr class="guion-separador">
                     <h3>Filmen Izenburua:</h3>
-                    <input type="text" id="pelikulaIzenezBilatu" name="pelikulaIzenezBilatu" placeholder="Pelikula bilatu..." title="pelikulaIzenezBilatu" maxlength="50" size="35"> 
+                    <input type="text" id="pelikulaIzenezBilatu" name="pelikulaIzenezBilatu" placeholder="Pelikula bilatu..." title="pelikulaIzenezBilatu" maxlength="50" size="35" value = "<?php echo (isset($pelikulaIzena))?$pelikulaIzena:'';?>"> 
                 </div>
                 <hr class="guion-separador">
                 <!-- Balorazioa -->                
                 <div class="stars">
                     <h3>Balorazioa:</h3>
                     <!-- <form action=""> -->
-                        <input class="star star-5" id="star-5" type="radio" name="star" value="5"/>
+                        <input class="star star-5" id="star-5" type="radio" name="star" value="5" <?php echo ($izarrak== 5) ?  "checked" : "" ;  ?>/>
                         <label class="star star-5" for="star-5"></label>
-                        <input class="star star-4" id="star-4" type="radio" name="star" value="4"/>
+                        <input class="star star-4" id="star-4" type="radio" name="star" value="4" <?php echo ($izarrak== 4) ?  "checked" : "" ;  ?>/>
                         <label class="star star-4" for="star-4"></label>
-                        <input class="star star-3" id="star-3" type="radio" name="star" value="3"/>
+                        <input class="star star-3" id="star-3" type="radio" name="star" value="3" <?php echo ($izarrak== 3) ?  "checked" : "" ;  ?>/>
                         <label class="star star-3" for="star-3"></label>
-                        <input class="star star-2" id="star-2" type="radio" name="star" value="2"/>
+                        <input class="star star-2" id="star-2" type="radio" name="star" value="2" <?php echo ($izarrak== 2) ?  "checked" : "" ;  ?>/>
                         <label class="star star-2" for="star-2"></label>
-                        <input class="star star-1" id="star-1" type="radio" name="star"value="1"/>
+                        <input class="star star-1" id="star-1" type="radio" name="star"value="1" <?php echo ($izarrak== 1) ?  "checked" : "" ;  ?>/>
                         <label class="star star-1" for="star-1"></label>
                     <!-- </form> -->
                 </div>  
@@ -94,7 +109,7 @@
                 <!-- Urteak -->
                 <div id="anyos">
                     <h3>Urtea:</h3>
-                    <select id="urtea" name="urtea"> 
+                    <select id="urtea" name="urtea" > 
                         <!--Urteak beteko dituen PHP-ari deia egin-->
                         <?php include ('PHP/urteakBete.php');?>
                     </select>
