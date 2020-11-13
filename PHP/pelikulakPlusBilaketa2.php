@@ -74,7 +74,6 @@ if((isset($_POST['pelikulaIzenezBilatu'])) || (isset($_POST['star'])) || (isset(
 
      
     if(isset($_POST['urtea'])) {
-        
         $año=$_POST['urtea'];
         if($año!=''){
             $var1 = " Urtea = {$año} ";

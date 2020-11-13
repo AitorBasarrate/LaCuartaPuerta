@@ -5,6 +5,24 @@
         <!-- Hemen datu basearekiko konexioa egingo da eta behar dituen php-ei detiuko dio -->
             <?php
                 include 'PHP/dbKonexioa.php';
+
+                // Bilaketa bat egin bada dagoeneko, aurreko bilaketaren parametroak gordeko dituzten
+                //cookiak
+                if((isset($_POST['pelikulaIzenezBilatu']))) {
+                    $pelikulaIzena=$_POST['pelikulaIzenezBilatu'];
+                }
+
+                if((isset($_POST['star']))) {
+                    $izarrak=$_POST['star'];
+                    echo $izarrak;
+                }
+                 
+                if(isset($_POST['urtea'])) {     
+                    $urtea=$_POST['urtea'];
+    
+                    echo $urtea;
+                }
+
             ?>
         <!-- Hasiera oriko estilua -->
         <meta charset="UTF-8">
@@ -64,7 +82,7 @@
                     <h2>Bilaketa filtroak</h2>
                     <hr class="guion-separador">
                     <h3>Filmen Izenburua:</h3>
-                    <input type="text" id="pelikulaIzenezBilatu" name="pelikulaIzenezBilatu" placeholder="Pelikula bilatu..." title="pelikulaIzenezBilatu" maxlength="50" size="35"> 
+                    <input type="text" id="pelikulaIzenezBilatu" name="pelikulaIzenezBilatu" placeholder="Pelikula bilatu..." title="pelikulaIzenezBilatu" maxlength="50" size="35" value = "<?php echo (isset($pelikulaIzena))?$pelikulaIzena:'';?>"> 
                 </div>
                 <hr class="guion-separador">
                 <!-- Balorazioa -->                
@@ -94,7 +112,7 @@
                 <!-- Urteak -->
                 <div id="anyos">
                     <h3>Urtea:</h3>
-                    <select id="urtea" name="urtea"> 
+                    <select id="urtea" name="urtea" > 
                         <!--Urteak beteko dituen PHP-ari deia egin-->
                         <?php include ('PHP/urteakBete.php');?>
                     </select>
