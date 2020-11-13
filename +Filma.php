@@ -31,7 +31,7 @@
         <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
         <script src="JS/HamburguerJS.js"></script>
         <script src="JS/bilaketa.js"></script>
-        <script src='JS/index.js'></script>
+        <script src="JS/sesionStorage.js"></script>
         <!-- Font family estiloa -->
         <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
         <!-- CSS stilo orrialdea -->
@@ -55,15 +55,15 @@
         <div class="content">
             <header>
                     <!-- Hemen logoa txertatu behar da -->
-                <img class="logo" src="Media/logo-bien.png" alt="Au revoir Shoshanna">
+                <img href="index.php" class="logo" id="logo"src="Media/logo-bien.png" alt="Au revoir Shoshanna">
                     <!-- Nabigatzailea, bakoitzak beraren orria kargatuko du -->
-                    <div class="topnav" id="myTopnav">
-                    <a href="index.php" class="active">HASIERA</a>
+                <div class="topnav" id="myTopnav">
+                    <a href="index.php">HASIERA</a>
                     <a href="astekoFilma.php">ASTEKO FILMA</a>
-                    <a href="+Filma.php">+ FILMA</a>
-                    <a href="adminArea.html" id="adminArea" >ADMIN AREA</a>
+                    <a href="+Filma.php" class="active">+ FILMA</a>
                     <a href="bazkideArea.php" id="bazkideArea1">BAZKIDE AREA</a>
                     <a id="bazkideArea2" onclick="alert('Atal hau ikusi nahi baduzu, erregistratu')">BAZKIDE AREA</a>
+                    <a href="adminArea.html" id="adminArea">ADMIN AREA</a>
                     <a class="LoginBoton" href="#home" id='LoginBoton'onclick="document.getElementById('izenaEman').style.display='block'"><i class="fa fa-fw fa-user" ></i> LOGIN</a>
                     <a class="LoginBoton"  href="#home" id='LogoutBoton' onclick="disableButton()"><i class="fa fa-fw fa-user" ></i> LOGOUT</a>
                     <a href="javascript:void(0);" class="icon" onclick="myFunction()">

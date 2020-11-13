@@ -3,11 +3,15 @@
 <head>    
     <?php
         include 'PHP/dbKonexioa.php';
+        include 'PHP/erregistroaEgin.php';
+        include 'PHP/loginEgin.php';
     ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
     <script src="JS/bazkideArea.js"></script>
+    <script src="JS/sesionStorage.js"></script>
+    <script src="JS/erregistratu.js"></script>
     <!-- Hasiera oriko estilua -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,54 +39,67 @@
     <div class="content">
         <header>
                 <!-- Hemen logoa txertatu behar da -->
-            <img class="logo" src="Media/logo-bien.png" alt="Au revoir Shoshanna">
+            <img href="index.php" class="logo" id="logo"src="Media/logo-bien.png" alt="Au revoir Shoshanna">
                 <!-- Nabigatzailea, bakoitzak beraren orria kargatuko du -->
-                <div class="topnav" id="myTopnav">
-                    <a href="index.php" class="active">HASIERA</a>
-                    <a href="astekoFilma.php">ASTEKO FILMA</a>
-                    <a href="+Filma.php">+ FILMA</a>
-                    <a href="adminArea.html" id="adminArea">ADMIN AREA</a>
-                    <a href="bazkideArea.php" id="bazkideArea1">BAZKIDE AREA</a>
-                    <a id="bazkideArea2" onclick="alert('Atal hau ikusi nahi baduzu, erregistratu')">BAZKIDE AREA</a>
-                    <a class="LoginBoton" href="#home" id='LoginBoton'onclick="document.getElementById('izenaEman').style.display='block'"><i class="fa fa-fw fa-user" ></i> LOGIN</a>
-                    <a class="LoginBoton"  href="#home" id='LogoutBoton' onclick="disableButton()"><i class="fa fa-fw fa-user" ></i> LOGOUT</a>
-                    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                    <!-- ESTO ES LA HAMBURGUESA -->
-                    <i class="fa fa-bars"></i>
-                    </a>
-                </div>
+            <div class="topnav" id="myTopnav">
+                <a href="index.php" class="active">HASIERA</a>
+                <a href="astekoFilma.php">ASTEKO FILMA</a>
+                <a href="+Filma.php">+ FILMA</a>
+                <a href="bazkideArea.php" id="bazkideArea1">BAZKIDE AREA</a>
+                <a id="bazkideArea2" onclick="alert('Atal hau ikusi nahi baduzu, erregistratu')">BAZKIDE AREA</a>
+                <a href="adminArea.html" id="adminArea">ADMIN AREA</a>
+                <a class="LoginBoton" href="#home" id='LoginBoton'onclick="document.getElementById('izenaEman').style.display='block'"><i class="fa fa-fw fa-user" ></i> LOGIN</a>
+                <a class="LoginBoton"  href="#home" id='LogoutBoton' onclick="disableButton()"><i class="fa fa-fw fa-user" ></i> LOGOUT</a>
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <!-- ESTO ES LA HAMBURGUESA -->
+                <i class="fa fa-bars"></i>
+                </a>
+            </div>
+                <!-- Nabigatzaile barra, responsive egitean Haamburguesa ateratzen da -->
+            <script src="JS/HamburguerJS.js"></script>
         </header>
-
         <form action="" method="post" enctype="multipart/form-data">
             <div class="grid-container">
                 <div class="grid-item item1">
-                    <h3>Sinopsis:</h3>
-                    <textarea name="sinopsis" id="sinopsis" maxlength="250" placeholder="Filmaren Sinopsis-a" required></textarea>
-                </div>
-                <div class="grid-item item2">
                     <h3>Izenburua:</h3>
                     <input type="text" name="izenburua" placeholder="Filmaren Izenburua" required></input>
                     <h3>Trailer:</h3>
-                    <input type="text" name="trailer" placeholder="Filmaren Trailer-a" required></input>
+                    <input type="text" name="trailer" placeholder="Filmaren Trailer-a" required></input><hr>
+                </div>
+                <div class="grid-item item2">
+                    <h3>Urtea:</h3>
+                    <input type="text" name="urtea" placeholder="Filmaren Urtea" required></input>
+                    <h3>Balorazioa:</h3>
+                    <input type="text" name="balorazioa" placeholder="Filmaren Balorazioa" required></input><hr>
                 </div>
                     <div class="grid-item item3" >
-                        <h3>Zuzendaria:</h3>
-                        <input type="text" name="zuzendaria" placeholder="Filmaren Zuzendaria" required></input>
-                        <h3>Generoa:</h3>
-                        <input type="text" name="generoa" placeholder="Filmaren Generoa" required></input>
-                    </div>
-                    <div class="grid-item item4">
-                        <h3>Urtea:</h3>
-                        <input type="text" name="urtea" placeholder="Filmaren Urtea" required></input>
-                        <h3>Balorazioa:</h3>
-                        <input type="text" name="balorazioa" placeholder="Filmaren Balorazioa" required></input>
-                    </div>
+                    <h3>Zuzendaria:</h3>
+                    <input type="text" name="zuzendaria" placeholder="Filmaren Zuzendaria" required></input>
+                    <h3>Generoa:</h3>
+                    <input type="text" name="generoa" placeholder="Filmaren Generoa" required></input><hr>
+                </div>
+                <div class="grid-item item4">
+                    <h3>Sinopsis:</h3>
+                    <textarea name="sinopsis" id="sinopsis" maxlength="250" placeholder="Filmaren Sinopsis-a" required></textarea><hr>
+                </div>
                 <div class="grid-item item5">
                     <h3>Kritika:</h3>
-                    <textarea name="kritika" name="kritika" id="kritika" maxlength="250" placeholder="Filmaren Kritika" required></textarea>
+                    <textarea name="kritika" name="kritika" id="kritika" maxlength="250" placeholder="Filmaren Kritika" required></textarea><hr>
                 </div>
                 <div class="grid-item item6">
-                    <br><input type="file" id="img" name="argazkia" accept="image/*" required><br><br>
+                    <h3>Filmaren Datua:</h3>
+                    <textarea name="sinopsis" id="datua" maxlength="250" placeholder="Filmaren Datua" required></textarea><hr>
+                </div>
+                <div class="grid-item item7">
+                    <h3>Filmaren Galdera:</h3>
+                    <textarea name="sinopsis" id="galdera" maxlength="250" placeholder="Filmaren Galdera" required></textarea><hr>
+                </div>
+                <div class="grid-item item8">
+                <h3>Galderaren Erantzuna:</h3>
+                    <textarea name="sinopsis" id="erantzuna" maxlength="250" placeholder="Galderaren Erantzuna" required></textarea><hr>
+                </div>
+                <div class="grid-item item9">
+                <br><input type="file" id="img" name="argazkia" accept="image/*" required><br><br>
                     <input type="submit" name="gorde" onclick="<?php include 'PHP/filmaBerriaGorde.php'; ?>" value="Filma Gorde">
                     <input type="reset" value="Datuak Ezabatu">
                 </div>

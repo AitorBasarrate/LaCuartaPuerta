@@ -9,8 +9,8 @@
         ?>
 
         <!-- Erregistro atala -->
+        <script src="JS/sesionStorage.js"></script>
         <script src="JS/erregistratu.js"></script>
-        <link rel="stylesheet" href="CSS/LogInArea.css">
         <!-- Hasiera oriko estilua -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,13 +21,15 @@
         <!-- Font family estiloa -->
         <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
         <!-- CSS stilo orrialdea -->
-        <link rel="stylesheet" href="CSS/IndexCSS.css">
+        <link rel="stylesheet" href="CSS/IndexCSS.css">        
+        <link rel="stylesheet" href="CSS/LogInArea.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">        
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
         <!-- Orriaren iconoa eta tituloa -->
         <link rel="icon" type="image/png" href="Media/fav-icon1.png">
         <script src="JS/index.js"></script>
+        
         <title>La Cuarta Puerta</title>
         
     </head>
@@ -35,7 +37,7 @@
         <div class="content">
             <header>
                     <!-- Hemen logoa txertatu behar da -->
-                <img class="logo" id="logo"src="Media/logo-bien.png" alt="Au revoir Shoshanna">
+                <img href="index.php" class="logo" id="logo"src="Media/logo-bien.png" alt="Au revoir Shoshanna">
                     <!-- Nabigatzailea, bakoitzak beraren orria kargatuko du -->
                 <div class="topnav" id="myTopnav">
                     <a href="index.php" class="active">HASIERA</a>

@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="CSS/filmaCSS.css">
     <link rel="stylesheet" href="CSS/LogInArea.css">
     <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
-    <script src='JS/index.js'></script>
+    <script src="JS/sesionStorage.js"></script>
+    <script src="JS/sesi"></script>
     <!-- Hasiera oriko estilua -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,22 +39,24 @@
     <div class="content">
         <header>
                 <!-- Hemen logoa txertatu behar da -->
-            <img class="logo" src="Media/logo-bien.png" alt="Au revoir Shoshanna">
+            <img href="index.php" class="logo" id="logo"src="Media/logo-bien.png" alt="Au revoir Shoshanna">
                 <!-- Nabigatzailea, bakoitzak beraren orria kargatuko du -->
-                <div class="topnav" id="myTopnav">
-                    <a href="index.php" class="active">HASIERA</a>
-                    <a href="astekoFilma.php">ASTEKO FILMA</a>
-                    <a href="+Filma.php">+ FILMA</a>
-                    <a href="adminArea.html" id="adminArea" >ADMIN AREA</a>
-                    <a href="bazkideArea.php" id="bazkideArea1">BAZKIDE AREA</a>
-                    <a id="bazkideArea2" onclick="alert('Atal hau ikusi nahi baduzu, erregistratu')">BAZKIDE AREA</a>
-                    <a class="LoginBoton" href="#home" id='LoginBoton'onclick="document.getElementById('izenaEman').style.display='block'"><i class="fa fa-fw fa-user" ></i> LOGIN</a>
-                    <a class="LoginBoton"  href="#home" id='LogoutBoton' onclick="disableButton()"><i class="fa fa-fw fa-user" ></i> LOGOUT</a>
-                    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                    <!-- ESTO ES LA HAMBURGUESA -->
-                    <i class="fa fa-bars"></i>
-                    </a>
-                </div>
+            <div class="topnav" id="myTopnav">
+                <a href="index.php">HASIERA</a>
+                <a href="astekoFilma.php">ASTEKO FILMA</a>
+                <a href="+Filma.php">+ FILMA</a>
+                <a href="bazkideArea.php" id="bazkideArea1">BAZKIDE AREA</a>
+                <a id="bazkideArea2" onclick="alert('Atal hau ikusi nahi baduzu, erregistratu')">BAZKIDE AREA</a>
+                <a href="adminArea.html" id="adminArea">ADMIN AREA</a>
+                <a class="LoginBoton" href="#home" id='LoginBoton'onclick="document.getElementById('izenaEman').style.display='block'"><i class="fa fa-fw fa-user" ></i> LOGIN</a>
+                <a class="LoginBoton"  href="#home" id='LogoutBoton' onclick="disableButton()"><i class="fa fa-fw fa-user" ></i> LOGOUT</a>
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <!-- ESTO ES LA HAMBURGUESA -->
+                <i class="fa fa-bars"></i>
+                </a>
+            </div>
+                <!-- Nabigatzaile barra, responsive egitean Haamburguesa ateratzen da -->
+            <script src="JS/HamburguerJS.js"></script>
         </header>
         <section>
         <div class="grid-container">
@@ -91,10 +94,10 @@
                 <hr>  
                 <?php include ('PHP/iruzkinakBete.php');?> 
                 <hr>
-                <form id="commentform" action="PHP/iruzkinaEgin.php">         
+                <form id="commentform">         
                     <h3>Zure Iruzkina:</h3>
                     <textarea name="comment" id="comment" maxlength="250" placeholder="Zer irudita zaizu filma?"></textarea>
-                    <input name="submit" type="submit" value="Argitaratu"/>
+                    <input name="submit" id="argitaratu" type="submit" value="Argitaratu" onclick='alertBoton()' />
                 </form>
             </div>
     </div>
