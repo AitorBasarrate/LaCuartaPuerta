@@ -42,6 +42,20 @@
             array_push($arrayPuntuak,$erabiltzailePuntuak);
          
         }
+        /* Bazkidearen datuak eta posizioa ranking-ean */
+        if(isset($_COOKIE['usuario'])){
+            $erabIzena=$_COOKIE['usuario'];
+            
+            $miConsulta = $miPDO->prepare("SELECT iderabiltzaile, Puntuak,(select count(*)+1 as ranking from erabiltzaile where puntuak>e.puntuak) as erabiltzaileRankingPos from erabiltzaile e where ErabiltzaileIzena='$erabIzena'");
+            $miConsulta->execute(); 
+            while ($fila = $miConsulta->fetch(PDO::FETCH_ASSOC)){
+                
+                $puntuazioa=$fila['Puntuak'];
+                $ranking=$fila['erabiltzaileRankingPos'];
+                echo($puntuazioa);
+                echo($ranking);
+        }
+        }
         /* Orain html-an bakarrik deituko dugu array posizioetara  */
 
         }catch( PDOException $Exception ) {

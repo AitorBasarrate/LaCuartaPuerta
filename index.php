@@ -9,6 +9,7 @@
         ?>
 
         <!-- Erregistro atala -->
+        <script src="JS/sesionStorage.js"></script>
         <script src="JS/erregistratu.js"></script>
         <link rel="stylesheet" href="CSS/LogInArea.css">
         <!-- Hasiera oriko estilua -->
@@ -28,6 +29,7 @@
         <!-- Orriaren iconoa eta tituloa -->
         <link rel="icon" type="image/png" href="Media/fav-icon1.png">
         <script src="JS/index.js"></script>
+        
         <title>La Cuarta Puerta</title>
         
     </head>

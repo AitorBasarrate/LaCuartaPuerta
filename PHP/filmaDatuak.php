@@ -2,7 +2,6 @@
 
 <?php 
     $TituloPelikula = $_GET['id'];
-
     try{       
     /* Filmen datu guztiak aterako ditu */
     $miConsulta = $miPDO->prepare("SELECT idPelikulak,Izenburuak,Argazkia,Generoa,Zuzendaria,Urtea,Sinopsis,Kritika,Balorazioa,Trailer

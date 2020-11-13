@@ -1,7 +1,6 @@
 <!-- Asteko filmean eta filma fitxan iruzkinak egiteko gaitasuna emango digun PHP-a -->
 
 <?php
-
     /* Argitaratu botoia sakatzerakoan */
     if(isset($_POST['commentform']) && isset($_POST['erabiltzaile'])) {
         echo('entra1');
@@ -33,9 +32,8 @@
         }
     } else {
 
-        echo '<script>alert("Iruzkinak egin ahal izateko bazkide izan behar zara!")</script>';
-
     }
+
 ?>
 <script>
      

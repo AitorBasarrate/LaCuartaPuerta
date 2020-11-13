@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="CSS/filmaCSS.css">
     <link rel="stylesheet" href="CSS/LogInArea.css">
     <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
-    <script src='JS/index.js'></script>
+    <script src="JS/sesionStorage.js"></script>
+    <script src="JS/sesi"></script>
     <!-- Hasiera oriko estilua -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -91,10 +92,10 @@
                 <hr>  
                 <?php include ('PHP/iruzkinakBete.php');?> 
                 <hr>
-                <form id="commentform" action="PHP/iruzkinaEgin.php">         
+                <form id="commentform">         
                     <h3>Zure Iruzkina:</h3>
                     <textarea name="comment" id="comment" maxlength="250" placeholder="Zer irudita zaizu filma?"></textarea>
-                    <input name="submit" type="submit" value="Argitaratu"/>
+                    <input name="submit" id="argitaratu" type="submit" value="Argitaratu" onclick='alertBoton()' />
                 </form>
             </div>
     </div>
