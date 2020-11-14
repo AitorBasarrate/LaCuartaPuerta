@@ -26,16 +26,18 @@
                     // https://stackoverflow.com/questions/10920821/set-checkbox-checked-state-based-on-array-values
 
                 }
-                for ($i = 0; $i < count($gen); $i++){
-                    if($gen($i) == null){
+                $hautatutakoGeneroak = explode('-', $gene);
+                for ($i = 0; $i < count($hautatutakoGeneroak); $i++){
+
+                    if($hautatutakoGeneroak[$i] == $generoa){
                       echo '   
-                        &ensp;&ensp;&ensp;<input type="checkbox" name="generoa[]" id="generoa" value="'.$generoa.'">
-                        <label for="'.$generoa.'">'.$generoa.'</label><br>
+                        &ensp;&ensp;&ensp;<input type="checkbox" name="generoa[]" id="generoa" value="'.$hautatutakoGeneroak[$i].'">
+                        <label for="'.$hautatutakoGeneroak[$i].'">'.$hautatutakoGeneroak[$i].'</label><br>
                         ';
                     }else{
                         echo '   
-                        &ensp;&ensp;&ensp;<input type="checkbox" name="generoa[]" id="generoa" value="'.$gen($i).'">
-                        <label for="'.$gen($i).'">'.$gen($i).'</label><br>
+                        &ensp;&ensp;&ensp;<input type="checkbox" name="generoa[]" id="generoa" value="'.$generoa.'">
+                        <label for="'.$generoa.'">'.$generoa.'</label><br>
                         ';
                     }
                 }
