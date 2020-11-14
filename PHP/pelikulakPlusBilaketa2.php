@@ -49,11 +49,14 @@ if((isset($_POST['pelikulaIzenezBilatu'])) || (isset($_POST['star'])) || (isset(
         }
        
     }
+//    Izarren bidez filtratzeko
     if((isset($_POST['star']))) {
         $izarrak=$_POST['star'];
         $balorazioa = " Balorazioa >= {$izarrak}";
         array_push($filtroak,$balorazioa);
+
     }
+//    Genero bidez filtratzen badugu
     if((isset($_POST['generoa']))){
         $generoa=$_POST['generoa'];
         $cantidadGeneros=count($generoa);
@@ -69,10 +72,11 @@ if((isset($_POST['pelikulaIzenezBilatu'])) || (isset($_POST['star'])) || (isset(
         else{
             $var= " Generoa = '{$generoa[0]}' ";
             array_push($filtroak,$var);
-        } 
+        }
+        setcookie('hautatutakoGeneroak', $generoa);
     }  
 
-     
+//     Urteen bidez filtrazen badugu
     if(isset($_POST['urtea'])) {
         $año=$_POST['urtea'];
         if($año!=''){
@@ -90,8 +94,7 @@ if((isset($_POST['pelikulaIzenezBilatu'])) || (isset($_POST['star'])) || (isset(
          for ($i=2; $i<count($filtroak); $i++) {
             
                 $sql.= " AND " . $filtroak[$i];
-                
-            }
+         }
       
       
     }

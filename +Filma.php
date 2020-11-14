@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        
         <!-- Hemen datu basearekiko konexioa egingo da eta behar dituen php-ei detiuko dio -->
             <?php
                 include 'PHP/dbKonexioa.php';
@@ -17,9 +16,6 @@
                 } else {
                     $izarrak = 0;
                 }
-
-   
-                 
             ?>
         <!-- Hasiera oriko estilua -->
         <meta charset="UTF-8">

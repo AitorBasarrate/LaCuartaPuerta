@@ -7,6 +7,7 @@
             if((isset($_POST['generoa']))) {
                 $gen=$_POST['generoa'];
                 $gene = implode('-',$gen);
+
             }
 
             /* Genero desberdinen lista atera */
@@ -24,12 +25,20 @@
 
                     // https://stackoverflow.com/questions/10920821/set-checkbox-checked-state-based-on-array-values
 
-                        echo '   
+                }
+                for ($i = 0; $i < count($gen); $i++){
+                    if($gen($i) == null){
+                      echo '   
                         &ensp;&ensp;&ensp;<input type="checkbox" name="generoa[]" id="generoa" value="'.$generoa.'">
-                            <label for="'.$generoa.'">'.$generoa.'</label><br>
-                            ';
-
-            }
+                        <label for="'.$generoa.'">'.$generoa.'</label><br>
+                        ';
+                    }else{
+                        echo '   
+                        &ensp;&ensp;&ensp;<input type="checkbox" name="generoa[]" id="generoa" value="'.$gen($i).'">
+                        <label for="'.$gen($i).'">'.$gen($i).'</label><br>
+                        ';
+                    }
+                }
 
         }catch( PDOException $Exception ) {
             // PHP Fatal Error. Second Argument Has To Be An Integer, But PDOException::getCode Returns A
