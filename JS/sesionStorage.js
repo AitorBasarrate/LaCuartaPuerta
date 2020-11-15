@@ -22,20 +22,20 @@
         if(permisos=='2'){
           document.getElementById('adminArea').style.display='block';
         }else{
-
           document.getElementById('adminArea').style.display='none';
         }
         document.getElementById('LoginBoton').style.display='none';
         document.getElementById('LogoutBoton').style.display='block';
         bazkide1.style.display='block';
         bazkide2.style.display='none';
+        document.getElementById('commentform').style.display='block';
         
         //lokalean dauden elementuekin kookiak sotuko dtugu
         crearCookies();
     }else{
         document.getElementById('LoginBoton').style.display='block';
         document.getElementById('LogoutBoton').style.display='none';
-        
+        document.getElementById('commentform').style.display='none';
         bazkide1.style.display='none';
         bazkide2.style.display='block';
         
@@ -116,7 +116,7 @@ function crearLocal(){
         //menua aldatzen dugu
         document.getElementById('LoginBoton').style.display='none';
         document.getElementById('LogoutBoton').style.display='block';
-
+      
     }
   
 
@@ -129,9 +129,12 @@ function disableButton() {
     //cookiak ezabatu
     var allCookies = document.cookie.split(';'); 
     // cookiei denbora 0 jarrita ezabatuko dira
-    for (var i = 0; i < allCookies.length; i++) 
-        document.cookie = allCookies[i] + "=;expires=" 
+    for (var i = 0; i < allCookies.length; i++) {
+              document.cookie = allCookies[i] + "=;expires=" 
         + new Date(0).toUTCString(); 
+    }
+
     //berriz guztia ezabatu denez, konprobatuko dugu ea zeozer dagoen 
         comprobarStorage();
+
 }
