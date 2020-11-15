@@ -9,6 +9,7 @@
         include 'PHP/loginEgin.php';
     ?>
     <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/filmaCSS.css">
     <link rel="stylesheet" href="CSS/LogInArea.css">
@@ -102,7 +103,7 @@
                 <form id="commentform" action="" method="POST">         
                     <h3>Zure Iruzkina:</h3>
                     <textarea name="comment" id="comment" maxlength="250" placeholder="Zer irudita zaizu filma?"></textarea>
-                    <input name="argitaratu" type="submit" onclick="alertBoton()" value="Argitaratu" disabled/>
+                    <input name="Argitaratu" type="submit" onclick="alertBoton()" value="Argitaratu" />
                 </form>
             </div>
     </div>
