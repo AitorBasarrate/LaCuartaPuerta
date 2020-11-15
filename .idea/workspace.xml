@@ -19,7 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="713df05e-3ce7-464c-b821-0927057b04b0" name="Default Changelist" comment="Intento de mantener los filtros de generoak.">
+    <list default="true" id="713df05e-3ce7-464c-b821-0927057b04b0" name="Default Changelist" comment="Intento de mantener los filtros de generoak.2">
+      <change beforePath="$PROJECT_DIR$/+Filma.php" beforeDir="false" afterPath="$PROJECT_DIR$/+Filma.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PHP/generoakBete.php" beforeDir="false" afterPath="$PROJECT_DIR$/PHP/generoakBete.php" afterDir="false" />
     </list>
@@ -64,7 +65,8 @@
       <workItem from="1605084262626" duration="1331000" />
       <workItem from="1605164230624" duration="5798000" />
       <workItem from="1605355697648" duration="1724000" />
-      <workItem from="1605366475415" duration="5785000" />
+      <workItem from="1605366475415" duration="6104000" />
+      <workItem from="1605433143821" duration="1186000" />
     </task>
     <task id="LOCAL-00001" summary="Mensaje de la hamburguesa adecentado">
       <created>1605006901331</created>
@@ -87,7 +89,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605376781387</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Intento de mantener los filtros de generoak.2">
+      <created>1605377808579</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1605377808579</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -109,7 +118,8 @@
     <MESSAGE value="Mensaje de la hamburguesa adecentado" />
     <MESSAGE value="Mensaje de que has cerrado sesion." />
     <MESSAGE value="Intento de mantener los filtros de generoak." />
-    <option name="LAST_COMMIT_MESSAGE" value="Intento de mantener los filtros de generoak." />
+    <MESSAGE value="Intento de mantener los filtros de generoak.2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Intento de mantener los filtros de generoak.2" />
   </component>
   <component name="WindowStateProjectService">
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1605177250241">
@@ -133,16 +143,16 @@
       <screen x="-1440" y="113" width="1440" height="860" />
     </state>
     <state x="-1219" y="187" key="SettingsEditor/0.0.1536.824/-1440.113.1440.860@-1440.113.1440.860" timestamp="1605006101750" />
-    <state x="296" y="138" key="Vcs.Push.Dialog.v2" timestamp="1605376783789">
+    <state x="296" y="138" key="Vcs.Push.Dialog.v2" timestamp="1605434352579">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="296" y="138" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1605376783789" />
+    <state x="296" y="138" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1605434352579" />
     <state x="-1128" y="276" key="Vcs.Push.Dialog.v2/0.0.1536.824/-1440.113.1440.860@-1440.113.1440.860" timestamp="1605006906382" />
     <state x="333" y="156" key="Vcs.Push.Dialog.v2/0.0.1536.824/-1440.113.1440.860@0.0.1536.824" timestamp="1605172034252" />
-    <state x="510" y="292" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605376745714">
+    <state x="510" y="292" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605433245803">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="510" y="292" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1605376745714" />
+    <state x="510" y="292" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1605433245803" />
     <state x="-903" y="457" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824/-1440.113.1440.860@-1440.113.1440.860" timestamp="1605084299581" />
     <state x="573" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824/-1440.113.1440.860@0.0.1536.824" timestamp="1605176947241" />
   </component>

@@ -111,7 +111,6 @@
                     </select>
                     </div>
                 </div>
-                
             </form>
             <!-- Pelikulen lista -->
                 <div id="pelikula-lista" class="flex-container">
