@@ -37,6 +37,7 @@
     <!-- Loginaren css a -->
     <link rel="stylesheet" href="CSS/LogInArea.css">
     <script src="JS/erregistratu.js"></script>
+    <script src="JS/dom.js"></script>
 </head>
 <body>
     <div class="content">
@@ -68,7 +69,7 @@
             </div>
             <div class="grid-item item2">
                 <?php echo '<img width=60%  src="data:image/jpeg;base64,'.base64_encode( $argazkia ).'"/>';?><hr>
-                <a><?php echo $izenburua;?></a>
+                <a id='izneburuDom' onmouseover="mensajeDom()"><?php echo $izenburua;?></a>
             </div>
             <div class="grid-item item3">
                 <div class="ZuzenGenero">

@@ -32,7 +32,6 @@ function erabiltzaileKonp() {
 /*  Pasahitza balio duen a la ez */
 
 function pasahitzaKonp(){
-    
     var password = document.getElementById('password1').value;
     
     //validar longitud contraseña
@@ -123,39 +122,6 @@ function pasahitzakBerdin() {
             return false;
         }
 }
-/* Gordeko dugu LocalStorage-en datuak erregistratu() funtzioarekin, web orria zabaltzean datuak gordeta izateko 
-    eta gero php-ra bidliko ditugu datuak datu basean sartu ahal izateko */
-function erregistratu(){
-    $(document).ready(function () {
-
-        if (!window.sessionStorage) {
-            alert("not supported!");
-        }
-
-        if (sessionStorage.getItem("session_storage1") != null) {
-            $("#erabiltzailea").val(sessionStorage.getItem("session_storage1"));
-            $("#password1").val(sessionStorage.getItem("session_storage2"));
-        }
-
-        $("#btn1").click(function () {
-            var izena=document.getElementById('erailtzailea').value;
-            var pasahitza=document.getElementById('password1').value;
-            sessionStorage.setItem("session_storage1", izena);
-            sessionStorage.setItem("session_storage2", pasahitza);
-            alert("now refresh your page");
-        });
-
-    });
-    if (typeof(Storage) !== 'undefined') {
-        // Código cuando Storage es compatible
-        
-        sessionStorage.setItem(izena,pasahitza);
-    } else {
-       // En el caso en el que haya 
-    }
-
-}
-
  /* Sartu div-a erakutsiko duen funtzioa */
 function bazkideaSartu(id) {
 
