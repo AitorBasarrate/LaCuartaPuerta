@@ -45,8 +45,7 @@
     <div class="content">
         <header>
                 <!-- Hemen logoa txertatu behar da -->
-            <img href="index.php" class="logo" id="logo"src="Media/logo-bien.png" alt="Au revoir Shoshanna">
-                <!-- Nabigatzailea, bakoitzak beraren orria kargatuko du -->
+            <a href="index.php"><img class="logo" id="logo"src="Media/logo-bien.png" alt="Au revoir Shoshanna"></a>                <!-- Nabigatzailea, bakoitzak beraren orria kargatuko du -->
             <div class="topnav" id="myTopnav">
                 <a href="index.php">HASIERA</a>
                 <a href="astekoFilma.php" class="active">ASTEKO FILMA</a>

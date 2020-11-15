@@ -19,20 +19,31 @@
                 $generoa=$fila['Generoa'];
 
                 //  Sortuko dugun generoa filtro bezala aukeratu baldin bada lehenago check jarri
-                if ((strpos($gene, $generoa)) !== false) {
-
-                    echo '   
-                        &ensp;&ensp;&ensp;<input type="checkbox" name="generoa[]" id="'.$generoa.'" value="'.$generoa.'" checked="checked" >
-                        <label for="'.$generoa.'">'.$generoa.'</label><br>
-                        ';
+                if (isset($_POST['generoa'])) {
                     
-                // Bestela sortu, checked barik 
+                    if ((strpos($gene, $generoa)) !== false) {
+
+                        echo '   
+                            &ensp;&ensp;&ensp;<input type="checkbox" name="generoa[]" id="'.$generoa.'" value="'.$generoa.'" checked="checked" >
+                            <label for="'.$generoa.'">'.$generoa.'</label><br>
+                            ';
+                        
+                    // Bestela sortu, checked barik 
+                    } else {
+
+                        echo '   
+                            &ensp;&ensp;&ensp;<input type="checkbox" name="generoa[]" id="'.$generoa.'" value="'.$generoa.'"  >
+                            <label for="'.$generoa.'">'.$generoa.'</label><br>
+                            ';
+
+                    }
+
                 } else {
 
                     echo '   
-                        &ensp;&ensp;&ensp;<input type="checkbox" name="generoa[]" id="'.$generoa.'" value="'.$generoa.'"  >
-                        <label for="'.$generoa.'">'.$generoa.'</label><br>
-                        ';
+                            &ensp;&ensp;&ensp;<input type="checkbox" name="generoa[]" id="'.$generoa.'" value="'.$generoa.'"  >
+                            <label for="'.$generoa.'">'.$generoa.'</label><br>
+                            ';
 
                 }
             }
