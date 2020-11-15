@@ -35,7 +35,7 @@ html, body{  height: 100vh;}
   color: #e7eeeb;
 }
 
-/*Sidevar*/
+/*Sidebar*/
 .sidebar {
   height: 100%;
   width: 250px;
@@ -43,6 +43,7 @@ html, body{  height: 100vh;}
   float: left;
   position: sticky;
   top: 5px;
+
 
 }
 
@@ -125,4 +126,5 @@ label.star:before {
 #urtea {
   font-size: 20px;
   margin-left: 15px;
+
 }
