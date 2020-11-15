@@ -6,7 +6,7 @@ if(isset($_POST['delete'])){
         try{ 
 
             $idPelikula = $_POST['idPelikula'];
-            include 'dbKonexioa.php';
+            include 'PHP/dbKonexioa.php';
             /* Erabiltzaileen ID izena eta puntuak aterako dugu */
             $miConsulta = $miPDO->prepare("DELETE FROM filmak WHERE idPelikulak=:idPelikulak");
             $miConsulta->bindValue("idPelikulak",intval($idPelikula));

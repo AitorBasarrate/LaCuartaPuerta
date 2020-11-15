@@ -6,7 +6,7 @@ if(isset($_POST['delete'])){
         try{ 
 
             $idErab = $_POST['idErab'];
-            include 'dbKonexioa.php';
+            include 'PHP/dbKonexioa.php';
             $miConsulta = $miPDO->prepare("DELETE FROM erabiltzaile WHERE idErabiltzaile=:idErabiltzaile");
             $miConsulta->bindValue("idErabiltzaile",intval($idErab));
 

@@ -4,6 +4,8 @@
         <!-- Hemen datu basearekiko konexioa egingo da eta behar dituen php-ei detiuko dio -->
             <?php
                 include 'PHP/dbKonexioa.php';
+                include 'PHP/ERREGISTRO-LOGIN/erregistroaEgin.php';
+                include 'PHP/ERREGISTRO-LOGIN/loginEgin.php';
 
                 // Bilaketa bat egin bada dagoeneko, aurreko bilaketaren parametroak gordeko dituzten
                 //cookiak
@@ -50,9 +52,9 @@
                     <!-- Hemen logoa txertatu behar da -->
                 <a href="index.php"><img class="logo" id="logo"src="Media/logo-bien.png" alt="Au revoir Shoshanna"></a>                    <!-- Nabigatzailea, bakoitzak beraren orria kargatuko du -->
                 <div class="topnav" id="myTopnav">
-                    <a href="index.php">HASIERA</a>
+                    <a href="index.php" class="active">HASIERA</a>
                     <a href="astekoFilma.php">ASTEKO FILMA</a>
-                    <a href="+Filma.php" class="active">+ FILMA</a>
+                    <a href="+Filma.php">+ FILMA</a>
                     <a href="bazkideArea.php" id="bazkideArea1">BAZKIDE AREA</a>
                     <a id="bazkideArea2" onclick="alert('Atal hau ikusi nahi baduzu, erregistratu')">BAZKIDE AREA</a>
                     <a href="adminArea.html" id="adminArea">ADMIN AREA</a>
@@ -98,7 +100,7 @@
                 <div id="genero-lista">
                     <h3>Generoak:</h3>
                     <!--Generoak beteko dituen PHP-ari deia egin-->
-                    <?php include ('PHP/generoakBete.php');?> 
+                    <?php include ('PHP/+FILMAK/generoakBete.php');?> 
                 </div>   
                 <hr class="guion-separador">
                 <!-- Urteak -->
@@ -106,14 +108,14 @@
                     <h3>Urtea:</h3>
                     <select id="urtea" name="urtea" > 
                         <!--Urteak beteko dituen PHP-ari deia egin-->
-                        <?php include ('PHP/urteakBete.php');?>
+                        <?php include ('PHP/+FILMAK/urteakBete.php');?>
                     </select>
                     </div>
                 </div>
             </form>
             <!-- Pelikulen lista -->
                 <div id="pelikula-lista" class="flex-container">
-                    <?php include  'PHP/pelikulakPlusBilaketa2.php'; ?>
+                    <?php include  'PHP/+FILMAK/pelikulakPlusBilaketa2.php'; ?>
                     <script type="text/javascript">var izenburua = "<?= $izenburua ?>";</script>
                     <!-- <script type="text/javascript" src="js/filmaIzenak.js"></script> -->
                 </div>

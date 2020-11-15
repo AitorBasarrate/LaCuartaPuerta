@@ -3,7 +3,7 @@
 <head>    
     <?php
         include 'PHP/dbKonexioa.php';
-        include 'PHP/erabiltzaileakEzabatu.php';
+        include 'PHP/ADMIN-AREA/erabiltzaileakEzabatu.php';
     ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -53,7 +53,7 @@
         </header>
         <section>
         <div class="flex-container">
-            <?php include 'PHP/erabiltzaileakKudeatu.php' ?>
+            <?php include 'PHP/ADMIN-AREA/erabiltzaileakKudeatu.php' ?>
         </div>
         </section>
     </div>

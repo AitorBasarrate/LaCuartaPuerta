@@ -12,11 +12,9 @@
  
   //Local storage dagoen ala ez begiratuko du.
   function comprobarStorage() {
-      var bazkide1=document.getElementById('bazkideArea1');
-      var bazkide2=document.getElementById('bazkideArea2');
-      //localean zeozer badago...
+      //lokalean zeozer badago...
     if(buscarLocal()){
-      //Begiratuko dugu zei baimena duen 
+      //Begiratuko dugu zein baimena duen 
         miStorage = window.localStorage;
         var permisos = miStorage.getItem('permisos');
         if(permisos=='2'){
@@ -26,18 +24,21 @@
         }
         document.getElementById('LoginBoton').style.display='none';
         document.getElementById('LogoutBoton').style.display='block';
-        bazkide1.style.display='block';
-        bazkide2.style.display='none';
-        document.getElementById('commentform').style.display='block';
-        
+        document.getElementById('bazkideArea1').style.display='block';
+        document.getElementById('bazkideArea2').style.display='none';
+        if(document.getElementById('commentform')){
+          document.getElementById('commentform').style.display='block';
+        }
         //lokalean dauden elementuekin kookiak sotuko dtugu
         crearCookies();
     }else{
         document.getElementById('LoginBoton').style.display='block';
         document.getElementById('LogoutBoton').style.display='none';
-        document.getElementById('commentform').style.display='none';
-        bazkide1.style.display='none';
-        bazkide2.style.display='block';
+        if(document.getElementById('commentform')){
+          document.getElementById('commentform').style.display='none';
+        }
+        document.getElementById('bazkideArea1').style.display='none';
+        document.getElementById('bazkideArea2').style.display='block';
         
     }
   }

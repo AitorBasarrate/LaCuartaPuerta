@@ -3,7 +3,8 @@
 <head>    
     <?php
         include 'PHP/dbKonexioa.php';
-        include 'PHP/pelikulakEzabatu.php';
+        include 'PHP/ADMIN-AREA/pelikulakEzabatu.php';
+  
     ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -53,7 +54,7 @@
         </header>
         <section>
         <div class="flex-container">
-            <?php include 'PHP/pelikulakKudeatu.php' ?>
+            <?php include 'PHP/ADMIN-AREA/pelikulakKudeatu.php' ?>
         </div>
         </section>
 

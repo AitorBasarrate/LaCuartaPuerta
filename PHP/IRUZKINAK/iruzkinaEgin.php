@@ -7,10 +7,9 @@
         if(isset($_POST['Argitaratu'])){
             $iruzkin=$_POST['comment'];
             $erab=$_COOKIE['usuario'];
-                //Iruzkina ezbadago hutsik eta erabiltzailea logeatuta baldin badago
+                //Iruzkina ezbadago hutsik
                 if($iruzkin!=''){
-                        echo'Entra3';
-                    //Aurreko php tik eongo da variablea bai edo bai kadenan pasatzen delako.
+                    //Aurreko php-tik eongo da variablea bai edo bai kadenan pasatzen delako.
                     $idPelikula;
                     //Erabiltzaile izena dugu baina ez id erabiltzaile, orduan aterako dugu...
                     $miConsulta = $miPDO->prepare("SELECT iderabiltzaile from erabiltzaile where ErabiltzaileIzena='$erab'");
@@ -33,8 +32,6 @@
 
                 
                 }else{echo '<script>alert("Zire iritzia ezin da hutsik egon!")</script>';}
-            }else{
-                echo '<script>alert("Ezin duzu iritzirik idazti. Egin bazkide!")</script>';
             }
     } catch( PDOException $Exception ) {
     // PHP Fatal Error. Second Argument Has To Be An Integer, But PDOException::getCode Returns A
@@ -46,7 +43,7 @@
 ?>
 <script>
      
-    //Erabiltzailea logueatuta dagoen edo ez konprobatuko duen kodigoa
+  /*   //Erabiltzailea logueatuta dagoen edo ez konprobatuko duen kodigoa
     function logueatutaDagoJakin() {
 
         var erabiltzaile = localStorage.getItem('izena');
@@ -61,6 +58,6 @@
             }
         });
 
-    };
+    }; */
 
 </script>

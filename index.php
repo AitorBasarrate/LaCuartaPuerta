@@ -4,8 +4,8 @@
         <!-- Hemen datu basearekiko konexioa -->
         <?php
             include 'PHP/dbKonexioa.php';
-            include 'PHP/erregistroaEgin.php';
-            include 'PHP/loginEgin.php';
+            include 'PHP/ERREGISTRO-LOGIN/erregistroaEgin.php';
+            include 'PHP/ERREGISTRO-LOGIN/loginEgin.php';
         ?>
 
         <!-- Erregistro atala -->
@@ -58,13 +58,13 @@
             </header>
                 <div class="contenido">
                     <div class="wrapper">
-                        <?php include ('PHP/indexDatosPelis.php');?> 
+                        <?php include ('PHP/INDEX/indexDatosPelis.php');?> 
                     </div>
                     <div class="trailer">
                         
-                    <div class="trailerBox" id="trailerBox "onmouseover="botoiHandiak(this.id)" onmouseout="botoiTxikiak(this.id)"><?php include ('PHP/indexTrailer.php');?></div> 
+                    <div class="trailerBox" id="trailerBox "onmouseover="botoiHandiak(this.id)" onmouseout="botoiTxikiak(this.id)"><?php include ('PHP/INDEX/indexTrailer.php');?></div> 
                         <!-- <div class="trailerBox" id="trailerBox "onmouseover="botoiHandiak(this.id)" onmouseout="botoiTxikiak(this.id)">
-                        <iframe allow='autoplay' src=<?php include ('PHP/indexTrailer.php') ?>> -->
+                        <iframe allow='autoplay' src=<?php include ('PHP/INDEX/indexTrailer.php') ?>> -->
                         </iframe>
                         </div>
 

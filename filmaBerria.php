@@ -3,8 +3,7 @@
 <head>    
     <?php
         include 'PHP/dbKonexioa.php';
-        include 'PHP/erregistroaEgin.php';
-        include 'PHP/loginEgin.php';
+
     ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -100,7 +99,7 @@
                 </div>
                 <div class="grid-item item9">
                     <br><input type="file" id="img" name="argazkia" accept="image/*" required><br><br>
-                    <input type="submit" name="gorde" onclick="<?php include 'PHP/filmaBerriaGorde.php'; ?>" value="Filma Gorde">
+                    <input type="submit" name="gorde" onclick="<?php include 'PHP/ADMIN-AREA/filmaBerriaGorde.php'; ?>" value="Filma Gorde">
                     <input type="reset" value="Datuak Ezabatu">
                 </div>
             </div>

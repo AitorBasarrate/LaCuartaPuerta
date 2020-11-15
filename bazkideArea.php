@@ -3,15 +3,19 @@
 <head>
     <?php
         include 'PHP/dbKonexioa.php';
-        include 'PHP/bazkideAreaBete.php';
+        include 'PHP/BAZKIDE-AREA/bazkideAreaBete.php';
+        include 'PHP/ERREGISTRO-LOGIN/erregistroaEgin.php';
+        include 'PHP/ERREGISTRO-LOGIN/loginEgin.php';
     ?>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/bazkideArea.css">
     <link rel="stylesheet" href="CSS/LogInArea.css">
     <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
-    <script src="JS/bazkideArea.js"></script>
     <script src="JS/sesionStorage.js"></script>
+    <script src="JS/bazkideArea.js"></script>
+    <script src="JS/erregistratu.js"></script>
     <!-- Hasiera oriko estilua -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,7 +34,7 @@
     <title>La Cuarta Puerta</title>
         <!-- Loginaren css a -->
         <link rel="stylesheet" href="CSS/LogInArea.css">
-    <script src="JS/erregistratu.js"></script>
+    
 </head>
 <body>
     <div class="content">
@@ -83,8 +87,10 @@
                     <p>Erabiltzailea: <a><?php echo  $erabIzena?></a></p>
                     <p>Puntuazioa: <a><?php echo $puntuazioa?></a></p>
                     <p>Posizioa Ranking-ean: <a><?php echo $ranking?></a></p>
-
-                    <input type="submit" id="saioaItxi" value="Saioa Itxi" onmouseover="botoiHandiak(this.id)" onmouseout="botoiTxikiak(this.id)">
+                    <form method="get" action="index.php">
+                         <input type="submit" id="saioaItxi" value="Saioa Itxi" onclick="disableButton()" onmouseover="botoiHandiak(this.id)" onmouseout="botoiTxikiak(this.id)">
+                    </form>
+                    
                 </div>
                 <!-- Bazkideen ranking-aren atala taula batean egingo dugu -->
                 <div class="rankingAtala">

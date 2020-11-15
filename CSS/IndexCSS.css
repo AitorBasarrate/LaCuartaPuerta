@@ -294,3 +294,7 @@ footer{
   color: #f5cb5c;
   padding: 0.5%;
 }
+
+#LoginArea1{
+  display: none;
+}

@@ -1,7 +1,7 @@
 
 <?php
 
-    include_once ("dbKonexioa.php");
+    include_once ("PHP/dbKonexioa.php");
     if(isset($_POST['btn2'])) { 
         /* Variableak gordeko ditugu */
         $contra=$_POST['password1'];
@@ -30,7 +30,7 @@
         /* Koinziditu badu */
         if($igual==true){
             /* Creamos las cookies para despues generar el localStorage */
-            include 'PHP/crearCookies.php';
+            include 'PHP/ERREGISTRO-LOGIN/crearCookies.php';
 
             echo("<script>
                 

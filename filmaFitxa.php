@@ -3,10 +3,10 @@
 <head>    
     <?php
         include 'PHP/dbKonexioa.php';
-        include 'PHP/filmaDatuak.php';
-        include "PHP/iruzkinaEgin.php";
-        include 'PHP/erregistroaEgin.php';
-        include 'PHP/loginEgin.php';
+        include 'PHP/FILMEN-FITXA/filmaDatuak.php';
+        include "PHP/IRUZKINAK/iruzkinaEgin.php";
+        include 'PHP/ERREGISTRO-LOGIN/erregistroaEgin.php';
+        include 'PHP/ERREGISTRO-LOGIN/loginEgin.php';
     ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -94,7 +94,7 @@
             <div id="respond">     
                 <h2>IRUZKINAK</h2>
                 <hr>  
-                <?php include ('PHP/iruzkinakBete.php');?> 
+                <?php include ('PHP/IRUZKINAK/iruzkinakBete.php');?> 
                 <hr>
                 <form id="commentform" action="" method="POST">         
                     <h3>Zure Iruzkina:</h3>

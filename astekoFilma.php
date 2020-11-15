@@ -3,25 +3,18 @@
 <head>    
     <?php
         include 'PHP/dbKonexioa.php';
-        include 'PHP/astekoFilmaDatuakHartu.php';
-        include "PHP/iruzkinaEgin.php";
-        include 'PHP/erregistroaEgin.php';
-        include 'PHP/loginEgin.php';
-    ?>
-    <meta charset="UTF-8">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/filmaCSS.css">
-    <link rel="stylesheet" href="CSS/LogInArea.css">
-    <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
-    <script src="JS/bazkideArea.js"></script>
-    <script src="JS/sesionStorage.js"></script>
-    <!-- Hasiera oriko estilua -->
+        include 'PHP/ASTEKO-FILMA/astekoFilmaDatuakHartu.php';
+        include "PHP/IRUZKINAK/iruzkinaEgin.php";
+        include 'PHP/ERREGISTRO-LOGIN/erregistroaEgin.php';
+        include 'PHP/ERREGISTRO-LOGIN/loginEgin.php';
+    ?><!-- Hasiera oriko estilua -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-
     <script src="JS/HamburguerJS.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="CSS/filmaCSS.css">
     <!-- Font family estiloa -->
     <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
     <!-- CSS stilo orrialdea -->
@@ -33,6 +26,7 @@
     <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
     <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="JS/sesionStorage.js"></script>
     <script src="JS/iruzkinak.js"></script>
     <!-- Orriaren iconoa eta tituloa -->
     <link rel="icon" type="image/png" href="Media/fav-icon1.png">
@@ -97,7 +91,7 @@
             <div id="respond">     
                 <h2>IRUZKINAK</h2>
                 <hr>  
-                <?php include ('PHP/iruzkinakAstekoFilma.php');?> 
+                <?php include ('PHP/IRUZKINAK/iruzkinakAstekoFilma.php');?> 
                 <hr>
                 <form id="commentform" action="" method="POST">         
                     <h3>Zure Iruzkina:</h3>
@@ -189,17 +183,18 @@
                     <img class="logo" src="Media/logo-bien-negro.png" alt="Au revoir Shoshanna" />
                 </div>
                 <!-- Kolumna 2 -->
-                <form target="frame2" method='post'>
+                <!-- Kolumna 2 -->
+                <form method='post' action=''>
                     <div class="column4">  
                         <!-- Izen emateko datuak sartu -->
                         <a>Saioa asi:</a><br>
                         <!-- Izena -->
-                        <input type="text" name="erabiltzailea" placeholder="Erabiltzaile izena *" required><br>
+                        <input type="text" name="erabiltzailea" placeholder="Erabiltzaile izena *" oninput='erabiltzaileKonp(),denaOndo()' required><br>
                         <!-- Pasahitza -->
-                        <input type="password" name="password1" placeholder="Pasahitza *" required><br>
+                        <input type="password" name="password1" placeholder="Pasahitza *" oninput='pasahitzakBerdin(),denaOndo()' required><br>
                         <!-- Sartu -->
-                        <input type="submit" value="logIn" name="btn2"><br>
-                        <button onclick="bazkideaSartu(this.id)" id="erregistratuNahi">Ez naiz bazkide, izena eman</button>
+                        <input type="submit" value="logIn" onclick="bazkideaSartu()" id='btn2' name="btn2"><br>
+                        <button onclick="bazkideaSartu(this.id)" id="erregistratuNavhi">Ez naiz bazkide, izena eman</button>
                     </div>
                 </form>
             </div>

@@ -1,5 +1,6 @@
 <?php
     /* Erregistratzeko botoia klikatzean soilik saartuko da */
+    include_once ("PHP/dbKonexioa.php");
     if(isset($_POST['btn1'])) {
         $erabIzena=$_POST['erabiltzailea'];
         /* Datu basearekiko konexioa egingo dugu konprobatzeko erabiltzaile izena erepikatzen ez dela. */
@@ -34,7 +35,7 @@
                 /* Ejecutamos */
                 $miConsulta->execute(); 
                 /* Creamos las cookies para despues generar el localStorage */
-                include 'PHP/crearCookies.php';
+                include 'PHP/ERREGISTRO-LOGIN/crearCookies.php';
                 echo("<script>
                     console.log('entra4');
                     console.log(localStorage.getItem('nombre'));
