@@ -35,11 +35,11 @@
           /* Variableak gordetzen ditugu */
             $erabiltzaileIzena=$fila['ErabiltzaileIzena'];
             $erabiltzailePuntuak=$fila['puntuak'];
-          
+        
             /* Hartutako datuak, arrayetan gordetzen ditugu */
             array_push($arrayErabiltzaileIzena,$erabiltzaileIzena);
             array_push($arrayPuntuak,$erabiltzailePuntuak);
-         
+        
         }
         /* Bazkidearen datuak eta posizioa ranking-ean */
         if(isset($_COOKIE['usuario'])){
