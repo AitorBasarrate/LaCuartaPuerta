@@ -90,7 +90,7 @@ display: block;
 }
 
 /* AdminAreako botoien estiloak */
-.astekoPelikulaBotoia, .pelikulakKudeatuBotoia, .pelikulakSartzekoa, .bazkideArea, .erabiltzaileak {
+.astekoPelikulaBotoia, .pelikulakKudeatuBotoia, .pelikulakSartzekoa, .erabiltzaileak {
     padding: 5%;
     margin: 5% 5% 5% 5%;
     text-align: center;
