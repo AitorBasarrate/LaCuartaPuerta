@@ -73,7 +73,7 @@ if((isset($_POST['pelikulaIzenezBilatu'])) || (isset($_POST['star'])) || (isset(
             $var= " Generoa = '{$generoa[0]}' ";
             array_push($filtroak,$var);
         }
-        setcookie('hautatutakoGeneroak', $generoa);
+
     }  
 
 //     Urteen bidez filtrazen badugu

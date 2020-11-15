@@ -4,10 +4,10 @@
 
         try{
 
+            // Aukeratutako generoak cookie bezala gorde, eta string bezala gorde gero komprobaketa egiteko
             if((isset($_POST['generoa']))) {
                 $gen=$_POST['generoa'];
-                $gene = implode('-',$gen);
-
+                $gene = implode(',',$gen);
             }
 
             /* Genero desberdinen lista atera */
@@ -18,18 +18,24 @@
                 //Generoa 
                 $generoa=$fila['Generoa'];
 
-                    // echo '   
-                    // &ensp;&ensp;&ensp;<input type="checkbox" name="generoa[]" id="generoa" value="'.$generoa.'" '. if (in_array($generoa, $gen))echo "checked";.' >
-                    //     <label for="'.$generoa.'">'.$generoa.'</label><br>
-                    //     ';
+                //  Sortuko dugun generoa filtro bezala aukeratu baldin bada lehenago check jarri
+                if ((strpos($gene, $generoa)) !== false) {
 
-                    // https://stackoverflow.com/questions/10920821/set-checkbox-checked-state-based-on-array-values
-                echo '   
-                        &ensp;&ensp;&ensp;<input type="checkbox" name="generoa[]" id="generoa" value="'.$generoa.'">
+                    echo '   
+                        &ensp;&ensp;&ensp;<input type="checkbox" name="generoa[]" id="'.$generoa.'" value="'.$generoa.'" checked="checked" >
                         <label for="'.$generoa.'">'.$generoa.'</label><br>
                         ';
-                }
+                    
+                // Bestela sortu, checked barik 
+                } else {
 
+                    echo '   
+                        &ensp;&ensp;&ensp;<input type="checkbox" name="generoa[]" id="'.$generoa.'" value="'.$generoa.'"  >
+                        <label for="'.$generoa.'">'.$generoa.'</label><br>
+                        ';
+
+                }
+            }
 
         }catch( PDOException $Exception ) {
             // PHP Fatal Error. Second Argument Has To Be An Integer, But PDOException::getCode Returns A
