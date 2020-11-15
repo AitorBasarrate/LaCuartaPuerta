@@ -3,15 +3,16 @@
 <head>
     <?php
         include 'PHP/dbKonexioa.php';
+        include 'PHP/BAZKIDE-AREA/puntuakGehitu.php';
         include 'PHP/BAZKIDE-AREA/bazkideAreaBete.php';
+        
         include 'PHP/ERREGISTRO-LOGIN/erregistroaEgin.php';
         include 'PHP/ERREGISTRO-LOGIN/loginEgin.php';
+        
     ?>
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/bazkideArea.css">
-    <link rel="stylesheet" href="CSS/LogInArea.css">
+    
     <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
     <script src="JS/sesionStorage.js"></script>
     <script src="JS/bazkideArea.js"></script>
@@ -24,16 +25,16 @@
     <!-- Font family estiloa -->
     <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
     <!-- CSS stilo orrialdea -->
+    <link rel="stylesheet" href="CSS/bazkideArea.css">
     <link rel="stylesheet" href="CSS/IndexCSS.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">        
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <!-- Orriaren iconoa eta tituloa -->
-    
     <link rel="icon" type="image/png" href="Media/fav-icon1.png">
     <title>La Cuarta Puerta</title>
-        <!-- Loginaren css a -->
-        <link rel="stylesheet" href="CSS/LogInArea.css">
+    <!-- Loginaren css a -->
+    <link rel="stylesheet" href="CSS/LogInArea.css">
     
 </head>
 <body>
@@ -69,13 +70,14 @@
                     
                 </div>
                 <!-- Igarkizun misteriotsuaren atala -->
-                <div class="igarkizunMisteriotsua">
-                    <h1>Igarkizun Misteriotsua</h1>
-                    <p id="igarkizunMamia"><?php echo $galdera;?></p>
-                    <input type="text" id="igarkizunErantzuna">
-                    <input type="submit" id="erantzunaBidali" value="Bidali" onmouseover="botoiHandiak(this.id)" onmouseout="botoiTxikiak(this.id)">
-                
-                </div> 
+                <form action=''method='post'>
+                    <div class="igarkizunMisteriotsua">
+                        <h1>Igarkizun Misteriotsua</h1>
+                        <p id="igarkizunMamia"><?php echo $galdera;?></p>
+                        <input type="text" name='igarkizunErantzuna' id="igarkizunErantzuna">
+                        <input type="submit" id="erantzunaBidali" name='erantzunaBidali' value="Bidali" onmouseover="botoiHandiak(this.id)" onmouseout="botoiTxikiak(this.id)">
+                    </div> 
+                </form>
                 <!-- Datu Interesgarriaren atala-->
                 <div class="datuInteresgarria">
                     <h1>Datu Interesgarria</h1>
@@ -140,12 +142,12 @@
                 </div>
                 <!-- Kolumna 2 datak sartzeko atala -->
                             
-                <form target="frame1" method='post'>
+                <form  method='post' action=''>
                     <div class="column2">
                             <!-- Izen emateko datuak sartu -->
                             <!-- Izena -->
                             <div class='erabIzena'>
-                                <input type="text" name="erabiltzailea" id="erabiltzailea" oninput='erabiltzaileKonp()' oninput='denaOndo()' placeholder="Erabiltzaile izena *" required>
+                                <input type="text" name="erabiltzailea" id="erabiltzailea" oninput='erabiltzaileKonp(),denaOndo()' placeholder="Erabiltzaile izena *" required>
                                 <!-- Baldintzak erabiltzaile izenarekiko (hover batean) -->
                                 <div class="hoverErab">
                                     <img class="info" src='media/informacion.png'><br>
@@ -160,7 +162,7 @@
                             </div>
                             <!-- Pasahitza -->
                             <div class='pswd1'>
-                                <input type="password" id="password1" name="password1" oninput='pasahitzaKonp()'oninput='denaOndo()' placeholder="Pasahitza *" required>
+                                <input type="password" id="password1" name="password1" oninput='pasahitzaKonp(),denaOndo()' placeholder="Pasahitza *" required>
                                 <!-- Baldintzak pasahitzari dagokiones (hover batean) -->
                                 <div class="hoverContra">
                                     <img class="info" src='media/informacion.png'><br>
@@ -176,16 +178,16 @@
                             </div>
                             
                         <!-- Pasahitza konfirmatu -->
-                        <input type="password" name="password2" id='password2' placeholder="Pasahitza konfirmatu"  oninput='pasahitzakBerdin()' oninput='denaOndo()' required><br>
+                        <input type="password" name="password2" id='password2' placeholder="Pasahitza konfirmatu"  oninput='pasahitzakBerdin(),denaOndo()' required><br>
                         <!-- Korreoa -->
-                        <input type="email" id='korreoa' name="korreoa" placeholder="Posta elektronikoa jarri" oninput='korreoaOndo()' oninput='denaOndo()' required ><br>
+                        <input type="email" id='korreoa' name="korreoa" placeholder="Posta elektronikoa jarri" oninput='korreoaOndo(),denaOndo()' required ><br>
                         <!-- Termino legalak onartu-->
                         <input type="checkbox" id="terminoLegalak" name="terminoLegalak" value="Boat" onclick='denaOndo()'>
                         <label for="terminoLegalak">Termino legalak onartzen ditut.</label><br>
                         <!-- Izena eman -->
-                        <input type="submit" id='register'name="btn1" value="Register" onclick="erregistratu()" disabled >
+                        <input type="submit" id='register' name="btn1" value="register" onclick="crearLocal()" disabled>
                         <!-- Bazkide naiz botoia - Sartzeko modal-a erakutsi -->
-                        <button onclick="if(lafuncionDeOhiane == true){muestraLaOtraVentana}else{muestraLaMismaVentana} bazkideaSartu(this.id)" id="bazkideNaiz">Bazkidea naiz dagoeneko</button>
+                        <button onclick="bazkideaSartu(this.id)" id="bazkideNaiz">Bazkidea naiz dagoeneko</button>
                     </div> 
                 </form>
             </div>
@@ -202,17 +204,17 @@
                     <img class="logo" src="Media/logo-bien-negro.png" alt="Au revoir Shoshanna" />
                 </div>
                 <!-- Kolumna 2 -->
-                <form target="frame2" method='post'>
+                <form method='post' action=''>
                     <div class="column4">  
                         <!-- Izen emateko datuak sartu -->
                         <a>Saioa asi:</a><br>
                         <!-- Izena -->
-                        <input type="text" name="erabiltzailea" placeholder="Erabiltzaile izena *" required><br>
+                        <input type="text" name="erabiltzailea" placeholder="Erabiltzaile izena *" oninput='erabiltzaileKonp(),denaOndo()' required><br>
                         <!-- Pasahitza -->
-                        <input type="password" name="password1" placeholder="Pasahitza *" required><br>
+                        <input type="password" name="password1" placeholder="Pasahitza *" oninput='pasahitzakBerdin(),denaOndo()' required><br>
                         <!-- Sartu -->
-                        <input type="submit" value="logIn" name="btn2"><br>
-                        <button onclick="bazkideaSartu(this.id)" id="erregistratuNahi">Ez naiz bazkide, izena eman</button>
+                        <input type="submit" value="logIn" onclick="bazkideaSartu()" id='btn2' name="btn2"><br>
+                        <button onclick="bazkideaSartu(this.id)" id="erregistratuNavhi">Ez naiz bazkide, izena eman</button>
                     </div>
                 </form>
             </div>

@@ -26,7 +26,7 @@
         /* Bazkideen ranking-a aterako dugu */
         
         $miConsulta = $miPDO->prepare("SELECT ErabiltzaileIzena, puntuak FROM erabiltzaile ORDER BY puntuak DESC LIMIT 3");
-        $miConsulta->execute(); 
+        $miConsulta->execute();
         /* Array bat sortzen dugu erantzunak gordetzeko */
         $arrayErabiltzaileIzena=array();
         $arrayPuntuak=array();
