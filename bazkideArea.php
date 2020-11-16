@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="JS/sesionStorage.js"></script>
     <?php
         include 'PHP/dbKonexioa.php';
         include 'PHP/BAZKIDE-AREA/puntuakGehitu.php';
         include 'PHP/BAZKIDE-AREA/bazkideAreaBete.php';
-        
         include 'PHP/ERREGISTRO-LOGIN/erregistroaEgin.php';
         include 'PHP/ERREGISTRO-LOGIN/loginEgin.php';
         
@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
-    <script src="JS/sesionStorage.js"></script>
+    
     <script src="JS/bazkideArea.js"></script>
     <script src="JS/erregistratu.js"></script>
     <!-- Hasiera oriko estilua -->

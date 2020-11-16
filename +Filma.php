@@ -52,9 +52,9 @@
                     <!-- Hemen logoa txertatu behar da -->
                 <a href="index.php"><img class="logo" id="logo"src="Media/logo-bien.png" alt="Au revoir Shoshanna"></a>                    <!-- Nabigatzailea, bakoitzak beraren orria kargatuko du -->
                 <div class="topnav" id="myTopnav">
-                    <a href="index.php" class="active">HASIERA</a>
+                    <a href="index.php">HASIERA</a>
                     <a href="astekoFilma.php">ASTEKO FILMA</a>
-                    <a href="+Filma.php">+ FILMA</a>
+                    <a href="+Filma.php" class="active">+ FILMA</a>
                     <a href="bazkideArea.php" id="bazkideArea1">BAZKIDE AREA</a>
                     <a id="bazkideArea2" onclick="alert('Atal hau ikusi nahi baduzu, erregistratu')">BAZKIDE AREA</a>
                     <a href="adminArea.html" id="adminArea">ADMIN AREA</a>
@@ -110,7 +110,8 @@
                         <!--Urteak beteko dituen PHP-ari deia egin-->
                         <?php include ('PHP/+FILMAK/urteakBete.php');?>
                     </select>
-                    </div>
+                    </div><br>
+                    <input type="submit" style='width:250px; height:25px font-weight:bolt' name="buscar" value='BILATU'>
                 </div>
             </form>
             <!-- Pelikulen lista -->

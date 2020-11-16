@@ -4,7 +4,7 @@
             $_POST['balorazioa'], $_POST['kritika'],$_POST['galdera'], $_POST['erantzuna'], $_POST['datua']))
     {
 
-    require_once 'dbKonexioa.php';
+    require_once 'PHP/dbKonexioa.php';
     $miConsulta = $miPDO->prepare("SELECT idPelikulak FROM filmak ORDER BY idPelikulak DESC limit 1;");
     if ($miConsulta->execute()) {
         $fila = $miConsulta->fetchALl(PDO::FETCH_OBJ);
@@ -49,14 +49,14 @@ echo $statusMsg;
 	$galdera = $_POST['galdera'];
     $erantzuna = $_POST['erantzuna'];   
     $datua = $_POST['datua'];
-
+echo('entra1');
     $miConsulta = $miPDO->prepare ("INSERT INTO filmak (idPelikulak,Izenburuak,Argazkia,Generoa,Zuzendaria,Urtea,Sinopsis,Kritika,Balorazioa,Trailer)
     VALUES ('$idPelikulakAnterior','$izenburua','$argaz','$generoa','$zuzendaria','$urtea','$sinopsis','$kritika','$balorazioa','$trailer')");
     $miConsulta->execute(); 
-
-    /* $miConsulta = $miPDO->prepare ("INSERT INTO bazkidearea (idPelikulak,galdera,erantzuna,datua)
+    echo('entra2');
+    $miConsulta = $miPDO->prepare ("INSERT INTO bazkidearea (idPelikulak,galdera,erantzuna,datua)
     VALUES ('$idPelikulakAnterior','$galdera','$erantzuna','$datua')");
-    $miConsulta->execute(); */
+    $miConsulta->execute(); 
 
     }
 ?>

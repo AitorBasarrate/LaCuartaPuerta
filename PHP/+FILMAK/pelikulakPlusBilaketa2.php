@@ -36,6 +36,7 @@ function hacerSelect($par){
 
 /* ARRAY HAU SORTUKO DUGU SELECT-REN KATEAK GORDETZEKO*/
 $filtroak =array(); 
+if(isset($_POST['buscar'])){
 // Filtroren bat beteta badago SQL- kontsultari WHERE klausula gehituko da
 if((isset($_POST['pelikulaIzenezBilatu'])) || (isset($_POST['star'])) || (isset($_POST['generoa'])) || (isset($_POST['urtea']))) {
     $sql = "SELECT * FROM filmak WHERE";
@@ -52,6 +53,7 @@ if((isset($_POST['pelikulaIzenezBilatu'])) || (isset($_POST['star'])) || (isset(
 //    Izarren bidez filtratzeko
     if((isset($_POST['star']))) {
         $izarrak=$_POST['star'];
+        $izarrak=($izarrak*20);
         $balorazioa = " Balorazioa >= {$izarrak}";
         array_push($filtroak,$balorazioa);
 
@@ -107,4 +109,8 @@ if((!isset($_POST['pelikulaIzenezBilatu'])) && (!isset($_POST['star'])) &&(!isse
     }
    
 hacerSelect($sql);
+}else{
+    $sql = "SELECT * FROM filmak ";
+    hacerSelect($sql);
+}
 ?>
