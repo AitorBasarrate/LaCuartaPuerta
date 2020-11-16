@@ -4,23 +4,36 @@
 if(isset($_POST['delete'])){
 
         try{ 
-
-            $idPelikula = $_POST['idPelikula'];
             include 'PHP/dbKonexioa.php';
-            /* Erabiltzaileen ID izena eta puntuak aterako dugu */
-            $miConsulta = $miPDO->prepare("DELETE FROM filmak WHERE idPelikulak=:idPelikulak");
-            $miConsulta->bindValue("idPelikulak",intval($idPelikula));
+            $idPelikula = $_POST['idPelikula'];
+            $miConsulta = $miPDO->prepare("SELECT FROM iruzkinak WHERE filmak_idPelikulak='$idPelikula'");
+            if ($miConsulta->execute()) {
+                $fila = $miConsulta->rowCount();
+                if($fila!=0){
+                 $miConsulta = $miPDO->prepare("DELETE FROM iruzkinak WHERE filmak_idPelikulak='$idPelikula'");
+                 $miConsulta->execute();
+                }
+            }
 
-                if ($miConsulta->execute()) {
-                    
+            $miConsulta = $miPDO->prepare("SELECT FROM galderak WHERE idPelikulak='$idPelikula'");
+            if ($miConsulta->execute()) {
+                $fila = $miConsulta->rowCount();
+                if($fila!=0){
+                    $miConsulta = $miPDO->prepare("DELETE FROM galderak WHERE idPelikulak='$idPelikula'");
+                    $miConsulta->execute();
+                }
+            }
+           
+
+            /* Erabiltzaileen ID izena eta puntuak aterako dugu */
+            $miConsulta = $miPDO->prepare("DELETE FROM filmak WHERE idPelikulak='$idPelikula'");
+            $miConsulta->execute();
+            if ($miConsulta->execute()) {
                     echo '<script language="javascript">';
                     echo 'alert("Pelikula ezabatu da!")';
                     echo '</script>';
-
                 } else {
-
-                    echo "Ezin izan da pelikula ezabatu: " . $miConsulta->error;
-
+                   echo('mierda');
                 }
 
         }catch( PDOException $Exception ) {
